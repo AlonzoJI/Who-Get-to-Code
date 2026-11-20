@@ -41,6 +41,13 @@ if (root) {
     select(next.dataset.event);
   });
 
-  const fromHash = location.hash.slice(1);
+  const hashId = () => location.hash.slice(1).replace(/^ev-/, '');
+  const fromHash = hashId();
   select(order.includes(fromHash) ? fromHash : order[0]);
+
+  // In-page links like #diversity-reports open that event's card.
+  window.addEventListener('hashchange', () => {
+    const id = hashId();
+    if (order.includes(id)) select(id, { focusCard: true });
+  });
 }

@@ -96,3 +96,13 @@
   .tl-item{grid-template-columns:9px minmax(0,1fr)}
   .tl-item-title{grid-column:2}
 }
+
+/* ── data-problem note ─────────────────────────────────── */
+.data-note{margin-top:28px;border:1px solid var(--line);border-left:2px solid var(--cat-2);
+  background:var(--fill);padding:22px 24px}
+.data-note .eyebrow{margin-bottom:8px}
+.data-note h2{font-size:20px;margin-bottom:10px}
+.data-note p{color:var(--t2);font-size:14.5px;max-width:78ch;margin:0 0 8px}
+.data-note .chart-src{margin-top:12px}
+.data-note a{border-bottom:1px solid var(--t4)}
+.data-note a:hover{color:var(--t0);border-color:var(--t1)}
