@@ -2,15 +2,41 @@
   {
     "id": "home",
     "section": "Home",
-    "author": "C. Wright Mills",
-    "title": "The Promise",
-    "work": "The Sociological Imagination",
-    "publisher": "Oxford University Press",
-    "year": 1959,
+    "heading": "C. Wright Mills, “The Promise”",
+    "works": [
+      { "cite": "C. Wright Mills, “The Promise,” in The Sociological Imagination. Oxford University Press, 1959." }
+    ],
     "idea": "Personal troubles and public issues",
     "tie": [
       "Mills separates personal troubles, which happen inside one person's life, from public issues, which come from how a society is organized. He argues that people can only understand their own lives once they see that link.",
       "A student who decides computer science \"isn't for me\" seems to be making a private choice. When the same choice shows up across whole groups of students, year after year, it is a public issue. This site treats enrollment, admissions and hiring numbers that way."
+    ]
+  },
+  {
+    "id": "pipeline-brown",
+    "section": "The pipeline",
+    "heading": "Brown v. Board of Education and “The Problem We All Live With”",
+    "works": [
+      { "cite": "Brown v. Board of Education of Topeka, 347 U.S. 483 (1954).", "url": "https://www.archives.gov/milestone-documents/brown-v-board-of-education" },
+      { "cite": "Nikole Hannah-Jones and Chana Joffe-Walt, “The Problem We All Live With,” Parts One and Two, This American Life, episodes 562 and 563, July 31 and Aug. 7, 2015.", "url": "https://www.thisamericanlife.org/562/the-problem-we-all-live-with-part-one" }
+    ],
+    "idea": "Access to a school is not the same as equal outcomes inside it",
+    "tie": [
+      "Brown ruled that segregated public schools violate the Equal Protection Clause. Sixty years later, Nikole Hannah-Jones reported on the Normandy School District in Missouri, the district that includes Michael Brown's high school, where a transfer program opened better-resourced schools to its students and that access was fought over.",
+      "Stage 01 of the pipeline counts whether a school offers computer science. The rest of the diagram asks what happens after that door opens: who is placed in the class, who is pointed toward the AP exam and who reaches the next step. A course in the catalog is where the question starts, not where it ends."
+    ]
+  },
+  {
+    "id": "pipeline-love",
+    "section": "The pipeline",
+    "heading": "Bettina L. Love, “Grit, Zest, and Racism”",
+    "works": [
+      { "cite": "Bettina L. Love, “Grit, Zest, and Racism,” in We Want to Do More Than Survive: Abolitionist Teaching and the Pursuit of Educational Freedom. Beacon Press, 2019.", "url": "https://www.penguinrandomhouse.com/books/598479/we-want-to-do-more-than-survive-by-bettina-love/" }
+    ],
+    "idea": "Don't blame students for dropping off",
+    "tie": [
+      "Love argues that teaching grit asks students of color to endure conditions that racism created, and treats their survival as a character trait instead of changing the conditions.",
+      "When a dot falls off in the diagram, it is easy to read it as a student who didn't try hard enough. The log records where students leave, not why any one student did. The question at each stage is what about the school, the course or the policy pushed students out."
     ]
   }
 ]
