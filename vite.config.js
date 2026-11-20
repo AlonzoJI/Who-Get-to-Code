@@ -17,7 +17,7 @@ const pages = Object.fromEntries(
 // Markers a page can use:
 //   <!-- @head -->  <!-- @nav -->  <!-- @foot -->
 //   <!-- @stats <data-file> -->  <!-- @citations <data-file> -->
-//   <!-- @pipeline -->  <!-- @pipeline-source -->  <!-- @datasets -->  <!-- @fromclass <reading-id> -->
+//   <!-- @pipeline -->  <!-- @pipeline-source -->  <!-- @datasets -->  <!-- @timeline -->  <!-- @fromclass <reading-id> -->
 function sitePartials() {
   return {
     name: 'site-partials',
@@ -38,6 +38,7 @@ function sitePartials() {
           .replace('<!-- @pipeline -->', () => render.pipelineCards(readJson('pages')))
           .replace('<!-- @pipeline-source -->', () => render.pipelineSource(readJson('pipeline')))
           .replace('<!-- @datasets -->', () => render.datasetsByStage(readJson('pipeline')))
+          .replace('<!-- @timeline -->', () => render.rollbackTimeline(readJson('rollback'), readJson('pipeline')))
           .replace(/<!-- @fromclass ([\w-]+) -->/g, (_, id) =>
             render.fromClassCard(readJson('readings').find((r) => r.id === id))
           );

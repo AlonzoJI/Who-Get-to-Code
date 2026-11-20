@@ -1,0 +1,252 @@
+{
+  "_about": "Rollback timeline events. Every fact and quote was checked against the linked source on 2026-11-20. Quotes are verbatim; 'notes' records caveats and anything the source does not say. outcome.verified false renders the placeholder badge.",
+  "axis": { "start": "2023-01-01", "end": "2026-12-31" },
+  "arenas": [
+    { "id": "courts", "label": "Courts" },
+    { "id": "federal", "label": "Federal government" },
+    { "id": "ohio", "label": "Ohio law" },
+    { "id": "companies", "label": "Tech companies" }
+  ],
+  "events": [
+    {
+      "id": "sffa",
+      "date": "2023-06-29",
+      "date_label": "June 29, 2023",
+      "arena": "courts",
+      "kind": "policy",
+      "title": "Supreme Court ends race-conscious college admissions",
+      "happened": [
+        "In Students for Fair Admissions v. Harvard and v. University of North Carolina, the Supreme Court ruled that both schools' race-conscious admissions programs violate the Equal Protection Clause. The vote was 6 to 3 in the UNC case and 6 to 2 in the Harvard case, where Justice Jackson took no part.",
+        "Brookings notes that it is the first time private colleges nationwide are barred from considering race or ethnicity in admissions."
+      ],
+      "stages": [4],
+      "affects": "Selective colleges can no longer weigh race in admissions, which changes who is admitted to which kind of college.",
+      "sources": [
+        { "cite": "Students for Fair Admissions, Inc. v. President and Fellows of Harvard College, No. 20-1199, 600 U.S. ___ (2023)", "publisher": "Supreme Court of the United States", "year": 2023, "url": "https://www.supremecourt.gov/opinions/22pdf/20-1199_hgdj.pdf" },
+        { "cite": "Julie J. Park, \"The complex ramifications of Students for Fair Admissions v. Harvard\"", "publisher": "Brookings Institution", "year": 2026, "url": "https://www.brookings.edu/articles/the-complex-ramifications-of-students-for-fair-admissions-v-harvard/" }
+      ],
+      "supporters": {
+        "who": "Chief Justice John Roberts, for the majority",
+        "quote": "Eliminating racial discrimination means eliminating all of it.",
+        "source": { "cite": "SFFA v. Harvard, opinion of the Court, slip op. at 15", "year": 2023, "url": "https://www.supremecourt.gov/opinions/22pdf/20-1199_hgdj.pdf" }
+      },
+      "outcome": {
+        "verified": true,
+        "text": "Black first-year enrollment at Harvard fell from 18% in 2023 to 11.5% in 2025. Of 29 elite colleges that reported fall 2025 data, only two still had Black enrollment of at least 10%, and 11 reported 5% or lower.",
+        "source": { "cite": "Julie J. Park, Brookings", "year": 2026, "url": "https://www.brookings.edu/articles/the-complex-ramifications-of-students-for-fair-admissions-v-harvard/" }
+      },
+      "verified": true,
+      "notes": "Decision date and votes from the opinion's syllabus. Park disclosed she was a consulting expert for Harvard in the case. Brookings does not discuss computer science or STEM."
+    },
+    {
+      "id": "eo-14151",
+      "date": "2025-01-20",
+      "date_label": "Jan. 20, 2025",
+      "arena": "federal",
+      "kind": "policy",
+      "title": "Executive Order 14151 ends federal DEI programs",
+      "happened": [
+        "President Trump signed \"Ending Radical and Wasteful Government DEI Programs and Preferencing\" on his first day in office. It directs every federal agency to terminate, within 60 days, its DEI offices and positions, \"equity action plans\" and \"equity-related\" grants or contracts."
+      ],
+      "stages": [4, 5],
+      "affects": "Federal grants that paid for programs to broaden participation in STEM. Researchers studying the terminations that followed say many supported STEM training for students of color.",
+      "sources": [
+        { "cite": "Ending Radical and Wasteful Government DEI Programs and Preferencing, Jan. 20, 2025", "publisher": "The White House", "year": 2025, "url": "https://www.whitehouse.gov/presidential-actions/2025/01/ending-radical-and-wasteful-government-dei-programs-and-preferencing/" },
+        { "cite": "S. Barros-Bustos and A. M. Chicas-Mosier, \"Unraveling federal award terminations: evidence from the Louis Stokes Alliances for Minority Participation,\" Frontiers in Education 11", "publisher": "Frontiers", "year": 2026, "url": "https://www.frontiersin.org/articles/10.3389/feduc.2026.1673464/full" }
+      ],
+      "supporters": {
+        "who": "The order, Section 1 (Purpose and Policy)",
+        "quote": "The public release of these plans demonstrated immense public waste and shameful discrimination.",
+        "source": { "cite": "Executive Order 14151, Sec. 1", "year": 2025, "url": "https://www.whitehouse.gov/presidential-actions/2025/01/ending-radical-and-wasteful-government-dei-programs-and-preferencing/" }
+      },
+      "outcome": {
+        "verified": false,
+        "text": "No student outcome data linked yet. The NSF event below shows one program-level effect.",
+        "source": null
+      },
+      "verified": true,
+      "notes": "The White House page does not print the EO number; 14151 comes from the Frontiers article ('Executive Order (EO) 14,151'). The Federal Register copy could not be loaded."
+    },
+    {
+      "id": "meta-google-hiring",
+      "date": "2025-01-10",
+      "date_label": "Jan. 10 to Feb. 5, 2025",
+      "arena": "companies",
+      "kind": "policy",
+      "title": "Meta and Google drop diversity hiring practices",
+      "happened": [
+        "Meta ended its DEI team, its representation goals, its supplier diversity program and the \"diverse slate approach\" in its hiring, as first reported by Axios on Jan. 10, 2025.",
+        "In an email to employees on Feb. 5, Google said it was scrapping some of its diversity hiring targets."
+      ],
+      "stages": [6],
+      "affects": "Hiring at two major employers of computer science graduates.",
+      "sources": [
+        { "cite": "Lamar Johnson, \"Meta joins chorus of DEI rollbacks, cutting roles and programs,\" Jan. 14, 2025", "publisher": "HR Dive", "year": 2025, "url": "https://www.hrdive.com/news/meta-cuts-dei-roles-supplier-diversity-programs-wave-rollbacks-mcdonalds-amazon/737223" },
+        { "cite": "Michael Liedtke (AP), \"Google scraps diversity hiring goals in the face of Trump's new anti-DEI government contractor rules,\" Feb. 6, 2025", "publisher": "Fortune", "year": 2025, "url": "https://fortune.com/2025/02/06/google-scraps-diversity-hiring-goals-trump-anti-dei-government-contractor-rules" }
+      ],
+      "supporters": {
+        "who": "Meta VP of Human Resources Janelle Gale, in an internal memo reported by Axios",
+        "quote": "legal and policy landscape surrounding diversity, equity and inclusion efforts in the United States",
+        "lead": "Gale attributed the changes to the",
+        "extra": "Google said it was \"evaluating changes required following recent court decisions and executive orders on this topic,\" citing its status as a federal contractor.",
+        "source": { "cite": "HR Dive, Jan. 14, 2025; Fortune (AP), Feb. 6, 2025", "year": 2025, "url": "https://www.hrdive.com/news/meta-cuts-dei-roles-supplier-diversity-programs-wave-rollbacks-mcdonalds-amazon/737223" }
+      },
+      "outcome": {
+        "verified": true,
+        "label": "Before the change",
+        "text": "Google's Black share of leadership rose from 2.6% in 2020 to 5.1% in 2024, and its Hispanic share from 3.7% to 4.3%, under a 2020 goal to raise underrepresented groups in leadership by 30% by 2025.",
+        "source": { "cite": "Fortune (AP), Feb. 6, 2025", "year": 2025, "url": "https://fortune.com/2025/02/06/google-scraps-diversity-hiring-goals-trump-anti-dei-government-contractor-rules" }
+      },
+      "verified": true,
+      "notes": "The diverse slate change is sourced to Axios via HR Dive; Meta's spokesperson confirmed the supplier diversity change. Fortune says Google scrapped 'some' targets. The Feb. 5 date is the Wednesday email the AP story describes."
+    },
+    {
+      "id": "ohio-sb1",
+      "date": "2025-03-28",
+      "date_label": "Mar. 28, 2025",
+      "arena": "ohio",
+      "kind": "policy",
+      "title": "Ohio enacts Senate Bill 1 for public colleges",
+      "happened": [
+        "The governor signed the Advance Ohio Higher Education Act on March 28, 2025, and it took effect June 27, 2025.",
+        "It requires every state college and university to ban DEI orientations and trainings, close DEI offices, stop using DEI in job descriptions and stop creating scholarships that use DEI. It also requires colleges to post course syllabi publicly and to \"ensure the fullest degree of intellectual diversity.\""
+      ],
+      "stages": [4, 5],
+      "affects": "Students at Ohio's public colleges and universities, including Ohio State, lose DEI offices and any new DEI-based scholarships.",
+      "sources": [
+        { "cite": "Sub. S.B. 1, 136th General Assembly, status and summary", "publisher": "Ohio Senate", "year": 2025, "url": "https://ohiosenate.gov/legislation/136/sb1" },
+        { "cite": "Sub. S.B. 1, as enrolled", "publisher": "Ohio General Assembly", "year": 2025, "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb1/05_EN/pdf/" }
+      ],
+      "supporters": {
+        "who": "Sen. Jerry Cirino, the bill's sponsor, June 24, 2026",
+        "quote": "Senate Bill 1 brought important reforms to higher education to ensure intellectual diversity, eliminate structural discrimination, and more.",
+        "source": { "cite": "Ohio Senate press release, \"Cirino press conference highlights SB1 proven success\"", "year": 2026, "url": "https://ohiosenate.gov/members/jerry-c-cirino/news/cirino-press-conference-highlights-sb1-proven-success" }
+      },
+      "outcome": {
+        "verified": false,
+        "text": "Sen. Cirino says \"the data shows no meaningful change following the implementation of SB1\" and that Ohio State and the University of Toledo enrolled more minority students. This site has not yet checked those figures against IPEDS or the universities' own reports.",
+        "source": { "cite": "Ohio Senate press release, June 24, 2026", "year": 2026, "url": "https://ohiosenate.gov/members/jerry-c-cirino/news/cirino-press-conference-highlights-sb1-proven-success" }
+      },
+      "verified": true,
+      "notes": "Signing and effective dates from the Ohio Senate status table. The listed Akin Gump tracker URL returned 403 and its slug refers to an Oklahoma order, so it is not used. Provisions quoted from the enrolled bill text."
+    },
+    {
+      "id": "nsf-terminations",
+      "date": "2025-04-18",
+      "date_label": "Apr. 18, 2025",
+      "arena": "federal",
+      "kind": "policy",
+      "title": "NSF terminates grants that no longer match its priorities",
+      "happened": [
+        "NSF posted a statement of priorities saying awards that do not align with them \"cannot be funded,\" and terminated awards including those on diversity, equity and inclusion.",
+        "By late May, NSF had terminated more than 1,700 grants since the start of the administration. AIP reports that cuts to grants deemed DEI-related \"disproportionately affected projects in the STEM Education Directorate.\""
+      ],
+      "stages": [4, 5],
+      "affects": "College programs that recruit and support students from underrepresented groups in STEM, such as the Louis Stokes Alliances for Minority Participation (LSAMP).",
+      "sources": [
+        { "cite": "Statement of NSF priorities, Apr. 18, 2025", "publisher": "National Science Foundation", "year": 2025, "url": "https://www.nsf.gov/updates-on-priorities" },
+        { "cite": "Clare Zhang, \"Researchers Scramble Following NSF Grant Cuts,\" May 28, 2025", "publisher": "AIP FYI", "year": 2025, "url": "https://www.aip.org/fyi/researchers-scramble-following-nsf-grant-cuts" }
+      ],
+      "supporters": {
+        "who": "National Science Foundation, statement of priorities",
+        "quote": "These efforts should not preference some groups at the expense of others.",
+        "source": { "cite": "NSF, Apr. 18, 2025", "year": 2025, "url": "https://www.nsf.gov/updates-on-priorities" }
+      },
+      "outcome": {
+        "verified": true,
+        "label": "What the program data shows",
+        "text": "On May 2, 2025, NSF terminated 56 of the 82 active LSAMP projects. Of the terminated LSAMP grants, 58% were led by women and 17% by Black principal investigators.",
+        "source": { "cite": "Barros-Bustos and Chicas-Mosier, Frontiers in Education", "year": 2026, "url": "https://www.frontiersin.org/articles/10.3389/feduc.2026.1673464/full" }
+      },
+      "verified": true,
+      "notes": "Your brief said 'hundreds' of grants in April; AIP gives 'over 1,700' since the start of the administration as of May 28, 2025, and does not date them to April. NSF's page gives no termination count. 114 awards were reinstated as of June 30, 2025 under a court injunction (NSF)."
+    },
+    {
+      "id": "fall-2025-enrollment",
+      "date": "2025-09-01",
+      "date_label": "Fall 2025",
+      "arena": "courts",
+      "kind": "outcome",
+      "title": "Black enrollment falls again at elite colleges",
+      "happened": [
+        "Fall 2025 was the second entering class admitted after SFFA. In a Bloomberg analysis of 27 elite colleges, all but two reported a smaller share of Black first-year students in fall 2025 than in fall 2023, the last class admitted before the ruling. Some 21 saw lower Hispanic first-year enrollment over the same period."
+      ],
+      "stages": [4],
+      "affects": "Which kind of college students enroll in.",
+      "sources": [
+        { "cite": "Liam Knox and Francesca Maglione, \"College Diversity Drops Again as Trump Ramps Up Scrutiny,\" Jan. 14, 2026", "publisher": "Bloomberg Law", "year": 2026, "url": "https://news.bloomberglaw.com/social-justice/college-racial-diversity-drops-again-as-trump-ramps-up-scrutiny" }
+      ],
+      "supporters": {
+        "who": "Chief Justice John Roberts, for the majority in SFFA",
+        "quote": "the student must be treated based on his or her experiences as an individual",
+        "lead": "The ruling holds that",
+        "source": { "cite": "SFFA v. Harvard, opinion of the Court, slip op. at 40", "year": 2023, "url": "https://www.supremecourt.gov/opinions/22pdf/20-1199_hgdj.pdf" }
+      },
+      "outcome": {
+        "verified": true,
+        "text": "25 of 27 elite colleges enrolled a smaller share of Black first-year students in fall 2025 than in fall 2023. More than half reported equal or higher Asian enrollment.",
+        "source": { "cite": "Bloomberg Law, Jan. 14, 2026", "year": 2026, "url": "https://news.bloomberglaw.com/social-justice/college-racial-diversity-drops-again-as-trump-ramps-up-scrutiny" }
+      },
+      "verified": true,
+      "notes": "Bloomberg does not name the 27 schools in the visible text and does not call it the 'second class'; that follows from the dates (fall 2024 was the first class admitted after June 2023). Plotted at Sept. 1, 2025 to mark the fall term."
+    },
+    {
+      "id": "diversity-reports",
+      "date": "2025-11-07",
+      "date_label": "Nov. 2025",
+      "arena": "companies",
+      "kind": "policy",
+      "title": "Google, Meta and Microsoft stop publishing diversity reports",
+      "happened": [
+        "Google, Microsoft and Meta confirmed they will not publish diversity, equity and inclusion data this year, according to Wired. Google had published 11 consecutive annual reports."
+      ],
+      "stages": [6],
+      "affects": "Company diversity reports were one of the few public sources on who gets hired in tech. Without them, stage 06 is harder to track.",
+      "sources": [
+        { "cite": "\"Google, Meta, And Microsoft Quietly End Diversity Reporting As DEI Pullback Widens,\" Nov. 7, 2025", "publisher": "Allwork.Space (citing Wired)", "year": 2025, "url": "https://allwork.space/?p=1040557" }
+      ],
+      "supporters": {
+        "who": "No company gave a public reason in this report",
+        "quote": null,
+        "extra": "Earlier in 2025, Google tied changes to its diversity programs to its status as a federal contractor and to \"recent court decisions and executive orders on this topic.\"",
+        "source": { "cite": "Fortune (AP), Feb. 6, 2025", "year": 2025, "url": "https://fortune.com/2025/02/06/google-scraps-diversity-hiring-goals-trump-anti-dei-government-contractor-rules" }
+      },
+      "outcome": {
+        "verified": false,
+        "text": "The last reports each company published will serve as the stage 06 baseline. Not yet collected.",
+        "source": null
+      },
+      "verified": true,
+      "notes": "Allwork says the companies 'will not publish' DEI data 'this year'; it does not say they stopped permanently. The Wired original could not be fetched."
+    },
+    {
+      "id": "ohio-compliance",
+      "date": "2026-02-01",
+      "date_label": "Feb. 1, 2026",
+      "arena": "ohio",
+      "kind": "policy",
+      "title": "Ohio colleges file SB 1 compliance reports",
+      "happened": [
+        "Ohio's public colleges had to submit Senate Bill 1 compliance reports to the Ohio Department of Higher Education by Feb. 1. Documents shared with WVXU show the University of Cincinnati, Ohio State and Miami University reporting full compliance and promising to post syllabi for all courses before the 2026-2027 school year.",
+        "Some lawmakers question whether colleges are following the law. Rep. Tom Young introduced House Bill 698, which would withhold state funding from colleges that do not comply."
+      ],
+      "stages": [4, 5],
+      "affects": "Students at Ohio's public colleges and universities.",
+      "sources": [
+        { "cite": "Zack Carreon (WVXU), \"Ohio colleges' compliance with DEI ban is called into question,\" Mar. 31, 2026", "publisher": "WYSO", "year": 2026, "url": "https://www.wyso.org/2026-03-31/ohio-colleges-compliance-dei-ban-question" }
+      ],
+      "supporters": {
+        "who": "Sen. Jerry Cirino, SB 1's sponsor, June 24, 2026",
+        "quote": "As we approach the one-year anniversary of the legislation, I'm proud to say we've seen great results so far.",
+        "source": { "cite": "Ohio Senate press release", "year": 2026, "url": "https://ohiosenate.gov/members/jerry-c-cirino/news/cirino-press-conference-highlights-sb1-proven-success" }
+      },
+      "outcome": {
+        "verified": false,
+        "text": "Fall 2025 and 2026 enrollment at Ohio public colleges by race and income, from IPEDS. Not yet collected.",
+        "source": null
+      },
+      "verified": true,
+      "notes": "WYSO gives 'Feb. 1' without a year; 2026 is inferred from the article date and the law's June 27, 2025 effective date. The article names only UC, OSU and Miami."
+    }
+  ]
+}
