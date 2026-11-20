@@ -36,6 +36,7 @@ Static site I can deploy free to GitHub Pages or Vercel. Keep it simple (plain H
   `<!-- @head -->`, `<!-- @nav -->`, `<!-- @foot -->`, `<!-- @stats <data-file> -->`, `<!-- @citations <data-file> -->`, `<!-- @pipeline -->`, `<!-- @fromclass <reading-id> -->`.
   `<body data-page="...">` sets the active nav link.
 - Data records (`/data/*.json`) use: `id, stage, metric, group, value, unit, display, caption, data_year, year, source, source_short, url, verified, accessed, notes`. `verified: false` or `value: null` renders the "Placeholder data" badge automatically. `notes` holds the exact quote from the source plus caveats.
+- `data/pipeline.json` drives the interactive pipeline on the home page (`src/pipeline/`). Each record's `value` is the percent of the group who move on from the previous stage. `null` or `verified: false` removes nobody and shows the placeholder badge. Stages with `has_periods: true` hold `before` and `after` sets; others hold `current`. Math lives in `src/pipeline/model.js` and is tested with `corepack pnpm test`.
 - "From class" pairings live in `data/readings.json`; stage pages and their order in `data/pages.json`.
 - Design tokens in `src/styles/tokens.css` (dark default, `:root.light` overrides). Text contrast: use `--t2` (.50) or brighter for any readable text; `--t-dim` only for large text; `--t3`/`--t4` are decorative only.
 - Charts read colors from `src/chart-theme.js` and re-render on the `themechange` window event.

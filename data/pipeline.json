@@ -1,0 +1,1455 @@
+{
+  "_about": "Pipeline diagram data. Each record is the percent of the group who move on from the previous stage (stage 01 is out of all students in the group). value null = not yet verified; the diagram removes no one at that stage and shows the placeholder badge. Set verified true only after checking the figure against the source at url.",
+  "cohort_size": 100,
+  "periods": [
+    {
+      "id": "before",
+      "label": "Before the rollback",
+      "note": "Placeholder: set the cutoff year once the stage 04 dataset is chosen."
+    },
+    {
+      "id": "after",
+      "label": "After the rollback",
+      "note": "Placeholder: set the comparison year once the stage 04 dataset is chosen."
+    }
+  ],
+  "dimensions": [
+    {
+      "id": "all",
+      "label": "All students",
+      "short": "All",
+      "groups": [
+        {
+          "id": "all",
+          "label": "All students"
+        }
+      ]
+    },
+    {
+      "id": "race",
+      "label": "Race and ethnicity",
+      "short": "Race",
+      "groups": [
+        {
+          "id": "american-indian",
+          "label": "American Indian or Alaska Native"
+        },
+        {
+          "id": "asian",
+          "label": "Asian"
+        },
+        {
+          "id": "black",
+          "label": "Black"
+        },
+        {
+          "id": "hispanic",
+          "label": "Hispanic or Latino"
+        },
+        {
+          "id": "pacific-islander",
+          "label": "Native Hawaiian or Pacific Islander"
+        },
+        {
+          "id": "white",
+          "label": "White"
+        },
+        {
+          "id": "multiracial",
+          "label": "Two or more races"
+        }
+      ]
+    },
+    {
+      "id": "gender",
+      "label": "Gender",
+      "short": "Gender",
+      "groups": [
+        {
+          "id": "female",
+          "label": "Female"
+        },
+        {
+          "id": "male",
+          "label": "Male"
+        }
+      ]
+    },
+    {
+      "id": "income",
+      "label": "Family income",
+      "short": "Income",
+      "groups": [
+        {
+          "id": "low-income",
+          "label": "Low-income"
+        },
+        {
+          "id": "not-low-income",
+          "label": "Not low-income"
+        }
+      ]
+    }
+  ],
+  "datasets": {
+    "codeorg": {
+      "name": "State of Computer Science Education",
+      "publisher": "Code.org, CSTA and ECEP Alliance",
+      "url": "https://advocacy.code.org/stateofcs/"
+    },
+    "crdc": {
+      "name": "Civil Rights Data Collection",
+      "publisher": "U.S. Department of Education, Office for Civil Rights",
+      "url": "https://civilrightsdata.ed.gov/"
+    },
+    "collegeboard": {
+      "name": "AP Program Results",
+      "publisher": "College Board",
+      "url": "https://reports.collegeboard.org/ap-program-results"
+    },
+    "ipeds": {
+      "name": "Integrated Postsecondary Education Data System (IPEDS)",
+      "publisher": "NCES, U.S. Department of Education",
+      "url": "https://nces.ed.gov/ipeds/"
+    },
+    "ncses": {
+      "name": "Diversity and STEM: Women, Minorities, and Persons with Disabilities (2023, NSF 23-315)",
+      "publisher": "NSF National Center for Science and Engineering Statistics",
+      "url": "https://ncses.nsf.gov/pubs/nsf23315/assets/nsf23315-report.pdf"
+    },
+    "acs": {
+      "name": "American Community Survey",
+      "publisher": "U.S. Census Bureau",
+      "url": "https://www.census.gov/programs-surveys/acs"
+    }
+  },
+  "stages": [
+    {
+      "id": "stage-1",
+      "n": "01",
+      "title": "School offers computer science",
+      "short": "Offers CS",
+      "metric": "Share of the group’s public high school students who attend a school that offers foundational CS",
+      "file": "stage-1-offers.html",
+      "datasets": [
+        "codeorg",
+        "crdc"
+      ],
+      "has_periods": false,
+      "values": {
+        "current": [
+          {
+            "id": "offers-all",
+            "stage": 1,
+            "metric": "Share of the group’s public high school students who attend a school that offers foundational CS",
+            "group": "all",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "offers-race-american-indian",
+            "stage": 1,
+            "metric": "Share of the group’s public high school students who attend a school that offers foundational CS",
+            "group": "race:american-indian",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "offers-race-asian",
+            "stage": 1,
+            "metric": "Share of the group’s public high school students who attend a school that offers foundational CS",
+            "group": "race:asian",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "offers-race-black",
+            "stage": 1,
+            "metric": "Share of the group’s public high school students who attend a school that offers foundational CS",
+            "group": "race:black",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "offers-race-hispanic",
+            "stage": 1,
+            "metric": "Share of the group’s public high school students who attend a school that offers foundational CS",
+            "group": "race:hispanic",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "offers-race-pacific-islander",
+            "stage": 1,
+            "metric": "Share of the group’s public high school students who attend a school that offers foundational CS",
+            "group": "race:pacific-islander",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "offers-race-white",
+            "stage": 1,
+            "metric": "Share of the group’s public high school students who attend a school that offers foundational CS",
+            "group": "race:white",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "offers-race-multiracial",
+            "stage": 1,
+            "metric": "Share of the group’s public high school students who attend a school that offers foundational CS",
+            "group": "race:multiracial",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "offers-gender-female",
+            "stage": 1,
+            "metric": "Share of the group’s public high school students who attend a school that offers foundational CS",
+            "group": "gender:female",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "offers-gender-male",
+            "stage": 1,
+            "metric": "Share of the group’s public high school students who attend a school that offers foundational CS",
+            "group": "gender:male",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "offers-income-low-income",
+            "stage": 1,
+            "metric": "Share of the group’s public high school students who attend a school that offers foundational CS",
+            "group": "income:low-income",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "offers-income-not-low-income",
+            "stage": 1,
+            "metric": "Share of the group’s public high school students who attend a school that offers foundational CS",
+            "group": "income:not-low-income",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "stage-2",
+      "n": "02",
+      "title": "Student enrolls",
+      "short": "Enrolls",
+      "metric": "Of those students, the share who enroll in a foundational CS class in high school",
+      "file": "stage-2-enrolls.html",
+      "datasets": [
+        "codeorg",
+        "crdc"
+      ],
+      "has_periods": false,
+      "values": {
+        "current": [
+          {
+            "id": "enrolls-all",
+            "stage": 2,
+            "metric": "Of those students, the share who enroll in a foundational CS class in high school",
+            "group": "all",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "enrolls-race-american-indian",
+            "stage": 2,
+            "metric": "Of those students, the share who enroll in a foundational CS class in high school",
+            "group": "race:american-indian",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "enrolls-race-asian",
+            "stage": 2,
+            "metric": "Of those students, the share who enroll in a foundational CS class in high school",
+            "group": "race:asian",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "enrolls-race-black",
+            "stage": 2,
+            "metric": "Of those students, the share who enroll in a foundational CS class in high school",
+            "group": "race:black",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "enrolls-race-hispanic",
+            "stage": 2,
+            "metric": "Of those students, the share who enroll in a foundational CS class in high school",
+            "group": "race:hispanic",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "enrolls-race-pacific-islander",
+            "stage": 2,
+            "metric": "Of those students, the share who enroll in a foundational CS class in high school",
+            "group": "race:pacific-islander",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "enrolls-race-white",
+            "stage": 2,
+            "metric": "Of those students, the share who enroll in a foundational CS class in high school",
+            "group": "race:white",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "enrolls-race-multiracial",
+            "stage": 2,
+            "metric": "Of those students, the share who enroll in a foundational CS class in high school",
+            "group": "race:multiracial",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "enrolls-gender-female",
+            "stage": 2,
+            "metric": "Of those students, the share who enroll in a foundational CS class in high school",
+            "group": "gender:female",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "enrolls-gender-male",
+            "stage": 2,
+            "metric": "Of those students, the share who enroll in a foundational CS class in high school",
+            "group": "gender:male",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "enrolls-income-low-income",
+            "stage": 2,
+            "metric": "Of those students, the share who enroll in a foundational CS class in high school",
+            "group": "income:low-income",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "enrolls-income-not-low-income",
+            "stage": 2,
+            "metric": "Of those students, the share who enroll in a foundational CS class in high school",
+            "group": "income:not-low-income",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "stage-3",
+      "n": "03",
+      "title": "Student takes an AP CS exam",
+      "short": "AP CS exam",
+      "metric": "Of CS enrollees, the share who take an AP Computer Science A or Principles exam",
+      "file": "stage-3-ap.html",
+      "datasets": [
+        "collegeboard"
+      ],
+      "has_periods": false,
+      "values": {
+        "current": [
+          {
+            "id": "ap-all",
+            "stage": 3,
+            "metric": "Of CS enrollees, the share who take an AP Computer Science A or Principles exam",
+            "group": "all",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "ap-race-american-indian",
+            "stage": 3,
+            "metric": "Of CS enrollees, the share who take an AP Computer Science A or Principles exam",
+            "group": "race:american-indian",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "ap-race-asian",
+            "stage": 3,
+            "metric": "Of CS enrollees, the share who take an AP Computer Science A or Principles exam",
+            "group": "race:asian",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "ap-race-black",
+            "stage": 3,
+            "metric": "Of CS enrollees, the share who take an AP Computer Science A or Principles exam",
+            "group": "race:black",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "ap-race-hispanic",
+            "stage": 3,
+            "metric": "Of CS enrollees, the share who take an AP Computer Science A or Principles exam",
+            "group": "race:hispanic",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "ap-race-pacific-islander",
+            "stage": 3,
+            "metric": "Of CS enrollees, the share who take an AP Computer Science A or Principles exam",
+            "group": "race:pacific-islander",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "ap-race-white",
+            "stage": 3,
+            "metric": "Of CS enrollees, the share who take an AP Computer Science A or Principles exam",
+            "group": "race:white",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "ap-race-multiracial",
+            "stage": 3,
+            "metric": "Of CS enrollees, the share who take an AP Computer Science A or Principles exam",
+            "group": "race:multiracial",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "ap-gender-female",
+            "stage": 3,
+            "metric": "Of CS enrollees, the share who take an AP Computer Science A or Principles exam",
+            "group": "gender:female",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "ap-gender-male",
+            "stage": 3,
+            "metric": "Of CS enrollees, the share who take an AP Computer Science A or Principles exam",
+            "group": "gender:male",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "ap-income-low-income",
+            "stage": 3,
+            "metric": "Of CS enrollees, the share who take an AP Computer Science A or Principles exam",
+            "group": "income:low-income",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "ap-income-not-low-income",
+            "stage": 3,
+            "metric": "Of CS enrollees, the share who take an AP Computer Science A or Principles exam",
+            "group": "income:not-low-income",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "stage-4",
+      "n": "04",
+      "title": "Student enrolls in college",
+      "short": "College",
+      "metric": "Of AP CS exam takers, the share who enroll in college, with the kind of college",
+      "file": "stage-4-college.html",
+      "datasets": [
+        "ipeds",
+        "acs"
+      ],
+      "has_periods": true,
+      "values": {
+        "before": [
+          {
+            "id": "college-before-all",
+            "stage": 4,
+            "metric": "Of AP CS exam takers, the share who enroll in college, with the kind of college",
+            "group": "all",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": "",
+            "by_kind": {
+              "selective_four_year": null,
+              "other_four_year": null,
+              "two_year": null
+            }
+          },
+          {
+            "id": "college-before-race-american-indian",
+            "stage": 4,
+            "metric": "Of AP CS exam takers, the share who enroll in college, with the kind of college",
+            "group": "race:american-indian",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": "",
+            "by_kind": {
+              "selective_four_year": null,
+              "other_four_year": null,
+              "two_year": null
+            }
+          },
+          {
+            "id": "college-before-race-asian",
+            "stage": 4,
+            "metric": "Of AP CS exam takers, the share who enroll in college, with the kind of college",
+            "group": "race:asian",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": "",
+            "by_kind": {
+              "selective_four_year": null,
+              "other_four_year": null,
+              "two_year": null
+            }
+          },
+          {
+            "id": "college-before-race-black",
+            "stage": 4,
+            "metric": "Of AP CS exam takers, the share who enroll in college, with the kind of college",
+            "group": "race:black",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": "",
+            "by_kind": {
+              "selective_four_year": null,
+              "other_four_year": null,
+              "two_year": null
+            }
+          },
+          {
+            "id": "college-before-race-hispanic",
+            "stage": 4,
+            "metric": "Of AP CS exam takers, the share who enroll in college, with the kind of college",
+            "group": "race:hispanic",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": "",
+            "by_kind": {
+              "selective_four_year": null,
+              "other_four_year": null,
+              "two_year": null
+            }
+          },
+          {
+            "id": "college-before-race-pacific-islander",
+            "stage": 4,
+            "metric": "Of AP CS exam takers, the share who enroll in college, with the kind of college",
+            "group": "race:pacific-islander",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": "",
+            "by_kind": {
+              "selective_four_year": null,
+              "other_four_year": null,
+              "two_year": null
+            }
+          },
+          {
+            "id": "college-before-race-white",
+            "stage": 4,
+            "metric": "Of AP CS exam takers, the share who enroll in college, with the kind of college",
+            "group": "race:white",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": "",
+            "by_kind": {
+              "selective_four_year": null,
+              "other_four_year": null,
+              "two_year": null
+            }
+          },
+          {
+            "id": "college-before-race-multiracial",
+            "stage": 4,
+            "metric": "Of AP CS exam takers, the share who enroll in college, with the kind of college",
+            "group": "race:multiracial",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": "",
+            "by_kind": {
+              "selective_four_year": null,
+              "other_four_year": null,
+              "two_year": null
+            }
+          },
+          {
+            "id": "college-before-gender-female",
+            "stage": 4,
+            "metric": "Of AP CS exam takers, the share who enroll in college, with the kind of college",
+            "group": "gender:female",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": "",
+            "by_kind": {
+              "selective_four_year": null,
+              "other_four_year": null,
+              "two_year": null
+            }
+          },
+          {
+            "id": "college-before-gender-male",
+            "stage": 4,
+            "metric": "Of AP CS exam takers, the share who enroll in college, with the kind of college",
+            "group": "gender:male",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": "",
+            "by_kind": {
+              "selective_four_year": null,
+              "other_four_year": null,
+              "two_year": null
+            }
+          },
+          {
+            "id": "college-before-income-low-income",
+            "stage": 4,
+            "metric": "Of AP CS exam takers, the share who enroll in college, with the kind of college",
+            "group": "income:low-income",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": "",
+            "by_kind": {
+              "selective_four_year": null,
+              "other_four_year": null,
+              "two_year": null
+            }
+          },
+          {
+            "id": "college-before-income-not-low-income",
+            "stage": 4,
+            "metric": "Of AP CS exam takers, the share who enroll in college, with the kind of college",
+            "group": "income:not-low-income",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": "",
+            "by_kind": {
+              "selective_four_year": null,
+              "other_four_year": null,
+              "two_year": null
+            }
+          }
+        ],
+        "after": [
+          {
+            "id": "college-after-all",
+            "stage": 4,
+            "metric": "Of AP CS exam takers, the share who enroll in college, with the kind of college",
+            "group": "all",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": "",
+            "by_kind": {
+              "selective_four_year": null,
+              "other_four_year": null,
+              "two_year": null
+            }
+          },
+          {
+            "id": "college-after-race-american-indian",
+            "stage": 4,
+            "metric": "Of AP CS exam takers, the share who enroll in college, with the kind of college",
+            "group": "race:american-indian",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": "",
+            "by_kind": {
+              "selective_four_year": null,
+              "other_four_year": null,
+              "two_year": null
+            }
+          },
+          {
+            "id": "college-after-race-asian",
+            "stage": 4,
+            "metric": "Of AP CS exam takers, the share who enroll in college, with the kind of college",
+            "group": "race:asian",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": "",
+            "by_kind": {
+              "selective_four_year": null,
+              "other_four_year": null,
+              "two_year": null
+            }
+          },
+          {
+            "id": "college-after-race-black",
+            "stage": 4,
+            "metric": "Of AP CS exam takers, the share who enroll in college, with the kind of college",
+            "group": "race:black",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": "",
+            "by_kind": {
+              "selective_four_year": null,
+              "other_four_year": null,
+              "two_year": null
+            }
+          },
+          {
+            "id": "college-after-race-hispanic",
+            "stage": 4,
+            "metric": "Of AP CS exam takers, the share who enroll in college, with the kind of college",
+            "group": "race:hispanic",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": "",
+            "by_kind": {
+              "selective_four_year": null,
+              "other_four_year": null,
+              "two_year": null
+            }
+          },
+          {
+            "id": "college-after-race-pacific-islander",
+            "stage": 4,
+            "metric": "Of AP CS exam takers, the share who enroll in college, with the kind of college",
+            "group": "race:pacific-islander",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": "",
+            "by_kind": {
+              "selective_four_year": null,
+              "other_four_year": null,
+              "two_year": null
+            }
+          },
+          {
+            "id": "college-after-race-white",
+            "stage": 4,
+            "metric": "Of AP CS exam takers, the share who enroll in college, with the kind of college",
+            "group": "race:white",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": "",
+            "by_kind": {
+              "selective_four_year": null,
+              "other_four_year": null,
+              "two_year": null
+            }
+          },
+          {
+            "id": "college-after-race-multiracial",
+            "stage": 4,
+            "metric": "Of AP CS exam takers, the share who enroll in college, with the kind of college",
+            "group": "race:multiracial",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": "",
+            "by_kind": {
+              "selective_four_year": null,
+              "other_four_year": null,
+              "two_year": null
+            }
+          },
+          {
+            "id": "college-after-gender-female",
+            "stage": 4,
+            "metric": "Of AP CS exam takers, the share who enroll in college, with the kind of college",
+            "group": "gender:female",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": "",
+            "by_kind": {
+              "selective_four_year": null,
+              "other_four_year": null,
+              "two_year": null
+            }
+          },
+          {
+            "id": "college-after-gender-male",
+            "stage": 4,
+            "metric": "Of AP CS exam takers, the share who enroll in college, with the kind of college",
+            "group": "gender:male",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": "",
+            "by_kind": {
+              "selective_four_year": null,
+              "other_four_year": null,
+              "two_year": null
+            }
+          },
+          {
+            "id": "college-after-income-low-income",
+            "stage": 4,
+            "metric": "Of AP CS exam takers, the share who enroll in college, with the kind of college",
+            "group": "income:low-income",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": "",
+            "by_kind": {
+              "selective_four_year": null,
+              "other_four_year": null,
+              "two_year": null
+            }
+          },
+          {
+            "id": "college-after-income-not-low-income",
+            "stage": 4,
+            "metric": "Of AP CS exam takers, the share who enroll in college, with the kind of college",
+            "group": "income:not-low-income",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": "",
+            "by_kind": {
+              "selective_four_year": null,
+              "other_four_year": null,
+              "two_year": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "stage-5",
+      "n": "05",
+      "title": "Student earns a CS degree",
+      "short": "CS degree",
+      "metric": "Of college enrollees, the share who earn a bachelor’s degree in computer science",
+      "file": "stage-5-degree.html",
+      "datasets": [
+        "ipeds",
+        "ncses"
+      ],
+      "has_periods": false,
+      "values": {
+        "current": [
+          {
+            "id": "degree-all",
+            "stage": 5,
+            "metric": "Of college enrollees, the share who earn a bachelor’s degree in computer science",
+            "group": "all",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "degree-race-american-indian",
+            "stage": 5,
+            "metric": "Of college enrollees, the share who earn a bachelor’s degree in computer science",
+            "group": "race:american-indian",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "degree-race-asian",
+            "stage": 5,
+            "metric": "Of college enrollees, the share who earn a bachelor’s degree in computer science",
+            "group": "race:asian",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "degree-race-black",
+            "stage": 5,
+            "metric": "Of college enrollees, the share who earn a bachelor’s degree in computer science",
+            "group": "race:black",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "degree-race-hispanic",
+            "stage": 5,
+            "metric": "Of college enrollees, the share who earn a bachelor’s degree in computer science",
+            "group": "race:hispanic",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "degree-race-pacific-islander",
+            "stage": 5,
+            "metric": "Of college enrollees, the share who earn a bachelor’s degree in computer science",
+            "group": "race:pacific-islander",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "degree-race-white",
+            "stage": 5,
+            "metric": "Of college enrollees, the share who earn a bachelor’s degree in computer science",
+            "group": "race:white",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "degree-race-multiracial",
+            "stage": 5,
+            "metric": "Of college enrollees, the share who earn a bachelor’s degree in computer science",
+            "group": "race:multiracial",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "degree-gender-female",
+            "stage": 5,
+            "metric": "Of college enrollees, the share who earn a bachelor’s degree in computer science",
+            "group": "gender:female",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "degree-gender-male",
+            "stage": 5,
+            "metric": "Of college enrollees, the share who earn a bachelor’s degree in computer science",
+            "group": "gender:male",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "degree-income-low-income",
+            "stage": 5,
+            "metric": "Of college enrollees, the share who earn a bachelor’s degree in computer science",
+            "group": "income:low-income",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          },
+          {
+            "id": "degree-income-not-low-income",
+            "stage": 5,
+            "metric": "Of college enrollees, the share who earn a bachelor’s degree in computer science",
+            "group": "income:not-low-income",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "stage-6",
+      "n": "06",
+      "title": "Graduate gets hired",
+      "short": "Hired in tech",
+      "metric": "Of CS graduates, the share employed in a computing occupation, with median earnings",
+      "file": "stage-6-hired.html",
+      "datasets": [
+        "ncses",
+        "acs"
+      ],
+      "has_periods": false,
+      "values": {
+        "current": [
+          {
+            "id": "hired-all",
+            "stage": 6,
+            "metric": "Of CS graduates, the share employed in a computing occupation, with median earnings",
+            "group": "all",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": "",
+            "median_earnings_usd": null
+          },
+          {
+            "id": "hired-race-american-indian",
+            "stage": 6,
+            "metric": "Of CS graduates, the share employed in a computing occupation, with median earnings",
+            "group": "race:american-indian",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": "",
+            "median_earnings_usd": null
+          },
+          {
+            "id": "hired-race-asian",
+            "stage": 6,
+            "metric": "Of CS graduates, the share employed in a computing occupation, with median earnings",
+            "group": "race:asian",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": "",
+            "median_earnings_usd": null
+          },
+          {
+            "id": "hired-race-black",
+            "stage": 6,
+            "metric": "Of CS graduates, the share employed in a computing occupation, with median earnings",
+            "group": "race:black",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": "",
+            "median_earnings_usd": null
+          },
+          {
+            "id": "hired-race-hispanic",
+            "stage": 6,
+            "metric": "Of CS graduates, the share employed in a computing occupation, with median earnings",
+            "group": "race:hispanic",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": "",
+            "median_earnings_usd": null
+          },
+          {
+            "id": "hired-race-pacific-islander",
+            "stage": 6,
+            "metric": "Of CS graduates, the share employed in a computing occupation, with median earnings",
+            "group": "race:pacific-islander",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": "",
+            "median_earnings_usd": null
+          },
+          {
+            "id": "hired-race-white",
+            "stage": 6,
+            "metric": "Of CS graduates, the share employed in a computing occupation, with median earnings",
+            "group": "race:white",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": "",
+            "median_earnings_usd": null
+          },
+          {
+            "id": "hired-race-multiracial",
+            "stage": 6,
+            "metric": "Of CS graduates, the share employed in a computing occupation, with median earnings",
+            "group": "race:multiracial",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": "",
+            "median_earnings_usd": null
+          },
+          {
+            "id": "hired-gender-female",
+            "stage": 6,
+            "metric": "Of CS graduates, the share employed in a computing occupation, with median earnings",
+            "group": "gender:female",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": "",
+            "median_earnings_usd": null
+          },
+          {
+            "id": "hired-gender-male",
+            "stage": 6,
+            "metric": "Of CS graduates, the share employed in a computing occupation, with median earnings",
+            "group": "gender:male",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": "",
+            "median_earnings_usd": null
+          },
+          {
+            "id": "hired-income-low-income",
+            "stage": 6,
+            "metric": "Of CS graduates, the share employed in a computing occupation, with median earnings",
+            "group": "income:low-income",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": "",
+            "median_earnings_usd": null
+          },
+          {
+            "id": "hired-income-not-low-income",
+            "stage": 6,
+            "metric": "Of CS graduates, the share employed in a computing occupation, with median earnings",
+            "group": "income:not-low-income",
+            "value": null,
+            "unit": "percent of previous stage",
+            "year": null,
+            "source": null,
+            "url": null,
+            "verified": false,
+            "notes": "",
+            "median_earnings_usd": null
+          }
+        ]
+      }
+    }
+  ]
+}

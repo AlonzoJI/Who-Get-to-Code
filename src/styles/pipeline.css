@@ -1,0 +1,101 @@
+/* ── outcomes pipeline widget ──────────────────────────── */
+.engine{border:1px solid var(--line);background:var(--bg);margin-top:40px}
+.engine fieldset{border:0;margin:0;padding:0;min-width:0}
+.engine .label{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--t2);font-weight:400;margin:0}
+
+.eng-bar{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px 24px;
+  padding:14px 16px;border-bottom:1px solid var(--line)}
+.pl-controls{display:flex;flex-wrap:wrap;align-items:flex-end;gap:14px 22px}
+.pl-actions{display:flex;align-items:center;gap:6px}
+
+/* segmented radio control */
+.seg{display:flex;flex-wrap:wrap;align-items:center}
+.seg legend{float:left;width:100%;margin-bottom:7px}
+.seg input{position:absolute;opacity:0;width:1px;height:1px}
+.seg label{padding:6px 12px;border:1px solid var(--line);margin-left:-1px;font-family:var(--mono);
+  font-size:11.5px;color:var(--t2);cursor:pointer;transition:color .13s,background-color .13s}
+.seg label:first-of-type{margin-left:0}
+.seg label:hover{color:var(--t0);background:var(--fill)}
+.seg input:checked + label{color:var(--bg);background:var(--t1);border-color:var(--t1)}
+.seg input:focus-visible + label{outline:1px solid var(--focus);outline-offset:2px;position:relative;z-index:1}
+.pl-pergroup{display:flex;flex-direction:column;gap:6px}
+.pl-note{font-family:var(--mono);font-size:10.5px;color:var(--t2)}
+
+.pl-select{display:flex;flex-direction:column;gap:7px}
+.pl-select select{appearance:none;-webkit-appearance:none;font:inherit;font-family:var(--mono);font-size:11.5px;
+  color:var(--t1);background:var(--bg);border:1px solid var(--line);padding:6px 30px 6px 10px;min-width:220px;
+  background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);
+  background-position:calc(100% - 15px) 50%,calc(100% - 10px) 50%;background-size:5px 5px;background-repeat:no-repeat}
+.pl-select select:disabled{color:var(--t2);opacity:.7}
+.pl-select select:focus-visible{outline:1px solid var(--focus);outline-offset:2px}
+
+.pl-status{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;
+  padding:9px 16px;border-bottom:1px solid var(--line-soft);font-family:var(--mono);font-size:11px;color:var(--t2)}
+.pl-legend{display:flex;gap:18px;flex-wrap:wrap}
+.pl-legend span{display:inline-flex;align-items:center;gap:7px}
+.pl-legend i{width:7px;height:7px;border-radius:50%;display:inline-block}
+.pl-legend .k-in{background:var(--cat-1)}
+.pl-legend .k-out{background:var(--cat-2)}
+
+.eng-body{display:grid;grid-template-columns:minmax(0,1fr) 300px}
+.eng-canvas{min-width:0;padding:8px 0}
+.eng-canvas svg{display:block;width:100%;height:auto}
+/* height:0 + min-height:100% makes the log match the diagram's height and scroll inside it */
+.trace{border-left:1px solid var(--line);padding:16px 18px;height:0;min-height:100%;overflow-y:auto}
+.trace .label{margin-bottom:12px}
+.tr-log{list-style:none;margin:0;padding:0}
+.tr-empty,.tr-end{font-family:var(--mono);font-size:11.5px;color:var(--t2);padding:6px 0}
+.tr-end{margin-top:6px;padding-top:12px;border-top:1px solid var(--line-soft);color:var(--t1)}
+.tr-step{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--line-soft);
+  animation:tr-in .3s ease both}
+.tr-n{font-family:var(--mono);font-size:11px;color:var(--t2);flex:0 0 18px;padding-top:1px}
+.tr-main{display:flex;flex-direction:column;gap:4px;align-items:flex-start;font-family:var(--mono);
+  font-size:11.5px;color:var(--t2);line-height:1.5}
+.tr-main b{font-family:var(--sans);font-size:13px;font-weight:500;color:var(--t0)}
+.tr-sub{color:var(--t2)}
+.tr-src a{border-bottom:1px solid var(--t4)}
+.tr-src a:hover{color:var(--t0)}
+@keyframes tr-in{from{opacity:0;transform:translateY(4px)}}
+
+/* svg marks: colors come from tokens so the theme toggle restyles them */
+.pl-edge{stroke:var(--line);stroke-width:1}
+.pl-ring{fill:none;stroke:var(--line);stroke-width:1;transition:stroke .2s}
+.pl-ring.on{stroke:var(--t2)}
+.pl-n{fill:var(--t2);font-family:var(--mono);font-size:11px;letter-spacing:.1em}
+.pl-title{fill:var(--t0);font-family:var(--sans);font-size:14px;font-weight:500}
+.pl-count{fill:var(--t2);font-family:var(--mono);font-size:12px}
+.pl-drop{fill:var(--cat-2);font-family:var(--mono);font-size:12px}
+.pl-dot{fill:var(--cat-1);transition:fill .25s}
+.pl-dot.out{fill:var(--cat-2)}
+svg.vertical .pl-title{font-size:15px}
+
+@media (max-width:900px){
+  .eng-body{grid-template-columns:1fr}
+  .trace{border-left:0;border-top:1px solid var(--line);height:auto;min-height:0;max-height:360px}
+}
+@media (max-width:640px){
+  .pl-select select{min-width:0;width:100%}
+  .pl-select{flex:1 1 100%}
+  .pl-actions{flex:1 1 100%}
+  .pl-actions .btn.primary{flex:1;justify-content:center}
+}
+
+.pl-nojs{padding:20px 16px;margin:0;color:var(--t2);font-size:14px}
+
+/* ── datasets by stage ─────────────────────────────────── */
+.ds-title{margin-top:64px;font-size:18px;font-weight:400}
+.ds-title + .ds-list{margin-top:18px}
+.mt-24{margin-top:24px}
+.ds-list{list-style:none;margin:40px 0 0;padding:0;border-top:1px solid var(--line)}
+.ds-row{display:grid;grid-template-columns:200px minmax(0,1fr) minmax(0,1.2fr);gap:8px 32px;
+  padding:18px 0;border-bottom:1px solid var(--line-soft);align-items:baseline}
+.ds-stage{display:flex;gap:12px;align-items:baseline}
+.ds-stage .n{font-family:var(--mono);font-size:11px;color:var(--t2)}
+.ds-stage b{font-weight:500;color:var(--t0);font-size:14px}
+.ds-metric{color:var(--t2);font-size:13.5px;margin:0}
+.ds-sets{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.ds-sets a{font-size:13.5px;color:var(--t1);border-bottom:1px solid var(--t4)}
+.ds-sets a:hover{color:var(--t0);border-color:var(--t1)}
+.ds-sets .pub{display:block;font-family:var(--mono);font-size:11px;color:var(--t2)}
+@media (max-width:840px){ .ds-row{grid-template-columns:1fr} }

@@ -58,9 +58,36 @@
       <section class="sec" id="pipeline" aria-labelledby="pipeline-title">
         <span class="eyebrow">The pipeline</span>
         <h2 id="pipeline-title">Six steps, from a class on the schedule to a first job</h2>
-        <p class="lede">Each step gets its own page with the data, the policy change that touches it,
-          and what supporters of that change argue.</p>
-        <div class="mt-40">
+        <p class="lede">Pick a group and press Run to follow 100 students from that group through every
+          step. The log on the side records where students drop off and which source each number
+          comes from.</p>
+
+        <div id="pipeline-diagram" class="engine">
+          <p class="pl-nojs">The interactive diagram needs JavaScript. The datasets for each stage are listed below.</p>
+        </div>
+        <!-- @pipeline-source -->
+
+        <details class="more">
+          <summary>The technical version</summary>
+          <div class="more-in">
+            <p>Each stage's number is the <b>percent of the group who move on from the previous stage</b>
+              (stage 01 is out of all students in the group). The diagram multiplies those rates, so the
+              count at stage 06 is the product of all six. Counts are rounded once per stage from the
+              running product, so rounding never adds up across steps.</p>
+            <p>A stage with no verified number removes nobody and is marked "Placeholder data" in the
+              log. Nothing is estimated or filled in. Datasets measure different cohorts and years, so
+              the chained result describes a typical path, not one real class of students followed for
+              ten years.</p>
+            <p>The before/after toggle only changes stages that have a verified figure for both periods.
+              Every other stage uses the same figure either way.</p>
+          </div>
+        </details>
+
+        <h3 class="ds-title">Where each stage's data will come from</h3>
+        <!-- @datasets -->
+
+        <h3 class="ds-title">Read more about each stage</h3>
+        <div class="mt-24">
           <!-- @pipeline -->
         </div>
       </section>
@@ -78,5 +105,6 @@
     </main>
 
     <!-- @foot -->
+    <script type="module" src="/src/pipeline/diagram.js"></script>
   </body>
 </html>
