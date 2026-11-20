@@ -1,0 +1,16 @@
+[
+  {
+    "id": "home",
+    "section": "Home",
+    "author": "C. Wright Mills",
+    "title": "The Promise",
+    "work": "The Sociological Imagination",
+    "publisher": "Oxford University Press",
+    "year": 1959,
+    "idea": "Personal troubles and public issues",
+    "tie": [
+      "Mills separates personal troubles, which happen inside one person's life, from public issues, which come from how a society is organized. He argues that people can only understand their own lives once they see that link.",
+      "A student who decides computer science \"isn't for me\" seems to be making a private choice. When the same choice shows up across whole groups of students, year after year, it is a public issue. This site treats enrollment, admissions and hiring numbers that way."
+    ]
+  }
+]

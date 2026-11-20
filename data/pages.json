@@ -1,0 +1,8 @@
+[
+  { "id": "stage-1", "file": "stage-1-offers.html",   "n": "01", "title": "School offers computer science", "question": "Which high schools offer a computer science class at all, and which don't?" },
+  { "id": "stage-2", "file": "stage-2-enrolls.html",  "n": "02", "title": "Student enrolls", "question": "When the class exists, who signs up for it?" },
+  { "id": "stage-3", "file": "stage-3-ap.html",       "n": "03", "title": "Student takes an AP CS exam", "question": "Who sits for AP Computer Science A and Principles, and who passes?" },
+  { "id": "stage-4", "file": "stage-4-college.html",  "n": "04", "title": "Student enrolls in college", "question": "Who goes to college, and to which kind of college?" },
+  { "id": "stage-5", "file": "stage-5-degree.html",   "n": "05", "title": "Student earns a CS degree", "question": "Who finishes a computer science degree?" },
+  { "id": "stage-6", "file": "stage-6-hired.html",    "n": "06", "title": "Graduate gets hired", "question": "Who gets hired in tech, and what do they earn?" }
+]

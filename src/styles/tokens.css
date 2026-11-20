@@ -1,0 +1,56 @@
+/* Design tokens. Every color on the site comes from here, and every token
+   has a light-mode counterpart below so the theme never half-applies. */
+:root{
+  --bg:#000;
+  --t0:#fff;
+  --t1:rgba(255,255,255,.92);
+  --t2:rgba(255,255,255,.50);   /* smallest size allowed for readable text: 5.3:1 */
+  --t-dim:rgba(255,255,255,.42);/* dimmed large text only (hero line 2): 3.9:1 */
+  --t3:rgba(255,255,255,.30);   /* decorative only: numbers, dividers, icons */
+  --t4:rgba(255,255,255,.18);   /* decorative only */
+  --line:rgba(255,255,255,.08);
+  --line-soft:rgba(255,255,255,.06);
+  --fill:rgba(255,255,255,.03);
+  --fill-2:rgba(255,255,255,.06);
+  --nav-bg:rgba(0,0,0,.82);
+  --sel:rgba(255,255,255,.15);
+  --focus:#fff;
+
+  /* status: always paired with a text label, never color alone */
+  --st-warn:#fab219;
+  --st-warn-text:#fab219;
+
+  /* chart palette */
+  --cat-1:#3987e5; --cat-2:#d95926; --cat-3:#199e70;
+  --lv-0:#86b6ef; --lv-1:#5598e7; --lv-2:#2a78d6; --lv-3:#1c5cab;
+  --grid:rgba(255,255,255,.07); --axis:rgba(255,255,255,.16);
+
+  --sans:"Geist",ui-sans-serif,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  --mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,Monaco,monospace;
+  --maxw:1240px;
+  --gutter:26px;
+}
+
+:root.light{
+  --bg:#fbfbfa;
+  --t0:#08090a;
+  --t1:rgba(8,9,10,.88);
+  --t2:rgba(8,9,10,.62);
+  --t-dim:rgba(8,9,10,.50);
+  --t3:rgba(8,9,10,.36);
+  --t4:rgba(8,9,10,.18);
+  --line:rgba(8,9,10,.11);
+  --line-soft:rgba(8,9,10,.08);
+  --fill:rgba(8,9,10,.025);
+  --fill-2:rgba(8,9,10,.05);
+  --nav-bg:rgba(251,251,250,.82);
+  --sel:rgba(8,9,10,.12);
+  --focus:#08090a;
+
+  --st-warn:#fab219;
+  --st-warn-text:#8a5a00;
+
+  --cat-1:#1f6fd0; --cat-2:#c04a1c; --cat-3:#0f7d56;
+  --lv-0:#9cc2f0; --lv-1:#5d9ae4; --lv-2:#2a6fc4; --lv-3:#1b4a8a;
+  --grid:rgba(8,9,10,.07); --axis:rgba(8,9,10,.18);
+}

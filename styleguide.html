@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- @head -->
+    <title>Design system · Who Gets to Be a Computer Scientist</title>
+    <style>
+      .sw{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+      .sw div{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px;font-family:var(--mono);font-size:11px;color:var(--t2)}
+      .sw i{display:block;height:44px;margin-bottom:10px;border:1px solid var(--line)}
+      .row{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:20px}
+      .type-sample > *{margin-bottom:18px}
+    </style>
+  </head>
+  <body data-page="styleguide">
+    <!-- @nav -->
+
+    <main id="main" class="wrap">
+      <section class="sec">
+        <span class="eyebrow">Design system</span>
+        <h1>Components and tokens</h1>
+        <p class="lede">Everything the pages are built from. Colors come from <code>src/styles/tokens.css</code> and follow the Light/Dark toggle.</p>
+      </section>
+
+      <section class="sec">
+        <span class="eyebrow">Text</span>
+        <div class="sw">
+          <div><i style="background:var(--t0)"></i>--t0 · headings</div>
+          <div><i style="background:var(--t1)"></i>--t1 · body .92</div>
+          <div><i style="background:var(--t2)"></i>--t2 · secondary .50</div>
+          <div><i style="background:var(--t-dim)"></i>--t-dim · large dim only</div>
+          <div><i style="background:var(--t3)"></i>--t3 · decorative .30</div>
+          <div><i style="background:var(--t4)"></i>--t4 · decorative .18</div>
+          <div><i style="background:var(--fill)"></i>--fill · card .03</div>
+          <div><i style="background:var(--line)"></i>--line · hairline .08</div>
+        </div>
+      </section>
+
+      <section class="sec">
+        <span class="eyebrow">Chart palette</span>
+        <div class="sw">
+          <div><i style="background:var(--cat-1)"></i>--cat-1 blue</div>
+          <div><i style="background:var(--cat-2)"></i>--cat-2 orange</div>
+          <div><i style="background:var(--cat-3)"></i>--cat-3 green</div>
+          <div><i style="background:var(--lv-0)"></i>--lv-0</div>
+          <div><i style="background:var(--lv-1)"></i>--lv-1</div>
+          <div><i style="background:var(--lv-2)"></i>--lv-2</div>
+          <div><i style="background:var(--lv-3)"></i>--lv-3</div>
+          <div><i style="background:var(--grid)"></i>--grid</div>
+          <div><i style="background:var(--axis)"></i>--axis</div>
+        </div>
+        <p class="chart-src">Source: every chart carries a line like this one, with source and year.</p>
+      </section>
+
+      <section class="sec type-sample">
+        <span class="eyebrow">Type · Geist and Geist Mono</span>
+        <h1>Hero headline, light weight<span class="dim" style="display:block;color:var(--t-dim)">Second line dimmed</span></h1>
+        <h2>Section heading</h2>
+        <h3>Card title</h3>
+        <p class="lede">Lede paragraph. Plain words, one idea, about two lines long on a desktop screen.</p>
+        <p>Body text at 15px for long reading.</p>
+      </section>
+
+      <section class="sec">
+        <span class="eyebrow">Buttons</span>
+        <div class="btn-group">
+          <a class="btn primary lg" href="#">Primary</a>
+          <a class="btn lg" href="#">Secondary</a>
+          <a class="btn text lg" href="#">Text button <span class="arr" aria-hidden="true">→</span></a>
+        </div>
+        <div class="row">
+          <span class="pill">Pill</span>
+          <span class="badge-ph">Placeholder data</span>
+        </div>
+      </section>
+
+      <section class="sec">
+        <span class="eyebrow">Numbered cards</span>
+        <ol class="grid g3">
+          <li class="cell card-n"><span class="n">01</span><h3>Bold title</h3><p>Short description in one or two lines.</p></li>
+          <li class="cell card-n"><span class="n">02</span><h3>Bold title</h3><p>Short description in one or two lines.</p></li>
+          <li class="cell card-n"><span class="n">03</span><h3>Bold title</h3><p>Short description in one or two lines.</p></li>
+        </ol>
+      </section>
+
+      <section class="sec">
+        <span class="eyebrow">Stat tile · unverified state</span>
+        <ul class="grid g3">
+          <li class="cell stat">
+            <p class="v">—</p>
+            <p class="cap">A record with verified: false or no value renders like this.</p>
+            <p class="src"><span>Source: pending</span><span class="badge-ph">Placeholder data</span></p>
+          </li>
+        </ul>
+        <details class="more">
+          <summary>The technical version</summary>
+          <div class="more-in"><p>Methods and citations go here, closed by default.</p></div>
+        </details>
+      </section>
+
+      <section class="sec">
+        <span class="eyebrow">From class card · empty state</span>
+        <!-- @fromclass none -->
+        <div class="ph-copy mt-40"><span class="tag">Placeholder · author's reflection</span><p>Marked spot for writing only the author fills in.</p></div>
+      </section>
+    </main>
+
+    <!-- @foot -->
+  </body>
+</html>
