@@ -1,0 +1,66 @@
+/* ── self-check (who-gets-tracked-in.html) ─────────────── */
+.sc{border:1px solid var(--line);background:var(--bg);margin-top:28px}
+.sc fieldset{border:0;margin:0;padding:0;min-width:0}
+.sc .label{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--t2)}
+
+.sc-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:12px 16px;border-bottom:1px solid var(--line)}
+.sc-progress{list-style:none;margin:0;padding:0;display:flex;gap:4px}
+.sc-progress li{width:26px;height:3px;background:var(--line);transition:background-color .2s}
+.sc-progress li.done{background:var(--t2)}
+.sc-progress li.on{background:var(--t0)}
+.sc-step{font-family:var(--mono);font-size:11.5px;color:var(--t2)}
+.sc-bar .btn.text{margin-left:auto}
+
+.sc-body{padding:28px 28px 24px}
+.sc-question{font-size:22px;font-weight:300;letter-spacing:-.02em;margin:0 0 20px;max-width:34ch}
+/* headings take focus only so screen readers announce the new step; they aren't controls */
+.sc-question:focus,.sc-question:focus-visible{outline:none}
+
+.sc-options{display:grid;gap:8px;max-width:640px}
+.sc-option{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--line);
+  cursor:pointer;font-size:14.5px;color:var(--t1);transition:border-color .13s,background-color .13s}
+.sc-option:hover{background:var(--fill);border-color:var(--t4)}
+.sc-option input{appearance:none;-webkit-appearance:none;width:14px;height:14px;margin:0;flex:0 0 14px;
+  border:1px solid var(--t2);border-radius:50%;display:grid;place-items:center}
+.sc-option input::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--t0);transform:scale(0);transition:transform .12s}
+.sc-option input:checked::before{transform:scale(1)}
+.sc-option:has(input:checked){border-color:var(--t1);background:var(--fill-2);color:var(--t0)}
+.sc-option input:focus-visible{outline:1px solid var(--focus);outline-offset:3px}
+
+.sc-note-label{display:block;margin:22px 0 8px;font-family:var(--mono);font-size:11px;color:var(--t2)}
+.sc-note{width:100%;max-width:640px;font:inherit;font-size:14px;color:var(--t1);background:var(--fill);
+  border:1px solid var(--line);padding:10px 12px;resize:vertical}
+.sc-note:focus-visible{outline:1px solid var(--focus);outline-offset:2px}
+.sc-error{min-height:1.4em;margin:10px 0 0;font-family:var(--mono);font-size:11.5px;color:var(--st-warn-text)}
+.sc-actions{display:flex;gap:10px;align-items:center;margin-top:8px}
+.sc-actions .btn[disabled]{opacity:.35;cursor:default}
+.sc-end{margin-top:24px}
+
+.sc-summary{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px 40px}
+.sc-answers{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.sc-answers li{padding:12px 0;border-bottom:1px solid var(--line-soft);display:flex;flex-direction:column;gap:3px}
+.sc-a-q{font-family:var(--mono);font-size:11px;color:var(--t2)}
+.sc-a-a{font-size:14.5px;color:var(--t0)}
+.sc-a-note{font-size:13.5px;color:var(--t2);font-style:italic}
+.sc-finding{border:1px solid var(--line);background:var(--fill);padding:20px 22px;align-self:start}
+.sc-finding h3{font-size:18px;margin:10px 0 8px}
+.sc-finding p{color:var(--t1);font-size:14.5px;margin:0 0 10px}
+.sc-finding .sc-why{color:var(--t2);font-family:var(--mono);font-size:11.5px}
+.sc-finding .btn.text{padding-left:0}
+
+.sc-private{display:flex;gap:10px;align-items:flex-start;margin-top:22px;max-width:78ch;
+  border:1px solid var(--line);border-left:2px solid var(--cat-3);background:var(--fill);padding:12px 16px;
+  font-size:13.5px;color:var(--t2)}
+.sc-private b{color:var(--t1);font-weight:500}
+
+@media (max-width:760px){
+  .sc-body{padding:22px 16px 18px}
+  .sc-summary{grid-template-columns:1fr}
+  .sc-question{font-size:19px}
+  .sc-progress li{width:18px}
+}
+.sc-section{margin-top:72px;padding-top:56px;border-top:1px solid var(--line-soft)}
+#self-check-widget{border:1px solid var(--line);margin-top:28px}
+#self-check-widget.sc{border:1px solid var(--line)}
+#self-check-widget > .pl-nojs{margin:0;padding:20px 16px;color:var(--t2);font-size:14px}
+.sc-section > h2{margin-bottom:14px}

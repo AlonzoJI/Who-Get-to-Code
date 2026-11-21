@@ -1,0 +1,55 @@
+{
+  "_about": "Self-check on who-gets-tracked-in.html. An option's 'study' points to a study id in data/tracking.json; the summary shows the study most answers point to (ties go to the earlier question), or default_study. Nothing here is a statistic.",
+  "default_study": "francis-2019",
+  "questions": [
+    {
+      "id": "recommended",
+      "text": "Who did I recommend for AP CS this year?",
+      "options": [
+        { "id": "knew", "label": "Mostly students I already knew were strong", "study": "francis-2019" },
+        { "id": "criteria", "label": "Every student who met the criteria, whether or not I knew them" },
+        { "id": "none", "label": "I didn't recommend anyone this year" },
+        { "id": "unsure", "label": "Not sure" }
+      ]
+    },
+    {
+      "id": "cutoff",
+      "text": "Did I use a grade cutoff?",
+      "options": [
+        { "id": "yes", "label": "Yes, I used one", "study": "hirschl-smith-2023" },
+        { "id": "school", "label": "My school sets one", "study": "hirschl-smith-2023" },
+        { "id": "no", "label": "No" },
+        { "id": "unsure", "label": "Not sure" }
+      ]
+    },
+    {
+      "id": "not-asked",
+      "text": "Who did I not think to ask?",
+      "options": [
+        { "id": "can-name", "label": "I can think of students I didn't ask", "study": "francis-2019" },
+        { "id": "asked-all", "label": "I think I asked everyone who might be interested" },
+        { "id": "unsure", "label": "Not sure" }
+      ]
+    },
+    {
+      "id": "look-like",
+      "text": "Do the students in my CS classes look like my school?",
+      "options": [
+        { "id": "yes", "label": "Yes, roughly" },
+        { "id": "no", "label": "Not really", "study": "margolis-2017" },
+        { "id": "unchecked", "label": "I haven't checked", "study": "margolis-2017" }
+      ]
+    },
+    {
+      "id": "major",
+      "text": "Who did I talk to about a CS major?",
+      "options": [
+        { "id": "mostly-boys", "label": "Mostly boys", "study": "margolis-fisher-2002" },
+        { "id": "mostly-girls", "label": "Mostly girls" },
+        { "id": "even", "label": "About as many girls as boys" },
+        { "id": "none", "label": "I haven't talked with students about a CS major" },
+        { "id": "unsure", "label": "Not sure" }
+      ]
+    }
+  ]
+}
