@@ -231,3 +231,14 @@
   .os-grid{grid-template-columns:1fr}
   .os-pos + .os-pos{border-left:0;border-top:1px solid var(--line)}
 }
+
+/* data-problem note (shared; the rollback page has its own copy) */
+.data-note{margin-top:28px;border:1px solid var(--line);border-left:2px solid var(--cat-2);background:var(--fill);padding:22px 24px}
+.data-note .eyebrow{margin-bottom:8px}
+.data-note h3{font-size:19px;font-weight:400;margin:0 0 10px}
+.data-note p{color:var(--t2);font-size:14.5px;max-width:78ch;margin:0 0 8px}
+.data-note .chart-src{margin-top:12px;font-size:11px}
+.data-note a{border-bottom:1px solid var(--t4)}
+.data-note a:hover{color:var(--t0);border-color:var(--t1)}
+.stat-row.two .grid{max-width:none}
+@media (min-width:760px){ .stat-row.two .grid{grid-template-columns:repeat(2,minmax(0,1fr))} }

@@ -1,0 +1,77 @@
+{
+  "_about": "Workforce (stage 06), part 1: tech companies pulling back on DEI after graduation. Every figure checked against its source on 2026-11-21; quotes in notes are verbatim.",
+  "charts": [],
+  "stats": [
+    {
+      "id": "gravity-fortune100-dei-language",
+      "stage": 6,
+      "metric": "Change in references to 'DEI', 'diversity' and 'racial equity' in Fortune 100 companies' public documents",
+      "group": "Fortune 100 companies",
+      "value": -72,
+      "value_secondary": -98,
+      "unit": "percent change",
+      "display": "−72%",
+      "display_secondary": "The term “DEI” itself fell 98%",
+      "caption": "drop in references to “DEI,” “diversity” and “racial equity” in Fortune 100 companies’ public documents, January 2023 to May 2025.",
+      "data_year": "January 2023 to May 2025",
+      "year": 2025,
+      "source": "Rich McEachran, \"Why is big tech rolling back DEI initiatives?\" ITPro, Oct. 30, 2025, citing Gravity Research",
+      "source_short": "ITPro",
+      "url": "https://www.itpro.com/business/business-strategy/why-is-big-tech-rolling-back-dei",
+      "verified": true,
+      "accessed": "2026-11-21",
+      "notes": "Article text: 'References to terms including ‘DEI’, ‘diversity’, and ‘racial equity’ fell 72% in the public documents of Fortune 100 companies between January 2023 and May 2025, per Gravity Research data.' The analysis covered DEI, ESG and sustainability reports, earnings calls and SEC filings, and 'tracked a 98% decline in the term ‘DEI’ itself.' This measures language, not programs or hiring; Gravity Research's own report was not opened."
+    },
+    {
+      "id": "leaddev-abandoned-dei",
+      "stage": 6,
+      "metric": "Share of companies that had completely abandoned DEI efforts",
+      "group": "Respondents to LeadDev's Engineering Leadership Report 2025",
+      "value": 5,
+      "value_secondary": 18,
+      "unit": "percent",
+      "display": "5%",
+      "display_secondary": "18% say DEI is being deprioritized",
+      "caption": "of companies in LeadDev’s 2025 Engineering Leadership Report had completely abandoned DEI efforts. Most of the pullback is quieter.",
+      "data_year": "2025 survey",
+      "year": 2025,
+      "source": "Chantal Kapani, \"DEI crackdown sparks quiet tech rollback,\" LeadDev, Aug. 14, 2025, reporting LeadDev's Engineering Leadership Report 2025",
+      "source_short": "LeadDev",
+      "url": "https://leaddev.com/culture/crackdown-sparks-quiet-tech-rollback",
+      "verified": true,
+      "accessed": "2026-11-21",
+      "notes": "Article text: 'according to LeadDev’s Engineering Leadership Report 2025, only 5% of companies have completely abandoned DEI efforts. The report found that a majority of respondents (56%) still view DEI as an organizational priority, while 18% believe these initiatives are being deprioritized. Meanwhile, 14% said DEI was never a priority ... and 7% reported that their organizations are actually increasing their focus.' The 'quieter' reading comes from Jessie Auguste, software engineer at CybSafe, quoted in the article: companies are 'quietly defunding them, reducing headcount, and letting initiatives ‘sunset’ without replacement.' The survey's sample size and makeup are not given in the article. The brief's URL (leaddev.com/?p=27681) redirects to this article."
+    }
+  ],
+  "note": {
+    "eyebrow": "A data problem",
+    "title": "The diversity reports that tracked tech hiring have stopped",
+    "text": "Google, Meta and Microsoft confirmed in 2025 that they would not publish diversity data that year. Google had published 11 annual reports in a row. Those reports were one of the few public records of who gets hired in tech and at what level, so stage 06 outcomes are now harder to track.",
+    "source": {
+      "cite": "\"Google, Meta, And Microsoft Quietly End Diversity Reporting As DEI Pullback Widens,\" Allwork.Space, Nov. 7, 2025, citing Wired",
+      "url": "https://allwork.space/?p=1040557",
+      "year": 2025
+    },
+    "verified": true,
+    "notes": "Article text: 'Google, Microsoft, and Meta have confirmed they will not publish diversity, equity, and inclusion (DEI) data this year.' and Google had published '11 consecutive annual reports.' It does not say the companies stopped permanently. Verified for the rollback timeline on 2026-11-20."
+  },
+  "debate": {
+    "supporters": {
+      "label": "What companies making the change say",
+      "quote": "legal and policy landscape surrounding diversity, equity and inclusion efforts in the United States",
+      "who": "Meta VP of Human Resources Janelle Gale, giving the reason for Meta’s changes in an internal memo reported by Axios",
+      "source": {
+        "cite": "HR Dive, Jan. 14, 2025",
+        "year": 2025,
+        "url": "https://www.hrdive.com/news/meta-cuts-dei-roles-supplier-diversity-programs-wave-rollbacks-mcdonalds-amazon/737223"
+      },
+      "lead": "Meta said its changes reflect the"
+    },
+    "outcome": {
+      "label": "What the outcome data shows",
+      "text": "Who gets hired in tech, at what level and for what pay, by race and gender, since these changes. Not yet collected, and harder to find now that the largest companies have stopped publishing diversity reports.",
+      "records": [],
+      "verified": false
+    }
+  }
+}
