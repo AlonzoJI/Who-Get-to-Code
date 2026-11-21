@@ -254,3 +254,5 @@
 .law-note{margin:14px 0 0;font-size:14.5px;color:var(--t0)}
 .law-box .chart-src a{border-bottom:1px solid var(--t4)}
 @media (max-width:640px){ .law-box li{grid-template-columns:1fr} }
+.card-list{margin:12px 0 0;padding-left:18px;color:var(--t1);font-size:13.5px}
+.card-list li{margin-bottom:4px}

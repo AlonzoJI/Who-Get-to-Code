@@ -254,5 +254,56 @@
       "Interviewing more than 100 Carnegie Mellon computer science students, Margolis and Fisher found women leaving the major after they had been admitted because its culture eroded their confidence, not because they were less interested or able.",
       "Student-run communities answer that problem from the ground up: a place where students who don’t match the default picture of a computer scientist find peers doing the same work."
     ]
+  },
+  {
+    "id": "next-paris",
+    "section": "Next steps",
+    "heading": "Pugach, Chapter 7, and Django Paris, “Culturally Sustaining Pedagogy”",
+    "works": [
+      {
+        "cite": "Django Paris, “Culturally Sustaining Pedagogy: A Needed Change in Stance, Terminology, and Practice,” Educational Researcher 41, no. 3 (2012): 93–97.",
+        "url": "https://doi.org/10.3102/0013189X12441244"
+      },
+      {
+        "cite": "Pugach (2024), Chapter 7. Full reference pending."
+      }
+    ],
+    "idea": "Sustaining what students bring instead of replacing it",
+    "tie": [
+      "Paris argues that “relevant” and “responsive” teaching may not go far enough, and proposes culturally sustaining pedagogy, which “seeks to perpetuate and foster—to sustain—linguistic, literate, and cultural pluralism as part of the democratic project of schooling.”",
+      "Actions 01, 02 and 05 apply that stance to computer science: start from what students’ families and communities already know, and treat it as something the CS class should build on, not something students leave at the door."
+    ],
+    "placeholder": "Add the full Pugach (2024) reference and one sentence from Chapter 7."
+  },
+  {
+    "id": "next-freire",
+    "section": "Next steps",
+    "heading": "Paulo Freire, Pedagogy of the Oppressed, Chapter 2",
+    "works": [
+      {
+        "cite": "Paulo Freire, Pedagogy of the Oppressed, Chapter 2. Translated by Myra Bergman Ramos. Herder and Herder, 1970."
+      }
+    ],
+    "idea": "Against banking education",
+    "tie": [
+      "Freire describes the “banking” concept of education, in which teachers deposit knowledge into students as if they were empty accounts. He argues instead for problem-posing education, where teachers and students investigate the world together.",
+      "Recruiting only students who already “have it,” or treating CS as syntax to memorize, is banking education. The actions above start from the knowledge students already have."
+    ]
+  },
+  {
+    "id": "next-hooks",
+    "section": "Next steps",
+    "heading": "bell hooks, “Engaged Pedagogy”",
+    "works": [
+      {
+        "cite": "bell hooks, “Engaged Pedagogy,” in Teaching to Transgress: Education as the Practice of Freedom. Routledge, 1994.",
+        "url": "https://www.routledge.com/products/9780415908085"
+      }
+    ],
+    "idea": "Teaching the whole student",
+    "tie": [
+      "hooks argues for engaged pedagogy: teaching that respects and cares for students as whole people, and that asks teachers to keep growing themselves. She builds on Freire’s critique of banking education.",
+      "An audit of your own recommendations and an open door to AP CS are small versions of that practice. Both ask teachers and counselors to look at each student, not just a transcript."
+    ]
   }
 ]

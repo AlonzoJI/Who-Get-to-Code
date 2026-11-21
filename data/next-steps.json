@@ -1,0 +1,85 @@
+{
+  "_about": "Next steps for teachers and counselors. Each action is open to every student. Citations checked 2026-11-21 against Crossref, OpenAlex abstracts or the source itself; Pugach (2024) is a course text that could not be found online and is marked as a placeholder.",
+  "actions": [
+    {
+      "n": "01",
+      "id": "funds-of-knowledge",
+      "title": "Recruit from what students already know",
+      "stages": [
+        2
+      ],
+      "verified": true,
+      "year": 1992,
+      "finding": "Ask students what they already do at home, at work and in their communities, from fixing phones to running a family business’s books, and invite them into CS from there. Moll and colleagues call this household knowledge “funds of knowledge.”",
+      "apa": "Moll, L. C., Amanti, C., Neff, D., & Gonzalez, N. (1992). Funds of knowledge for teaching: Using a qualitative approach to connect homes and classrooms. *Theory Into Practice, 31*(2), 132–141. Also Pugach (2024), p. 250 [full reference pending].",
+      "url": "https://doi.org/10.1080/00405849209543534",
+      "notes": "Moll et al. citation confirmed in Crossref. The examples (fixing phones, family business books) are illustrations written for this site, not from the article. Pugach (2024), p. 250 is the course text cited in the brief; its full reference has not been added or checked."
+    },
+    {
+      "n": "02",
+      "id": "kapor-framework",
+      "title": "Use the Kapor Center’s six core components",
+      "stages": [
+        2,
+        3
+      ],
+      "verified": true,
+      "year": 2021,
+      "finding": "Review your CS classroom against the six core components of the Kapor Center’s Culturally Responsive-Sustaining CS Education framework.",
+      "list": [
+        "Acknowledge racism in CS and enact anti-racist practices",
+        "Create inclusive and equitable classroom cultures",
+        "Pedagogy and curriculum are rigorous, relevant and encourage sociopolitical critiques",
+        "Student voice, agency and self-determination are prioritized in CS classrooms",
+        "Family and community cultural assets are incorporated into CS classrooms",
+        "Diverse professionals and role models provide exposure to a range of CS and tech careers"
+      ],
+      "apa": "Kapor Center. (2021, June 24). *Culturally responsive-sustaining computer science education: A framework*.",
+      "url": "https://www.kaporcenter.org/download/13902",
+      "notes": "Component names are taken from page 6 of the framework PDF. The PDF lays them out in a grid, so the order shown here may not match the framework’s numbering. The framework is written for K-12 educators."
+    },
+    {
+      "n": "03",
+      "id": "audit-recommendations",
+      "title": "Audit who you recommend each year",
+      "stages": [
+        3
+      ],
+      "verified": true,
+      "year": 2019,
+      "finding": "Each spring, list who you recommended for AP CS and compare it with who is in your school. In the Francis study, counselors given identical transcripts recommended Black female students for AP Calculus less often; only the name changed.",
+      "apa": "Francis, D. V., de Oliveira, A. C. M., & Dimmitt, C. (2019). Do school counselors exhibit bias in recommending students for advanced coursework? *The B.E. Journal of Economic Analysis & Policy, 19*(4), Article 20180189.",
+      "url": "https://doi.org/10.1515/bejeap-2018-0189",
+      "notes": "See study 01 on the Who gets tracked in page. The study is about AP Calculus. The self-check on that page walks through this audit."
+    },
+    {
+      "n": "04",
+      "id": "open-enrollment",
+      "title": "Open AP CS to any student who wants it",
+      "stages": [
+        3
+      ],
+      "verified": true,
+      "year": 2023,
+      "finding": "Let any student who wants to take AP CS enroll, instead of using grade or test-score cutoffs. Hirschl and Smith found that cutoffs opened Black-white and Hispanic-white gaps even among students with similar prior achievement.",
+      "apa": "Hirschl, N., & Smith, C. M. (2023). Advanced Placement gatekeeping and racialized tracking. *Sociology of Education, 96*(3), 190–210.",
+      "url": "https://doi.org/10.1177/00380407231161334",
+      "notes": "Abstract: course gatekeeping \"produces Black-white and Hispanic-white disparities in participation even among students with similar, relatively low prior achievement.\" Wisconsin data; AP courses generally, not AP CS specifically."
+    },
+    {
+      "n": "05",
+      "id": "role-models",
+      "title": "Bring in role models from many backgrounds",
+      "stages": [
+        2,
+        6
+      ],
+      "verified": true,
+      "year": 2015,
+      "finding": "Invite speakers and use examples and projects that show people from many backgrounds doing computing, for every student in the class. Culturally responsive computing, as Scott, Sheridan and Clark describe it, ties computing to students’ identities and communities.",
+      "apa": "Scott, K. A., Sheridan, K. M., & Clark, K. (2015). Culturally responsive computing: A theory revisited. *Learning, Media and Technology, 40*(4), 412–436.",
+      "url": "https://doi.org/10.1080/17439884.2014.924966",
+      "notes": "Citation confirmed in Crossref (published online 2014, volume 40 in 2015). The abstract reconceptualizes culturally responsive computing \"considering intersectionality, innovations, and technosocial activism.\" Role models are also one of the Kapor framework’s six components."
+    }
+  ]
+}
