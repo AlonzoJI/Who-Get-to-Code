@@ -166,5 +166,98 @@
         "ace-29-black"
       ]
     }
-  }
+  },
+  "cascade": {
+    "illustrative": true,
+    "illustrative_note": "The dots are illustrative, not counts. No verified source gives flows between tiers, so none are shown.",
+    "tiers": [
+      {
+        "id": "highly",
+        "label": "Highly selective",
+        "rule": "Acceptance rate below 25%"
+      },
+      {
+        "id": "selective",
+        "label": "Selective",
+        "rule": "Acceptance rate 25% to 60%"
+      },
+      {
+        "id": "less",
+        "label": "Less selective",
+        "rule": "Acceptance rate above 60%"
+      }
+    ],
+    "tier_source": {
+      "cite": "Bloem et al., EdWorkingPaper 26-1392",
+      "url": "https://edworkingpapers.com/sites/default/files/ai26-1392.pdf",
+      "year": 2026,
+      "verified": true,
+      "notes": "Paper: highly selective colleges are \"those with pre-pandemic acceptance rates below 25%\"; selective \"25-60%\"; less selective \"above 60%\"."
+    },
+    "why": {
+      "text": "In fall 2024, the first year after the ruling, high-achieving Black, Hispanic, Native American and Pacific Islander students were less likely to enroll at highly selective colleges and more likely to “cascade” into less selective ones, which have lower graduation rates and earnings outcomes. For this site’s pipeline, that can mean fewer students reaching a CS degree at stage 05 and a tech job at stage 06.",
+      "sources": [
+        {
+          "cite": "Bloem et al., EdWorkingPaper 26-1392",
+          "url": "https://edworkingpapers.com/sites/default/files/ai26-1392.pdf",
+          "year": 2026
+        },
+        {
+          "cite": "JBHE on James S. Murphy’s Class Action report",
+          "url": "https://jbhe.com/2026/02/new-report-analyzes-post-affirmative-action-enrollment-outcomes-at-over-three-thousand-u-s-institutions/",
+          "year": 2026
+        }
+      ]
+    }
+  },
+  "research": [
+    {
+      "id": "ewp-highly-selective",
+      "stage": 4,
+      "metric": "Change in likelihood of enrolling at a highly selective college, fall 2024 vs. fall 2023",
+      "group": "High-achieving URM college-goers",
+      "display": "Up to 10 percentage points (about 14%) less likely",
+      "unit": "percentage points",
+      "data_year": "First entering class after SFFA (fall 2024) vs. fall 2023; 12.6 million domestic PSAT, SAT and AP takers in the 2021-2024 graduation cohorts linked to National Student Clearinghouse enrollment",
+      "year": 2026,
+      "source": "Bloem, M. D., Edwards, A., Goyer, J. P., Howell, J., Hu, X., Hurwitz, M., Imlay, S. J., Ma, J., & Pender, M. (2026). College enrollment patterns after SFFA v. Harvard (EdWorkingPaper No. 26-1392). Annenberg Institute at Brown University",
+      "source_short": "EdWorkingPaper 26-1392",
+      "url": "https://edworkingpapers.com/sites/default/files/ai26-1392.pdf",
+      "verified": true,
+      "accessed": "2026-11-21",
+      "notes": "Abstract: \"high-achieving underrepresented minority (URM) college-goers were up to 10 percentage points (14 percent) less likely to enroll in highly selective colleges in fall 2024 than fall 2023, with URM enrollees cascading down the college selectivity distribution into less selective colleges with lower graduation rates and earnings outcomes.\" URM = Native American, Hispanic, Black or Pacific Islander. The data come from College Board and the National Student Clearinghouse; the paper says it reflects the authors’ views, not theirs."
+    },
+    {
+      "id": "ewp-urm-share",
+      "stage": 4,
+      "metric": "URM share of first-year domestic students at highly selective colleges, first year after SFFA",
+      "group": "Highly selective colleges",
+      "display": "Down 4 to 5 percentage points (about 18%)",
+      "unit": "percentage points",
+      "data_year": "Fall 2024, difference-in-differences estimate using earlier state bans",
+      "year": 2026,
+      "source": "Bloem, M. D., Edwards, A., Goyer, J. P., Howell, J., Hu, X., Hurwitz, M., Imlay, S. J., Ma, J., & Pender, M. (2026). College enrollment patterns after SFFA v. Harvard (EdWorkingPaper No. 26-1392). Annenberg Institute at Brown University",
+      "source_short": "EdWorkingPaper 26-1392",
+      "url": "https://edworkingpapers.com/sites/default/files/ai26-1392.pdf",
+      "verified": true,
+      "accessed": "2026-11-21",
+      "notes": "Abstract: \"we estimate that the URM student share of first-year domestic students at highly selective colleges declined 4 to 5 percentage points (18 percent) in the first year after SFFA, with smaller declines at selective public colleges.\""
+    },
+    {
+      "id": "murphy-class-action",
+      "stage": 4,
+      "metric": "Where students went in fall 2024, across more than 3,000 colleges",
+      "group": "Class Action report by James S. Murphy",
+      "display": "A first-year “cascade effect”",
+      "unit": null,
+      "data_year": "Federal enrollment data, 2024 vs. 2022 and 2023",
+      "year": 2026,
+      "source": "\"New Report Analyzes Post-Affirmative Action Enrollment Outcomes at Over Three Thousand U.S. Institutions,\" The Journal of Blacks in Higher Education, Feb. 9, 2026",
+      "source_short": "JBHE",
+      "url": "https://jbhe.com/2026/02/new-report-analyzes-post-affirmative-action-enrollment-outcomes-at-over-three-thousand-u-s-institutions/",
+      "verified": true,
+      "accessed": "2026-11-21",
+      "notes": "Murphy, quoted by JBHE: the ruling \"created, at least in its first year, a cascade effect in which highly qualified students of color who would have been much more likely to be admitted to highly selective institutions\" ended up \"enrolling in less selective institutions.\" JBHE also reports \"a slight increase in Black freshman enrollment at institutions with lower graduation rates and expected earnings post-graduation\" and Black freshman enrollment up 30% at LSU and 50% at the University of Mississippi. The AOL link in the brief returned 404; it appears to reprint a story from The Hill that could not be opened, so its figures are not used."
+    }
+  ]
 }
