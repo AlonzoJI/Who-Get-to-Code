@@ -85,5 +85,37 @@
       "The rollback on this page is not only something that happens at other schools. It shapes how this course, the one this site was made for, describes itself."
     ],
     "placeholder": "Paste the exact wording of the syllabus’s Intellectual Diversity statement here."
+  },
+  {
+    "id": "before-rothstein",
+    "section": "Before the classroom",
+    "heading": "Richard Rothstein, Class and Schools",
+    "works": [
+      {
+        "cite": "Richard Rothstein, Class and Schools: Using Social, Economic, and Educational Reform to Close the Black-White Achievement Gap. Economic Policy Institute and Teachers College, Columbia University, 2004.",
+        "url": "https://www.epi.org/publication/books_class_and_schools/"
+      }
+    ],
+    "idea": "Social class shapes what students bring to school",
+    "tie": [
+      "Rothstein argues that achievement gaps grow out of social class differences outside school, in income, health, housing and early childhood, and that closing them takes social and economic policy as well as school reform.",
+      "A high school computer science course meets students who arrive with very different amounts of exposure to computing. Offering the course, stage 01 of the pipeline, does not undo what happened before a student walked in."
+    ]
+  },
+  {
+    "id": "before-hooks",
+    "section": "Before the classroom",
+    "heading": "bell hooks, “Confronting Class in the Classroom”",
+    "works": [
+      {
+        "cite": "bell hooks, “Confronting Class in the Classroom,” in Teaching to Transgress: Education as the Practice of Freedom. Routledge, 1994.",
+        "url": "https://www.routledge.com/products/9780415908085"
+      }
+    ],
+    "idea": "The silence about class in classrooms",
+    "tie": [
+      "hooks writes that class is rarely talked about in American classrooms, and that middle-class values quietly set the terms for how students are expected to speak and behave.",
+      "In a computer science classroom, those unspoken terms can include assuming that students already own a computer or have written code before. Students who don’t fit those assumptions can read them as a sign that the class isn’t for them."
+    ]
   }
 ]

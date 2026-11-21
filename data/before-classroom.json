@@ -1,0 +1,88 @@
+{
+  "_about": "Charts for the Before the classroom page. Each chart lists its records; a record with verified false or value null renders as pending with the placeholder badge. Checked 2026-11-21.",
+  "charts": [
+    {
+      "id": "low-income-share",
+      "title": "Low-income students are underrepresented in computer science classes",
+      "measure": "Low-income students as a share of each group",
+      "annotate": "gap",
+      "records": [
+        {
+          "id": "low-income-share-all",
+          "stage": 2,
+          "metric": "Students from low-income families as a share of all students",
+          "group": "All students",
+          "value": 53,
+          "unit": "percent",
+          "display": "53%",
+          "data_year": "Code.org 2024 State of CS report",
+          "year": 2024,
+          "source": "Alyson Klein, \"One Change That Can Get More Girls, Students of Color Taking Computer Science,\" Education Week, Oct. 22, 2024, citing Code.org's 2024 State of CS report",
+          "source_short": "EdWeek",
+          "url": "https://www.edweek.org/teaching-learning/one-change-that-can-get-more-girls-students-of-color-taking-computer-science/2024/10",
+          "verified": true,
+          "accessed": "2026-11-20",
+          "notes": "Article text: 'Students from low-income families comprise 53 percent of students but make up 38 percent of those in foundational computer science courses.' The article says 'students', not 'high school students'."
+        },
+        {
+          "id": "low-income-share-cs",
+          "stage": 2,
+          "metric": "Students from low-income families as a share of students in foundational CS courses",
+          "group": "Students in foundational CS",
+          "value": 38,
+          "unit": "percent",
+          "display": "38%",
+          "data_year": "Code.org 2024 State of CS report",
+          "year": 2024,
+          "source": "Alyson Klein, \"One Change That Can Get More Girls, Students of Color Taking Computer Science,\" Education Week, Oct. 22, 2024, citing Code.org's 2024 State of CS report",
+          "source_short": "EdWeek",
+          "url": "https://www.edweek.org/teaching-learning/one-change-that-can-get-more-girls-students-of-color-taking-computer-science/2024/10",
+          "verified": true,
+          "accessed": "2026-11-20",
+          "notes": "Same sentence as above. The article does not give the number of reporting states for this figure."
+        }
+      ]
+    },
+    {
+      "id": "cs-access-2015-2025",
+      "title": "Access to computer science at school, 2015 and 2025",
+      "measure": "Share of schools offering computer science",
+      "records": [
+        {
+          "id": "cs-access-2015",
+          "stage": 1,
+          "metric": "Share of schools offering computer science",
+          "group": "2015",
+          "value": null,
+          "unit": "percent",
+          "display": null,
+          "data_year": "2014-15 survey of U.S. K-12 principals, students and parents",
+          "year": 2015,
+          "source": "Google and Gallup, Searching for Computer Science: Access and Barriers in U.S. K-12 Education, 2015",
+          "source_short": "Google & Gallup",
+          "url": "https://services.google.com/fh/files/misc/searching-for-computer-science_report.pdf",
+          "verified": false,
+          "accessed": "2026-11-21",
+          "notes": "Candidate figures, not yet chosen: 'Of all principals surveyed, three in four report that they do not offer computer science with programming/coding.' Also: 'approximately 25% of seventh- to 12th-grade students report having no access to a computer science class or club at school.' Both are survey responses covering K-12 schools, not a count of public high schools."
+        },
+        {
+          "id": "cs-access-2025",
+          "stage": 1,
+          "metric": "Share of U.S. public high schools offering foundational CS",
+          "group": "2025",
+          "value": null,
+          "unit": "percent",
+          "display": null,
+          "data_year": "2024-25 school year",
+          "year": 2025,
+          "source": "Code.org, CSTA and ECEP Alliance, 2025 State of AI + Computer Science Education",
+          "source_short": "Code.org",
+          "url": "https://advocacy.code.org/stateofcs/",
+          "verified": false,
+          "accessed": "2026-11-21",
+          "notes": "The 2025 report gives 60% of public high schools offering foundational CS (verified on the home page). It is left pending here because it measures something different from the 2015 survey; a fair comparison needs the same measure in both years, for example an earlier Code.org State of CS figure. The 2025 report's own trend chart starts at 47% in 2019-20."
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 import './styles/tokens.css';
 import './styles/base.css';
 import './styles/components.css';
+import './styles/charts.css';
 
 // Light/Dark toggle. The button names the theme it will switch to.
 const toggle = document.getElementById('theme-toggle');

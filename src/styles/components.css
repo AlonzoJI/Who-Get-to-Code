@@ -20,7 +20,9 @@
 .topnav nav a[aria-current="page"]{color:var(--t0)}
 .topnav .right{margin-left:auto;display:flex;align-items:center;gap:10px}
 
-@media (max-width:900px){
+/* seven links plus two buttons need about 1180px on one row */
+.topnav nav a{white-space:nowrap}
+@media (max-width:1180px){
   .topnav .in{flex-wrap:wrap;height:auto;gap:0 14px}
   .logo{order:1;min-height:54px}
   .topnav .right{order:2;min-height:54px}
@@ -167,3 +169,7 @@
 .stub h1{font-size:40px;margin-bottom:18px}
 .stub .lede{margin:0 auto 28px}
 .stub .btn-group{justify-content:center}
+
+/* an H2 that opens a page */
+.page-h2{font-size:40px;line-height:1.12;margin-bottom:18px;max-width:22ch}
+@media (max-width:840px){ .page-h2{font-size:29px} }
