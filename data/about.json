@@ -1,0 +1,133 @@
+{
+  "_about": "About page (ColorStack and why I built this). Stats are placeholders for the author to fill in. Law quotes are verbatim from Sub. S.B. 1 as enrolled, checked 2026-11-21.",
+  "colorstack": {
+    "mission": "to increase the number of Black and Latinx Computer Science graduates that go on to launch rewarding technical careers",
+    "url": "https://www.colorstack.org/about",
+    "verified": true,
+    "accessed": "2026-11-21",
+    "notes": "ColorStack’s About page: “We exist to increase the number of Black and Latinx Computer Science graduates that go on to launch rewarding technical careers.” It calls itself “a tech nonprofit.” Its site uses “Latinx.”"
+  },
+  "stats": [
+    {
+      "id": "chapter-members",
+      "stage": null,
+      "metric": "Chapter members",
+      "group": "Ohio State ColorStack chapter",
+      "value": null,
+      "unit": "count",
+      "display": null,
+      "caption": "chapter members.",
+      "data_year": "Pending",
+      "year": null,
+      "source": "Ohio State ColorStack chapter records, to be filled in by the author",
+      "source_short": "Chapter records",
+      "url": null,
+      "verified": false,
+      "accessed": null,
+      "notes": "Placeholder. Add the number, the year it describes and where it comes from."
+    },
+    {
+      "id": "eboard",
+      "stage": null,
+      "metric": "E-board members",
+      "group": "Ohio State ColorStack chapter",
+      "value": null,
+      "unit": "count",
+      "display": null,
+      "caption": "students on the founding e-board.",
+      "data_year": "Pending",
+      "year": null,
+      "source": "Ohio State ColorStack chapter records, to be filled in by the author",
+      "source_short": "Chapter records",
+      "url": null,
+      "verified": false,
+      "accessed": null,
+      "notes": "Placeholder. Add the number, the year it describes and where it comes from."
+    },
+    {
+      "id": "sponsors",
+      "stage": null,
+      "metric": "Corporate sponsors",
+      "group": "Ohio State ColorStack chapter",
+      "value": null,
+      "unit": "count",
+      "display": null,
+      "caption": "corporate sponsors.",
+      "data_year": "Pending",
+      "year": null,
+      "source": "Ohio State ColorStack chapter records, to be filled in by the author",
+      "source_short": "Chapter records",
+      "url": null,
+      "verified": false,
+      "accessed": null,
+      "notes": "Placeholder. Add the number, the year it describes and where it comes from."
+    },
+    {
+      "id": "events",
+      "stage": null,
+      "metric": "Events held",
+      "group": "Ohio State ColorStack chapter",
+      "value": null,
+      "unit": "count",
+      "display": null,
+      "caption": "events held.",
+      "data_year": "Pending",
+      "year": null,
+      "source": "Ohio State ColorStack chapter records, to be filled in by the author",
+      "source_short": "Chapter records",
+      "url": null,
+      "verified": false,
+      "accessed": null,
+      "notes": "Placeholder. Add the number, the year it describes and where it comes from."
+    }
+  ],
+  "sb1": {
+    "title": "What Senate Bill 1 says",
+    "items": [
+      {
+        "section": "R.C. 3345.0217(B)(1)(a)(ii)",
+        "quote": "The continuation of existing diversity, equity, and inclusion offices or departments",
+        "lead": "Each state college must adopt a policy prohibiting"
+      },
+      {
+        "section": "R.C. 3345.0217(B)(1)(a)(vi)",
+        "quote": "The establishment of any new institutional scholarships that use diversity, equity, and inclusion in any manner",
+        "lead": "It must also prohibit"
+      },
+      {
+        "section": "R.C. 3345.88(B)(2)",
+        "quote": "Provide no advantage or disadvantage to faculty, staff, or students on the basis of race, ethnicity, religion, sex, sexual orientation, gender identity, or gender expression in admissions, hiring, promotion, tenuring, or workplace conditions.",
+        "lead": "For every position, policy, program and activity, including internships and student life programs, each state college must"
+      },
+      {
+        "section": "R.C. 3345.0217(D)(2)",
+        "quote": "Nothing in this section prohibits a state institution of higher education from complying with any state or federal law to provide disability services or to permit student organizations, including fraternities and sororities.",
+        "lead": ""
+      }
+    ],
+    "source": {
+      "cite": "Sub. S.B. 1, 136th General Assembly, as enrolled (effective June 27, 2025)",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb1/05_EN/pdf/",
+      "year": 2025
+    },
+    "note": "The law does not ban identity-based student organizations. It closes university DEI offices, stops new DEI scholarships and requires university programs, including student life programs, to give no advantage by race or sex."
+  },
+  "debate": {
+    "supporters": {
+      "label": "What supporters of Senate Bill 1 argue",
+      "quote": "Senate Bill 1 brought important reforms to higher education to ensure intellectual diversity, eliminate structural discrimination, and more.",
+      "who": "Sen. Jerry Cirino, the bill’s sponsor, June 24, 2026",
+      "source": {
+        "cite": "Ohio Senate press release, June 24, 2026",
+        "year": 2026,
+        "url": "https://ohiosenate.gov/members/jerry-c-cirino/news/cirino-press-conference-highlights-sb1-proven-success"
+      }
+    },
+    "outcome": {
+      "label": "What the chapter data shows",
+      "text": "Membership, sponsors and university support for the Ohio State chapter before and after the law took effect. Not yet filled in.",
+      "records": [],
+      "verified": false
+    }
+  }
+}

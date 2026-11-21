@@ -223,5 +223,36 @@
       "Loewen argues that textbooks turn people into simple heroes by leaving out what makes them complicated, such as Helen Keller’s socialism or Woodrow Wilson’s racism. What gets left out shapes what students think is possible.",
       "Computer science has hero stories too. When the people students hear about are mostly the same kind of person, students learn what a computer scientist is supposed to look like long before anyone hires them. Company diversity reports were one of the few public places a different picture showed up, and they are going away."
     ]
+  },
+  {
+    "id": "about-takacs",
+    "section": "About",
+    "heading": "David Takacs, “How Does Your Positionality Bias Your Epistemology?”",
+    "works": [
+      {
+        "cite": "David Takacs, “How Does Your Positionality Bias Your Epistemology?” Thought & Action (NEA Higher Education Journal), Summer 2003."
+      }
+    ],
+    "idea": "Where you stand shapes what you can see",
+    "tie": [
+      "Takacs asks readers to notice how their own position, the identities and experiences they bring, shapes what they accept as true. He argues that admitting your views are not inevitable makes you more open to other people’s knowledge.",
+      "This site is written from inside one student chapter. That position shows some things clearly and hides others, which is why the page leaves room for who was still missing."
+    ]
+  },
+  {
+    "id": "about-clubhouse",
+    "section": "About",
+    "heading": "Jane Margolis and Allan Fisher, Unlocking the Clubhouse",
+    "works": [
+      {
+        "cite": "Jane Margolis and Allan Fisher, Unlocking the Clubhouse: Women in Computing. MIT Press, 2002.",
+        "url": "https://mitpress.mit.edu/9780262632690/unlocking-the-clubhouse/"
+      }
+    ],
+    "idea": "Why students leave after they get in",
+    "tie": [
+      "Interviewing more than 100 Carnegie Mellon computer science students, Margolis and Fisher found women leaving the major after they had been admitted because its culture eroded their confidence, not because they were less interested or able.",
+      "Student-run communities answer that problem from the ground up: a place where students who don’t match the default picture of a computer scientist find peers doing the same work."
+    ]
   }
 ]

@@ -242,3 +242,15 @@
 .data-note a:hover{color:var(--t0);border-color:var(--t1)}
 .stat-row.two .grid{max-width:none}
 @media (min-width:760px){ .stat-row.two .grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
+
+/* about page */
+.about-ph{display:grid;gap:12px;margin-top:40px}
+.law-box{margin-top:24px;border:1px solid var(--line);background:var(--fill);padding:22px 24px}
+.law-box .label{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--t2);font-weight:400;margin:0 0 12px}
+.law-box ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--line-soft)}
+.law-box li{padding:12px 0;border-bottom:1px solid var(--line-soft);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 24px;align-items:baseline}
+.law-box li p{margin:0;font-size:14.5px;color:var(--t1)}
+.law-sec{font-family:var(--mono);font-size:11px;color:var(--t2);white-space:nowrap}
+.law-note{margin:14px 0 0;font-size:14.5px;color:var(--t0)}
+.law-box .chart-src a{border-bottom:1px solid var(--t4)}
+@media (max-width:640px){ .law-box li{grid-template-columns:1fr} }
