@@ -2,20 +2,81 @@
 <html lang="en">
   <head>
     <!-- @head -->
-    <title>Every figure, with its source · Who Gets to Be a Computer Scientist</title>
+    <title>Methods and sources · Who Gets to Be a Computer Scientist</title>
+    <meta name="description" content="How the data on this site were gathered and checked, every figure with its source and status, and a full bibliography.">
   </head>
   <body data-page="sources">
     <!-- @nav -->
 
     <main id="main" class="wrap">
-      <section class="stub" aria-labelledby="page-title">
-        <span class="eyebrow">Sources</span>
-        <h1 id="page-title">Every figure, with its source</h1>
-        <p class="lede">A full list of the data on this site, built from the files in /data, with what has and hasn&#39;t been verified.</p>
-        <div class="btn-group">
-          <span class="pill">Coming soon</span>
-          <a class="btn text" href="index.html">Back to overview <span class="arr" aria-hidden="true">→</span></a>
+      <section class="sec" aria-labelledby="methods-title">
+        <span class="eyebrow">Methods and sources</span>
+        <h2 id="methods-title" class="page-h2">How the numbers on this site were gathered and checked</h2>
+        <p class="lede">Every figure on this site comes from a named source, with a date and a link. Before a
+          number was marked verified, its wording was checked against the source itself, and the exact
+          sentence was saved in the data files under <code>/data</code>. Anything not yet checked is shown
+          with a placeholder badge.</p>
+
+        <div class="mt-40">
+          <!-- @figure-summary -->
         </div>
+
+        <div class="methods-grid">
+          <section>
+            <h3 class="sub-h">How the datasets fit together</h3>
+            <p>Figures are shown as each source reported them. The site does not merge datasets into new
+              statistics, with two exceptions. Some pages show simple arithmetic on published numbers, such
+              as the 15-point gap between 53% and 38%, and the note always says so. The pipeline diagram on
+              the overview page will multiply each stage's rate once those rates are verified; until then it
+              removes no one.</p>
+            <p>The six pipeline stages draw on different datasets: Code.org and the Civil Rights Data
+              Collection for access and enrollment, College Board for AP exams, IPEDS for college enrollment
+              and degrees, NSF NCSES and the American Community Survey for jobs and earnings.</p>
+          </section>
+          <section>
+            <h3 class="sub-h">What the data can't tell you</h3>
+            <ul class="limits">
+              <li><b>Different groups of students.</b> Each dataset follows its own cohort and year, so the
+                pipeline describes a typical path, not one class of students followed for ten years.</li>
+              <li><b>Different definitions.</b> Sources count shares in some places and raw enrollment in
+                others, use "students" or "high school students," and draw their own lines around "elite" or
+                "highly selective" colleges. Notes on each figure say which.</li>
+              <li><b>Secondhand reporting.</b> Several figures come from news coverage of a report rather than
+                the report itself. The figure table says which source was read.</li>
+              <li><b>Too soon to tell.</b> Most outcome data covers only the first one or two classes after
+                2023, and the newest federal data lags by a year or more.</li>
+            </ul>
+          </section>
+        </div>
+
+        <aside class="data-note">
+          <span class="eyebrow">A data problem</span>
+          <h3>The end of corporate diversity reports limits what can be tracked</h3>
+          <p>Google, Meta and Microsoft did not publish diversity data in 2025. Their reports were among the
+            few public records of who gets hired in tech and at what level. Without them, stage 06 of the
+            pipeline depends on federal surveys, which don't report company by company and come out more
+            slowly, so changes inside individual companies can't be followed from the outside.</p>
+          <p class="chart-src"><span>Sources: <a href="https://allwork.space/?p=1040557" rel="noopener" target="_blank">Allwork.Space, Nov. 7, 2025</a>; <a href="https://www.engadget.com/big-tech/microsoft-isnt-releasing-a-diversity-report-for-2025-180000401.html" rel="noopener" target="_blank">Engadget, Nov. 22, 2025</a></span></p>
+        </aside>
+      </section>
+
+      <section class="sec" aria-labelledby="figures-title">
+        <span class="eyebrow">Every figure</span>
+        <h2 id="figures-title">Every figure on the site, by page</h2>
+        <p class="lede">This table is built from the files in <code>/data</code> each time the site is built,
+          so it always matches what the pages show.</p>
+        <div class="mt-24">
+          <!-- @figure-table -->
+        </div>
+      </section>
+
+      <section class="sec" aria-labelledby="bib-title">
+        <span class="eyebrow">Bibliography</span>
+        <h2 id="bib-title">References</h2>
+        <p class="lede">Every source and class reading cited on the site, in APA 7 style, sorted
+          alphabetically. The project's tests (<code>corepack pnpm test</code>) fail if a source used in <code>/data</code>
+          is missing here.</p>
+        <!-- @bibliography -->
       </section>
     </main>
 

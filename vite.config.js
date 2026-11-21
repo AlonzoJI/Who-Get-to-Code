@@ -5,6 +5,11 @@ import * as render from './lib/render.js';
 
 const root = import.meta.dirname;
 const readJson = (name) => JSON.parse(readFileSync(resolve(root, 'data', `${name}.json`), 'utf8'));
+// Every data file, for pages that summarize the whole site (methods and sources).
+const readAllData = () =>
+  readdirSync(resolve(root, 'data'))
+    .filter((f) => f.endsWith('.json'))
+    .map((f) => [f, JSON.parse(readFileSync(resolve(root, 'data', f), 'utf8'))]);
 const readPartial = (name) => readFileSync(resolve(root, 'partials', `${name}.html`), 'utf8');
 
 // Every .html file in the project root is its own page.
@@ -21,6 +26,7 @@ const pages = Object.fromEntries(
 //   <!-- @studies <data-file> -->  <!-- @study-notes <data-file> -->
 //   <!-- @other-side <data-file> -->  <!-- @other-side-notes <data-file> -->
 //   <!-- @cards <data-file> <key> -->  <!-- @card-notes <data-file> <key> -->  <!-- @programs <data-file> -->
+//   <!-- @figure-summary -->  <!-- @figure-table -->  <!-- @bibliography -->
 //   <!-- @law-box <data-file> -->  <!-- @data-note <data-file> -->  <!-- @debate <data-file> -->  <!-- @cascade-intro <data-file> -->  <!-- @cascade-foot <data-file> -->
 //   <!-- @chart <data-file> <chart-id> -->  <!-- @chart-citations <data-file> -->  <!-- @fromclass <reading-id> -->
 function sitePartials() {
@@ -60,6 +66,9 @@ function sitePartials() {
           .replace(/<!-- @card-notes ([\w-]+) ([\w-]+) -->/g, (_, file, key) => render.studyNotes({ studies: readJson(file)[key] }))
           .replace(/<!-- @programs ([\w-]+) -->/g, (_, file) => render.programList(readJson(file)))
           .replace(/<!-- @law-box ([\w-]+) -->/g, (_, file) => render.lawBox(readJson(file)))
+          .replace('<!-- @figure-summary -->', () => render.figureSummary(render.collectFigures(readAllData())))
+          .replace('<!-- @figure-table -->', () => render.figureTable(render.collectFigures(readAllData())))
+          .replace('<!-- @bibliography -->', () => render.bibliography(readJson('bibliography')))
           .replace(/<!-- @debate ([\w-]+) -->/g, (_, file) => render.debateCard(readJson(file)))
           .replace(/<!-- @chart-citations ([\w-]+) -->/g, (_, file) => render.chartCitations(readJson(file)))
           .replace(/<!-- @studies ([\w-]+) -->/g, (_, file) => render.studyCards(readJson(file), readJson('pipeline')))
