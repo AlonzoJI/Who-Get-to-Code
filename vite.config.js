@@ -19,6 +19,7 @@ const pages = Object.fromEntries(
 //   <!-- @stats <data-file> -->  <!-- @citations <data-file> -->
 //   <!-- @pipeline -->  <!-- @pipeline-source -->  <!-- @datasets -->  <!-- @timeline -->
 //   <!-- @studies <data-file> -->  <!-- @study-notes <data-file> -->
+//   <!-- @other-side <data-file> -->  <!-- @other-side-notes <data-file> -->
 //   <!-- @debate <data-file> -->  <!-- @cascade-intro <data-file> -->  <!-- @cascade-foot <data-file> -->
 //   <!-- @chart <data-file> <chart-id> -->  <!-- @chart-citations <data-file> -->  <!-- @fromclass <reading-id> -->
 function sitePartials() {
@@ -49,6 +50,8 @@ function sitePartials() {
           )
           .replace(/<!-- @cascade-intro ([\w-]+) -->/g, (_, file) => render.cascadeIntro(readJson(file)))
           .replace(/<!-- @cascade-foot ([\w-]+) -->/g, (_, file) => render.cascadeFoot(readJson(file)))
+          .replace(/<!-- @other-side ([\w-]+) -->/g, (_, file) => render.otherSide(readJson(file)))
+          .replace(/<!-- @other-side-notes ([\w-]+) -->/g, (_, file) => render.otherSideNotes(readJson(file)))
           .replace(/<!-- @debate ([\w-]+) -->/g, (_, file) => render.debateCard(readJson(file)))
           .replace(/<!-- @chart-citations ([\w-]+) -->/g, (_, file) => render.chartCitations(readJson(file)))
           .replace(/<!-- @studies ([\w-]+) -->/g, (_, file) => render.studyCards(readJson(file), readJson('pipeline')))

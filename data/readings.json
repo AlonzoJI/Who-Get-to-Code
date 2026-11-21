@@ -186,5 +186,26 @@
       "Six decades after Brown, This American Life introduced Nikole Hannah-Jones’s reporting by noting that desegregation is the one thing “nobody tries anymore, despite lots of evidence that it works.” The fall 2025 numbers on this page are an early look at selective colleges once race can no longer be considered at all."
     ],
     "notes": "Majority quote: SFFA v. Harvard, opinion of the Court, slip op. at 13. Dissent quote: Sotomayor, J., dissenting, slip op. at 2. Desegregation quote: This American Life, episode 562 description, July 31, 2015."
+  },
+  {
+    "id": "college-rothstein",
+    "section": "College placements",
+    "heading": "Richard Rothstein, Class and Schools",
+    "works": [
+      {
+        "cite": "Richard Rothstein, Class and Schools: Using Social, Economic, and Educational Reform to Close the Black-White Achievement Gap. Economic Policy Institute and Teachers College, Columbia University, 2004.",
+        "url": "https://www.epi.org/publication/books_class_and_schools/"
+      },
+      {
+        "cite": "Lewis Diuguid, “Addressing Classism Will Improve School Performance,” The Kansas City Star, Jan. 17, 2006, reposted by Teachers College.",
+        "url": "https://www.tc.columbia.edu/articles/2006/january/addressing-classism-will-improve-school-performance"
+      }
+    ],
+    "idea": "Why class-based admissions alone does not close racial gaps",
+    "tie": [
+      "Rothstein argues that the Black-white achievement gap grows out of social and economic conditions that schools alone can’t change. “You can’t fix it with school reform,” he told the Kansas City Star. “The biggest improvements will come when you address social and economic inequality.”",
+      "Class-based admissions uses income as the measure of disadvantage. The national study in this section found evidence that Ivy Plus colleges pivoted toward class-based admissions after SFFA, yet the share of Black, Hispanic, Native American and Pacific Islander students at highly selective colleges still fell 4 to 5 percentage points. Income and race are linked, but one does not stand in for the other."
+    ],
+    "placeholder": "Add the page in Class and Schools where Rothstein compares Black and white students of the same social class. Wording not yet checked against the book."
   }
 ]

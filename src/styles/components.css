@@ -205,3 +205,29 @@
   .debate{grid-template-columns:1fr}
   .debate-side + .debate-side{border-left:0;border-top:1px solid var(--line)}
 }
+
+/* "The other side" card */
+.other-side{margin-top:40px;border:1px solid var(--line);background:var(--fill)}
+.os-head{padding:24px 24px 6px}
+.os-head .eyebrow{margin-bottom:8px}
+.os-head h3{font-size:20px;font-weight:400;margin:0 0 8px}
+.os-head p{color:var(--t2);font-size:14.5px;max-width:70ch;margin:0}
+.os-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:18px;border-top:1px solid var(--line)}
+.os-pos{padding:20px 22px;display:flex;flex-direction:column}
+.os-pos + .os-pos{border-left:1px solid var(--line)}
+.os-stance{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--t2)}
+.os-pos h4{margin:8px 0 12px;font-size:15px;font-weight:500;color:var(--t0)}
+.os-pos blockquote{margin:0 0 12px}
+.os-pos blockquote p{font-size:15.5px;line-height:1.5;color:var(--t0);margin:0}
+.os-pos ul{margin:0 0 10px;padding-left:18px;color:var(--t1);font-size:14px}
+.os-pos li{margin-bottom:6px}
+.os-figure{font-family:var(--mono);font-size:12px;color:var(--t1);border-left:2px solid var(--line);padding-left:10px;margin:4px 0 10px}
+.os-pos .chart-src{margin-top:auto;padding-top:10px}
+.os-pos .chart-src a{border-bottom:1px solid var(--t4)}
+.os-synthesis{margin:0;padding:16px 24px;border-top:1px solid var(--line);font-size:14.5px;color:var(--t1)}
+.ohio-section{margin-top:8px}
+.ohio-chart{margin-top:24px;max-width:760px}
+@media (max-width:960px){
+  .os-grid{grid-template-columns:1fr}
+  .os-pos + .os-pos{border-left:0;border-top:1px solid var(--line)}
+}

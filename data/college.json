@@ -123,6 +123,149 @@
           "notes": "See above."
         }
       ]
+    },
+    {
+      "id": "ohio-first-year",
+      "title": "Ohio first-year enrollment by race, before and after 2023",
+      "measure": "Share of first-year students",
+      "records": [
+        {
+          "id": "osu-black-2023",
+          "stage": 4,
+          "metric": "Share of first-year students by race",
+          "group": "Ohio State, Black, fall 2023",
+          "value": null,
+          "unit": "percent",
+          "display": null,
+          "data_year": "fall 2023",
+          "year": null,
+          "source": "To be pulled from the Ohio State Common Data Set (section B) or IPEDS Fall Enrollment",
+          "source_short": "Pending",
+          "url": "https://nces.ed.gov/ipeds/",
+          "verified": false,
+          "accessed": "2026-11-21",
+          "notes": "Placeholder. Use one source for every bar so the years compare. IPEDS fall 2025 data may not be released yet; if not, compare fall 2023 with fall 2024. Sen. Cirino’s June 2026 claim about Ohio State minority enrollment (see the rollback page) can be checked against these figures."
+        },
+        {
+          "id": "osu-black-2025",
+          "stage": 4,
+          "metric": "Share of first-year students by race",
+          "group": "Ohio State, Black, fall 2025",
+          "value": null,
+          "unit": "percent",
+          "display": null,
+          "data_year": "fall 2025",
+          "year": null,
+          "source": "To be pulled from the Ohio State Common Data Set (section B) or IPEDS Fall Enrollment",
+          "source_short": "Pending",
+          "url": "https://nces.ed.gov/ipeds/",
+          "verified": false,
+          "accessed": "2026-11-21",
+          "notes": "Placeholder. Use one source for every bar so the years compare. IPEDS fall 2025 data may not be released yet; if not, compare fall 2023 with fall 2024. Sen. Cirino’s June 2026 claim about Ohio State minority enrollment (see the rollback page) can be checked against these figures."
+        },
+        {
+          "id": "osu-hisp-2023",
+          "stage": 4,
+          "metric": "Share of first-year students by race",
+          "group": "Ohio State, Hispanic, fall 2023",
+          "value": null,
+          "unit": "percent",
+          "display": null,
+          "data_year": "fall 2023",
+          "year": null,
+          "source": "To be pulled from the Ohio State Common Data Set (section B) or IPEDS Fall Enrollment",
+          "source_short": "Pending",
+          "url": "https://nces.ed.gov/ipeds/",
+          "verified": false,
+          "accessed": "2026-11-21",
+          "notes": "Placeholder. Use one source for every bar so the years compare. IPEDS fall 2025 data may not be released yet; if not, compare fall 2023 with fall 2024. Sen. Cirino’s June 2026 claim about Ohio State minority enrollment (see the rollback page) can be checked against these figures."
+        },
+        {
+          "id": "osu-hisp-2025",
+          "stage": 4,
+          "metric": "Share of first-year students by race",
+          "group": "Ohio State, Hispanic, fall 2025",
+          "value": null,
+          "unit": "percent",
+          "display": null,
+          "data_year": "fall 2025",
+          "year": null,
+          "source": "To be pulled from the Ohio State Common Data Set (section B) or IPEDS Fall Enrollment",
+          "source_short": "Pending",
+          "url": "https://nces.ed.gov/ipeds/",
+          "verified": false,
+          "accessed": "2026-11-21",
+          "notes": "Placeholder. Use one source for every bar so the years compare. IPEDS fall 2025 data may not be released yet; if not, compare fall 2023 with fall 2024. Sen. Cirino’s June 2026 claim about Ohio State minority enrollment (see the rollback page) can be checked against these figures."
+        },
+        {
+          "id": "ohpub-black-2023",
+          "stage": 4,
+          "metric": "Share of first-year students by race",
+          "group": "Ohio public universities, Black, fall 2023",
+          "value": null,
+          "unit": "percent",
+          "display": null,
+          "data_year": "fall 2023",
+          "year": null,
+          "source": "To be pulled from the Ohio State Common Data Set (section B) or IPEDS Fall Enrollment",
+          "source_short": "Pending",
+          "url": "https://nces.ed.gov/ipeds/",
+          "verified": false,
+          "accessed": "2026-11-21",
+          "notes": "Placeholder. Use one source for every bar so the years compare. IPEDS fall 2025 data may not be released yet; if not, compare fall 2023 with fall 2024. Sen. Cirino’s June 2026 claim about Ohio State minority enrollment (see the rollback page) can be checked against these figures."
+        },
+        {
+          "id": "ohpub-black-2025",
+          "stage": 4,
+          "metric": "Share of first-year students by race",
+          "group": "Ohio public universities, Black, fall 2025",
+          "value": null,
+          "unit": "percent",
+          "display": null,
+          "data_year": "fall 2025",
+          "year": null,
+          "source": "To be pulled from the Ohio State Common Data Set (section B) or IPEDS Fall Enrollment",
+          "source_short": "Pending",
+          "url": "https://nces.ed.gov/ipeds/",
+          "verified": false,
+          "accessed": "2026-11-21",
+          "notes": "Placeholder. Use one source for every bar so the years compare. IPEDS fall 2025 data may not be released yet; if not, compare fall 2023 with fall 2024. Sen. Cirino’s June 2026 claim about Ohio State minority enrollment (see the rollback page) can be checked against these figures."
+        },
+        {
+          "id": "ohpub-hisp-2023",
+          "stage": 4,
+          "metric": "Share of first-year students by race",
+          "group": "Ohio public universities, Hispanic, fall 2023",
+          "value": null,
+          "unit": "percent",
+          "display": null,
+          "data_year": "fall 2023",
+          "year": null,
+          "source": "To be pulled from the Ohio State Common Data Set (section B) or IPEDS Fall Enrollment",
+          "source_short": "Pending",
+          "url": "https://nces.ed.gov/ipeds/",
+          "verified": false,
+          "accessed": "2026-11-21",
+          "notes": "Placeholder. Use one source for every bar so the years compare. IPEDS fall 2025 data may not be released yet; if not, compare fall 2023 with fall 2024. Sen. Cirino’s June 2026 claim about Ohio State minority enrollment (see the rollback page) can be checked against these figures."
+        },
+        {
+          "id": "ohpub-hisp-2025",
+          "stage": 4,
+          "metric": "Share of first-year students by race",
+          "group": "Ohio public universities, Hispanic, fall 2025",
+          "value": null,
+          "unit": "percent",
+          "display": null,
+          "data_year": "fall 2025",
+          "year": null,
+          "source": "To be pulled from the Ohio State Common Data Set (section B) or IPEDS Fall Enrollment",
+          "source_short": "Pending",
+          "url": "https://nces.ed.gov/ipeds/",
+          "verified": false,
+          "accessed": "2026-11-21",
+          "notes": "Placeholder. Use one source for every bar so the years compare. IPEDS fall 2025 data may not be released yet; if not, compare fall 2023 with fall 2024. Sen. Cirino’s June 2026 claim about Ohio State minority enrollment (see the rollback page) can be checked against these figures."
+        }
+      ]
     }
   ],
   "stats": [
@@ -259,5 +402,68 @@
       "accessed": "2026-11-21",
       "notes": "Murphy, quoted by JBHE: the ruling \"created, at least in its first year, a cascade effect in which highly qualified students of color who would have been much more likely to be admitted to highly selective institutions\" ended up \"enrolling in less selective institutions.\" JBHE also reports \"a slight increase in Black freshman enrollment at institutions with lower graduation rates and expected earnings post-graduation\" and Black freshman enrollment up 30% at LSU and 50% at the University of Mississippi. The AOL link in the brief returned 404; it appears to reprint a story from The Hill that could not be opened, so its figures are not used."
     }
-  ]
+  ],
+  "other_side": {
+    "intro": "Supporters of the ruling and some researchers read the same enrollment data differently. Here is what they argue, in their own words where possible.",
+    "positions": [
+      {
+        "id": "manhattan",
+        "stance": "Supporter of the ruling",
+        "who": "Robert VerBruggen, Manhattan Institute",
+        "quote": "noticeable, though modest, racial demographic shifts",
+        "quote_lead": "Using IPEDS data on more than 1,000 four-year colleges from 2010 to 2024, the report finds the most selective colleges saw",
+        "points": [
+          "It asks whether some colleges’ warnings to the Court “prove[d] overstated.”",
+          "It says a lack of demographic change “does not necessarily indicate noncompliance,” and calls for more scrutiny where warranted and more admissions transparency."
+        ],
+        "figure": "At Ivy League schools, Black enrollment fell from about 11% to 8% and Hispanic from 16% to 15%, while white rose from 35% to 37% and Asian from 30% to 32%.",
+        "source": {
+          "cite": "\"New Report: Students for Fair Admissions Decision Reshapes Elite College Enrollment,\" Manhattan Institute, May 14, 2026",
+          "url": "https://manhattan.institute/article/new-report-students-for-fair-admissions-decision-reshapes-elite-college-enrollment",
+          "year": 2026
+        },
+        "verified": true,
+        "notes": "Press release text, verbatim: \"VerBruggen finds that the most selective colleges experienced noticeable, though modest, racial demographic shifts\"; \"At Ivy League schools, Black enrollment fell from about 11% to 8%; Hispanic enrollment fell from 16% to 15%; white enrollment rose from 35% to 37%; and Asian enrollment rose from 30% to 32%.\" The release frames the question as whether \"some institutions’ warnings to the Court prove overstated\". The full report is linked from the release; the before and after years for the Ivy figures are not stated in the release."
+      },
+      {
+        "id": "murphy",
+        "stance": "Critic of the decline story",
+        "who": "James S. Murphy, Class Action",
+        "quote": "the highly qualified students of color who lost an advantage in the admissions process due to SFFA were not going to opt out of higher education altogether",
+        "quote_lead": "",
+        "points": [
+          "Black enrollment fell at highly selective colleges, but total Black enrollment at four-year institutions held steady as more students enrolled at less selective schools.",
+          "More than four of five state flagship universities enrolled more underrepresented students of color in 2024."
+        ],
+        "figure": null,
+        "source": {
+          "cite": "\"Black enrollment shifts, not shrinks, after affirmative action ban: report,\" The College Fix, Feb. 27, 2026",
+          "url": "https://www.thecollegefix.com/black-enrollment-shifts-not-shrinks-after-affirmative-action-ban-report/",
+          "year": 2026
+        },
+        "verified": true,
+        "notes": "College Fix: \"total black enrollment at four-year institutions held steady due to increased participation at less selective schools, according to a new report from Class Action\"; \"more than four of five state flagship universities had increases in enrollment of underrepresented students of color in 2024.\" Murphy also notes that enrollment data alone cannot show intent or compliance. The report date is not given; JBHE covered it on Feb. 9, 2026. The \"January 2026 report\" in The College Fix is Richard Sander’s separate law school study, not Murphy’s."
+      },
+      {
+        "id": "mismatch",
+        "stance": "Supporter of the ruling",
+        "who": "Robert Steinbuch, University of Arkansas, with Richard Sander, UCLA",
+        "quote": "It’s clearly positive to see a reordering of admissions to place students where they will best thrive.",
+        "quote_lead": "",
+        "points": [
+          "Their “mismatch hypothesis” holds that students admitted with much weaker credentials than their classmates may do worse than they would at a less selective school.",
+          "Sander’s January 2026 study of law schools found Black and Hispanic enrollment did not fall overall; it shifted toward less selective schools."
+        ],
+        "figure": null,
+        "source": {
+          "cite": "\"Black enrollment shifts, not shrinks, after affirmative action ban: report,\" The College Fix, Feb. 27, 2026",
+          "url": "https://www.thecollegefix.com/black-enrollment-shifts-not-shrinks-after-affirmative-action-ban-report/",
+          "year": 2026
+        },
+        "verified": true,
+        "notes": "Steinbuch quote and the mismatch description are from The College Fix. The mismatch hypothesis is contested; the article notes that Yale scholars Ian Ayres and Richard Brooks have objected to it. Sander’s study covers law schools, not undergraduate admissions."
+      }
+    ],
+    "synthesis": "Both sides agree on the core numbers above: fewer Black students at the most selective colleges. They disagree on what the shift means. Supporters see students landing where they fit; the national study in this section finds the less selective colleges they land at have lower graduation rates and earnings."
+  }
 }
