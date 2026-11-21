@@ -42,7 +42,8 @@ section('data/bibliography.json: references with pending details', bib.entries.f
 
 // 4. Marked placeholders in the page files (author's writing, empty From class pairings, stub pages).
 const pageLines = [];
-for (const f of readdirSync(root).filter((f) => f.endsWith('.html'))) {
+// styleguide.html shows sample placeholders on purpose, so it is skipped.
+for (const f of readdirSync(root).filter((f) => f.endsWith('.html') && f !== 'styleguide.html')) {
   const html = read(f);
   for (const m of html.matchAll(/<span class="tag">([^<]*Placeholder[^<]*)<\/span>\s*<p>([\s\S]*?)<\/p>/g)) {
     pageLines.push(`- ${f}: ${m[1].replace(/\s+/g, ' ')}: ${m[2].replace(/\s+/g, ' ').trim()}`);
