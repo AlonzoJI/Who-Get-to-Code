@@ -117,5 +117,53 @@
       "hooks writes that class is rarely talked about in American classrooms, and that middle-class values quietly set the terms for how students are expected to speak and behave.",
       "In a computer science classroom, those unspoken terms can include assuming that students already own a computer or have written code before. Students who don’t fit those assumptions can read them as a sign that the class isn’t for them."
     ]
+  },
+  {
+    "id": "tracked-banaji",
+    "section": "Who gets tracked in",
+    "heading": "Mahzarin R. Banaji and Anthony G. Greenwald, “Mindbugs”",
+    "works": [
+      {
+        "cite": "Mahzarin R. Banaji and Anthony G. Greenwald, “Mindbugs,” in Blindspot: Hidden Biases of Good People. Delacorte Press, 2013.",
+        "url": "https://www.npr.org/2013/04/16/177455360/excerpt-blindspot"
+      }
+    ],
+    "idea": "Implicit bias in who gets recommended",
+    "tie": [
+      "Banaji and Greenwald use “mindbugs” for ingrained habits of thought that lead well-meaning people into errors of perception and judgment, often without noticing.",
+      "A recommendation for AP is a quick judgment made many times a year. In the Francis study the transcripts were identical, so the only thing that changed was the name, and the name changed the recommendation."
+    ]
+  },
+  {
+    "id": "tracked-eisner",
+    "section": "Who gets tracked in",
+    "heading": "Elliot W. Eisner, “Questionable Assumptions About Schooling”",
+    "works": [
+      {
+        "cite": "Elliot W. Eisner, “Questionable Assumptions About Schooling,” Phi Delta Kappan 84, no. 9 (2003): 648–657.",
+        "url": "https://eric.ed.gov/?id=EJ666083"
+      }
+    ],
+    "idea": "Tracking as part of how school is assumed to work",
+    "tie": [
+      "Eisner questions the assumption that school should move every student to the same place at about the same time, a race run “on a track for which their life experiences have advantaged them.” He asks readers to examine structures that are taken for granted, including how classes are organized.",
+      "Grade cutoffs and counselor sign-offs for AP are that kind of structure. They feel neutral because they are routine, yet Hirschl and Smith found they open racial gaps among students with similar records."
+    ]
+  },
+  {
+    "id": "tracked-runyan",
+    "section": "Who gets tracked in",
+    "heading": "Anne Sisson Runyan, “What Is Intersectionality and Why Is It Important?”",
+    "works": [
+      {
+        "cite": "Anne Sisson Runyan, “What Is Intersectionality and Why Is It Important?” Academe, November–December 2018.",
+        "url": "https://www.aaup.org/article/what-intersectionality-and-why-it-important"
+      }
+    ],
+    "idea": "Why the gaps are not simply added together",
+    "tie": [
+      "Runyan traces intersectionality to Kimberlé Crenshaw and stresses that forms of oppression are “not just additive.” Women of color face a different form of racism than men of color, and a different form of sexism than white women.",
+      "That is what the Francis study found: counselors were least likely to recommend Black female students, a gap that looking at race alone or gender alone would miss. For low-income women of color, class shapes those gaps too."
+    ]
   }
 ]

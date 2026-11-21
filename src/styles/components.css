@@ -10,19 +10,19 @@
   backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
   border-bottom:1px solid var(--line)}
 .topnav .in{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;
-  gap:28px;padding:0 var(--gutter);height:60px}
+  gap:22px;padding:0 var(--gutter);height:60px}
 .logo{font-family:var(--mono);font-size:12.5px;font-weight:500;color:var(--t0);
   letter-spacing:.02em;white-space:nowrap;display:flex;align-items:center;gap:10px}
 .logo .mark{width:9px;height:9px;background:var(--t0);display:inline-block}
-.topnav nav{display:flex;gap:22px;font-size:13.5px}
+.topnav nav{display:flex;gap:17px;font-size:13px}
 .topnav nav a{color:var(--t2);transition:color .13s;padding:4px 0}
 .topnav nav a:hover{color:var(--t1)}
 .topnav nav a[aria-current="page"]{color:var(--t0)}
 .topnav .right{margin-left:auto;display:flex;align-items:center;gap:10px}
 
-/* seven links plus two buttons need about 1180px on one row */
+/* eight links plus two buttons need about 1200px on one row; below that the links get their own row */
 .topnav nav a{white-space:nowrap}
-@media (max-width:1180px){
+@media (max-width:1260px){
   .topnav .in{flex-wrap:wrap;height:auto;gap:0 14px}
   .logo{order:1;min-height:54px}
   .topnav .right{order:2;min-height:54px}
@@ -173,3 +173,15 @@
 /* an H2 that opens a page */
 .page-h2{font-size:40px;line-height:1.12;margin-bottom:18px;max-width:22ch}
 @media (max-width:840px){ .page-h2{font-size:29px} }
+
+/* pipeline stage chips + study cards */
+.stage-chips{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.stage-chips .pill{font-size:11px;padding:3px 9px;color:var(--t1)}
+.stage-chips .pill:hover{color:var(--t0);border-color:var(--t2)}
+.study{display:flex;flex-direction:column}
+.study h3{font-size:17px}
+.study > p:not(.apa){font-size:15px;color:var(--t1);max-width:56ch}
+.study .apa{margin-top:auto;padding-top:18px;font-family:var(--mono);font-size:11.5px;line-height:1.6;color:var(--t2)}
+.study .apa i{font-style:italic}
+.study .apa a{border-bottom:1px solid var(--t4);word-break:break-all}
+.study .apa a:hover{color:var(--t0);border-color:var(--t1)}

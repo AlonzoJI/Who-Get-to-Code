@@ -1,0 +1,57 @@
+{
+  "_about": "Studies for the Who gets tracked in page. 'finding' is one sentence written from the source's own abstract or description; 'apa' is an APA 7 reference where *text* marks italics. Checked 2026-11-21.",
+  "studies": [
+    {
+      "n": "01",
+      "id": "francis-2019",
+      "title": "Counselors and identical transcripts",
+      "finding": "Counselors given transcripts that were identical except for the student's name were less likely to recommend Black female students for AP Calculus, and rated them the least prepared.",
+      "stages": [3],
+      "apa": "Francis, D. V., de Oliveira, A. C. M., & Dimmitt, C. (2019). Do school counselors exhibit bias in recommending students for advanced coursework? *The B.E. Journal of Economic Analysis & Policy, 19*(4), Article 20180189.",
+      "url": "https://doi.org/10.1515/bejeap-2018-0189",
+      "year": 2019,
+      "source": "The B.E. Journal of Economic Analysis & Policy",
+      "verified": true,
+      "notes": "Abstract: 'black female students were less likely to be recommended for AP Calculus and were rated as being the least prepared.' Audit study of 152 high school counselors (Harvard Gender Action Portal summary). The study is about AP Calculus, not AP Computer Science."
+    },
+    {
+      "n": "02",
+      "id": "hirschl-smith-2023",
+      "title": "Grade cutoffs for AP",
+      "finding": "When Wisconsin high schools enforced grade or score requirements for AP courses, Black and Hispanic students lost out more than white students, even among students with similar, relatively low prior achievement.",
+      "stages": [3],
+      "apa": "Hirschl, N., & Smith, C. M. (2023). Advanced Placement gatekeeping and racialized tracking. *Sociology of Education, 96*(3), 190–210.",
+      "url": "https://doi.org/10.1177/00380407231161334",
+      "year": 2023,
+      "source": "Sociology of Education",
+      "verified": true,
+      "notes": "Abstract: 'course gatekeeping produces Black-white and Hispanic-white disparities in participation even among students with similar, relatively low prior achievement.' The authors call performance-based selection criteria 'course gatekeeping'. The abstract says 'similar' achievement, not identical grades. It also finds gatekeeping discourages Black and Asian or Pacific Islander students from attending highly selective four-year colleges."
+    },
+    {
+      "n": "03",
+      "id": "margolis-2017",
+      "title": "Stuck in the Shallow End",
+      "finding": "Studying three Los Angeles public high schools, the authors found a \"virtual segregation\" that kept Black and Latino/a students out of computer science, even in schools where the classes existed.",
+      "stages": [1, 2],
+      "apa": "Margolis, J., Estrella, R., Goode, J., Holme, J. J., & Nao, K. (2017). *Stuck in the shallow end: Education, race, and computing* (Updated ed.). MIT Press.",
+      "url": "https://mitpress.mit.edu/9780262533461/stuck-in-the-shallow-end/",
+      "year": 2017,
+      "source": "MIT Press",
+      "verified": true,
+      "notes": "Publisher description: the book examines why so few African American and Latino/a students study computer science, drawing on three Los Angeles public high schools, and finds an insidious 'virtual segregation' that maintains inequality. Original edition 2008; the 2017 updated edition adds a new preface, postscript and discussion questions."
+    },
+    {
+      "n": "04",
+      "id": "margolis-fisher-2002",
+      "title": "Unlocking the Clubhouse",
+      "finding": "Interviews with more than 100 Carnegie Mellon computer science students showed women leaving the major after they got in because its culture eroded their confidence, not because they were less interested or able.",
+      "stages": [5],
+      "apa": "Margolis, J., & Fisher, A. (2002). *Unlocking the clubhouse: Women in computing*. MIT Press.",
+      "url": "https://mitpress.mit.edu/9780262632690/unlocking-the-clubhouse/",
+      "year": 2002,
+      "source": "MIT Press",
+      "verified": true,
+      "notes": "Based on interviews with more than 100 Carnegie Mellon CS students plus classroom observation. Chapters include 'The Decision to Leave' and one on the erosion of confidence. Reviewers summarize the finding that women are not less interested or skilled than men. Some records list a 2003 printing; the first printing is 2002."
+    }
+  ]
+}

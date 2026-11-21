@@ -18,6 +18,7 @@ const pages = Object.fromEntries(
 //   <!-- @head -->  <!-- @nav -->  <!-- @foot -->
 //   <!-- @stats <data-file> -->  <!-- @citations <data-file> -->
 //   <!-- @pipeline -->  <!-- @pipeline-source -->  <!-- @datasets -->  <!-- @timeline -->
+//   <!-- @studies <data-file> -->  <!-- @study-notes <data-file> -->
 //   <!-- @chart <data-file> <chart-id> -->  <!-- @chart-citations <data-file> -->  <!-- @fromclass <reading-id> -->
 function sitePartials() {
   return {
@@ -43,6 +44,8 @@ function sitePartials() {
             render.barChart(readJson(file).charts.find((c) => c.id === id))
           )
           .replace(/<!-- @chart-citations ([\w-]+) -->/g, (_, file) => render.chartCitations(readJson(file)))
+          .replace(/<!-- @studies ([\w-]+) -->/g, (_, file) => render.studyCards(readJson(file), readJson('pipeline')))
+          .replace(/<!-- @study-notes ([\w-]+) -->/g, (_, file) => render.studyNotes(readJson(file)))
           .replace('<!-- @timeline -->', () => render.rollbackTimeline(readJson('rollback'), readJson('pipeline')))
           .replace(/<!-- @fromclass ([\w-]+) -->/g, (_, id) =>
             render.fromClassCard(readJson('readings').find((r) => r.id === id))
