@@ -82,7 +82,7 @@
 .cell-link:focus-visible{outline-offset:-2px}
 
 /* numbered card */
-.card-n .n{font-family:var(--mono);font-size:11px;color:var(--t3);letter-spacing:.12em}
+.card-n .n{font-family:var(--mono);font-size:11px;color:var(--t2);letter-spacing:.12em}
 .card-n h3{margin:14px 0 8px}
 .card-n p{color:var(--t2);font-size:14px;margin:0}
 .cell-link.card-body{display:flex;flex-direction:column}
