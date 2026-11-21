@@ -1,6 +1,191 @@
 {
   "_about": "Workforce (stage 06), part 1: tech companies pulling back on DEI after graduation. Every figure checked against its source on 2026-11-21; quotes in notes are verbatim.",
-  "charts": [],
+  "charts": [
+    {
+      "id": "cs-degrees",
+      "title": "Who earns computer science bachelor’s degrees",
+      "measure": "Share of CS bachelor’s degrees, by race and by gender",
+      "records": [
+        {
+          "id": "cs-deg-women",
+          "stage": 6,
+          "metric": "Share of bachelor’s degrees in computer and information sciences (CIP 11)",
+          "group": "Women",
+          "value": null,
+          "unit": "percent",
+          "display": null,
+          "data_year": "Pending",
+          "year": null,
+          "source": "To be pulled from NCES IPEDS Completions, CIP code 11",
+          "source_short": "Pending",
+          "url": "https://nces.ed.gov/ipeds/",
+          "verified": false,
+          "accessed": "2026-11-21",
+          "notes": "Placeholder. Use one IPEDS completions year for every bar and note the year. Race and gender are separate breakdowns, so the bars do not add to 100%."
+        },
+        {
+          "id": "cs-deg-black",
+          "stage": 6,
+          "metric": "Share of bachelor’s degrees in computer and information sciences (CIP 11)",
+          "group": "Black",
+          "value": null,
+          "unit": "percent",
+          "display": null,
+          "data_year": "Pending",
+          "year": null,
+          "source": "To be pulled from NCES IPEDS Completions, CIP code 11",
+          "source_short": "Pending",
+          "url": "https://nces.ed.gov/ipeds/",
+          "verified": false,
+          "accessed": "2026-11-21",
+          "notes": "Placeholder. Use one IPEDS completions year for every bar and note the year. Race and gender are separate breakdowns, so the bars do not add to 100%."
+        },
+        {
+          "id": "cs-deg-hispanic",
+          "stage": 6,
+          "metric": "Share of bachelor’s degrees in computer and information sciences (CIP 11)",
+          "group": "Hispanic or Latino",
+          "value": null,
+          "unit": "percent",
+          "display": null,
+          "data_year": "Pending",
+          "year": null,
+          "source": "To be pulled from NCES IPEDS Completions, CIP code 11",
+          "source_short": "Pending",
+          "url": "https://nces.ed.gov/ipeds/",
+          "verified": false,
+          "accessed": "2026-11-21",
+          "notes": "Placeholder. Use one IPEDS completions year for every bar and note the year. Race and gender are separate breakdowns, so the bars do not add to 100%."
+        },
+        {
+          "id": "cs-deg-asian",
+          "stage": 6,
+          "metric": "Share of bachelor’s degrees in computer and information sciences (CIP 11)",
+          "group": "Asian",
+          "value": null,
+          "unit": "percent",
+          "display": null,
+          "data_year": "Pending",
+          "year": null,
+          "source": "To be pulled from NCES IPEDS Completions, CIP code 11",
+          "source_short": "Pending",
+          "url": "https://nces.ed.gov/ipeds/",
+          "verified": false,
+          "accessed": "2026-11-21",
+          "notes": "Placeholder. Use one IPEDS completions year for every bar and note the year. Race and gender are separate breakdowns, so the bars do not add to 100%."
+        },
+        {
+          "id": "cs-deg-white",
+          "stage": 6,
+          "metric": "Share of bachelor’s degrees in computer and information sciences (CIP 11)",
+          "group": "White",
+          "value": null,
+          "unit": "percent",
+          "display": null,
+          "data_year": "Pending",
+          "year": null,
+          "source": "To be pulled from NCES IPEDS Completions, CIP code 11",
+          "source_short": "Pending",
+          "url": "https://nces.ed.gov/ipeds/",
+          "verified": false,
+          "accessed": "2026-11-21",
+          "notes": "Placeholder. Use one IPEDS completions year for every bar and note the year. Race and gender are separate breakdowns, so the bars do not add to 100%."
+        }
+      ]
+    },
+    {
+      "id": "tech-workforce",
+      "title": "Who works in computing jobs",
+      "measure": "Share of workers in computer and mathematical occupations, by race and by gender",
+      "records": [
+        {
+          "id": "tech-wf-women",
+          "stage": 6,
+          "metric": "Share of workers in computer and mathematical occupations",
+          "group": "Women",
+          "value": null,
+          "unit": "percent",
+          "display": null,
+          "data_year": "Pending",
+          "year": null,
+          "source": "To be pulled from NSF NCSES, Diversity and STEM (2023 or later)",
+          "source_short": "Pending",
+          "url": "https://ncses.nsf.gov/pubs/nsf23315/assets/nsf23315-report.pdf",
+          "verified": false,
+          "accessed": "2026-11-21",
+          "notes": "Placeholder. Use the newest NCSES edition and the same occupation group for every bar."
+        },
+        {
+          "id": "tech-wf-black",
+          "stage": 6,
+          "metric": "Share of workers in computer and mathematical occupations",
+          "group": "Black",
+          "value": null,
+          "unit": "percent",
+          "display": null,
+          "data_year": "Pending",
+          "year": null,
+          "source": "To be pulled from NSF NCSES, Diversity and STEM (2023 or later)",
+          "source_short": "Pending",
+          "url": "https://ncses.nsf.gov/pubs/nsf23315/assets/nsf23315-report.pdf",
+          "verified": false,
+          "accessed": "2026-11-21",
+          "notes": "Placeholder. Use the newest NCSES edition and the same occupation group for every bar."
+        },
+        {
+          "id": "tech-wf-hispanic",
+          "stage": 6,
+          "metric": "Share of workers in computer and mathematical occupations",
+          "group": "Hispanic or Latino",
+          "value": null,
+          "unit": "percent",
+          "display": null,
+          "data_year": "Pending",
+          "year": null,
+          "source": "To be pulled from NSF NCSES, Diversity and STEM (2023 or later)",
+          "source_short": "Pending",
+          "url": "https://ncses.nsf.gov/pubs/nsf23315/assets/nsf23315-report.pdf",
+          "verified": false,
+          "accessed": "2026-11-21",
+          "notes": "Placeholder. Use the newest NCSES edition and the same occupation group for every bar."
+        },
+        {
+          "id": "tech-wf-asian",
+          "stage": 6,
+          "metric": "Share of workers in computer and mathematical occupations",
+          "group": "Asian",
+          "value": null,
+          "unit": "percent",
+          "display": null,
+          "data_year": "Pending",
+          "year": null,
+          "source": "To be pulled from NSF NCSES, Diversity and STEM (2023 or later)",
+          "source_short": "Pending",
+          "url": "https://ncses.nsf.gov/pubs/nsf23315/assets/nsf23315-report.pdf",
+          "verified": false,
+          "accessed": "2026-11-21",
+          "notes": "Placeholder. Use the newest NCSES edition and the same occupation group for every bar."
+        },
+        {
+          "id": "tech-wf-white",
+          "stage": 6,
+          "metric": "Share of workers in computer and mathematical occupations",
+          "group": "White",
+          "value": null,
+          "unit": "percent",
+          "display": null,
+          "data_year": "Pending",
+          "year": null,
+          "source": "To be pulled from NSF NCSES, Diversity and STEM (2023 or later)",
+          "source_short": "Pending",
+          "url": "https://ncses.nsf.gov/pubs/nsf23315/assets/nsf23315-report.pdf",
+          "verified": false,
+          "accessed": "2026-11-21",
+          "notes": "Placeholder. Use the newest NCSES edition and the same occupation group for every bar."
+        }
+      ]
+    }
+  ],
   "stats": [
     {
       "id": "gravity-fortune100-dei-language",
@@ -57,15 +242,14 @@
   },
   "debate": {
     "supporters": {
-      "label": "What companies making the change say",
-      "quote": "legal and policy landscape surrounding diversity, equity and inclusion efforts in the United States",
-      "who": "Meta VP of Human Resources Janelle Gale, giving the reason for Meta’s changes in an internal memo reported by Axios",
+      "label": "What supporters of the corporate changes argue",
+      "quote": "Far too many employers defend certain types of race or sex preferences as good, provided they are motivated by business interests in ‘diversity, equity, or inclusion.’ But no matter an employer’s motive, there is no ‘good,’ or even acceptable, race or sex discrimination.",
+      "who": "Andrea Lucas, Acting Chair of the U.S. Equal Employment Opportunity Commission, March 19, 2025",
       "source": {
-        "cite": "HR Dive, Jan. 14, 2025",
+        "cite": "EEOC and Justice Department Warn Against Unlawful DEI-Related Discrimination, Mar. 19, 2025",
         "year": 2025,
-        "url": "https://www.hrdive.com/news/meta-cuts-dei-roles-supplier-diversity-programs-wave-rollbacks-mcdonalds-amazon/737223"
-      },
-      "lead": "Meta said its changes reflect the"
+        "url": "https://www.eeoc.gov/newsroom/eeoc-and-justice-department-warn-against-unlawful-dei-related-discrimination"
+      }
     },
     "outcome": {
       "label": "What the outcome data shows",
@@ -73,5 +257,96 @@
       "records": [],
       "verified": false
     }
+  },
+  "companies": [
+    {
+      "n": "01",
+      "id": "meta-2025",
+      "title": "Meta",
+      "stages": [
+        6
+      ],
+      "verified": true,
+      "year": 2025,
+      "finding": "In January 2025, Meta ended its DEI team, its representation goals and the “diverse slate approach” in hiring. An internal memo tied the changes to the “legal and policy landscape” for DEI in the United States.",
+      "apa": "Johnson, L. (2025, January 14). Meta joins chorus of DEI rollbacks, cutting roles and programs. *HR Dive*.",
+      "url": "https://www.hrdive.com/news/meta-cuts-dei-roles-supplier-diversity-programs-wave-rollbacks-mcdonalds-amazon/737223",
+      "notes": "Article: Meta will \"cease to incorporate the ‘diverse slate approach’ in its hiring processes, according to changes first reported Friday by Axios\"; the memo attributed the changes to the \"legal and policy landscape surrounding diversity, equity and inclusion efforts in the United States.\" The diverse slate change is sourced to Axios; the supplier diversity change was confirmed by a Meta spokesperson."
+    },
+    {
+      "n": "02",
+      "id": "google-2025",
+      "title": "Google",
+      "stages": [
+        6
+      ],
+      "verified": true,
+      "year": 2025,
+      "finding": "In February 2025, Google told employees it was scrapping some of its diversity hiring targets. As a federal contractor, it said it was reviewing changes required by “recent court decisions and executive orders.”",
+      "apa": "Liedtke, M. (2025, February 6). Google scraps diversity hiring goals in the face of Trump’s new anti-DEI government contractor rules. *Fortune*.",
+      "url": "https://fortune.com/2025/02/06/google-scraps-diversity-hiring-goals-trump-anti-dei-government-contractor-rules",
+      "notes": "Article: \"Google is scrapping some of its diversity hiring targets\"; Google’s statement says its teams are \"evaluating changes required following recent court decisions and executive orders on this topic.\" Associated Press story carried by Fortune."
+    },
+    {
+      "n": "03",
+      "id": "amazon-2024",
+      "title": "Amazon",
+      "stages": [
+        6
+      ],
+      "verified": true,
+      "year": 2025,
+      "finding": "In a Dec. 16, 2024 memo, Amazon said it was “winding down outdated programs and materials” after reviewing hundreds of initiatives, and would focus on “programs with proven outcomes.” The memo did not say which programs were cut.",
+      "apa": "Amazon to halt some of its DEI programs: Internal memo. (2025, January 10). *NBC4 Washington* (CNBC).",
+      "url": "https://www.nbcwashington.com/news/business/money-report/amazon-to-halt-some-of-its-dei-programs-internal-memo/3810883/",
+      "notes": "Article: \"In a Dec. 16 internal note to staffers that was obtained by CNBC, Candi Castleberry, Amazon’s VP of inclusive experiences and technology, said the company was in the process of ‘winding down outdated programs and materials’\"; \"Castleberry’s memo doesn’t say which programs the company is dropping.\" Memo text: aiming to complete that \"by the end of 2024.\""
+    },
+    {
+      "n": "04",
+      "id": "microsoft-2025",
+      "title": "Microsoft",
+      "stages": [
+        6
+      ],
+      "verified": true,
+      "year": 2025,
+      "finding": "Microsoft did not publish a 2025 diversity report after releasing one every year since 2019. It said it had moved to “stories, videos, and insights that show inclusion in action.”",
+      "apa": "Moon, M. (2025, November 22). Microsoft isn’t releasing a diversity report for 2025. *Engadget*.",
+      "url": "https://www.engadget.com/big-tech/microsoft-isnt-releasing-a-diversity-report-for-2025-180000401.html",
+      "notes": "Statement from chief communications officer Frank Shaw: \"We are not doing a traditional report this year as we’ve evolved beyond that to formats that are more dynamic and accessible — stories, videos, and insights that show inclusion in action.\" Engadget credits the original report to Stephen Totilo of Game File. Separately, Microsoft cut some DEI roles in July 2024; reports disagree on how many, so that is not used here."
+    }
+  ],
+  "programs": {
+    "title": "Diversity internships and early-career programs that ended or changed",
+    "note": "To be filled in. Each entry needs a company, the program, what changed, the date and a source that says so.",
+    "rows": [
+      {
+        "company": null,
+        "program": null,
+        "change": null,
+        "date": null,
+        "source": null,
+        "url": null,
+        "verified": false
+      },
+      {
+        "company": null,
+        "program": null,
+        "change": null,
+        "date": null,
+        "source": null,
+        "url": null,
+        "verified": false
+      },
+      {
+        "company": null,
+        "program": null,
+        "change": null,
+        "date": null,
+        "source": null,
+        "url": null,
+        "verified": false
+      }
+    ]
   }
 }

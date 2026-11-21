@@ -46,3 +46,13 @@
 .is-count .bc-val{flex-basis:72px}
 .is-count .bc-axis{grid-template-columns:210px minmax(0,1fr) 84px}
 @media (max-width:560px){ .is-count .bc-axis{grid-template-columns:minmax(0,1fr) 84px} }
+
+/* placeholder table for programs (lib/render.js programList) */
+.program-list{margin:0;border:1px solid var(--line);background:var(--fill);padding:22px 24px 18px;overflow-x:auto}
+.program-list figcaption{margin-bottom:14px}
+.program-list table{width:100%;border-collapse:collapse;min-width:560px}
+.program-list th{text-align:left;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--t2);font-weight:400;padding:8px 10px;border-bottom:1px solid var(--line)}
+.program-list td{padding:12px 10px;border-bottom:1px dashed var(--t4);font-size:14px;color:var(--t1)}
+.pending-cell{font-family:var(--mono);font-size:11px;color:var(--t2)}
+.program-list .chart-src{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}

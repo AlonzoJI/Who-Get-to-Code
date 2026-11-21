@@ -20,6 +20,7 @@ const pages = Object.fromEntries(
 //   <!-- @pipeline -->  <!-- @pipeline-source -->  <!-- @datasets -->  <!-- @timeline -->
 //   <!-- @studies <data-file> -->  <!-- @study-notes <data-file> -->
 //   <!-- @other-side <data-file> -->  <!-- @other-side-notes <data-file> -->
+//   <!-- @cards <data-file> <key> -->  <!-- @card-notes <data-file> <key> -->  <!-- @programs <data-file> -->
 //   <!-- @data-note <data-file> -->  <!-- @debate <data-file> -->  <!-- @cascade-intro <data-file> -->  <!-- @cascade-foot <data-file> -->
 //   <!-- @chart <data-file> <chart-id> -->  <!-- @chart-citations <data-file> -->  <!-- @fromclass <reading-id> -->
 function sitePartials() {
@@ -53,6 +54,11 @@ function sitePartials() {
           .replace(/<!-- @other-side ([\w-]+) -->/g, (_, file) => render.otherSide(readJson(file)))
           .replace(/<!-- @other-side-notes ([\w-]+) -->/g, (_, file) => render.otherSideNotes(readJson(file)))
           .replace(/<!-- @data-note ([\w-]+) -->/g, (_, file) => render.dataNote(readJson(file)))
+          .replace(/<!-- @cards ([\w-]+) ([\w-]+) -->/g, (_, file, key) =>
+            render.studyCards({ studies: readJson(file)[key] }, readJson('pipeline'))
+          )
+          .replace(/<!-- @card-notes ([\w-]+) ([\w-]+) -->/g, (_, file, key) => render.studyNotes({ studies: readJson(file)[key] }))
+          .replace(/<!-- @programs ([\w-]+) -->/g, (_, file) => render.programList(readJson(file)))
           .replace(/<!-- @debate ([\w-]+) -->/g, (_, file) => render.debateCard(readJson(file)))
           .replace(/<!-- @chart-citations ([\w-]+) -->/g, (_, file) => render.chartCitations(readJson(file)))
           .replace(/<!-- @studies ([\w-]+) -->/g, (_, file) => render.studyCards(readJson(file), readJson('pipeline')))

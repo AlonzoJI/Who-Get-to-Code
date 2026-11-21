@@ -207,5 +207,21 @@
       "Class-based admissions uses income as the measure of disadvantage. The national study in this section found evidence that Ivy Plus colleges pivoted toward class-based admissions after SFFA, yet the share of Black, Hispanic, Native American and Pacific Islander students at highly selective colleges still fell 4 to 5 percentage points. Income and race are linked, but one does not stand in for the other."
     ],
     "placeholder": "Add the page in Class and Schools where Rothstein compares Black and white students of the same social class. Wording not yet checked against the book."
+  },
+  {
+    "id": "workforce-loewen",
+    "section": "Workforce",
+    "heading": "James W. Loewen, “Handicapped by History: The Process of Hero-Making”",
+    "works": [
+      {
+        "cite": "James W. Loewen, “Handicapped by History: The Process of Hero-Making,” chapter 1 in Lies My Teacher Told Me: Everything Your American History Textbook Got Wrong. The New Press, 1995.",
+        "url": "https://justice.tougaloo.edu/truth/k-12/resources/lmttm-table-of-contents/"
+      }
+    ],
+    "idea": "Who shows up as a computer scientist in what students learn",
+    "tie": [
+      "Loewen argues that textbooks turn people into simple heroes by leaving out what makes them complicated, such as Helen Keller’s socialism or Woodrow Wilson’s racism. What gets left out shapes what students think is possible.",
+      "Computer science has hero stories too. When the people students hear about are mostly the same kind of person, students learn what a computer scientist is supposed to look like long before anyone hires them. Company diversity reports were one of the few public places a different picture showed up, and they are going away."
+    ]
   }
 ]
