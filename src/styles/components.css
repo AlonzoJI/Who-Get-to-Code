@@ -185,3 +185,23 @@
 .study .apa i{font-style:italic}
 .study .apa a{border-bottom:1px solid var(--t4);word-break:break-all}
 .study .apa a:hover{color:var(--t0);border-color:var(--t1)}
+
+/* sub-heading inside a section */
+.sub-h{margin:56px 0 18px;font-size:18px;font-weight:400}
+.stat-row .grid{grid-template-columns:minmax(0,1fr);max-width:620px}
+
+/* supporters vs outcome, side by side */
+.debate{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:40px;border:1px solid var(--line);background:var(--fill)}
+.debate-side{padding:22px 24px}
+.debate-side + .debate-side{border-left:1px solid var(--line)}
+.debate .label{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--t2);font-weight:400;margin:0 0 12px}
+.debate blockquote{margin:0 0 10px}
+.debate blockquote p{font-size:18px;line-height:1.45;color:var(--t0);margin:0}
+.debate p{color:var(--t1);font-size:14.5px;margin:0 0 10px}
+.debate p.debate-who{font-family:var(--mono);font-size:11.5px;color:var(--t2)}
+.debate p.chart-src{margin-top:14px;font-size:11px;color:var(--t2)}
+.debate .chart-src a{border-bottom:1px solid var(--t4)}
+@media (max-width:760px){
+  .debate{grid-template-columns:1fr}
+  .debate-side + .debate-side{border-left:0;border-top:1px solid var(--line)}
+}

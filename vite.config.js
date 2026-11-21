@@ -19,6 +19,7 @@ const pages = Object.fromEntries(
 //   <!-- @stats <data-file> -->  <!-- @citations <data-file> -->
 //   <!-- @pipeline -->  <!-- @pipeline-source -->  <!-- @datasets -->  <!-- @timeline -->
 //   <!-- @studies <data-file> -->  <!-- @study-notes <data-file> -->
+//   <!-- @debate <data-file> -->
 //   <!-- @chart <data-file> <chart-id> -->  <!-- @chart-citations <data-file> -->  <!-- @fromclass <reading-id> -->
 function sitePartials() {
   return {
@@ -35,7 +36,10 @@ function sitePartials() {
           .replace('<!-- @head -->', readPartial('head'))
           .replace('<!-- @nav -->', nav)
           .replace('<!-- @foot -->', readPartial('foot'))
-          .replace(/<!-- @stats ([\w-]+) -->/g, (_, file) => render.statGrid(readJson(file), 'Key figures'))
+          .replace(/<!-- @stats ([\w-]+) -->/g, (_, file) => {
+            const data = readJson(file);
+            return render.statGrid(Array.isArray(data) ? data : data.stats, 'Key figures');
+          })
           .replace(/<!-- @citations ([\w-]+) -->/g, (_, file) => render.citationList(readJson(file)))
           .replace('<!-- @pipeline -->', () => render.pipelineCards(readJson('pages')))
           .replace('<!-- @pipeline-source -->', () => render.pipelineSource(readJson('pipeline')))
@@ -43,6 +47,7 @@ function sitePartials() {
           .replace(/<!-- @chart ([\w-]+) ([\w-]+) -->/g, (_, file, id) =>
             render.barChart(readJson(file).charts.find((c) => c.id === id))
           )
+          .replace(/<!-- @debate ([\w-]+) -->/g, (_, file) => render.debateCard(readJson(file)))
           .replace(/<!-- @chart-citations ([\w-]+) -->/g, (_, file) => render.chartCitations(readJson(file)))
           .replace(/<!-- @studies ([\w-]+) -->/g, (_, file) => render.studyCards(readJson(file), readJson('pipeline')))
           .replace(/<!-- @study-notes ([\w-]+) -->/g, (_, file) => render.studyNotes(readJson(file)))

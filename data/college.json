@@ -1,0 +1,170 @@
+{
+  "_about": "College placements after SFFA (stage 04). Every number was checked against its source on 2026-11-21. Quotes in notes are verbatim. A record with verified false or value null renders as a placeholder.",
+  "charts": [
+    {
+      "id": "elite-declines",
+      "title": "Fall 2023 to fall 2025: how many elite colleges went down",
+      "measure": "Number of the 27 elite colleges in Bloomberg's analysis",
+      "max": 27,
+      "ticks": [
+        0,
+        9,
+        18,
+        27
+      ],
+      "records": [
+        {
+          "id": "bloomberg-black-share",
+          "stage": 4,
+          "metric": "Elite colleges with a smaller share of Black first-year students in fall 2025 than in fall 2023",
+          "group": "Smaller Black first-year share",
+          "value": 25,
+          "unit": "colleges",
+          "display": "25 of 27",
+          "data_year": "Fall 2023 vs. fall 2025 entering classes",
+          "year": 2026,
+          "source": "Liam Knox and Francesca Maglione, \"College Diversity Drops Again as Trump Ramps Up Scrutiny,\" Bloomberg Law, Jan. 14, 2026",
+          "source_short": "Bloomberg Law",
+          "url": "https://news.bloomberglaw.com/social-justice/college-racial-diversity-drops-again-as-trump-ramps-up-scrutiny",
+          "verified": true,
+          "accessed": "2026-11-21",
+          "notes": "Article text: 'In a Bloomberg analysis of data from 27 elite schools, all but two reported a smaller share of Black freshmen in fall 2025 than in fall 2023, the last class admitted before the affirmative action ban.' 25 = 27 minus 'all but two'. The visible text does not name the 27 schools."
+        },
+        {
+          "id": "bloomberg-hispanic-enrollment",
+          "stage": 4,
+          "metric": "Elite colleges with reduced Hispanic first-year enrollment, fall 2023 to fall 2025",
+          "group": "Lower Hispanic first-year enrollment",
+          "value": 21,
+          "unit": "colleges",
+          "display": "21 of 27",
+          "data_year": "Fall 2023 vs. fall 2025 entering classes",
+          "year": 2026,
+          "source": "Liam Knox and Francesca Maglione, \"College Diversity Drops Again as Trump Ramps Up Scrutiny,\" Bloomberg Law, Jan. 14, 2026",
+          "source_short": "Bloomberg Law",
+          "url": "https://news.bloomberglaw.com/social-justice/college-racial-diversity-drops-again-as-trump-ramps-up-scrutiny",
+          "verified": true,
+          "accessed": "2026-11-21",
+          "notes": "Article text: 'Some 21 schools saw reduced Hispanic enrollment among first-year students over that period.' Bloomberg says 'enrollment' here, not 'share' as it does for Black students, and does not say which. The same article: 'more than half the schools reported equal or higher Asian enrollment in the 2025 freshman class compared to 2023.'"
+        }
+      ]
+    },
+    {
+      "id": "elite-average-share",
+      "title": "Average first-year share at the same elite colleges, before and after",
+      "measure": "Share of first-year students, averaged across colleges",
+      "records": [
+        {
+          "id": "avg-black-2023",
+          "stage": 4,
+          "metric": "Average Black share of first-year students, fall 2023",
+          "group": "Black, fall 2023",
+          "value": null,
+          "unit": "percent",
+          "display": null,
+          "data_year": "Fall 2023",
+          "year": null,
+          "source": "Not yet compiled. Candidate: James S. Murphy, The 2025 Post-SFFA Enrollment Tracker, Jan. 7, 2026",
+          "source_short": "Pending",
+          "url": "https://jamessmurphy.com/2026/01/07/the-2025-post-sffa-enrollment-tracker/",
+          "verified": false,
+          "accessed": "2026-11-21",
+          "notes": "The tracker lists first-year enrollment shares by race for 29 colleges, comparing the average of the 2022 and 2023 classes with 2024 and 2025. An average across colleges has not been computed or checked yet."
+        },
+        {
+          "id": "avg-black-2025",
+          "stage": 4,
+          "metric": "Average Black share of first-year students, fall 2025",
+          "group": "Black, fall 2025",
+          "value": null,
+          "unit": "percent",
+          "display": null,
+          "data_year": "Fall 2025",
+          "year": null,
+          "source": "Not yet compiled. Candidate: James S. Murphy, The 2025 Post-SFFA Enrollment Tracker, Jan. 7, 2026",
+          "source_short": "Pending",
+          "url": "https://jamessmurphy.com/2026/01/07/the-2025-post-sffa-enrollment-tracker/",
+          "verified": false,
+          "accessed": "2026-11-21",
+          "notes": "See above."
+        },
+        {
+          "id": "avg-hispanic-2023",
+          "stage": 4,
+          "metric": "Average Hispanic share of first-year students, fall 2023",
+          "group": "Hispanic, fall 2023",
+          "value": null,
+          "unit": "percent",
+          "display": null,
+          "data_year": "Fall 2023",
+          "year": null,
+          "source": "Not yet compiled. Candidate: James S. Murphy, The 2025 Post-SFFA Enrollment Tracker, Jan. 7, 2026",
+          "source_short": "Pending",
+          "url": "https://jamessmurphy.com/2026/01/07/the-2025-post-sffa-enrollment-tracker/",
+          "verified": false,
+          "accessed": "2026-11-21",
+          "notes": "See above."
+        },
+        {
+          "id": "avg-hispanic-2025",
+          "stage": 4,
+          "metric": "Average Hispanic share of first-year students, fall 2025",
+          "group": "Hispanic, fall 2025",
+          "value": null,
+          "unit": "percent",
+          "display": null,
+          "data_year": "Fall 2025",
+          "year": null,
+          "source": "Not yet compiled. Candidate: James S. Murphy, The 2025 Post-SFFA Enrollment Tracker, Jan. 7, 2026",
+          "source_short": "Pending",
+          "url": "https://jamessmurphy.com/2026/01/07/the-2025-post-sffa-enrollment-tracker/",
+          "verified": false,
+          "accessed": "2026-11-21",
+          "notes": "See above."
+        }
+      ]
+    }
+  ],
+  "stats": [
+    {
+      "id": "ace-29-black",
+      "stage": 4,
+      "metric": "Elite institutions reporting fall 2025 data where Black enrollment fell",
+      "group": "29 elite institutions",
+      "value": 24,
+      "value_secondary": 16,
+      "unit": "institutions",
+      "display": "24 of 29",
+      "display_secondary": "Latino enrollment fell at 16 of 29",
+      "caption": "elite institutions reporting fall 2025 data saw Black enrollment fall.",
+      "data_year": "Fall 2025 entering classes; comparison year not stated",
+      "year": 2026,
+      "source": "Julie J. Park, \"Is Race-Conscious Admissions Really Dead?\" Higher Education Today (American Council on Education), Apr. 13, 2026, citing James S. Murphy's post-SFFA enrollment tracker",
+      "source_short": "Higher Ed Today",
+      "url": "https://www.higheredtoday.org/2026/04/13/is-race-conscious-admissions-really-dead/",
+      "verified": true,
+      "accessed": "2026-11-21",
+      "notes": "Article text: 'Out of 29 elite institutions reporting data for fall 2025, Black enrollment fell at 24 and Latino enrollment fell at 16.' The article does not say which year it compares to or whether 'enrollment' means share or count. Its data link is Murphy's tracker, which reports shares and uses the average of the 2022 and 2023 classes as its baseline. This is a different, larger set of colleges than Bloomberg's 27, so the two counts are not directly comparable."
+    }
+  ],
+  "debate": {
+    "supporters": {
+      "label": "What supporters of the ruling argue",
+      "quote": "Eliminating racial discrimination means eliminating all of it.",
+      "who": "Chief Justice John Roberts, for the majority",
+      "source": {
+        "cite": "SFFA v. Harvard, opinion of the Court, slip op. at 15",
+        "year": 2023,
+        "url": "https://www.supremecourt.gov/opinions/22pdf/20-1199_hgdj.pdf"
+      }
+    },
+    "outcome": {
+      "label": "What the outcome data shows",
+      "text": "At {bloomberg-black-share} elite colleges, Black students made up a smaller share of the fall 2025 first-year class than of the fall 2023 class. A separate count found Black enrollment down at {ace-29-black} elite institutions reporting fall 2025 data.",
+      "records": [
+        "bloomberg-black-share",
+        "ace-29-black"
+      ]
+    }
+  }
+}
