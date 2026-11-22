@@ -18,20 +18,36 @@ More high schools offer Computer Science than ever before but the students who t
 # Hard rules
 
 - NEVER invent numbers. Every figure must be real, cited and dated
-- All data lives in /data as JSON or CSV. Every record has source, year, url and a verified true/false flag
+- Curated data starts in /data as JSON or CSV, which is the seed data a script loads into MongoDB. Every record, in a file or in the database, has source, year, url and a verified true/false flag
 - Anything not yet verified renders with a visible "placeholder data" badge
 - Every chart shows its source and year directly under it
 - Present the rollback debate fairly. Each policy section includes a short card on what supporters of the change argue, with a cited source, next to what the outcome data shows
 - Do not write my personal story or reflection copy. Leave marked placeholders
 - Every section ends with a "From class" card that ties it to a course reading (I will give you the pairings in each part)
 
+# Hard rules for the database and contributions (added Nov 21, 2026)
+
+- The MongoDB connection string lives only in the `MONGODB_URI` environment variable. Never commit it. `.env` is gitignored and `.env.example` shows the variable names with no real values
+- Every submission is saved with `status: "pending"`. Nothing a visitor submits appears on the site until I approve it
+- Never collect student names or any information that could identify a student
+- Any count under 10 is never shown publicly, so small schools cannot be identified
+- Contact emails are stored for follow-up only and are never shown on the site or returned by any public API
+- Every form says clearly how the answers will be used and asks for consent to publish
+- All earlier hard rules still apply. Never invent numbers, and every figure keeps source, year, url and verified
+
 # Tech
 
-Static site I can deploy free to GitHub Pages or Vercel. Keep it simple (plain HTML, CSS and JS or Vite). D3 or Observable Plot for charts. Responsive, keyboard accessible and readable contrast.
+Vite frontend (plain HTML, CSS and JS) plus a small backend of Vercel serverless functions in `/api`, using the official MongoDB Node.js driver against MongoDB Atlas (free tier). MongoDB was chosen because the data comes in many different shapes. Deploys on Vercel. D3 or Observable Plot for charts. Responsive, keyboard accessible and readable contrast.
+
+# Contributors
+
+Besides the main audience, two groups can contribute:
+- K-12 Computer Science educators can share what they see in their schools
+- STEM outreach leaders can list their programs
 
 # Structure & conventions (agreed Nov 20, 2026)
 
-- Vite multi-page site. Every `.html` in the repo root is a page. Run with `corepack pnpm dev`, build with `corepack pnpm build` (output in `dist/`, relative paths, so it works on GitHub Pages or Vercel).
+- Vite multi-page site. Every `.html` in the repo root is a page. Run with `corepack pnpm dev`, build with `corepack pnpm build` (output in `dist/`, relative paths).
 - Shared markup lives in `partials/` (head, nav, foot). Pages use HTML comment markers that `vite.config.js` replaces at build time using `lib/render.js`:
   `<!-- @head -->`, `<!-- @nav -->`, `<!-- @foot -->`, `<!-- @stats <data-file> -->`, `<!-- @citations <data-file> -->`, `<!-- @pipeline -->`, `<!-- @fromclass <reading-id> -->`.
   `<body data-page="...">` sets the active nav link.
@@ -43,7 +59,7 @@ Static site I can deploy free to GitHub Pages or Vercel. Keep it simple (plain H
 - Illustrative animations (no verified flow numbers) must carry the "Illustrative, not data" badge (`.badge-illus`) and say so in text; see the cascade explainer (`src/college/cascade.js`, `data/college.json` → `cascade`, markers `@cascade-intro` / `@cascade-foot`). Qualitative research findings go in a file's `research[]` and print in the technical version via `@chart-citations`.
 - Any list in a data file shaped like `studies[]` can render as numbered cards with `<!-- @cards <file> <key> -->` (notes via `@card-notes`); a `programs` block renders as a placeholder table with `<!-- @programs <file> -->`. Stage pages double as section pages: stage 04 = College placements, stage 06 = Workforce.
 - `sources.html` (Methods and sources) builds its figure table and counts from every file in `/data` (`collectFigures` in `lib/render.js`; add new data files to `FIGURE_PAGES`). The bibliography lives in `data/bibliography.json` as APA 7 strings; `tests/bibliography.test.js` fails if any URL in `/data` has no entry, so add a reference whenever you add a source.
-- Deploys to Vercel as a static Vite site (`vercel.json`: pnpm install --frozen-lockfile, pnpm build, output `dist`). No server code, no database, no environment variables. `corepack pnpm placeholders` prints every placeholder still on the site.
+- Deploys to Vercel (`vercel.json`: pnpm install --frozen-lockfile, pnpm build, output `dist`; functions in `/api`). `MONGODB_URI` is set in Vercel project settings and in a local `.env`, never in code. `corepack pnpm placeholders` prints every placeholder still on the site.
 - Accessibility baseline (Nov 21, 2026): axe-core reports zero WCAG 2.1 AA violations on all pages in dark, light and 375px views. Every page has one H1 and no skipped heading levels; horizontally scrolling tables are focusable regions.
 - Research studies render as numbered cards from `data/<file>.json` → `studies[]` with `<!-- @studies <file> -->` and `<!-- @study-notes <file> -->`. Each study has a one-sentence `finding` written from its abstract, an APA 7 `apa` string (`*text*` = italics), `url`, `stages` and `notes`.
 - The nav holds eight links and only just fits the 1188px content width; adding another link needs shorter labels or a different nav pattern.
