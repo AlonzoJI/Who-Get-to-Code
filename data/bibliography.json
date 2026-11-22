@@ -3,6 +3,12 @@
   "entries": [
     {
       "kind": "source",
+      "apa": "Connolly, C. (2025, April 30). With Meta University's closure, a sign of changing times in tech. *Work Shift*.",
+      "url": "https://workshift.org/with-meta-universitys-closure-a-sign-of-changing-times-in-tech/",
+      "type": "secondary"
+    },
+    {
+      "kind": "source",
       "apa": "Allwork.Space News Team. (2025, November 7). Google, Meta, and Microsoft quietly end diversity reporting as DEI pullback widens. *Allwork.Space*.",
       "url": "https://allwork.space/?p=1040557",
       "type": "secondary"

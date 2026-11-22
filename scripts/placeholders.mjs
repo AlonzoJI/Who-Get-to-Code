@@ -31,7 +31,7 @@ for (const [file, rows] of Object.entries(byFile)) {
 
 // 2. Placeholder rows in tables (programs list).
 for (const [file, data] of dataFiles) {
-  if (data.programs) section(`data/${file}: ${data.programs.title}`, [`- ${data.programs.rows.filter((r) => !r.verified).length} empty rows. Needs: company, program, what changed, date and a source.`]);
+  if (data.programs?.rows.some((r) => !r.verified)) section(`data/${file}: ${data.programs.title}`, [`- ${data.programs.rows.filter((r) => !r.verified).length} empty rows. Needs: company, program, what changed, date and a source.`]);
 }
 
 // 3. Readings and references with pending details.

@@ -318,34 +318,19 @@
   ],
   "programs": {
     "title": "Diversity internships and early-career programs that ended or changed",
-    "note": "To be filled in. Each entry needs a company, the program, what changed, the date and a source that says so.",
+    "note": "Only programs with a source that says what changed are listed. One so far.",
     "rows": [
       {
-        "company": null,
-        "program": null,
-        "change": null,
-        "date": null,
-        "source": null,
-        "url": null,
-        "verified": false
-      },
-      {
-        "company": null,
-        "program": null,
-        "change": null,
-        "date": null,
-        "source": null,
-        "url": null,
-        "verified": false
-      },
-      {
-        "company": null,
-        "program": null,
-        "change": null,
-        "date": null,
-        "source": null,
-        "url": null,
-        "verified": false
+        "company": "Meta",
+        "program": "Meta University (10-week program for college freshmen and sophomores)",
+        "change": "Took its final class in 2025 and is closing. A Meta spokesperson confirmed it had accepted its final class.",
+        "date": "Closure memo Jan. 10, 2025; reported Apr. 30, 2025",
+        "source": "Work Shift, Apr. 30, 2025",
+        "url": "https://workshift.org/with-meta-universitys-closure-a-sign-of-changing-times-in-tech/",
+        "year": 2025,
+        "verified": true,
+        "accessed": "2026-11-22",
+        "notes": "Colleen Connolly, \"With Meta University's Closure, a Sign of Changing Times in Tech,\" Work Shift, Apr. 30, 2025. Text: 'Meta will soon bring in the last cohort of students at Meta University, its diversity-focused training program that had been a model for the industry.' 'Tracy Clayton, a spokesperson for Meta, confirmed that Meta University has accepted its final class.' 'Then on Jan. 10, Meta sent out a memo indicating the closure of the training program.' 'Meta University was for freshmen and sophomores.' 'Within the last year, language on the website changed from targeting “students from underrepresented communities” to “students with a range of backgrounds, experiences and perspectives.”' The article does not give the number of students served or say whether a replacement program exists. Searched Nov 22, 2026 for other tech companies' internship or early-career programs ended, renamed or opened to all since January 2025; found none with a source that says so. Not included: Google Women Techmakers (moved to Technovation in Oct. 2025, a community program, not an internship) and Hack.Diversity (a nonprofit, not a company)."
       }
     ]
   }
