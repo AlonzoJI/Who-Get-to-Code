@@ -17,9 +17,10 @@
           sentence was saved in the data files under <code>/data</code>. Anything not yet checked is shown
           with a placeholder badge.</p>
 
-        <div class="mt-40">
+        <div class="mt-40" id="figure-summary">
           <!-- @figure-summary -->
         </div>
+        <p class="fig-origin" id="figure-origin" role="status">Showing the copy built from the /data files when the site was last deployed.</p>
 
         <div class="methods-grid">
           <section>
@@ -60,12 +61,83 @@
         </aside>
       </section>
 
+      <section class="sec" aria-labelledby="kinds-title">
+        <span class="eyebrow">Two kinds of data</span>
+        <h2 id="kinds-title">Published statistics and community submissions are kept apart</h2>
+        <div class="kinds-grid">
+          <section class="kind">
+            <h3>Published statistics</h3>
+            <p>Figures from reports, studies, government data and news coverage. Each one names its source,
+              year and link, and was checked against the source before it was marked verified. These are the
+              numbers in the charts, stat tiles, pipeline and timeline, and the only ones in the figure table
+              below.</p>
+          </section>
+          <section class="kind">
+            <h3>Community submissions</h3>
+            <p>Answers that K-12 educators and STEM outreach leaders send through the forms on
+              <a href="share.html">Share from your classroom</a> and the <a href="outreach.html">outreach
+              directory</a>. They describe what people see in their own schools and programs. They are
+              self-reported and <b>not a representative sample</b>: whoever chooses to answer is counted, so
+              they can't stand in for all schools or all programs. They appear only after review, are always
+              labeled as self-reported, and are never mixed into the published statistics.</p>
+          </section>
+        </div>
+      </section>
+
+      <section class="sec" aria-labelledby="privacy-title">
+        <span class="eyebrow">Privacy</span>
+        <h2 id="privacy-title">What the forms collect and what anyone can see</h2>
+        <p class="lede">Nothing anyone submits appears on the site until the site's author reviews and approves
+          it. Both forms ask for consent to publish before they can be sent.</p>
+        <div class="privacy-grid">
+          <section class="privacy">
+            <h3>Share from your classroom (educators)</h3>
+            <p><b>Asks for:</b> your role and state; your school's type, setting and grades; which CS courses
+              it offers; rough ranges for the share of girls, students of color and low-income students in CS
+              classes (for example "under 25%"); barriers; whether anything changed since 2025; what has worked;
+              and, if you choose, your name, school and an email.</p>
+            <p><b>Shown publicly:</b> combined counts across all approved answers, never one person's answers.
+              No counts are shown until at least 10 answers are approved. A quote may appear if the author picks
+              one of your written answers, copied word for word, with your role and grades. Your state is shown
+              only if at least 10 approved answers come from it, and your name and school only if you ticked the
+              box to allow it.</p>
+            <p><b>Kept private:</b> your email, your name and school unless you allowed them, and your full
+              set of answers.</p>
+          </section>
+          <section class="privacy">
+            <h3>Outreach directory (program leaders)</h3>
+            <p><b>Asks for:</b> the program's name, organization, website, grades, who it serves, state and
+              city, format, cost and scholarships, how teachers can connect students, whether funding or
+              partnerships changed since 2025, and a contact name and email.</p>
+            <p><b>Shown publicly:</b> the program listing: name, organization, website, grades, who it serves,
+              place, format, cost, scholarships and how to connect students. The funding answer appears only
+              inside a combined summary across all programs.</p>
+            <p><b>Kept private:</b> the contact name and email, and any details you give about funding.</p>
+          </section>
+        </div>
+        <ul class="limits privacy-rules">
+          <li><b>No student information.</b> Neither form asks about any individual student. Educators give
+            rough ranges for groups, never names or counts of students. If an answer mentions a student by name
+            or in a way that could identify them, it is edited out or the answer is rejected.</li>
+          <li><b>Small numbers stay hidden.</b> Any count under 10 is never shown, so a small school or program
+            can't be picked out. When hiding one number would let you work it out from the total, a second number
+            is hidden too.</li>
+          <li><b>Emails are never shown.</b> Contact emails are used only to follow up and are never shown on
+            the site or returned by any public part of it.</li>
+          <li><b>Spam protection without tracking.</b> To limit repeated submissions, the site keeps a scrambled
+            (hashed) version of your connection's address for one hour and then deletes it. The address itself
+            is never stored.</li>
+        </ul>
+      </section>
+
       <section class="sec" aria-labelledby="figures-title">
         <span class="eyebrow">Every figure</span>
         <h2 id="figures-title">Every figure on the site, by page</h2>
-        <p class="lede">This table is built from the files in <code>/data</code> each time the site is built,
-          so it always matches what the pages show.</p>
-        <div class="mt-24">
+        <p class="lede">This table reads from the site's database, so it matches what the charts show. If the
+          database can't be reached, you see the copy built from the <code>/data</code> files at deploy time
+          instead. "Verified" means the figure was checked word for word against its source; "No" means it is
+          still a placeholder.</p>
+        <div class="mt-24" id="figure-table">
           <!-- @figure-table -->
         </div>
       </section>
@@ -81,5 +153,6 @@
     </main>
 
     <!-- @foot -->
+    <script type="module" src="/src/methods/figures.js"></script>
   </body>
 </html>

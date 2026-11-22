@@ -302,3 +302,13 @@
 @media (max-width:700px){ .od-cta{grid-template-columns:1fr} }
 .od-cta + .od-cta{margin-top:16px}
 .od-cta p a{color:var(--t1);border-bottom:1px solid var(--t4)}
+.fig-no{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--t2);margin-right:6px}
+.fig-origin{margin:10px 0 0;font-family:var(--mono);font-size:11.5px;color:var(--t2)}
+.kinds-grid,.privacy-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:24px}
+.kind,.privacy{border:1px solid var(--line);background:var(--fill);padding:20px 22px}
+.kind h3,.privacy h3{font-size:16px;margin:0 0 10px}
+.kind p,.privacy p{color:var(--t1);font-size:14.5px;margin:0 0 10px}
+.kind a,.privacy a{border-bottom:1px solid var(--t4)}
+.privacy b,.kind b{font-weight:500;color:var(--t0)}
+.privacy-rules{margin-top:24px;max-width:80ch}
+@media (max-width:860px){ .kinds-grid,.privacy-grid{grid-template-columns:1fr} }

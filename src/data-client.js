@@ -12,7 +12,9 @@ export function loadDatapoints() {
       if (!res.ok || !res.headers.get('content-type')?.includes('application/json')) return null;
       const body = await res.json();
       if (!Array.isArray(body?.data)) return null;
-      return new Map(body.data.map((d) => [d.recordId, d]));
+      const map = new Map(body.data.map((d) => [d.recordId, d]));
+      map.all = body.data;
+      return map;
     } catch {
       return null;
     }

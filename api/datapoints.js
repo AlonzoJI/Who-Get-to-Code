@@ -4,7 +4,8 @@
 import { getDb } from '../lib/mongodb.js';
 import { datapointFilter, datapointQuery, json, parseQuery, withDb } from '../lib/api.js';
 
-const PROJECTION = { _id: 0, seededAt: 0, createdAt: 0 };
+// seededAt is kept so the Methods page can say when the database was last loaded.
+const PROJECTION = { _id: 0, createdAt: 0 };
 
 export function GET(request) {
   const { query, error } = parseQuery(datapointQuery, request);
