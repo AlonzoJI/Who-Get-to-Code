@@ -293,3 +293,12 @@
 .bib li a:hover{color:var(--t0)}
 .bib .pill{text-indent:0;margin-left:6px;font-size:10px}
 .bib .badge-ph{text-indent:0}
+
+/* link card on the Next steps page */
+.od-cta{margin-top:56px;border:1px solid var(--line);background:var(--fill);padding:24px 24px 22px;
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px 40px;align-items:center}
+.od-cta h2{font-size:22px;margin:0 0 8px}
+.od-cta p{color:var(--t2);font-size:14.5px;margin:0;max-width:62ch}
+@media (max-width:700px){ .od-cta{grid-template-columns:1fr} }
+.od-cta + .od-cta{margin-top:16px}
+.od-cta p a{color:var(--t1);border-bottom:1px solid var(--t4)}

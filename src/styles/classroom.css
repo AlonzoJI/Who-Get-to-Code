@@ -1,0 +1,100 @@
+/* ── Share from your classroom (share.html) ───────────────
+   Builds on the self-check step card (self-check.css: .sc, .sc-bar,
+   .sc-option, .sc-note, .sc-error, .sc-actions). */
+
+/* checkboxes use the same option row as the self-check radios */
+.sc-option input[type="checkbox"]{border-radius:2px}
+.sc-option input[type="checkbox"]::before{border-radius:1px;width:8px;height:8px}
+
+.cf-group + .cf-group{margin-top:26px}
+.cf-legend{display:block;padding:0;margin:0 0 6px;font-size:16px;font-weight:400;color:var(--t0)}
+.cf-hint{margin:0 0 12px;font-size:13.5px;color:var(--t2);max-width:66ch}
+.cf-legend + .sc-options,.cf-legend + .cf-scale{margin-top:12px}
+.cf-cols{grid-template-columns:repeat(2,minmax(0,1fr));max-width:880px}
+.cf-inline{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));max-width:640px}
+
+/* text fields and the state picker */
+.cf-label{display:block;margin:20px 0 8px;font-family:var(--mono);font-size:11px;color:var(--t2)}
+.cf-label .opt{color:var(--t2)}
+.cf-input,.cf-select{width:100%;max-width:420px;font:inherit;font-size:14.5px;color:var(--t1);
+  background:var(--fill);border:1px solid var(--line);padding:10px 12px}
+.cf-select{appearance:none;-webkit-appearance:none;cursor:pointer;
+  background-image:linear-gradient(45deg,transparent 50%,var(--t2) 50%),linear-gradient(135deg,var(--t2) 50%,transparent 50%);
+  background-position:calc(100% - 18px) 50%,calc(100% - 13px) 50%;background-size:5px 5px;background-repeat:no-repeat}
+.cf-select option{background:var(--bg);color:var(--t0)}
+.cf-input:focus-visible,.cf-select:focus-visible{outline:1px solid var(--focus);outline-offset:2px}
+.sc-note.cf-long{min-height:120px}
+[aria-invalid="true"]{border-color:var(--st-warn) !important}
+
+/* share-of-students questions: one row of ranges per group */
+.cf-scale{border:0;margin:0;padding:14px 0;min-width:0;border-bottom:1px solid var(--line-soft);max-width:880px}
+.cf-scale:first-of-type{border-top:1px solid var(--line-soft)}
+.cf-scale legend{float:left;width:180px;padding:9px 0 0;font-size:14.5px;color:var(--t1)}
+.cf-scale .sc-options{grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin-left:180px;max-width:none}
+.cf-scale .sc-option{padding:9px 10px;font-size:13px}
+
+/* how answers are used */
+.cf-use{margin-top:28px;max-width:80ch;border:1px solid var(--line);border-left:2px solid var(--cat-3);
+  background:var(--fill);padding:18px 22px}
+.cf-use h2{font-size:16px;font-weight:500;margin:0 0 10px}
+.cf-use ul{margin:0;padding-left:18px;color:var(--t1);font-size:14px;line-height:1.65}
+.cf-use li + li{margin-top:4px}
+.cf-use b{font-weight:500;color:var(--t0)}
+
+.cf-consent{margin-top:24px;max-width:640px}
+.cf-consent .sc-option{align-items:flex-start;border-color:var(--t4)}
+.cf-consent .sc-option input{margin-top:3px}
+.cf-consent small{display:block;color:var(--t2);font-size:13px;margin-top:4px}
+.cf-req{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--t2);margin-left:6px}
+
+/* honeypot: off screen for people, still in the form for bots */
+.cf-hp{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+
+.cf-issues{margin:10px 0 0;padding-left:18px;font-size:13.5px;color:var(--st-warn-text)}
+.cf-issues button{font:inherit;color:inherit;background:none;border:0;padding:0;text-decoration:underline;cursor:pointer}
+
+/* thank-you screen */
+.cf-done{max-width:62ch}
+.cf-done p{color:var(--t1);font-size:15px;line-height:1.65;margin:0 0 12px}
+.cf-done .btn-group{margin-top:22px}
+.cf-done .pill{margin-bottom:16px}
+
+@media (max-width:760px){
+  .cf-cols{grid-template-columns:1fr}
+  .cf-scale legend{float:none;width:auto;padding:0 0 10px}
+  .cf-scale .sc-options{margin-left:0;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cf-scale .sc-option:last-child{grid-column:1 / -1}
+  .cf-input,.cf-select{max-width:none}
+}
+
+/* ── From the classroom (from-the-classroom.html) ───────── */
+.cr-label{display:inline-flex;align-items:center;gap:8px;margin-top:22px;font-family:var(--mono);font-size:11px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--t1);border:1px solid var(--t4);padding:4px 10px}
+.cr-label::before{content:"";width:6px;height:6px;background:var(--cat-3)}
+.cr-status{margin-top:40px;max-width:66ch;color:var(--t1);font-size:15px}
+.cr-status .v{display:block;font-family:var(--mono);font-weight:300;font-size:44px;line-height:1;color:var(--t0);margin-bottom:10px}
+.cr-charts{margin-top:28px}
+.cr-charts .bar-chart:first-child{grid-column:1 / -1}
+.is-suppressed .bc-track{border:1px dashed var(--t4);border-left:1px solid var(--axis)}
+.is-suppressed .bc-val{color:var(--t2)}
+
+.cr-quotes{margin-top:8px}
+.cr-quote{display:flex;flex-direction:column;margin:0}
+.cr-quote blockquote{margin:0;font-size:16px;line-height:1.6;color:var(--t0);font-weight:300}
+.cr-quote blockquote p{margin:0}
+.cr-quote blockquote p::before{content:"\201C"}
+.cr-quote blockquote p::after{content:"\201D"}
+.cr-quote figcaption{margin-top:auto;padding-top:20px;font-family:var(--mono);font-size:11px;color:var(--t2);line-height:1.6}
+.cr-quote figcaption b{display:block;color:var(--t1);font-weight:400}
+.cr-empty{color:var(--t2);font-size:14.5px;max-width:66ch;border:1px dashed var(--t4);padding:18px 20px;margin:0}
+
+/* containers before the scripts mount */
+#classroom-form{margin-top:28px}
+#classroom-form:not(.sc){border:1px solid var(--line)}
+#classroom-form > .pl-nojs{margin:0;padding:20px 16px;color:var(--t2);font-size:14px}
+.cr-status .pl-nojs{color:var(--t2)}
+.lede a,.cf-use a{color:var(--t0);border-bottom:1px solid var(--t4)}
+.lede a:hover,.cf-use a:hover{border-color:var(--t0)}
+[aria-invalid="true"] .sc-option,[aria-invalid="true"] > .sc-options .sc-option{border-color:var(--st-warn)}
+/* step headings take focus; keep them clear of the sticky nav (two rows below 1260px) */
+.cf .sc-question{scroll-margin-top:140px}

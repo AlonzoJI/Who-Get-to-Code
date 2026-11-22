@@ -1,0 +1,112 @@
+/* ── STEM outreach directory (outreach.html) ───────────── */
+
+/* filter bar */
+.od-filters{display:grid;grid-template-columns:minmax(0,1.6fr) repeat(4,minmax(0,1fr)) auto;gap:12px;align-items:end;
+  border:1px solid var(--line);background:var(--fill);padding:16px 18px}
+.od-field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.od-field label{font-family:var(--mono);font-size:11px;color:var(--t2);letter-spacing:.02em}
+.of-field > label,.of-group > legend{font-size:14px;color:var(--t1);font-weight:500}
+.od-filters input,.od-filters select,.of input[type="text"],.of input[type="url"],.of input[type="email"],.of select,.of textarea{
+  width:100%;font:inherit;font-size:14px;color:var(--t1);background:var(--bg);border:1px solid var(--line);
+  padding:9px 11px;min-height:40px;transition:border-color .13s}
+.od-filters select,.of select{appearance:none;-webkit-appearance:none;padding-right:30px;cursor:pointer;
+  background-image:linear-gradient(45deg,transparent 50%,var(--t2) 50%),linear-gradient(135deg,var(--t2) 50%,transparent 50%);
+  background-position:calc(100% - 15px) 50%,calc(100% - 10px) 50%;background-size:5px 5px;background-repeat:no-repeat}
+.od-filters select option,.of select option{background:var(--bg);color:var(--t1)}
+.od-filters input:hover,.od-filters select:hover,.of input:hover,.of select:hover,.of textarea:hover{border-color:var(--t4)}
+.od-filters :focus-visible,.of :focus-visible{outline:1px solid var(--focus);outline-offset:2px}
+.od-filters .btn{min-height:40px}
+.od-note{margin:10px 0 0;max-width:78ch;color:var(--t2);font-size:13.5px}
+.od-note-lead{margin:0 0 16px}
+@media (max-width:1060px){
+  .od-filters{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .od-search{grid-column:1 / -1}
+  .od-filters .btn{justify-self:start}
+}
+@media (max-width:480px){ .od-filters{grid-template-columns:1fr} }
+
+.od-count{margin:28px 0 14px;font-family:var(--mono);font-size:12px;color:var(--t1)}
+.od-empty{color:var(--t2);font-size:14px}
+
+/* program cards */
+.od-cards:empty{display:none}
+.od-card{display:flex;flex-direction:column}
+.od-org{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--t2);margin:0 0 8px;overflow-wrap:anywhere}
+.od-card h3{font-size:17px;margin:0 0 6px;overflow-wrap:anywhere}
+.od-where{font-size:13.5px;color:var(--t1);margin:0 0 12px}
+.od-aud{font-size:14px;color:var(--t2);margin:0 0 14px;white-space:pre-line;overflow-wrap:anywhere}
+.od-tags{list-style:none;margin:0 0 16px;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.od-tags .pill{white-space:normal}
+.od-connect{border-top:1px solid var(--line-soft);padding-top:12px}
+.od-label{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--t2);margin:0 0 6px}
+.od-connect p:last-child{font-size:14px;color:var(--t1);margin:0;white-space:pre-line;overflow-wrap:anywhere}
+.od-card .card-foot{padding-top:18px}
+.od-card .btn.text{padding-left:0}
+.od-self{font-family:var(--mono);font-size:10.5px;color:var(--t2)}
+
+/* funding chart */
+.od-funding{max-width:760px}
+.od-chart .bc th{width:170px}
+.od-chart .bc-axis{grid-template-columns:170px minmax(0,1fr) 84px}
+
+/* notes: privacy, thanks, error (the last two show via :target for no-JS posts) */
+.od-private{border:1px solid var(--line);border-left:2px solid var(--cat-3);background:var(--fill);
+  padding:14px 18px;font-size:14px;color:var(--t2);max-width:80ch}
+.od-private p{margin:0 0 8px}
+.od-private p:last-child{margin:0}
+.od-private b{color:var(--t1);font-weight:500}
+.od-private.is-error{border-left-color:var(--st-warn)}
+#submitted,#submit-error{display:none;margin-top:24px}
+#submitted:target,#submit-error:target{display:block}
+.of-done{margin-top:8px}
+.of-done:focus{outline:none}
+
+/* submission form */
+.of{max-width:780px}
+.of-use{margin-bottom:28px}
+.of-section{border:0;border-top:1px solid var(--line);margin:0 0 8px;padding:20px 0 4px;min-width:0}
+.of .of-legend{float:left;width:100%;padding:0;margin:0 0 18px;font-family:var(--sans);font-size:16px;font-weight:500;
+  color:var(--t0);letter-spacing:-.01em}
+.of-legend + *{clear:left}
+.of-field{margin:0 0 20px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.of-group{border:0;padding:0}
+.of-group legend{padding:0;margin-bottom:6px}
+.of-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px}
+@media (max-width:640px){ .of-row{grid-template-columns:1fr} }
+.of-hint{margin:0;font-size:13px;color:var(--t2);max-width:70ch}
+.of textarea{resize:vertical;min-height:84px;line-height:1.55}
+.of-opt{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--t2);
+  border:1px solid var(--line);padding:0 5px;margin-left:6px}
+
+.of-choices{display:flex;flex-wrap:wrap;gap:8px}
+.of-choice{display:inline-flex;align-items:center;gap:10px;padding:9px 12px;border:1px solid var(--line);cursor:pointer;
+  font-family:var(--sans)!important;font-size:14px!important;color:var(--t1)!important;letter-spacing:0!important;
+  transition:border-color .13s,background-color .13s}
+.of-choice:hover{background:var(--fill);border-color:var(--t4)}
+.of-choice:has(input:checked){border-color:var(--t1);background:var(--fill-2);color:var(--t0)!important}
+.of-choice input{appearance:none;-webkit-appearance:none;width:14px;height:14px;margin:0;flex:0 0 14px;
+  border:1px solid var(--t2);display:grid;place-items:center;cursor:pointer}
+.of-choice input[type="radio"]{border-radius:50%}
+.of-choice input::before{content:"";width:6px;height:6px;background:var(--t0);transform:scale(0);transition:transform .12s}
+.of-choice input[type="radio"]::before{border-radius:50%}
+.of-choice input:checked::before{transform:scale(1)}
+.of-choice input:focus-visible{outline:1px solid var(--focus);outline-offset:3px}
+.of-solo{align-self:flex-start}
+.of-consent{border-top:1px solid var(--line);padding-top:20px}
+.of-consent .of-choice{align-items:flex-start;line-height:1.5}
+.of-consent .of-choice input{margin-top:4px}
+
+.of-error{margin:0;min-height:0;font-family:var(--mono);font-size:11.5px;color:var(--st-warn-text)}
+.of-error:empty{display:none}
+.has-error input:not([type="checkbox"]):not([type="radio"]),.has-error select,.has-error textarea{border-color:var(--st-warn)}
+.has-error .of-choice{border-color:var(--st-warn)}
+
+/* honeypot: off screen for people, still in the markup for bots */
+.of-trap{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+
+.of-status{min-height:1.4em;margin:4px 0 12px;font-family:var(--mono);font-size:12px;color:var(--t1)}
+.of-status:empty{min-height:0;margin:0}
+.of-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin-bottom:8px}
+.of-actions .btn[disabled]{opacity:.5;cursor:default}
+.of-after{font-size:13px;color:var(--t2)}
+.of .of-choice{font-weight:400}

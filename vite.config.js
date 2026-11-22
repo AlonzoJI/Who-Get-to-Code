@@ -1,7 +1,8 @@
-import { readFileSync, readdirSync } from 'node:fs';
-import { resolve } from 'node:path';
-import { defineConfig } from 'vite';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
+import { resolve, sep } from 'node:path';
+import { defineConfig, loadEnv } from 'vite';
 import * as render from './lib/render.js';
+import { outreachForm } from './lib/outreach-form.js';
 
 const root = import.meta.dirname;
 const readJson = (name) => JSON.parse(readFileSync(resolve(root, 'data', `${name}.json`), 'utf8'));
@@ -29,6 +30,7 @@ const pages = Object.fromEntries(
 //   <!-- @figure-summary -->  <!-- @figure-table -->  <!-- @bibliography -->
 //   <!-- @law-box <data-file> -->  <!-- @data-note <data-file> -->  <!-- @debate <data-file> -->  <!-- @cascade-intro <data-file> -->  <!-- @cascade-foot <data-file> -->
 //   <!-- @chart <data-file> <chart-id> -->  <!-- @chart-citations <data-file> -->  <!-- @fromclass <reading-id> -->
+//   <!-- @outreach-form -->  (lib/outreach-form.js, choices from lib/outreach-options.js)
 function sitePartials() {
   return {
     name: 'site-partials',
@@ -74,6 +76,7 @@ function sitePartials() {
           .replace(/<!-- @studies ([\w-]+) -->/g, (_, file) => render.studyCards(readJson(file), readJson('pipeline')))
           .replace(/<!-- @study-notes ([\w-]+) -->/g, (_, file) => render.studyNotes(readJson(file)))
           .replace('<!-- @timeline -->', () => render.rollbackTimeline(readJson('rollback'), readJson('pipeline')))
+          .replace('<!-- @outreach-form -->', () => outreachForm())
           .replace(/<!-- @fromclass ([\w-]+) -->/g, (_, id) =>
             render.fromClassCard(readJson('readings').find((r) => r.id === id))
           );
@@ -86,8 +89,56 @@ function sitePartials() {
   };
 }
 
+// Dev only: serves the Vercel functions in /api from `corepack pnpm dev`, so
+// forms and API-backed charts work locally. /api/submissions/educator maps to
+// api/submissions/educator.js and calls its GET or POST export with a standard
+// Request. MONGODB_* and RATE_LIMIT_SALT come from .env. Vercel does this in production.
+function apiDev() {
+  const apiDir = resolve(root, 'api') + sep;
+  return {
+    name: 'api-dev',
+    apply: 'serve',
+    configureServer(server) {
+      const env = loadEnv(server.config.mode, root, ['MONGODB_', 'RATE_LIMIT_']);
+      for (const [key, value] of Object.entries(env)) process.env[key] ??= value;
+
+      server.middlewares.use(async (req, res, next) => {
+        const { pathname } = new URL(req.url, 'http://localhost');
+        if (!pathname.startsWith('/api/')) return next();
+        const file = resolve(root, `.${pathname.replace(/\/$/, '')}.js`);
+        if (!file.startsWith(apiDir) || !existsSync(file)) return next();
+        try {
+          const handler = (await server.ssrLoadModule(file))[req.method];
+          if (typeof handler !== 'function') {
+            res.statusCode = 405;
+            return res.end();
+          }
+          const chunks = [];
+          for await (const chunk of req) chunks.push(chunk);
+          const headers = new Headers();
+          for (const [key, value] of Object.entries(req.headers)) {
+            if (value != null && !key.startsWith(':')) headers.set(key, [].concat(value).join(', '));
+          }
+          const response = await handler(
+            new Request(`http://${req.headers.host}${req.url}`, {
+              method: req.method,
+              headers,
+              body: ['GET', 'HEAD'].includes(req.method) ? undefined : Buffer.concat(chunks),
+            })
+          );
+          res.statusCode = response.status;
+          response.headers.forEach((value, key) => res.setHeader(key, value));
+          res.end(Buffer.from(await response.arrayBuffer()));
+        } catch (err) {
+          next(err);
+        }
+      });
+    },
+  };
+}
+
 export default defineConfig({
   base: './',
-  plugins: [sitePartials()],
+  plugins: [sitePartials(), apiDev()],
   build: { rollupOptions: { input: pages } },
 });

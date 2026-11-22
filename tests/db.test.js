@@ -56,7 +56,11 @@ test('validators require core fields but allow extra ones', async () => {
 
   const subs = db.collection('educatorSubmissions');
   await assert.rejects(subs.insertOne({ status: 'published', createdAt: new Date(), consentToPublish: true, state: 'OH' }));
-  const s = await subs.insertOne({ status: 'pending', createdAt: new Date(), consentToPublish: true, state: 'OH', extra: 1 });
+  const s = await subs.insertOne({
+    status: 'pending', createdAt: new Date(), consentToPublish: true, state: 'OH', role: 'counselor',
+    schoolSector: 'public', schoolLocale: 'rural', gradeBands: ['9-12'], courses: ['none'], shares: {},
+    barriers: [], changedSince2025: 'no', extra: 1,
+  });
   await subs.deleteOne({ _id: s.insertedId });
 });
 

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- @head -->
+    <title>STEM outreach directory · Who Gets to Be a Computer Scientist</title>
+    <meta name="description" content="A directory of STEM and computer science outreach programs that high school teachers and counselors can connect students to, listed by the programs themselves.">
+  </head>
+  <body data-page="for-schools">
+    <!-- @nav -->
+
+    <main id="main" class="wrap">
+      <section class="sec" aria-labelledby="dir-title">
+        <span class="eyebrow">For your school</span>
+        <h1 id="dir-title" class="page-h2">STEM outreach directory</h1>
+        <p class="lede">Programs outside the classroom are often where students first try computing. Each program
+          below was listed by the people who run it and reviewed before it went up. Filter by where your students
+          live, their grade, the format and the cost, then use the "How to connect students" note on each card.</p>
+
+        <div class="od-private" id="submitted" role="status">
+          <p><b>Thanks, your program was sent.</b> It will show up here after it is reviewed. We will only use
+            your email if we have a question about the listing.</p>
+        </div>
+        <div class="od-private is-error" id="submit-error" role="alert">
+          <p><b>The listing was not sent.</b> An answer may be missing or there were too many tries from this
+            connection. Go back, check the required fields and try again later.</p>
+        </div>
+
+        <h2 class="sub-h" id="find-title">Find a program</h2>
+        <form class="od-filters" id="od-filters" aria-labelledby="find-title" role="search">
+          <div class="od-field od-search">
+            <label for="f-q">Search</label>
+            <input id="f-q" name="q" type="search" placeholder="Name, organization, city" autocomplete="off">
+          </div>
+          <div class="od-field">
+            <label for="f-state">State</label>
+            <select id="f-state" name="state"><option value="">Any state</option></select>
+          </div>
+          <div class="od-field">
+            <label for="f-grade">Grade band</label>
+            <select id="f-grade" name="grade"><option value="">Any grade</option></select>
+          </div>
+          <div class="od-field">
+            <label for="f-format">Format</label>
+            <select id="f-format" name="format"><option value="">Any format</option></select>
+          </div>
+          <div class="od-field">
+            <label for="f-cost">Cost</label>
+            <select id="f-cost" name="cost"><option value="">Any cost</option></select>
+          </div>
+          <button class="btn sm" type="reset" id="f-reset">Clear filters</button>
+        </form>
+        <p class="od-note">Choosing a state also shows programs that serve students nationwide online. The filters
+          sort by place, grade, format and cost only. Who a program serves is described on each card in the
+          program's own words.</p>
+
+        <p class="od-count" id="od-count" aria-live="polite">Loading programs…</p>
+        <ul class="grid g3 od-cards" id="od-cards" aria-labelledby="find-title"></ul>
+        <noscript><p class="od-empty">Turn on JavaScript to load the directory.</p></noscript>
+
+        <h2 class="sub-h" id="funding-title">Funding and partnership changes since 2025</h2>
+        <p class="od-note od-note-lead">Listed programs answer one question in private: has your funding or partnerships
+          changed since 2025? Only the totals below are public, and only when a total is 10 or more.</p>
+        <div id="od-funding" class="od-funding">
+          <!-- filled by src/outreach/directory.js -->
+        </div>
+
+        <h2 class="sub-h" id="list-your-program">List your program</h2>
+        <!-- @outreach-form -->
+
+        <details class="more">
+          <summary>The technical version</summary>
+          <div class="more-in">
+            <p><b>How listings get on the site.</b> Every submission is saved as pending. The site owner reads it,
+              checks the website and approves or rejects it. Nothing a visitor sends appears until it is approved,
+              and a program has to agree to be listed before it can be approved.</p>
+            <p><b>What stays private.</b> Contact names and emails are kept only for follow-up. They are never shown
+              on the site or returned by the public API (<code>/api/outreach</code>). Each program's answer about
+              funding changes is also private; it only counts toward the totals in the chart.</p>
+            <p><b>Small counts.</b> Any total under 10 is hidden. If only one total would be hidden, the next smallest
+              is hidden as well, so the hidden number can't be worked out by subtracting from the number of programs
+              listed.</p>
+            <p><b>Self-reported.</b> Listings and the funding chart come from the programs themselves. They have not
+              been independently verified, so treat the chart as a picture of who has spoken up, not a measure of
+              every program in the country.</p>
+            <p><b>Spam and safety.</b> The server strips HTML from every answer, ignores submissions that fill a
+              hidden trap field, and limits each connection to 10 tries an hour. It stores a salted hash of the
+              connection, never the IP address, and deletes it after an hour.</p>
+          </div>
+        </details>
+
+        <!-- @fromclass outreach -->
+      </section>
+    </main>
+
+    <!-- @foot -->
+    <script type="module" src="/src/outreach/directory.js"></script>
+    <script type="module" src="/src/outreach/form.js"></script>
+  </body>
+</html>
