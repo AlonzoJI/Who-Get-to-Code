@@ -1,66 +1,372 @@
 {
-  "_about": "APA 7 references for every source and class reading on the site. *text* marks italics. Sorted alphabetically at build time. tests/bibliography.test.js fails if a URL used anywhere in /data is missing here. 'pending' marks details not yet confirmed.",
+  "_about": "APA 7 references for every source and class reading on the site. *text* marks italics. type: primary = the original study, data, law, opinion, statement or class reading; secondary = an article reporting on someone else's work. Sorted alphabetically at build time. tests/bibliography.test.js fails if a URL used anywhere in /data is missing here. 'pending' marks details not yet confirmed.",
   "entries": [
-    { "kind": "source", "apa": "Allwork.Space News Team. (2025, November 7). Google, Meta, and Microsoft quietly end diversity reporting as DEI pullback widens. *Allwork.Space*.", "url": "https://allwork.space/?p=1040557" },
-    { "kind": "source", "apa": "Amazon to halt some of its DEI programs: Internal memo. (2025, January 10). *NBC4 Washington* (CNBC).", "url": "https://www.nbcwashington.com/news/business/money-report/amazon-to-halt-some-of-its-dei-programs-internal-memo/3810883/" },
-    { "kind": "reading", "apa": "Banaji, M. R., & Greenwald, A. G. (2013). Mindbugs. In *Blindspot: Hidden biases of good people*. Delacorte Press.", "url": "https://www.npr.org/2013/04/16/177455360/excerpt-blindspot" },
-    { "kind": "source", "apa": "Barros-Bustos, S., & Chicas-Mosier, A. M. (2026). Unraveling federal award terminations: Evidence from the Louis Stokes Alliances for Minority Participation. *Frontiers in Education, 11*. https://doi.org/10.3389/feduc.2026.1673464", "url": "https://www.frontiersin.org/articles/10.3389/feduc.2026.1673464/full" },
-    { "kind": "source", "apa": "Black enrollment shifts, not shrinks, after affirmative action ban: Report. (2026, February 27). *The College Fix*.", "url": "https://www.thecollegefix.com/black-enrollment-shifts-not-shrinks-after-affirmative-action-ban-report/" },
-    { "kind": "source", "apa": "Bloem, M. D., Edwards, A., Goyer, J. P., Howell, J., Hu, X., Hurwitz, M., Imlay, S. J., Ma, J., & Pender, M. (2026). *College enrollment patterns after SFFA v. Harvard* (EdWorkingPaper No. 26-1392). Annenberg Institute at Brown University. https://doi.org/10.26300/6a7w-bq06", "url": "https://edworkingpapers.com/sites/default/files/ai26-1392.pdf" },
-    { "kind": "reading", "apa": "Brown v. Board of Education of Topeka, 347 U.S. 483 (1954).", "url": "https://www.archives.gov/milestone-documents/brown-v-board-of-education" },
-    { "kind": "reading", "apa": "Center on Education Policy. (2020). *For the common good: Recommitting to public education in a time of crisis*. George Washington University.", "url": "https://eric.ed.gov/?id=ED606967" },
-    { "kind": "source", "apa": "Cirino, J. (2026, June 24). *Cirino press conference highlights SB1 proven success* [Press release]. Ohio Senate.", "url": "https://ohiosenate.gov/members/jerry-c-cirino/news/cirino-press-conference-highlights-sb1-proven-success" },
-    { "kind": "dataset", "apa": "Code.org, CSTA, & ECEP Alliance. (2025). *2025 state of AI + computer science education*.", "url": "https://advocacy.code.org/stateofcs/" },
-    { "kind": "source", "apa": "Code.org. (2025, December 10). *New report: AI + computer science are the foundation for U.S. K-12 readiness, but state policies lag behind* [Press release]. PR Newswire.", "url": "https://www.prnewswire.com/news-releases/new-report-ai--computer-science-are-the-foundation-for-us-k12-readiness-but-state-policies-lag-behind-302637515.html" },
-    { "kind": "dataset", "apa": "College Board. (n.d.). *AP program results* [Data set].", "url": "https://reports.collegeboard.org/ap-program-results" },
-    { "kind": "source", "apa": "ColorStack. (n.d.). *About us*. Retrieved November 21, 2026.", "url": "https://www.colorstack.org/about" },
-    { "kind": "reading", "apa": "Diuguid, L. (2006, January 17). Addressing classism will improve school performance. *The Kansas City Star*. Reposted by Teachers College, Columbia University.", "url": "https://www.tc.columbia.edu/articles/2006/january/addressing-classism-will-improve-school-performance" },
-    { "kind": "reading", "apa": "Eisner, E. W. (2003). Questionable assumptions about schooling. *Phi Delta Kappan, 84*(9), 648–657.", "url": "https://eric.ed.gov/?id=EJ666083" },
-    { "kind": "source", "apa": "Exec. Order No. 14151. (2025, January 20). *Ending radical and wasteful government DEI programs and preferencing*. The White House.", "url": "https://www.whitehouse.gov/presidential-actions/2025/01/ending-radical-and-wasteful-government-dei-programs-and-preferencing/" },
-    { "kind": "source", "apa": "Francis, D. V., de Oliveira, A. C. M., & Dimmitt, C. (2019). Do school counselors exhibit bias in recommending students for advanced coursework? *The B.E. Journal of Economic Analysis & Policy, 19*(4), Article 20180189. https://doi.org/10.1515/bejeap-2018-0189", "url": "https://doi.org/10.1515/bejeap-2018-0189" },
-    { "kind": "reading", "apa": "Freire, P. (1970). *Pedagogy of the oppressed* (M. B. Ramos, Trans.). Herder and Herder.", "url": null },
-    { "kind": "reading", "apa": "Friedman, M. (1955). The role of government in education. In R. A. Solo (Ed.), *Economics and the public interest*. Rutgers University Press.", "url": "https://www.edchoice.org/about/legacy/articles/the-role-of-government-in-education/" },
-    { "kind": "source", "apa": "Google & Gallup. (2015). *Searching for computer science: Access and barriers in U.S. K-12 education*.", "url": "https://services.google.com/fh/files/misc/searching-for-computer-science_report.pdf" },
-    { "kind": "reading", "apa": "Hannah-Jones, N., & Joffe-Walt, C. (2015, July 31 and August 7). The problem we all live with, Parts one and two (Episodes 562 and 563) [Radio broadcast episodes]. In *This American Life*.", "url": "https://www.thisamericanlife.org/562/the-problem-we-all-live-with-part-one" },
-    { "kind": "source", "apa": "Hirschl, N., & Smith, C. M. (2023). Advanced Placement gatekeeping and racialized tracking. *Sociology of Education, 96*(3), 190–210. https://doi.org/10.1177/00380407231161334", "url": "https://doi.org/10.1177/00380407231161334" },
-    { "kind": "reading", "apa": "hooks, b. (1994). Confronting class in the classroom. In *Teaching to transgress: Education as the practice of freedom*. Routledge.", "url": "https://www.routledge.com/products/9780415908085" },
-    { "kind": "reading", "apa": "hooks, b. (1994). Engaged pedagogy. In *Teaching to transgress: Education as the practice of freedom*. Routledge.", "url": "https://www.routledge.com/products/9780415908085" },
-    { "kind": "source", "apa": "Johnson, L. (2025, January 14). Meta joins chorus of DEI rollbacks, cutting roles and programs. *HR Dive*.", "url": "https://www.hrdive.com/news/meta-cuts-dei-roles-supplier-diversity-programs-wave-rollbacks-mcdonalds-amazon/737223" },
-    { "kind": "source", "apa": "Kapani, C. (2025, August 14). DEI crackdown sparks quiet tech rollback. *LeadDev*.", "url": "https://leaddev.com/culture/crackdown-sparks-quiet-tech-rollback" },
-    { "kind": "source", "apa": "Kapor Center. (2021, June 24). *Culturally responsive-sustaining computer science education: A framework*.", "url": "https://www.kaporcenter.org/download/13902" },
-    { "kind": "source", "apa": "Klein, A. (2024, October 22). One change that can get more girls, students of color taking computer science. *Education Week*.", "url": "https://www.edweek.org/teaching-learning/one-change-that-can-get-more-girls-students-of-color-taking-computer-science/2024/10" },
-    { "kind": "source", "apa": "Knox, L., & Maglione, F. (2026, January 14). College diversity drops again as Trump ramps up scrutiny. *Bloomberg Law*.", "url": "https://news.bloomberglaw.com/social-justice/college-racial-diversity-drops-again-as-trump-ramps-up-scrutiny" },
-    { "kind": "source", "apa": "Liedtke, M. (2025, February 6). Google scraps diversity hiring goals in the face of Trump's new anti-DEI government contractor rules. *Fortune*.", "url": "https://fortune.com/2025/02/06/google-scraps-diversity-hiring-goals-trump-anti-dei-government-contractor-rules" },
-    { "kind": "source", "apa": "Liu, J., Conrad, C., & Blazar, D. (2024, May 1). High school computer science impacts college majors and increases earnings. *Brookings Institution*.", "url": "https://www.brookings.edu/articles/high-school-computer-science-impacts-colleg-majors-and-increases-earnings" },
-    { "kind": "reading", "apa": "Loewen, J. W. (1995). Handicapped by history: The process of hero-making. In *Lies my teacher told me: Everything your American history textbook got wrong*. The New Press.", "url": "https://justice.tougaloo.edu/truth/k-12/resources/lmttm-table-of-contents/" },
-    { "kind": "reading", "apa": "Love, B. L. (2019). Grit, zest, and racism. In *We want to do more than survive: Abolitionist teaching and the pursuit of educational freedom*. Beacon Press.", "url": "https://www.penguinrandomhouse.com/books/598479/we-want-to-do-more-than-survive-by-bettina-love/" },
-    { "kind": "source", "apa": "Manhattan Institute. (2026, May 14). *New report: Students for Fair Admissions decision reshapes elite college enrollment* [Press release].", "url": "https://manhattan.institute/article/new-report-students-for-fair-admissions-decision-reshapes-elite-college-enrollment" },
-    { "kind": "source", "apa": "Margolis, J., Estrella, R., Goode, J., Holme, J. J., & Nao, K. (2017). *Stuck in the shallow end: Education, race, and computing* (Updated ed.). MIT Press.", "url": "https://mitpress.mit.edu/9780262533461/stuck-in-the-shallow-end/" },
-    { "kind": "reading", "apa": "Margolis, J., & Fisher, A. (2002). *Unlocking the clubhouse: Women in computing*. MIT Press.", "url": "https://mitpress.mit.edu/9780262632690/unlocking-the-clubhouse/" },
-    { "kind": "source", "apa": "McEachran, R. (2025, October 30). Why is big tech rolling back DEI initiatives? *ITPro*.", "url": "https://www.itpro.com/business/business-strategy/why-is-big-tech-rolling-back-dei" },
-    { "kind": "reading", "apa": "Mills, C. W. (1959). The promise. In *The sociological imagination*. Oxford University Press.", "url": null },
-    { "kind": "source", "apa": "Moll, L. C., Amanti, C., Neff, D., & Gonzalez, N. (1992). Funds of knowledge for teaching: Using a qualitative approach to connect homes and classrooms. *Theory Into Practice, 31*(2), 132–141. https://doi.org/10.1080/00405849209543534", "url": "https://doi.org/10.1080/00405849209543534" },
-    { "kind": "source", "apa": "Moon, M. (2025, November 22). Microsoft isn't releasing a diversity report for 2025. *Engadget*.", "url": "https://www.engadget.com/big-tech/microsoft-isnt-releasing-a-diversity-report-for-2025-180000401.html" },
-    { "kind": "dataset", "apa": "Murphy, J. S. (2026, January 7). *The 2025 post-SFFA enrollment tracker*.", "url": "https://jamessmurphy.com/2026/01/07/the-2025-post-sffa-enrollment-tracker/" },
-    { "kind": "dataset", "apa": "National Center for Education Statistics. (n.d.). *Integrated Postsecondary Education Data System (IPEDS)* [Data set]. U.S. Department of Education.", "url": "https://nces.ed.gov/ipeds/" },
-    { "kind": "dataset", "apa": "National Center for Science and Engineering Statistics. (2023). *Diversity and STEM: Women, minorities, and persons with disabilities 2023* (NSF 23-315). National Science Foundation.", "url": "https://ncses.nsf.gov/pubs/nsf23315/assets/nsf23315-report.pdf" },
-    { "kind": "source", "apa": "National Science Foundation. (2025, April 18). *Statement of NSF priorities*.", "url": "https://www.nsf.gov/updates-on-priorities" },
-    { "kind": "source", "apa": "New report analyzes post-affirmative action enrollment outcomes at over three thousand U.S. institutions. (2026, February 9). *The Journal of Blacks in Higher Education*.", "url": "https://jbhe.com/2026/02/new-report-analyzes-post-affirmative-action-enrollment-outcomes-at-over-three-thousand-u-s-institutions/" },
-    { "kind": "source", "apa": "Ohio Senate. (2025). *Senate Bill 1, 136th General Assembly: Status and summary*.", "url": "https://ohiosenate.gov/legislation/136/sb1" },
-    { "kind": "source", "apa": "Advance Ohio Higher Education Act, Sub. S.B. 1, 136th Gen. Assemb. (Ohio 2025) (as enrolled).", "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb1/05_EN/pdf/" },
-    { "kind": "reading", "apa": "Paris, D. (2012). Culturally sustaining pedagogy: A needed change in stance, terminology, and practice. *Educational Researcher, 41*(3), 93–97. https://doi.org/10.3102/0013189X12441244", "url": "https://doi.org/10.3102/0013189X12441244" },
-    { "kind": "source", "apa": "Park, J. J. (2026, April 13). Is race-conscious admissions really dead? *Higher Education Today*. American Council on Education.", "url": "https://www.higheredtoday.org/2026/04/13/is-race-conscious-admissions-really-dead/" },
-    { "kind": "source", "apa": "Park, J. J. (2026, April 27). The complex ramifications of Students for Fair Admissions v. Harvard. *Brookings Institution*.", "url": "https://www.brookings.edu/articles/the-complex-ramifications-of-students-for-fair-admissions-v-harvard/" },
-    { "kind": "reading", "apa": "Pugach, M. C. (2024). [Full reference pending; Chapter 7 and p. 250 are cited on this site.]", "url": null, "pending": true },
-    { "kind": "reading", "apa": "Rothstein, R. (2004). *Class and schools: Using social, economic, and educational reform to close the Black-White achievement gap*. Economic Policy Institute; Teachers College, Columbia University.", "url": "https://www.epi.org/publication/books_class_and_schools/" },
-    { "kind": "reading", "apa": "Runyan, A. S. (2018, November–December). What is intersectionality and why is it important? *Academe*.", "url": "https://www.aaup.org/article/what-intersectionality-and-why-it-important" },
-    { "kind": "source", "apa": "Scott, K. A., Sheridan, K. M., & Clark, K. (2015). Culturally responsive computing: A theory revisited. *Learning, Media and Technology, 40*(4), 412–436. https://doi.org/10.1080/17439884.2014.924966", "url": "https://doi.org/10.1080/17439884.2014.924966" },
-    { "kind": "source", "apa": "Students for Fair Admissions, Inc. v. President and Fellows of Harvard College, No. 20-1199 (U.S. June 29, 2023).", "url": "https://www.supremecourt.gov/opinions/22pdf/20-1199_hgdj.pdf" },
-    { "kind": "reading", "apa": "Takacs, D. (2003). How does your positionality bias your epistemology? *Thought & Action*, Summer 2003. National Education Association.", "url": null },
-    { "kind": "dataset", "apa": "U.S. Census Bureau. (n.d.). *American Community Survey* [Data set].", "url": "https://www.census.gov/programs-surveys/acs" },
-    { "kind": "dataset", "apa": "U.S. Department of Education, Office for Civil Rights. (n.d.). *Civil Rights Data Collection* [Data set].", "url": "https://civilrightsdata.ed.gov/" },
-    { "kind": "source", "apa": "U.S. Equal Employment Opportunity Commission. (2025, March 19). *EEOC and Justice Department warn against unlawful DEI-related discrimination* [Press release].", "url": "https://www.eeoc.gov/newsroom/eeoc-and-justice-department-warn-against-unlawful-dei-related-discrimination" },
-    { "kind": "source", "apa": "Carreon, Z. (2026, March 31). Ohio colleges' compliance with DEI ban is called into question. *WYSO* (WVXU).", "url": "https://www.wyso.org/2026-03-31/ohio-colleges-compliance-dei-ban-question" },
-    { "kind": "source", "apa": "Zhang, C. (2025, May 28). Researchers scramble following NSF grant cuts. *FYI*. American Institute of Physics.", "url": "https://www.aip.org/fyi/researchers-scramble-following-nsf-grant-cuts" }
+    {
+      "kind": "source",
+      "apa": "Allwork.Space News Team. (2025, November 7). Google, Meta, and Microsoft quietly end diversity reporting as DEI pullback widens. *Allwork.Space*.",
+      "url": "https://allwork.space/?p=1040557",
+      "type": "secondary"
+    },
+    {
+      "kind": "source",
+      "apa": "Amazon to halt some of its DEI programs: Internal memo. (2025, January 10). *NBC4 Washington* (CNBC).",
+      "url": "https://www.nbcwashington.com/news/business/money-report/amazon-to-halt-some-of-its-dei-programs-internal-memo/3810883/",
+      "type": "secondary"
+    },
+    {
+      "kind": "reading",
+      "apa": "Banaji, M. R., & Greenwald, A. G. (2013). Mindbugs. In *Blindspot: Hidden biases of good people*. Delacorte Press.",
+      "url": "https://www.npr.org/2013/04/16/177455360/excerpt-blindspot",
+      "type": "primary"
+    },
+    {
+      "kind": "source",
+      "apa": "Barros-Bustos, S., & Chicas-Mosier, A. M. (2026). Unraveling federal award terminations: Evidence from the Louis Stokes Alliances for Minority Participation. *Frontiers in Education, 11*. https://doi.org/10.3389/feduc.2026.1673464",
+      "url": "https://www.frontiersin.org/articles/10.3389/feduc.2026.1673464/full",
+      "type": "primary"
+    },
+    {
+      "kind": "source",
+      "apa": "Black enrollment shifts, not shrinks, after affirmative action ban: Report. (2026, February 27). *The College Fix*.",
+      "url": "https://www.thecollegefix.com/black-enrollment-shifts-not-shrinks-after-affirmative-action-ban-report/",
+      "type": "secondary"
+    },
+    {
+      "kind": "source",
+      "apa": "Bloem, M. D., Edwards, A., Goyer, J. P., Howell, J., Hu, X., Hurwitz, M., Imlay, S. J., Ma, J., & Pender, M. (2026). *College enrollment patterns after SFFA v. Harvard* (EdWorkingPaper No. 26-1392). Annenberg Institute at Brown University. https://doi.org/10.26300/6a7w-bq06",
+      "url": "https://edworkingpapers.com/sites/default/files/ai26-1392.pdf",
+      "type": "primary"
+    },
+    {
+      "kind": "reading",
+      "apa": "Brown v. Board of Education of Topeka, 347 U.S. 483 (1954).",
+      "url": "https://www.archives.gov/milestone-documents/brown-v-board-of-education",
+      "type": "primary"
+    },
+    {
+      "kind": "reading",
+      "apa": "Center on Education Policy. (2020). *For the common good: Recommitting to public education in a time of crisis*. George Washington University.",
+      "url": "https://eric.ed.gov/?id=ED606967",
+      "type": "primary"
+    },
+    {
+      "kind": "source",
+      "apa": "Cirino, J. (2026, June 24). *Cirino press conference highlights SB1 proven success* [Press release]. Ohio Senate.",
+      "url": "https://ohiosenate.gov/members/jerry-c-cirino/news/cirino-press-conference-highlights-sb1-proven-success",
+      "type": "primary"
+    },
+    {
+      "kind": "dataset",
+      "apa": "Code.org, CSTA, & ECEP Alliance. (2025). *2025 state of AI + computer science education*.",
+      "url": "https://advocacy.code.org/stateofcs/",
+      "type": "primary"
+    },
+    {
+      "kind": "source",
+      "apa": "Code.org. (2025, December 10). *New report: AI + computer science are the foundation for U.S. K-12 readiness, but state policies lag behind* [Press release]. PR Newswire.",
+      "url": "https://www.prnewswire.com/news-releases/new-report-ai--computer-science-are-the-foundation-for-us-k12-readiness-but-state-policies-lag-behind-302637515.html",
+      "type": "primary"
+    },
+    {
+      "kind": "dataset",
+      "apa": "College Board. (n.d.). *AP program results* [Data set].",
+      "url": "https://reports.collegeboard.org/ap-program-results",
+      "type": "primary"
+    },
+    {
+      "kind": "source",
+      "apa": "ColorStack. (n.d.). *About us*. Retrieved November 21, 2026.",
+      "url": "https://www.colorstack.org/about",
+      "type": "primary"
+    },
+    {
+      "kind": "reading",
+      "apa": "Diuguid, L. (2006, January 17). Addressing classism will improve school performance. *The Kansas City Star*. Reposted by Teachers College, Columbia University.",
+      "url": "https://www.tc.columbia.edu/articles/2006/january/addressing-classism-will-improve-school-performance",
+      "type": "secondary"
+    },
+    {
+      "kind": "reading",
+      "apa": "Eisner, E. W. (2003). Questionable assumptions about schooling. *Phi Delta Kappan, 84*(9), 648–657.",
+      "url": "https://eric.ed.gov/?id=EJ666083",
+      "type": "primary"
+    },
+    {
+      "kind": "source",
+      "apa": "Exec. Order No. 14151. (2025, January 20). *Ending radical and wasteful government DEI programs and preferencing*. The White House.",
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/01/ending-radical-and-wasteful-government-dei-programs-and-preferencing/",
+      "type": "primary"
+    },
+    {
+      "kind": "source",
+      "apa": "Francis, D. V., de Oliveira, A. C. M., & Dimmitt, C. (2019). Do school counselors exhibit bias in recommending students for advanced coursework? *The B.E. Journal of Economic Analysis & Policy, 19*(4), Article 20180189. https://doi.org/10.1515/bejeap-2018-0189",
+      "url": "https://doi.org/10.1515/bejeap-2018-0189",
+      "type": "primary"
+    },
+    {
+      "kind": "reading",
+      "apa": "Freire, P. (1970). *Pedagogy of the oppressed* (M. B. Ramos, Trans.). Herder and Herder.",
+      "url": null,
+      "type": "primary"
+    },
+    {
+      "kind": "reading",
+      "apa": "Friedman, M. (1955). The role of government in education. In R. A. Solo (Ed.), *Economics and the public interest*. Rutgers University Press.",
+      "url": "https://www.edchoice.org/about/legacy/articles/the-role-of-government-in-education/",
+      "type": "primary"
+    },
+    {
+      "kind": "source",
+      "apa": "Google & Gallup. (2015). *Searching for computer science: Access and barriers in U.S. K-12 education*.",
+      "url": "https://services.google.com/fh/files/misc/searching-for-computer-science_report.pdf",
+      "type": "primary"
+    },
+    {
+      "kind": "reading",
+      "apa": "Hannah-Jones, N., & Joffe-Walt, C. (2015, July 31 and August 7). The problem we all live with, Parts one and two (Episodes 562 and 563) [Radio broadcast episodes]. In *This American Life*.",
+      "url": "https://www.thisamericanlife.org/562/the-problem-we-all-live-with-part-one",
+      "type": "primary"
+    },
+    {
+      "kind": "source",
+      "apa": "Hirschl, N., & Smith, C. M. (2023). Advanced Placement gatekeeping and racialized tracking. *Sociology of Education, 96*(3), 190–210. https://doi.org/10.1177/00380407231161334",
+      "url": "https://doi.org/10.1177/00380407231161334",
+      "type": "primary"
+    },
+    {
+      "kind": "reading",
+      "apa": "hooks, b. (1994). Confronting class in the classroom. In *Teaching to transgress: Education as the practice of freedom*. Routledge.",
+      "url": "https://www.routledge.com/products/9780415908085",
+      "type": "primary"
+    },
+    {
+      "kind": "reading",
+      "apa": "hooks, b. (1994). Engaged pedagogy. In *Teaching to transgress: Education as the practice of freedom*. Routledge.",
+      "url": "https://www.routledge.com/products/9780415908085",
+      "type": "primary"
+    },
+    {
+      "kind": "source",
+      "apa": "Johnson, L. (2025, January 14). Meta joins chorus of DEI rollbacks, cutting roles and programs. *HR Dive*.",
+      "url": "https://www.hrdive.com/news/meta-cuts-dei-roles-supplier-diversity-programs-wave-rollbacks-mcdonalds-amazon/737223",
+      "type": "secondary"
+    },
+    {
+      "kind": "source",
+      "apa": "Kapani, C. (2025, August 14). DEI crackdown sparks quiet tech rollback. *LeadDev*.",
+      "url": "https://leaddev.com/culture/crackdown-sparks-quiet-tech-rollback",
+      "type": "secondary"
+    },
+    {
+      "kind": "source",
+      "apa": "Kapor Center. (2021, June 24). *Culturally responsive-sustaining computer science education: A framework*.",
+      "url": "https://www.kaporcenter.org/download/13902",
+      "type": "primary"
+    },
+    {
+      "kind": "source",
+      "apa": "Klein, A. (2024, October 22). One change that can get more girls, students of color taking computer science. *Education Week*.",
+      "url": "https://www.edweek.org/teaching-learning/one-change-that-can-get-more-girls-students-of-color-taking-computer-science/2024/10",
+      "type": "secondary"
+    },
+    {
+      "kind": "source",
+      "apa": "Knox, L., & Maglione, F. (2026, January 14). College diversity drops again as Trump ramps up scrutiny. *Bloomberg Law*.",
+      "url": "https://news.bloomberglaw.com/social-justice/college-racial-diversity-drops-again-as-trump-ramps-up-scrutiny",
+      "type": "secondary"
+    },
+    {
+      "kind": "source",
+      "apa": "Liedtke, M. (2025, February 6). Google scraps diversity hiring goals in the face of Trump's new anti-DEI government contractor rules. *Fortune*.",
+      "url": "https://fortune.com/2025/02/06/google-scraps-diversity-hiring-goals-trump-anti-dei-government-contractor-rules",
+      "type": "secondary"
+    },
+    {
+      "kind": "source",
+      "apa": "Liu, J., Conrad, C., & Blazar, D. (2024, May 1). High school computer science impacts college majors and increases earnings. *Brookings Institution*.",
+      "url": "https://www.brookings.edu/articles/high-school-computer-science-impacts-colleg-majors-and-increases-earnings",
+      "type": "primary"
+    },
+    {
+      "kind": "reading",
+      "apa": "Loewen, J. W. (1995). Handicapped by history: The process of hero-making. In *Lies my teacher told me: Everything your American history textbook got wrong*. The New Press.",
+      "url": "https://justice.tougaloo.edu/truth/k-12/resources/lmttm-table-of-contents/",
+      "type": "primary"
+    },
+    {
+      "kind": "reading",
+      "apa": "Love, B. L. (2019). Grit, zest, and racism. In *We want to do more than survive: Abolitionist teaching and the pursuit of educational freedom*. Beacon Press.",
+      "url": "https://www.penguinrandomhouse.com/books/598479/we-want-to-do-more-than-survive-by-bettina-love/",
+      "type": "primary"
+    },
+    {
+      "kind": "source",
+      "apa": "Manhattan Institute. (2026, May 14). *New report: Students for Fair Admissions decision reshapes elite college enrollment* [Press release].",
+      "url": "https://manhattan.institute/article/new-report-students-for-fair-admissions-decision-reshapes-elite-college-enrollment",
+      "type": "primary"
+    },
+    {
+      "kind": "source",
+      "apa": "Margolis, J., Estrella, R., Goode, J., Holme, J. J., & Nao, K. (2017). *Stuck in the shallow end: Education, race, and computing* (Updated ed.). MIT Press.",
+      "url": "https://mitpress.mit.edu/9780262533461/stuck-in-the-shallow-end/",
+      "type": "primary"
+    },
+    {
+      "kind": "reading",
+      "apa": "Margolis, J., & Fisher, A. (2002). *Unlocking the clubhouse: Women in computing*. MIT Press.",
+      "url": "https://mitpress.mit.edu/9780262632690/unlocking-the-clubhouse/",
+      "type": "primary"
+    },
+    {
+      "kind": "source",
+      "apa": "McEachran, R. (2025, October 30). Why is big tech rolling back DEI initiatives? *ITPro*.",
+      "url": "https://www.itpro.com/business/business-strategy/why-is-big-tech-rolling-back-dei",
+      "type": "secondary"
+    },
+    {
+      "kind": "reading",
+      "apa": "Mills, C. W. (1959). The promise. In *The sociological imagination*. Oxford University Press.",
+      "url": null,
+      "type": "primary"
+    },
+    {
+      "kind": "source",
+      "apa": "Moll, L. C., Amanti, C., Neff, D., & Gonzalez, N. (1992). Funds of knowledge for teaching: Using a qualitative approach to connect homes and classrooms. *Theory Into Practice, 31*(2), 132–141. https://doi.org/10.1080/00405849209543534",
+      "url": "https://doi.org/10.1080/00405849209543534",
+      "type": "primary"
+    },
+    {
+      "kind": "source",
+      "apa": "Moon, M. (2025, November 22). Microsoft isn't releasing a diversity report for 2025. *Engadget*.",
+      "url": "https://www.engadget.com/big-tech/microsoft-isnt-releasing-a-diversity-report-for-2025-180000401.html",
+      "type": "secondary"
+    },
+    {
+      "kind": "dataset",
+      "apa": "Murphy, J. S. (2026, January 7). *The 2025 post-SFFA enrollment tracker*.",
+      "url": "https://jamessmurphy.com/2026/01/07/the-2025-post-sffa-enrollment-tracker/",
+      "type": "primary"
+    },
+    {
+      "kind": "dataset",
+      "apa": "National Center for Education Statistics. (n.d.). *Integrated Postsecondary Education Data System (IPEDS)* [Data set]. U.S. Department of Education.",
+      "url": "https://nces.ed.gov/ipeds/",
+      "type": "primary"
+    },
+    {
+      "kind": "dataset",
+      "apa": "National Center for Science and Engineering Statistics. (2023). *Diversity and STEM: Women, minorities, and persons with disabilities 2023* (NSF 23-315). National Science Foundation.",
+      "url": "https://ncses.nsf.gov/pubs/nsf23315/assets/nsf23315-report.pdf",
+      "type": "primary"
+    },
+    {
+      "kind": "source",
+      "apa": "National Science Foundation. (2025, April 18). *Statement of NSF priorities*.",
+      "url": "https://www.nsf.gov/updates-on-priorities",
+      "type": "primary"
+    },
+    {
+      "kind": "source",
+      "apa": "New report analyzes post-affirmative action enrollment outcomes at over three thousand U.S. institutions. (2026, February 9). *The Journal of Blacks in Higher Education*.",
+      "url": "https://jbhe.com/2026/02/new-report-analyzes-post-affirmative-action-enrollment-outcomes-at-over-three-thousand-u-s-institutions/",
+      "type": "secondary"
+    },
+    {
+      "kind": "source",
+      "apa": "Ohio Senate. (2025). *Senate Bill 1, 136th General Assembly: Status and summary*.",
+      "url": "https://ohiosenate.gov/legislation/136/sb1",
+      "type": "primary"
+    },
+    {
+      "kind": "source",
+      "apa": "Advance Ohio Higher Education Act, Sub. S.B. 1, 136th Gen. Assemb. (Ohio 2025) (as enrolled).",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb1/05_EN/pdf/",
+      "type": "primary"
+    },
+    {
+      "kind": "reading",
+      "apa": "Paris, D. (2012). Culturally sustaining pedagogy: A needed change in stance, terminology, and practice. *Educational Researcher, 41*(3), 93–97. https://doi.org/10.3102/0013189X12441244",
+      "url": "https://doi.org/10.3102/0013189X12441244",
+      "type": "primary"
+    },
+    {
+      "kind": "source",
+      "apa": "Park, J. J. (2026, April 13). Is race-conscious admissions really dead? *Higher Education Today*. American Council on Education.",
+      "url": "https://www.higheredtoday.org/2026/04/13/is-race-conscious-admissions-really-dead/",
+      "type": "secondary"
+    },
+    {
+      "kind": "source",
+      "apa": "Park, J. J. (2026, April 27). The complex ramifications of Students for Fair Admissions v. Harvard. *Brookings Institution*.",
+      "url": "https://www.brookings.edu/articles/the-complex-ramifications-of-students-for-fair-admissions-v-harvard/",
+      "type": "primary"
+    },
+    {
+      "kind": "reading",
+      "apa": "Pugach, M. C. (2024). [Full reference pending; Chapter 7 and p. 250 are cited on this site.]",
+      "url": null,
+      "pending": true,
+      "type": "primary"
+    },
+    {
+      "kind": "reading",
+      "apa": "Rothstein, R. (2004). *Class and schools: Using social, economic, and educational reform to close the Black-White achievement gap*. Economic Policy Institute; Teachers College, Columbia University.",
+      "url": "https://www.epi.org/publication/books_class_and_schools/",
+      "type": "primary"
+    },
+    {
+      "kind": "reading",
+      "apa": "Runyan, A. S. (2018, November–December). What is intersectionality and why is it important? *Academe*.",
+      "url": "https://www.aaup.org/article/what-intersectionality-and-why-it-important",
+      "type": "primary"
+    },
+    {
+      "kind": "source",
+      "apa": "Scott, K. A., Sheridan, K. M., & Clark, K. (2015). Culturally responsive computing: A theory revisited. *Learning, Media and Technology, 40*(4), 412–436. https://doi.org/10.1080/17439884.2014.924966",
+      "url": "https://doi.org/10.1080/17439884.2014.924966",
+      "type": "primary"
+    },
+    {
+      "kind": "source",
+      "apa": "Students for Fair Admissions, Inc. v. President and Fellows of Harvard College, No. 20-1199 (U.S. June 29, 2023).",
+      "url": "https://www.supremecourt.gov/opinions/22pdf/20-1199_hgdj.pdf",
+      "type": "primary"
+    },
+    {
+      "kind": "reading",
+      "apa": "Takacs, D. (2003). How does your positionality bias your epistemology? *Thought & Action*, Summer 2003. National Education Association.",
+      "url": null,
+      "type": "primary"
+    },
+    {
+      "kind": "dataset",
+      "apa": "U.S. Census Bureau. (n.d.). *American Community Survey* [Data set].",
+      "url": "https://www.census.gov/programs-surveys/acs",
+      "type": "primary"
+    },
+    {
+      "kind": "dataset",
+      "apa": "U.S. Department of Education, Office for Civil Rights. (n.d.). *Civil Rights Data Collection* [Data set].",
+      "url": "https://civilrightsdata.ed.gov/",
+      "type": "primary"
+    },
+    {
+      "kind": "source",
+      "apa": "U.S. Equal Employment Opportunity Commission. (2025, March 19). *EEOC and Justice Department warn against unlawful DEI-related discrimination* [Press release].",
+      "url": "https://www.eeoc.gov/newsroom/eeoc-and-justice-department-warn-against-unlawful-dei-related-discrimination",
+      "type": "primary"
+    },
+    {
+      "kind": "source",
+      "apa": "Carreon, Z. (2026, March 31). Ohio colleges' compliance with DEI ban is called into question. *WYSO* (WVXU).",
+      "url": "https://www.wyso.org/2026-03-31/ohio-colleges-compliance-dei-ban-question",
+      "type": "secondary"
+    },
+    {
+      "kind": "source",
+      "apa": "Zhang, C. (2025, May 28). Researchers scramble following NSF grant cuts. *FYI*. American Institute of Physics.",
+      "url": "https://www.aip.org/fyi/researchers-scramble-following-nsf-grant-cuts",
+      "type": "secondary"
+    }
   ]
 }

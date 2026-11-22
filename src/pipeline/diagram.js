@@ -4,6 +4,7 @@
 import '../styles/pipeline.css';
 import pipeline from '../../data/pipeline.json';
 import { simulate, groupKey, anyPlaceholder } from './model.js';
+import { loadDatapoints } from '../data-client.js';
 
 const NS = 'http://www.w3.org/2000/svg';
 const DOT_R = 2.6;
@@ -358,7 +359,32 @@ export function mountPipeline(root) {
 
   fillGroups();
   reset();
+  return { reset, isRunning: () => state.running };
+}
+
+// The bundled pipeline.json is the fallback. If the API has newer stage rates,
+// copy them in and redraw (unless a run is in progress).
+export function mergeApiRates(byId) {
+  let changed = false;
+  for (const stage of pipeline.stages) {
+    for (const records of Object.values(stage.values)) {
+      for (const r of records) {
+        const d = byId.get(r.id);
+        if (!d) continue;
+        const next = { value: d.value, year: d.year, verified: d.verified, source: d.source?.title ?? r.source, url: d.source?.url ?? r.url };
+        for (const [k, v] of Object.entries(next)) {
+          if (r[k] !== v) { r[k] = v; changed = true; }
+        }
+      }
+    }
+  }
+  return changed;
 }
 
 const mount = document.getElementById('pipeline-diagram');
-if (mount) mountPipeline(mount);
+if (mount) {
+  const widget = mountPipeline(mount);
+  loadDatapoints().then((byId) => {
+    if (byId && mergeApiRates(byId) && !widget.isRunning()) widget.reset();
+  });
+}

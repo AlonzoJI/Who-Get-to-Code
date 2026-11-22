@@ -19,3 +19,8 @@ if (toggle) {
     window.dispatchEvent(new CustomEvent('themechange'));
   });
 }
+
+// Charts are rendered from /data at build time; this swaps in the latest figures
+// from the API when it is reachable and leaves the /data version otherwise.
+import { hydrateCharts } from './data-client.js';
+hydrateCharts();
