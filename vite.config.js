@@ -92,18 +92,23 @@ function sitePartials() {
 // Dev only: serves the Vercel functions in /api from `corepack pnpm dev`, so
 // forms and API-backed charts work locally. /api/submissions/educator maps to
 // api/submissions/educator.js and calls its GET or POST export with a standard
-// Request. MONGODB_* and RATE_LIMIT_SALT come from .env. Vercel does this in production.
+// Request. MONGODB_*, RATE_LIMIT_SALT and ADMIN_PASSWORD come from .env. Vercel does this in production.
 function apiDev() {
   const apiDir = resolve(root, 'api') + sep;
   return {
     name: 'api-dev',
     apply: 'serve',
     configureServer(server) {
-      const env = loadEnv(server.config.mode, root, ['MONGODB_', 'RATE_LIMIT_']);
+      const env = loadEnv(server.config.mode, root, ['MONGODB_', 'RATE_LIMIT_', 'ADMIN_']);
       for (const [key, value] of Object.entries(env)) process.env[key] ??= value;
 
       server.middlewares.use(async (req, res, next) => {
         const { pathname } = new URL(req.url, 'http://localhost');
+        // Same as the /admin rewrite in vercel.json.
+        if (pathname === '/admin') {
+          req.url = '/admin.html';
+          return next();
+        }
         if (!pathname.startsWith('/api/')) return next();
         const file = resolve(root, `.${pathname.replace(/\/$/, '')}.js`);
         if (!file.startsWith(apiDir) || !existsSync(file)) return next();

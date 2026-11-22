@@ -11,6 +11,7 @@ import { fileURLToPath } from 'node:url';
 import { resolve } from 'node:path';
 import { ObjectId } from 'mongodb';
 import { getDb, closeClient } from '../lib/mongodb.js';
+import { moderate } from '../lib/moderation.js';
 import { COSTS, FORMATS, FUNDING_ANSWERS, GRADE_BANDS, REGIONS, labelFor } from '../lib/outreach-options.js';
 
 const labels = (list, values) => (values ?? []).map((v) => labelFor(list, v)).join(', ');
@@ -40,14 +41,10 @@ export async function review(db, [command = 'list', arg] = [], { log = console.l
   }
   if (command === 'approve' || command === 'reject') {
     if (!arg || !ObjectId.isValid(arg)) throw new Error(`Give the id of the submission to ${command}.`);
-    const _id = new ObjectId(arg);
-    const doc = await programs.findOne({ _id });
-    if (!doc) throw new Error(`No submission with id ${arg}.`);
-    if (command === 'approve' && !doc.consentToPublish) throw new Error('This program did not agree to be listed, so it cannot be approved.');
-    const update = command === 'approve' ? { status: 'approved', approvedAt: new Date() } : { status: 'rejected', approvedAt: null };
-    await programs.updateOne({ _id }, { $set: update });
+    // lib/moderation.js checks consent and logs the action in moderationLog.
+    const doc = await moderate(db, { collection: 'outreachPrograms', id: arg, action: command, via: 'cli' });
     log(`${command === 'approve' ? 'Approved' : 'Rejected'}: ${doc.programName} (${doc.organization})`);
-    return { ...doc, ...update };
+    return doc;
   }
   throw new Error(`Unknown command "${command}". Use list, approve or reject.`);
 }

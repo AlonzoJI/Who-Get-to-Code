@@ -15,7 +15,7 @@ import { fileURLToPath } from 'node:url';
 import { resolve } from 'node:path';
 import { ObjectId } from 'mongodb';
 import { getDb, closeClient } from '../lib/mongodb.js';
-import { isVerbatim, plainText } from '../lib/educator.js';
+import { moderate, unfeature } from '../lib/moderation.js';
 import {
   BARRIERS, CHANGED, COURSES, GRADE_BANDS, LOCALES, ROLES, SECTORS, SHARE_GROUPS, SHARE_RANGES, STATES, labelOf,
 } from '../lib/educator-form.js';
@@ -46,32 +46,28 @@ export async function review(db, [command = 'list', ...args], log = console.log)
     return docs;
   }
 
+  // Approve, reject and unfeature go through lib/moderation.js, which logs each
+  // action in the moderationLog collection (same as the admin page).
   const id = args[0];
   if (!id || !ObjectId.isValid(id)) throw new Error(`Usage: educator:review ${command} <id>`);
-  const _id = new ObjectId(id);
-  const doc = await subs.findOne({ _id });
-  if (!doc) throw new Error(`No submission ${id}`);
-  const now = new Date();
-
   if (command === 'approve') {
     const at = args.indexOf('--quote');
-    const quote = at >= 0 ? plainText(args[at + 1]) : null;
-    if (at >= 0 && !isVerbatim(quote, doc)) {
-      throw new Error('That quote is not copied word for word from this response. Nothing was changed.');
-    }
-    const review = { reviewedAt: now, featured: Boolean(quote), quote: quote || null };
-    await subs.updateOne({ _id }, { $set: { status: 'approved', review } });
-    log(`Approved ${id}${quote ? ' with a quote card' : ''}.`);
-  } else if (command === 'unfeature') {
-    await subs.updateOne({ _id }, { $set: { 'review.featured': false, 'review.quote': null, 'review.reviewedAt': now } });
-    log(`Removed the quote card for ${id}.`);
-  } else if (command === 'reject') {
-    await subs.updateOne({ _id }, { $set: { status: 'rejected', review: { reviewedAt: now, featured: false, quote: null } } });
-    log(`Rejected ${id}.`);
-  } else {
-    throw new Error(`Unknown command "${command}". Use list, approve, unfeature or reject.`);
+    const quoteText = at >= 0 ? args[at + 1] : null;
+    const doc = await moderate(db, { collection: 'educatorSubmissions', id, action: 'approve', quoteText, via: 'cli' });
+    log(`Approved ${id}${doc.review?.featured ? ' with a quote card' : ''}.`);
+    return doc;
   }
-  return subs.findOne({ _id });
+  if (command === 'unfeature') {
+    const doc = await unfeature(db, id, { via: 'cli' });
+    log(`Removed the quote card for ${id}.`);
+    return doc;
+  }
+  if (command === 'reject') {
+    const doc = await moderate(db, { collection: 'educatorSubmissions', id, action: 'reject', via: 'cli' });
+    log(`Rejected ${id}.`);
+    return doc;
+  }
+  throw new Error(`Unknown command "${command}". Use list, approve, unfeature or reject.`);
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

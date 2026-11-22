@@ -1,0 +1,36 @@
+/* ── private review page (admin.html) ──────────────────── */
+.ad-login{display:grid;gap:10px;max-width:360px}
+.ad-login label{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--t2)}
+.ad-login input,.ad-edit input,.ad-edit textarea{font:inherit;font-size:14.5px;color:var(--t0);background:var(--fill);
+  border:1px solid var(--line);padding:10px 12px;width:100%}
+.ad-login input:focus-visible,.ad-edit input:focus-visible,.ad-edit textarea:focus-visible{outline:1px solid var(--focus);outline-offset:2px}
+.ad-login .btn{justify-self:start}
+.ad-status{font-size:14px;color:var(--t1);min-height:1.4em;margin:0}
+
+.ad-bar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.ad-bar p{margin:0 auto 0 0;font-family:var(--mono);font-size:12px;color:var(--t2)}
+.ad-live{font-family:var(--mono);font-size:12px;color:var(--t1);min-height:1.4em;margin:12px 0 0}
+#admin-app h2{font-size:20px;margin:40px 0 14px}
+.ad-empty{color:var(--t2);font-size:14px}
+.ad-list{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+.ad-card{border:1px solid var(--line);background:var(--fill);padding:20px 22px}
+.ad-card header h3{font-size:17px;margin:0}
+.ad-meta{margin:4px 0 14px;font-family:var(--mono);font-size:11px;color:var(--t2);word-break:break-all}
+.ad-facts{display:grid;grid-template-columns:minmax(140px,max-content) minmax(0,1fr);gap:6px 18px;margin:0 0 16px;font-size:14px}
+.ad-facts dt{color:var(--t2)}
+.ad-facts dd{margin:0;color:var(--t1);overflow-wrap:anywhere}
+.ad-facts a{border-bottom:1px solid var(--t4)}
+.ad-edits{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));margin-bottom:16px}
+.ad-edit{display:grid;gap:6px}
+.ad-edit label{font-family:var(--mono);font-size:11px;color:var(--t2)}
+.ad-edit textarea{resize:vertical;line-height:1.5}
+.ad-quote{border:1px solid var(--line);padding:12px 14px;margin:0 0 16px;display:flex;flex-wrap:wrap;gap:8px 20px}
+.ad-quote legend{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--t2);padding:0 6px}
+.ad-quote label{font-size:14px;color:var(--t1);display:inline-flex;gap:6px;align-items:center}
+.ad-quote input:disabled + *,.ad-quote label:has(input:disabled){color:var(--t2)}
+.ad-contact{border-left:2px solid var(--st-warn);padding:10px 0 2px 14px;margin-bottom:16px}
+.ad-contact h4{margin:0 0 10px;font-size:13px;font-weight:500;color:var(--t1)}
+.ad-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;border-top:1px solid var(--line);padding-top:14px}
+.ad-msg{margin:0;font-size:13px;color:var(--t1)}
+.ad-reject{color:var(--t1)}
+@media (max-width:560px){ .ad-facts{grid-template-columns:1fr} .ad-facts dd{margin-bottom:6px} }
