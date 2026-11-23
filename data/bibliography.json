@@ -327,6 +327,12 @@
     },
     {
       "kind": "dataset",
+      "apa": "National Science Board. (2024). *The STEM labor force: Scientists, engineers, and skilled technical workers. Supplemental tables* (NSB-2024-5). National Science Foundation.",
+      "url": "https://ncses.nsf.gov/pubs/nsb20245/assets/supplemental-tables/nsb20245-supplemental-tables.pdf",
+      "type": "primary"
+    },
+    {
+      "kind": "dataset",
       "apa": "National Center for Science and Engineering Statistics. (2023). *Diversity and STEM: Women, minorities, and persons with disabilities 2023* (NSF 23-315). National Science Foundation.",
       "url": "https://ncses.nsf.gov/pubs/nsf23315/assets/nsf23315-report.pdf",
       "type": "primary"
