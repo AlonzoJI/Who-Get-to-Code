@@ -1,7 +1,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { simulate, groupKey, recordFor, anyPlaceholder } from '../src/pipeline/model.js';
+import { simulate, groupKey, recordFor, anyPlaceholder, estimateFunnel } from '../src/pipeline/model.js';
+import { stageSnapshots } from '../src/pipeline/snapshots.js';
 
 // Test fixture only. These rates are made up to exercise the math and never ship.
 const stage = (n, values, has_periods = false) => ({ id: `stage-${n}`, n: `0${n}`, has_periods, values });
@@ -64,4 +65,38 @@ test('the shipped pipeline.json has every stage and group with source metadata',
   assert.equal(simulate(data, 'all', 'before')[0].reached, 78);
   assert.equal(simulate(data, 'race:black', 'before')[0].reached, 80);
   assert.equal(simulate(data, 'income:low-income', 'before')[0].usable, false);
+});
+
+test('stage snapshots use independent denominators and the selected college period', () => {
+  const load = (name) => JSON.parse(readFileSync(new URL(`../data/${name}.json`, import.meta.url), 'utf8'));
+  const data = load('pipeline');
+  const charts = {
+    enrollment: load('cs-enrollment').charts,
+    exams: load('ap-exams').charts,
+    college: load('college').charts,
+    workforce: load('workforce').charts,
+  };
+  const before = stageSnapshots(data, charts, 'race', 'black', 'before');
+  const after = stageSnapshots(data, charts, 'race', 'black', 'after');
+  const values = (steps) => steps.map((step) => Math.round(step.value * 100) / 100);
+  assert.deepEqual(values(before), [80, 15.92, 7.49, 12.67, 8.89, 8]);
+  assert.deepEqual(values(after), [80, 15.92, 7.49, 12.92, 8.89, 8]);
+  assert.equal(before[3].source.data_year, 'Fall 2023');
+  assert.equal(after[3].source.data_year, 'Fall 2024');
+  assert.ok(after.every((step) => step.source.verified && step.source.url));
+  assert.equal(stageSnapshots(data, charts, 'gender', 'female', 'after')[3].value, undefined);
+  assert.equal(stageSnapshots(data, charts, 'race', 'pacific-islander', 'after')[5].value, undefined);
+  assert.ok(simulate(data, 'race:black', 'after').slice(1).every((step) => !step.usable));
+});
+
+test('the illustrative funnel shows a sourced drop-off at all six stages', () => {
+  const data = JSON.parse(readFileSync(new URL('../data/pipeline-estimates.json', import.meta.url), 'utf8'));
+  const estimates = estimateFunnel(data);
+  assert.deepEqual(estimates.map(({ reached }) => reached), [8200, 689, 112, 92, 10, 5]);
+  assert.ok(estimates.every(({ entered, reached, dropped, sources }) =>
+    dropped > 0 && entered === reached + dropped
+    && sources.length > 0 && sources.every((source) => source.url && source.year && source.verified)));
+  data.inputs['ap-csp'].verified = false;
+  assert.deepEqual(estimateFunnel(data).map(({ reached }) => reached),
+    [8200, 689, null, null, null, null]);
 });

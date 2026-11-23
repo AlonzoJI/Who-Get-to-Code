@@ -287,6 +287,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2023/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 232,
           "notes": "232 of 133,436 enrolled students across 93 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -304,6 +305,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2023/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 27759,
           "notes": "27,759 of 133,436 enrolled students across 93 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -321,6 +323,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2023/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 11061,
           "notes": "11,061 of 133,436 enrolled students across 93 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -338,6 +341,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2023/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 20836,
           "notes": "20,836 of 133,436 enrolled students across 93 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -355,6 +359,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2023/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 138,
           "notes": "138 of 133,436 enrolled students across 93 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -372,6 +377,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2023/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 47802,
           "notes": "47,802 of 133,436 enrolled students across 93 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -389,6 +395,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2023/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 8400,
           "notes": "8,400 of 133,436 enrolled students across 93 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -406,6 +413,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2023/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 3444,
           "notes": "3,444 of 133,436 enrolled students across 93 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -423,6 +431,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2023/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 13764,
           "notes": "13,764 of 133,436 enrolled students across 93 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         }
       ]
@@ -447,6 +456,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2023/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 770,
           "notes": "770 of 326,345 enrolled students across 301 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -464,6 +474,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2023/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 42367,
           "notes": "42,367 of 326,345 enrolled students across 301 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -481,6 +492,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2023/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 32750,
           "notes": "32,750 of 326,345 enrolled students across 301 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -498,6 +510,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2023/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 58825,
           "notes": "58,825 of 326,345 enrolled students across 301 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -515,6 +528,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2023/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 372,
           "notes": "372 of 326,345 enrolled students across 301 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -532,6 +546,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2023/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 148136,
           "notes": "148,136 of 326,345 enrolled students across 301 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -549,6 +564,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2023/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 16050,
           "notes": "16,050 of 326,345 enrolled students across 301 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -566,6 +582,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2023/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 7132,
           "notes": "7,132 of 326,345 enrolled students across 301 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -583,6 +600,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2023/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 19943,
           "notes": "19,943 of 326,345 enrolled students across 301 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         }
       ]
@@ -607,6 +625,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2023/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 10190,
           "notes": "10,190 of 1,552,005 enrolled students across 1,819 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -624,6 +643,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2023/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 88875,
           "notes": "88,875 of 1,552,005 enrolled students across 1,819 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -641,6 +661,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2023/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 196895,
           "notes": "196,895 of 1,552,005 enrolled students across 1,819 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -658,6 +679,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2023/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 337011,
           "notes": "337,011 of 1,552,005 enrolled students across 1,819 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -675,6 +697,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2023/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 3072,
           "notes": "3,072 of 1,552,005 enrolled students across 1,819 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -692,6 +715,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2023/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 752055,
           "notes": "752,055 of 1,552,005 enrolled students across 1,819 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -709,6 +733,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2023/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 71003,
           "notes": "71,003 of 1,552,005 enrolled students across 1,819 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -726,6 +751,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2023/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 51304,
           "notes": "51,304 of 1,552,005 enrolled students across 1,819 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -743,6 +769,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2023/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 41600,
           "notes": "41,600 of 1,552,005 enrolled students across 1,819 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         }
       ]
@@ -767,6 +794,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2023/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 7915,
           "notes": "7,915 of 846,110 enrolled students across 1,406 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -784,6 +812,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2023/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 43790,
           "notes": "43,790 of 846,110 enrolled students across 1,406 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -801,6 +830,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2023/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 121400,
           "notes": "121,400 of 846,110 enrolled students across 1,406 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -818,6 +848,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2023/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 251293,
           "notes": "251,293 of 846,110 enrolled students across 1,406 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -835,6 +866,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2023/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 2504,
           "notes": "2,504 of 846,110 enrolled students across 1,406 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -852,6 +884,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2023/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 337663,
           "notes": "337,663 of 846,110 enrolled students across 1,406 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -869,6 +902,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2023/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 36118,
           "notes": "36,118 of 846,110 enrolled students across 1,406 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -886,6 +920,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2023/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 30567,
           "notes": "30,567 of 846,110 enrolled students across 1,406 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -903,6 +938,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2023/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 14860,
           "notes": "14,860 of 846,110 enrolled students across 1,406 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         }
       ]
@@ -927,6 +963,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2024/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 207,
           "notes": "207 of 134,773 enrolled students across 93 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -944,6 +981,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2024/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 28576,
           "notes": "28,576 of 134,773 enrolled students across 93 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -961,6 +999,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2024/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 9333,
           "notes": "9,333 of 134,773 enrolled students across 93 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -978,6 +1017,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2024/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 19928,
           "notes": "19,928 of 134,773 enrolled students across 93 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -995,6 +1035,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2024/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 117,
           "notes": "117 of 134,773 enrolled students across 93 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -1012,6 +1053,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2024/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 48406,
           "notes": "48,406 of 134,773 enrolled students across 93 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -1029,6 +1071,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2024/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 8234,
           "notes": "8,234 of 134,773 enrolled students across 93 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -1046,6 +1089,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2024/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 5808,
           "notes": "5,808 of 134,773 enrolled students across 93 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -1063,6 +1107,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2024/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 14164,
           "notes": "14,164 of 134,773 enrolled students across 93 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         }
       ]
@@ -1087,6 +1132,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2024/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 790,
           "notes": "790 of 335,937 enrolled students across 301 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -1104,6 +1150,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2024/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 42312,
           "notes": "42,312 of 335,937 enrolled students across 301 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -1121,6 +1168,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2024/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 32520,
           "notes": "32,520 of 335,937 enrolled students across 301 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -1138,6 +1186,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2024/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 61157,
           "notes": "61,157 of 335,937 enrolled students across 301 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -1155,6 +1204,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2024/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 417,
           "notes": "417 of 335,937 enrolled students across 301 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -1172,6 +1222,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2024/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 150092,
           "notes": "150,092 of 335,937 enrolled students across 301 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -1189,6 +1240,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2024/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 16891,
           "notes": "16,891 of 335,937 enrolled students across 301 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -1206,6 +1258,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2024/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 11014,
           "notes": "11,014 of 335,937 enrolled students across 301 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -1223,6 +1276,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2024/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 20744,
           "notes": "20,744 of 335,937 enrolled students across 301 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         }
       ]
@@ -1247,6 +1301,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2024/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 10330,
           "notes": "10,330 of 1,585,872 enrolled students across 1,819 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -1264,6 +1319,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2024/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 87516,
           "notes": "87,516 of 1,585,872 enrolled students across 1,819 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -1281,6 +1337,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2024/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 206029,
           "notes": "206,029 of 1,585,872 enrolled students across 1,819 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -1298,6 +1355,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2024/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 355733,
           "notes": "355,733 of 1,585,872 enrolled students across 1,819 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -1315,6 +1373,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2024/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 3151,
           "notes": "3,151 of 1,585,872 enrolled students across 1,819 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -1332,6 +1391,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2024/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 740190,
           "notes": "740,190 of 1,585,872 enrolled students across 1,819 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -1349,6 +1409,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2024/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 72635,
           "notes": "72,635 of 1,585,872 enrolled students across 1,819 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -1366,6 +1427,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2024/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 63108,
           "notes": "63,108 of 1,585,872 enrolled students across 1,819 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -1383,6 +1445,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2024/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 47180,
           "notes": "47,180 of 1,585,872 enrolled students across 1,819 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         }
       ]
@@ -1407,6 +1470,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2024/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 8026,
           "notes": "8,026 of 901,293 enrolled students across 1,406 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -1424,6 +1488,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2024/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 47295,
           "notes": "47,295 of 901,293 enrolled students across 1,406 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -1441,6 +1506,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2024/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 134253,
           "notes": "134,253 of 901,293 enrolled students across 1,406 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -1458,6 +1524,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2024/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 270097,
           "notes": "270,097 of 901,293 enrolled students across 1,406 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -1475,6 +1542,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2024/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 2528,
           "notes": "2,528 of 901,293 enrolled students across 1,406 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -1492,6 +1560,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2024/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 345204,
           "notes": "345,204 of 901,293 enrolled students across 1,406 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -1509,6 +1578,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2024/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 40105,
           "notes": "40,105 of 901,293 enrolled students across 1,406 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -1526,6 +1596,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2024/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 37320,
           "notes": "37,320 of 901,293 enrolled students across 1,406 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         },
         {
@@ -1543,6 +1614,7 @@
           "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2024/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
           "verified": true,
           "accessed": "2026-11-23",
+          "enrolled_count": 16465,
           "notes": "16,465 of 901,293 enrolled students across 1,406 matched institutions. Full- and part-time students. Institution level and selectivity are fixed to 2023. The enrollment source has no AP Computer Science exam history."
         }
       ]

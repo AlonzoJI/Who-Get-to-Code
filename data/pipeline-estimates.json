@@ -1,0 +1,217 @@
+{
+  "_about": "Sourced inputs and assumptions for the illustrative national funnel. Input verification describes the cited figures; the chained output is a scenario.",
+  "cohort_size": 10000,
+  "inputs": {
+    "access": {
+      "id": "funnel-input-access",
+      "stage": 1,
+      "metric": "U.S. high school students with computer science available at their school",
+      "group": "All",
+      "value": 82,
+      "unit": "percent",
+      "display": "82%",
+      "data_year": "2023–24",
+      "year": 2024,
+      "source": "CSTA, 2024 State of Computer Science Education",
+      "source_short": "CSTA, 2024 State of Computer Science Education",
+      "url": "https://csteachers.org/what-is-the-state-of-cs-education-in-2024/",
+      "verified": true,
+      "accessed": "2026-11-23",
+      "notes": "Reported share of students with access. This is a student share rather than the share of schools offering CS."
+    },
+    "high-school": {
+      "id": "funnel-input-high-school",
+      "stage": 2,
+      "metric": "U.S. public school enrollment in grades 9–12",
+      "group": "All",
+      "value": 15600000,
+      "unit": "count",
+      "display": "15,600,000",
+      "data_year": "Fall 2023",
+      "year": 2024,
+      "source": "NCES Common Core of Data",
+      "source_short": "NCES Common Core of Data",
+      "url": "https://nces.ed.gov/learn/press-release/nces-data-show-public-school-enrollment-held-steady-overall-fall-2022-fall-2023",
+      "verified": true,
+      "accessed": "2026-11-23",
+      "notes": "Rounded as published (about 15.6 million). Covers the 50 states and D.C."
+    },
+    "cs-enrollment": {
+      "id": "funnel-input-cs-enrollment",
+      "stage": 2,
+      "metric": "Reported U.S. public school computer science enrollees in grades 9–12 or equivalent",
+      "group": "All",
+      "value": 1074826,
+      "unit": "count",
+      "display": "1,074,826",
+      "data_year": "2023–24",
+      "year": 2026,
+      "source": "Office for Civil Rights, CRDC",
+      "source_short": "Office for Civil Rights, CRDC",
+      "url": "https://ocrdata.ed.gov/assets/ocr/docs/2023-24-crdc-data.zip",
+      "verified": true,
+      "accessed": "2026-11-23",
+      "notes": "Sum of the 14 national cells in the Stage 2 charts. Covers female and male counts in the 50 states and D.C."
+    },
+    "ap-csp": {
+      "id": "funnel-input-ap-csp",
+      "stage": 3,
+      "metric": "AP Computer Science Principles takers in grades 9–12",
+      "group": "All",
+      "value": 174906,
+      "unit": "count",
+      "display": "174,906",
+      "data_year": "2024 exam administration",
+      "year": 2024,
+      "source": "College Board, 2024 AP Program Summary",
+      "source_short": "College Board, 2024 AP Program Summary",
+      "url": "https://apcentral.collegeboard.org/media/pdf/program-summary-report-2024.pdf",
+      "verified": true,
+      "accessed": "2026-11-23",
+      "notes": "Sum of the four grade counts in the Computer Science Principles row. The program-wide count includes private and international students."
+    },
+    "college-entry": {
+      "id": "funnel-input-college-entry",
+      "stage": 4,
+      "metric": "Estimated immediate four-year college entry for students averaging 3 across AP exams",
+      "group": "All",
+      "value": 82,
+      "unit": "percent",
+      "display": "82%",
+      "data_year": "2017 graduating class",
+      "year": 2021,
+      "source": "College Board, New Analyses of AP Scores of 1 and 2",
+      "source_short": "College Board, New Analyses of AP Scores of 1 and 2",
+      "url": "https://research.collegeboard.org/media/pdf/new-analyses-ap-scores-1-and-2.pdf",
+      "verified": true,
+      "accessed": "2026-11-23",
+      "notes": "The college enrollment chart reports a modeled probability for students with an average AP score of 3 across AP subjects."
+    },
+    "cs-major": {
+      "id": "funnel-input-cs-major",
+      "stage": 5,
+      "metric": "CS major declarations among matched AP CSP takers at four-year colleges",
+      "group": "All",
+      "value": 16.9,
+      "unit": "percent",
+      "display": "16.9%",
+      "data_year": "2019 graduating class",
+      "year": 2020,
+      "source": "College Board, AP CSP and the STEM and Computer Science Pipelines",
+      "source_short": "College Board, AP CSP and the STEM and Computer Science Pipelines",
+      "url": "https://apcentral.collegeboard.org/media/pdf/ap-csp-and-stem-cs-pipelines.pdf?course=ap-computer-science-principles",
+      "verified": true,
+      "accessed": "2026-11-23",
+      "notes": "Figure 2. The sample was limited to four-year college entrants who declared a major."
+    },
+    "bachelor-completion": {
+      "id": "funnel-input-bachelor-completion",
+      "stage": 5,
+      "metric": "Six-year bachelor’s completion among first-time, full-time bachelor’s seekers",
+      "group": "All",
+      "value": 64.8,
+      "unit": "percent",
+      "display": "64.8%",
+      "data_year": "2018 entry cohort, reported 2024",
+      "year": 2024,
+      "source": "NCES IPEDS Graduation Rates",
+      "source_short": "NCES IPEDS Graduation Rates",
+      "url": "https://nces.ed.gov/ipeds/SummaryTables/report/817",
+      "verified": true,
+      "accessed": "2026-11-23",
+      "notes": "Bachelor’s completion within six years at the starting institution, across fields of study."
+    },
+    "cs-degree-holders": {
+      "id": "funnel-input-cs-degree-holders",
+      "stage": 6,
+      "metric": "People whose highest degree was a computer and information sciences bachelor’s",
+      "group": "All",
+      "value": 2263000,
+      "unit": "count",
+      "display": "2,263,000",
+      "data_year": "2023 survey",
+      "year": 2025,
+      "source": "NCSES National Survey of College Graduates, Table 1-1",
+      "source_short": "NCSES National Survey of College Graduates, Table 1-1",
+      "url": "https://ncses.nsf.gov/pubs/nsf25322/assets/data-tables/tables/nsf25322-tab001-001.pdf",
+      "verified": true,
+      "accessed": "2026-11-23",
+      "notes": "The bachelor’s row for computer and information sciences includes employed and unemployed people and those outside the labor force."
+    },
+    "computing-workers": {
+      "id": "funnel-input-computing-workers",
+      "stage": 6,
+      "metric": "Computing and mathematical scientists whose highest degree was a computer and information sciences bachelor’s",
+      "group": "All",
+      "value": 1143000,
+      "unit": "count",
+      "display": "1,143,000",
+      "data_year": "2023 survey",
+      "year": 2025,
+      "source": "NCSES National Survey of College Graduates, Table 1-2",
+      "source_short": "NCSES National Survey of College Graduates, Table 1-2",
+      "url": "https://ncses.nsf.gov/pubs/nsf25322/assets/data-tables/tables/nsf25322-tab001-002.pdf",
+      "verified": true,
+      "accessed": "2026-11-23",
+      "notes": "The bachelor’s row for computer and information sciences, computer and mathematical scientists column."
+    }
+  },
+  "steps": [
+    {
+      "label": "Can take CS at school",
+      "numerator": [
+        "access"
+      ],
+      "denominator": [],
+      "notes": "Uses the published share of U.S. high school students with access to a CS course."
+    },
+    {
+      "label": "Enroll in a high school CS course",
+      "numerator": [
+        "cs-enrollment"
+      ],
+      "denominator": [
+        "high-school",
+        "access"
+      ],
+      "notes": "Divides reported CS enrollment by estimated enrollment at schools offering CS. This assumes reported enrollees are part of the population with access. The two collections define course coverage differently."
+    },
+    {
+      "label": "Take the AP CS Principles exam",
+      "numerator": [
+        "ap-csp"
+      ],
+      "denominator": [
+        "cs-enrollment"
+      ],
+      "notes": "Uses the ratio of program-wide AP CSP takers in grades 9–12 to U.S. public-school CS enrollees. Different school coverage makes this a rough proxy. It can include students who took CS in an earlier year."
+    },
+    {
+      "label": "Enter a four-year college",
+      "numerator": [
+        "college-entry"
+      ],
+      "denominator": [],
+      "notes": "Uses the four-year college entry estimate for 2017 graduates who averaged 3 across AP exams in any subject as a proxy for AP CSP takers. Two-year entry is outside this path."
+    },
+    {
+      "label": "Earn a CS bachelor’s degree",
+      "numerator": [
+        "cs-major",
+        "bachelor-completion"
+      ],
+      "denominator": [],
+      "notes": "Multiplies the share declaring CS in a matched AP CSP study by the overall six-year bachelor’s completion rate. This assumes those declaring CS keep that major and complete at the overall rate."
+    },
+    {
+      "label": "Work in computing or math",
+      "numerator": [
+        "computing-workers"
+      ],
+      "denominator": [
+        "cs-degree-holders"
+      ],
+      "notes": "Uses the share of people whose highest degree was a CS bachelor’s who worked as computer and mathematical scientists. The survey covers all career stages."
+    }
+  ]
+}
