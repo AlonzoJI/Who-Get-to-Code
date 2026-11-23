@@ -93,6 +93,18 @@
     },
     {
       "kind": "dataset",
+      "apa": "College Board. (2024). *AP program summary report* [Data table].",
+      "url": "https://apcentral.collegeboard.org/media/pdf/program-summary-report-2024.pdf",
+      "type": "primary"
+    },
+    {
+      "kind": "dataset",
+      "apa": "Wyatt, J., Feng, J., & Ewing, M. (2020). *AP Computer Science Principles and the STEM and computer science pipelines*. College Board.",
+      "url": "https://apcentral.collegeboard.org/media/pdf/ap-csp-and-stem-cs-pipelines.pdf?course=ap-computer-science-principles",
+      "type": "primary"
+    },
+    {
+      "kind": "dataset",
       "apa": "College Board. (n.d.). *AP program results* [Data set].",
       "url": "https://reports.collegeboard.org/ap-program-results",
       "type": "primary"
