@@ -23,6 +23,7 @@ export function loadDatapoints() {
 }
 
 const usable = (d) => d && d.verified === true && typeof d.value === 'number';
+export const isUnsourcedPlaceholder = (d) => d?.verified === false && d.year == null && !d.source?.url;
 const esc = (v) => String(v ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
 const badge = '<span class="badge-ph">Placeholder data</span>';
 const sourceLabel = (d) => `${esc(d.source?.publisher ?? 'Source')}${d.year ? `, ${esc(d.year)}` : ', year pending'}`;
@@ -32,6 +33,8 @@ function hydrateBarChart(figure, byId) {
   const rows = [...figure.querySelectorAll('tr[data-record]')];
   const docs = rows.map((tr) => byId.get(tr.dataset.record));
   if (!docs.some(Boolean)) return;
+  const showDataYear = figure.hasAttribute('data-show-data-year');
+  if (showDataYear && docs.some((d) => !d || isUnsourcedPlaceholder(d))) return;
 
   rows.forEach((tr, i) => {
     const d = docs[i];
@@ -39,7 +42,8 @@ function hydrateBarChart(figure, byId) {
     const track = tr.querySelector('.bc-track');
     const val = tr.querySelector('.bc-val');
     const sub = tr.querySelector('.bc-sub');
-    if (sub) sub.textContent = `${d.source?.publisher ?? ''}${d.year ? `, ${d.year}` : ''}`;
+    if (sub && showDataYear && d.dataYear) sub.textContent = d.dataYear;
+    if (sub && !showDataYear) sub.textContent = `${d.source?.publisher ?? ''}${d.year ? `, ${d.year}` : ''}`;
     if (usable(d)) {
       tr.classList.remove('is-pending');
       track.innerHTML = `<span class="bc-bar" style="width:${((Math.min(Math.max(d.value, 0), max) / max) * 100).toFixed(2)}%"></span>`;

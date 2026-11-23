@@ -47,7 +47,7 @@ test('a verified: false record is ignored even if it has a value', () => {
   assert.equal(simulate({ cohort_size: 100, stages: [s] }, 'all', 'before')[0].dropped, 0);
 });
 
-test('the shipped pipeline.json has every stage and group, all unverified', () => {
+test('the shipped pipeline.json has every stage and group with source metadata', () => {
   const data = JSON.parse(readFileSync(new URL('../data/pipeline.json', import.meta.url), 'utf8'));
   const keys = data.dimensions.flatMap((d) => d.groups.map((g) => groupKey(d.id, g.id)));
   assert.equal(data.stages.length, 6);
@@ -61,4 +61,7 @@ test('the shipped pipeline.json has every stage and group, all unverified', () =
     }
   }
   assert.equal(data.stages.filter((s) => s.has_periods).map((s) => s.id).join(), 'stage-4');
+  assert.equal(simulate(data, 'all', 'before')[0].reached, 78);
+  assert.equal(simulate(data, 'race:black', 'before')[0].reached, 80);
+  assert.equal(simulate(data, 'income:low-income', 'before')[0].usable, false);
 });

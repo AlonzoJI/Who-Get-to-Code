@@ -4,7 +4,7 @@
 import '../styles/pipeline.css';
 import pipeline from '../../data/pipeline.json';
 import { simulate, groupKey, anyPlaceholder } from './model.js';
-import { loadDatapoints } from '../data-client.js';
+import { isUnsourcedPlaceholder, loadDatapoints } from '../data-client.js';
 
 const NS = 'http://www.w3.org/2000/svg';
 const DOT_R = 2.6;
@@ -371,6 +371,7 @@ export function mergeApiRates(byId) {
       for (const r of records) {
         const d = byId.get(r.id);
         if (!d) continue;
+        if (r.verified && isUnsourcedPlaceholder(d)) continue;
         const next = { value: d.value, year: d.year, verified: d.verified, source: d.source?.title ?? r.source, url: d.source?.url ?? r.url };
         for (const [k, v] of Object.entries(next)) {
           if (r[k] !== v) { r[k] = v; changed = true; }

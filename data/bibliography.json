@@ -68,6 +68,24 @@
       "type": "primary"
     },
     {
+      "kind": "dataset",
+      "apa": "Code.org, CSTA, & ECEP Alliance. (2021). *2021 state of computer science education: Accelerating action through advocacy*.",
+      "url": "https://code.org/assets/advocacy/stateofcs/2021_state_of_cs.pdf",
+      "type": "primary"
+    },
+    {
+      "kind": "dataset",
+      "apa": "Code.org, CSTA, & ECEP Alliance. (2024). *2024 state of computer science education*.",
+      "url": "https://drive.google.com/file/d/1iXkNx3m80BcHC_5GghjPrppf47EDmpiC/view?usp=sharing",
+      "type": "primary"
+    },
+    {
+      "kind": "dataset",
+      "apa": "Code.org. (2025). *High school 2025 data (public): Most recent access data* [Data set].",
+      "url": "https://docs.google.com/spreadsheets/d/1GVik9c6b0vKLCC_QOgJ7Iy4vBKZNAyVpgN_LqXBzM0A/edit#gid=1228010716",
+      "type": "primary"
+    },
+    {
       "kind": "source",
       "apa": "Code.org. (2025, December 10). *New report: AI + computer science are the foundation for U.S. K-12 readiness, but state policies lag behind* [Press release]. PR Newswire.",
       "url": "https://www.prnewswire.com/news-releases/new-report-ai--computer-science-are-the-foundation-for-us-k12-readiness-but-state-policies-lag-behind-302637515.html",

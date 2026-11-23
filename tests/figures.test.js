@@ -11,15 +11,17 @@ const rows = collectFigures(files);
 
 test('collects figures from every data file that shows numbers', () => {
   const seen = new Set(rows.map((r) => r.file));
-  for (const f of ['home-stats.json', 'pipeline.json', 'before-classroom.json', 'rollback.json', 'college.json', 'workforce.json', 'about.json']) {
+  for (const f of ['home-stats.json', 'pipeline.json', 'school-access.json', 'before-classroom.json', 'rollback.json', 'college.json', 'workforce.json', 'about.json']) {
     assert.ok(seen.has(f), f);
   }
 });
 
-test('the 84 pipeline placeholders are all unverified', () => {
-  const p = rows.filter((r) => r.file === 'pipeline.json');
-  assert.equal(p.length, 84);
-  assert.ok(p.every((r) => !r.verified && r.value === null));
+test('the Methods page includes verified Stage 1 figures and remaining pipeline placeholders', () => {
+  const pipeline = rows.filter((r) => r.file === 'pipeline.json');
+  assert.equal(pipeline.length, 84);
+  assert.equal(pipeline.filter((r) => r.verified).length, 8);
+  assert.ok(pipeline.filter((r) => !r.verified).every((r) => r.value === null));
+  assert.equal(rows.filter((r) => r.file === 'school-access.json' && r.verified).length, 51);
 });
 
 test('a verified row always has a value and a source', () => {

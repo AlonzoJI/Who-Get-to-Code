@@ -54,6 +54,7 @@ function sitePartials() {
           .replace('<!-- @pipeline -->', () => render.pipelineCards(readJson('pages')))
           .replace('<!-- @pipeline-source -->', () => render.pipelineSource(readJson('pipeline')))
           .replace('<!-- @datasets -->', () => render.datasetsByStage(readJson('pipeline')))
+          .replace('<!-- @student-access -->', () => render.studentAccessChart(readJson('pipeline')))
           .replace(/<!-- @chart ([\w-]+) ([\w-]+) -->/g, (_, file, id) =>
             render.barChart(readJson(file).charts.find((c) => c.id === id))
           )
