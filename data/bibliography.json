@@ -466,12 +466,6 @@
     },
     {
       "kind": "source",
-      "apa": "Computer Science Teachers Association. (2024, October 22). *What is the state of CS education in 2024?*",
-      "url": "https://csteachers.org/what-is-the-state-of-cs-education-in-2024/",
-      "type": "primary"
-    },
-    {
-      "kind": "source",
       "apa": "National Center for Education Statistics. (2024, December 5). *NCES data show public school enrollment held steady overall from fall 2022 to fall 2023*.",
       "url": "https://nces.ed.gov/learn/press-release/nces-data-show-public-school-enrollment-held-steady-overall-fall-2022-fall-2023",
       "type": "primary"
@@ -498,6 +492,18 @@
       "kind": "source",
       "apa": "National Center for Science and Engineering Statistics. (2025). *National Survey of College Graduates: 2023, table 1-2* (NSF 25-322). National Science Foundation.",
       "url": "https://ncses.nsf.gov/pubs/nsf25322/assets/data-tables/tables/nsf25322-tab001-002.pdf",
+      "type": "primary"
+    },
+    {
+      "kind": "dataset",
+      "apa": "National Center for Education Statistics. (2024). Table 203.60. Enrollment and percentage distribution of enrollment in public elementary and secondary schools, by race/ethnicity and level of education: Fall 1999 through fall 2023 [Data table]. In *Digest of Education Statistics*. U.S. Department of Education.",
+      "url": "https://nces.ed.gov/programs/digest/d24/tables/dt24_203.60.asp?current=yes",
+      "type": "primary"
+    },
+    {
+      "kind": "dataset",
+      "apa": "U.S. Census Bureau. (2025). *Sex by school enrollment by level of school by type of school for the population 3 years and over* (American Community Survey 2024 1-year estimates, Table B14002) [Data set]. Retrieved via Census Reporter.",
+      "url": "https://censusreporter.org/data/table/?table=B14002&geo_ids=01000US",
       "type": "primary"
     }
   ]

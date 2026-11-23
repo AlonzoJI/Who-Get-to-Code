@@ -33,24 +33,3 @@ export function simulate(pipeline, key, period) {
 }
 
 export const anyPlaceholder = (steps) => steps.some((s) => !s.usable);
-
-export function estimateFunnel({ cohort_size, inputs, steps }) {
-  const product = (rows) => rows.reduce((value, row) =>
-    value * (isUsable(row) ? row.value / (row.unit === 'percent' ? 100 : 1) : NaN), 1);
-  let remaining = cohort_size;
-  return steps.map((step) => {
-    const numerator = step.numerator.map((key) => inputs[key]);
-    const denominator = step.denominator.map((key) => inputs[key]);
-    const ratio = product(numerator) / product(denominator);
-    const rate = ratio >= 0 && ratio <= 1 ? ratio : null;
-    const entered = remaining === null ? null : Math.round(remaining);
-    remaining = rate === null || remaining === null ? null : remaining * rate;
-    const reached = remaining === null ? null : Math.round(remaining);
-    return {
-      ...step, rate, entered, reached,
-      dropped: reached === null ? null : entered - reached,
-      sources: [...new Map([...numerator, ...denominator]
-        .filter(isUsable).map((row) => [row.url, row])).values()],
-    };
-  });
-}

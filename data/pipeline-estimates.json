@@ -1,24 +1,7 @@
 {
-  "_about": "Sourced inputs and assumptions for the illustrative national funnel. Input verification describes the cited figures; the chained output is a scenario.",
-  "cohort_size": 10000,
+  "_about": "Sourced inputs for the projected pipeline on the home page. Each input is a cited figure; the chained rates and group adjustments are an illustrative projection, not a measured cohort.",
+  "cohort_size": 100,
   "inputs": {
-    "access": {
-      "id": "funnel-input-access",
-      "stage": 1,
-      "metric": "U.S. high school students with computer science available at their school",
-      "group": "All",
-      "value": 82,
-      "unit": "percent",
-      "display": "82%",
-      "data_year": "2023–24",
-      "year": 2024,
-      "source": "CSTA, 2024 State of Computer Science Education",
-      "source_short": "CSTA, 2024 State of Computer Science Education",
-      "url": "https://csteachers.org/what-is-the-state-of-cs-education-in-2024/",
-      "verified": true,
-      "accessed": "2026-11-23",
-      "notes": "Reported share of students with access. This is a student share rather than the share of schools offering CS."
-    },
     "high-school": {
       "id": "funnel-input-high-school",
       "stage": 2,
@@ -160,10 +143,12 @@
     {
       "label": "Can take CS at school",
       "numerator": [
-        "access"
+        "school-access"
       ],
       "denominator": [],
-      "notes": "Uses the published share of U.S. high school students with access to a CS course."
+      "notes": "Uses the published share of U.S. high school students who attend a school offering foundational CS (Code.org, CSTA and ECEP Alliance, 2021 State of Computer Science Education).",
+      "stage": 1,
+      "group_method": "Uses the group’s own published access rate (Code.org, CSTA and ECEP Alliance, 2021). Groups without a published rate use the all-students rate."
     },
     {
       "label": "Enroll in a high school CS course",
@@ -172,9 +157,11 @@
       ],
       "denominator": [
         "high-school",
-        "access"
+        "school-access"
       ],
-      "notes": "Divides reported CS enrollment by estimated enrollment at schools offering CS. This assumes reported enrollees are part of the population with access. The two collections define course coverage differently."
+      "notes": "Divides reported CS enrollment by estimated enrollment at schools offering CS. This assumes reported enrollees are part of the population with access. The two collections define course coverage differently.",
+      "stage": 2,
+      "group_method": "Compares the group’s share of CS enrollees (CRDC 2023–24) with its share of high schoolers at schools offering CS (NCES fall 2023 enrollment weighted by the stage 1 access rate)."
     },
     {
       "label": "Take the AP CS Principles exam",
@@ -184,7 +171,9 @@
       "denominator": [
         "cs-enrollment"
       ],
-      "notes": "Uses the ratio of program-wide AP CSP takers in grades 9–12 to U.S. public-school CS enrollees. Different school coverage makes this a rough proxy. It can include students who took CS in an earlier year."
+      "notes": "Uses the ratio of program-wide AP CSP takers in grades 9–12 to U.S. public-school CS enrollees. Different school coverage makes this a rough proxy. It can include students who took CS in an earlier year.",
+      "stage": 3,
+      "group_method": "Compares the group’s share of AP CSP takers (College Board) with its share of CS enrollees (CRDC). The race figures describe the class of 2019; the gender figures describe the 2024 exam."
     },
     {
       "label": "Enter a four-year college",
@@ -192,7 +181,9 @@
         "college-entry"
       ],
       "denominator": [],
-      "notes": "Uses the four-year college entry estimate for 2017 graduates who averaged 3 across AP exams in any subject as a proxy for AP CSP takers. Two-year entry is outside this path."
+      "notes": "Uses the four-year college entry estimate for 2017 graduates who averaged 3 across AP exams in any subject as a proxy for AP CSP takers. Two-year entry is outside this path.",
+      "stage": 4,
+      "group_method": "Compares the group’s share of first-time students at four-year colleges (IPEDS, fall 2023 before or fall 2024 after) with its share of high schoolers (NCES). This is college-going among all students, used as a proxy for AP CSP takers. No sex breakdown is in the site data, so gender uses the all-students rate."
     },
     {
       "label": "Earn a CS bachelor’s degree",
@@ -201,7 +192,9 @@
         "bachelor-completion"
       ],
       "denominator": [],
-      "notes": "Multiplies the share declaring CS in a matched AP CSP study by the overall six-year bachelor’s completion rate. This assumes those declaring CS keep that major and complete at the overall rate."
+      "notes": "Multiplies the share declaring CS in a matched AP CSP study by the overall six-year bachelor’s completion rate. This assumes those declaring CS keep that major and complete at the overall rate.",
+      "stage": 5,
+      "group_method": "Compares the group’s share of CS bachelor’s awards (IPEDS 2023–24) with its share of fall 2023 four-year entrants. For gender, which has no entrant breakdown in the site data, it compares with the share of AP CSP takers."
     },
     {
       "label": "Work in computing or math",
@@ -211,7 +204,177 @@
       "denominator": [
         "cs-degree-holders"
       ],
-      "notes": "Uses the share of people whose highest degree was a CS bachelor’s who worked as computer and mathematical scientists. The survey covers all career stages."
+      "notes": "Uses the share of people whose highest degree was a CS bachelor’s who worked as computer and mathematical scientists. The survey covers all career stages.",
+      "stage": 6,
+      "group_method": "Compares the group’s share of computer and mathematical scientists (NSF, 2021) with its share of CS bachelor’s awards. The workforce figure covers all degree fields and career stages. Pacific Islander and multiracial workers are not reported separately, so those groups use the all-students rate."
     }
-  ]
+  ],
+  "baselines": {
+    "race": [
+      {
+        "stage": 0,
+        "unit": "thousand students",
+        "data_year": "Fall 2023",
+        "year": 2024,
+        "source": "NCES, Digest of Education Statistics 2024, Table 203.60",
+        "source_short": "NCES Digest Table 203.60",
+        "url": "https://nces.ed.gov/programs/digest/d24/tables/dt24_203.60.asp?current=yes",
+        "verified": true,
+        "accessed": "2026-11-23",
+        "metric": "Public school enrollment in grades 9 through 12, by race/ethnicity",
+        "id": "baseline-hs-race-american-indian",
+        "group": "american-indian",
+        "value": 141,
+        "display": "141 thousand",
+        "caption": "American Indian/Alaska Native students in public grades 9–12",
+        "notes": "Fall 2023 row labeled \"Grades 9 through 12\" (includes a small number of grade 13 students). Race categories exclude Hispanic ethnicity. The table notes: \"Enrollment data for students not reported by race/ethnicity were prorated based on the known racial/ethnic composition of a state by grade.\" Total row: 15,569 thousand."
+      },
+      {
+        "stage": 0,
+        "unit": "thousand students",
+        "data_year": "Fall 2023",
+        "year": 2024,
+        "source": "NCES, Digest of Education Statistics 2024, Table 203.60",
+        "source_short": "NCES Digest Table 203.60",
+        "url": "https://nces.ed.gov/programs/digest/d24/tables/dt24_203.60.asp?current=yes",
+        "verified": true,
+        "accessed": "2026-11-23",
+        "metric": "Public school enrollment in grades 9 through 12, by race/ethnicity",
+        "id": "baseline-hs-race-asian",
+        "group": "asian",
+        "value": 862,
+        "display": "862 thousand",
+        "caption": "Asian students in public grades 9–12",
+        "notes": "Fall 2023 row labeled \"Grades 9 through 12\" (includes a small number of grade 13 students). Race categories exclude Hispanic ethnicity. The table notes: \"Enrollment data for students not reported by race/ethnicity were prorated based on the known racial/ethnic composition of a state by grade.\" Total row: 15,569 thousand."
+      },
+      {
+        "stage": 0,
+        "unit": "thousand students",
+        "data_year": "Fall 2023",
+        "year": 2024,
+        "source": "NCES, Digest of Education Statistics 2024, Table 203.60",
+        "source_short": "NCES Digest Table 203.60",
+        "url": "https://nces.ed.gov/programs/digest/d24/tables/dt24_203.60.asp?current=yes",
+        "verified": true,
+        "accessed": "2026-11-23",
+        "metric": "Public school enrollment in grades 9 through 12, by race/ethnicity",
+        "id": "baseline-hs-race-black",
+        "group": "black",
+        "value": 2308,
+        "display": "2,308 thousand",
+        "caption": "Black students in public grades 9–12",
+        "notes": "Fall 2023 row labeled \"Grades 9 through 12\" (includes a small number of grade 13 students). Race categories exclude Hispanic ethnicity. The table notes: \"Enrollment data for students not reported by race/ethnicity were prorated based on the known racial/ethnic composition of a state by grade.\" Total row: 15,569 thousand."
+      },
+      {
+        "stage": 0,
+        "unit": "thousand students",
+        "data_year": "Fall 2023",
+        "year": 2024,
+        "source": "NCES, Digest of Education Statistics 2024, Table 203.60",
+        "source_short": "NCES Digest Table 203.60",
+        "url": "https://nces.ed.gov/programs/digest/d24/tables/dt24_203.60.asp?current=yes",
+        "verified": true,
+        "accessed": "2026-11-23",
+        "metric": "Public school enrollment in grades 9 through 12, by race/ethnicity",
+        "id": "baseline-hs-race-hispanic",
+        "group": "hispanic",
+        "value": 4616,
+        "display": "4,616 thousand",
+        "caption": "Hispanic students in public grades 9–12",
+        "notes": "Fall 2023 row labeled \"Grades 9 through 12\" (includes a small number of grade 13 students). Race categories exclude Hispanic ethnicity. The table notes: \"Enrollment data for students not reported by race/ethnicity were prorated based on the known racial/ethnic composition of a state by grade.\" Total row: 15,569 thousand."
+      },
+      {
+        "stage": 0,
+        "unit": "thousand students",
+        "data_year": "Fall 2023",
+        "year": 2024,
+        "source": "NCES, Digest of Education Statistics 2024, Table 203.60",
+        "source_short": "NCES Digest Table 203.60",
+        "url": "https://nces.ed.gov/programs/digest/d24/tables/dt24_203.60.asp?current=yes",
+        "verified": true,
+        "accessed": "2026-11-23",
+        "metric": "Public school enrollment in grades 9 through 12, by race/ethnicity",
+        "id": "baseline-hs-race-pacific-islander",
+        "group": "pacific-islander",
+        "value": 56,
+        "display": "56 thousand",
+        "caption": "Pacific Islander students in public grades 9–12",
+        "notes": "Fall 2023 row labeled \"Grades 9 through 12\" (includes a small number of grade 13 students). Race categories exclude Hispanic ethnicity. The table notes: \"Enrollment data for students not reported by race/ethnicity were prorated based on the known racial/ethnic composition of a state by grade.\" Total row: 15,569 thousand."
+      },
+      {
+        "stage": 0,
+        "unit": "thousand students",
+        "data_year": "Fall 2023",
+        "year": 2024,
+        "source": "NCES, Digest of Education Statistics 2024, Table 203.60",
+        "source_short": "NCES Digest Table 203.60",
+        "url": "https://nces.ed.gov/programs/digest/d24/tables/dt24_203.60.asp?current=yes",
+        "verified": true,
+        "accessed": "2026-11-23",
+        "metric": "Public school enrollment in grades 9 through 12, by race/ethnicity",
+        "id": "baseline-hs-race-white",
+        "group": "white",
+        "value": 6900,
+        "display": "6,900 thousand",
+        "caption": "White students in public grades 9–12",
+        "notes": "Fall 2023 row labeled \"Grades 9 through 12\" (includes a small number of grade 13 students). Race categories exclude Hispanic ethnicity. The table notes: \"Enrollment data for students not reported by race/ethnicity were prorated based on the known racial/ethnic composition of a state by grade.\" Total row: 15,569 thousand."
+      },
+      {
+        "stage": 0,
+        "unit": "thousand students",
+        "data_year": "Fall 2023",
+        "year": 2024,
+        "source": "NCES, Digest of Education Statistics 2024, Table 203.60",
+        "source_short": "NCES Digest Table 203.60",
+        "url": "https://nces.ed.gov/programs/digest/d24/tables/dt24_203.60.asp?current=yes",
+        "verified": true,
+        "accessed": "2026-11-23",
+        "metric": "Public school enrollment in grades 9 through 12, by race/ethnicity",
+        "id": "baseline-hs-race-multiracial",
+        "group": "multiracial",
+        "value": 686,
+        "display": "686 thousand",
+        "caption": "Two or more races students in public grades 9–12",
+        "notes": "Fall 2023 row labeled \"Grades 9 through 12\" (includes a small number of grade 13 students). Race categories exclude Hispanic ethnicity. The table notes: \"Enrollment data for students not reported by race/ethnicity were prorated based on the known racial/ethnic composition of a state by grade.\" Total row: 15,569 thousand."
+      }
+    ],
+    "sex": [
+      {
+        "stage": 0,
+        "unit": "students",
+        "data_year": "2024",
+        "year": 2025,
+        "source": "U.S. Census Bureau, American Community Survey 2024 1-year, Table B14002",
+        "source_short": "ACS 2024, Table B14002",
+        "url": "https://censusreporter.org/data/table/?table=B14002&geo_ids=01000US",
+        "verified": true,
+        "accessed": "2026-11-23",
+        "metric": "People enrolled in grades 9 to 12 at a public school, by sex",
+        "id": "baseline-hs-sex-female",
+        "group": "female",
+        "value": 7561543,
+        "display": "7,561,543",
+        "caption": "Female students in public grades 9–12",
+        "notes": "Estimate B14002_041, margin of error ±45,432. Retrieved from the Census Reporter mirror of the Census Bureau table because the Census API now requires a key. Survey estimate of the household population, so it does not match administrative counts exactly."
+      },
+      {
+        "stage": 0,
+        "unit": "students",
+        "data_year": "2024",
+        "year": 2025,
+        "source": "U.S. Census Bureau, American Community Survey 2024 1-year, Table B14002",
+        "source_short": "ACS 2024, Table B14002",
+        "url": "https://censusreporter.org/data/table/?table=B14002&geo_ids=01000US",
+        "verified": true,
+        "accessed": "2026-11-23",
+        "metric": "People enrolled in grades 9 to 12 at a public school, by sex",
+        "id": "baseline-hs-sex-male",
+        "group": "male",
+        "value": 8021818,
+        "display": "8,021,818",
+        "caption": "Male students in public grades 9–12",
+        "notes": "Estimate B14002_017, margin of error ±39,915. Retrieved from the Census Reporter mirror of the Census Bureau table because the Census API now requires a key. Survey estimate of the household population, so it does not match administrative counts exactly."
+      }
+    ]
+  }
 }

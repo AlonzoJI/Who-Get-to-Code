@@ -59,27 +59,36 @@
         <span class="eyebrow">The pipeline</span>
         <h2 id="pipeline-title">Six steps, from a class on the schedule to a first job</h2>
         <p class="lede">Pick a group and press Run to follow 100 students from that group through every
-          step. The log on the side records where students drop off and which source each number
-          comes from.</p>
+          step. This is a projection built from published figures, not one class followed for ten years.
+          The log on the side shows each rate, how it was estimated and where the numbers come from.</p>
 
         <div id="pipeline-diagram" class="engine">
           <p class="pl-nojs">The interactive diagram needs JavaScript. The datasets for each stage are listed below.</p>
         </div>
-        <!-- @pipeline-source -->
+        <p class="chart-src">Sources: NCES, CRDC, College Board, IPEDS, NCSES and Census figures, 2019 to 2024. Each step lists its own sources and years in the log.</p>
 
         <details class="more">
           <summary>The technical version</summary>
           <div class="more-in">
-            <p>Each stage's number is the <b>percent of the group who move on from the previous stage</b>
-              (stage 01 is out of all students in the group). The diagram multiplies those rates, so the
-              count at stage 06 is the product of all six. Counts are rounded once per stage from the
-              running product, so rounding never adds up across steps.</p>
-            <p>A stage with no verified number removes nobody and is marked "Placeholder data" in the
-              log. Nothing is estimated or filled in. Datasets measure different cohorts and years, so
-              the chained result describes a typical path, not one real class of students followed for
-              ten years.</p>
-            <p>The before/after toggle only changes stages that have a verified figure for both periods.
-              Every other stage uses the same figure either way.</p>
+            <p><b>All students.</b> Each step's rate is a ratio of published figures. Stage 01 is the share
+              of high schoolers at a school offering CS (Code.org, 2021). Stage 02 is 2023–24 CRDC
+              CS enrollment divided by fall 2023 grades 9–12 enrollment, adjusted for access. Stage 03 is
+              2024 AP CS Principles takers divided by CRDC enrollment. Stage 04 is College Board's
+              estimate of four-year entry for students averaging a 3 on AP exams. Stage 05 multiplies the
+              share of matched AP CSP takers who declared CS by the six-year bachelor's completion rate.
+              Stage 06 is the share of CS bachelor's holders working as computer or mathematical scientists.</p>
+            <p><b>One group.</b> The all-students rate is adjusted by how the group's share changes between
+              two matching populations, such as its share of AP CSP takers compared with its share of CS
+              enrollees. The adjustment scales the odds, so no rate goes above 100%. Where no breakdown
+              exists (income at every stage, gender at stage 04), the step uses the all-students rate and the
+              log says so.</p>
+            <p><b>What this is not.</b> The figures come from different cohorts, years and sometimes
+              different populations (some AP counts include private schools; the workforce figures cover
+              all ages). The result shows the rough size of each drop-off and how groups compare. It is not
+              a measured outcome. Dots are rounded to whole students, so the labels under each stage keep
+              the decimals.</p>
+            <p>The before/after toggle changes stage 04 for race groups, using fall 2023 or fall 2024
+              first-year enrollment at four-year colleges.</p>
           </div>
         </details>
 

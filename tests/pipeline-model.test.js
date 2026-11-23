@@ -1,8 +1,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { simulate, groupKey, recordFor, anyPlaceholder, estimateFunnel } from '../src/pipeline/model.js';
-import { stageSnapshots } from '../src/pipeline/snapshots.js';
+import { simulate, groupKey, recordFor, anyPlaceholder } from '../src/pipeline/model.js';
+import { projectPipeline, scaleOdds } from '../src/pipeline/projection.js';
 
 // Test fixture only. These rates are made up to exercise the math and never ship.
 const stage = (n, values, has_periods = false) => ({ id: `stage-${n}`, n: `0${n}`, has_periods, values });
@@ -67,36 +67,65 @@ test('the shipped pipeline.json has every stage and group with source metadata',
   assert.equal(simulate(data, 'income:low-income', 'before')[0].usable, false);
 });
 
-test('stage snapshots use independent denominators and the selected college period', () => {
-  const load = (name) => JSON.parse(readFileSync(new URL(`../data/${name}.json`, import.meta.url), 'utf8'));
-  const data = load('pipeline');
-  const charts = {
+const load = (name) => JSON.parse(readFileSync(new URL(`../data/${name}.json`, import.meta.url), 'utf8'));
+const shipped = () => ({
+  pipeline: load('pipeline'),
+  estimates: load('pipeline-estimates'),
+  charts: {
     enrollment: load('cs-enrollment').charts,
     exams: load('ap-exams').charts,
     college: load('college').charts,
     workforce: load('workforce').charts,
-  };
-  const before = stageSnapshots(data, charts, 'race', 'black', 'before');
-  const after = stageSnapshots(data, charts, 'race', 'black', 'after');
-  const values = (steps) => steps.map((step) => Math.round(step.value * 100) / 100);
-  assert.deepEqual(values(before), [80, 15.92, 7.49, 12.67, 8.89, 8]);
-  assert.deepEqual(values(after), [80, 15.92, 7.49, 12.92, 8.89, 8]);
-  assert.equal(before[3].source.data_year, 'Fall 2023');
-  assert.equal(after[3].source.data_year, 'Fall 2024');
-  assert.ok(after.every((step) => step.source.verified && step.source.url));
-  assert.equal(stageSnapshots(data, charts, 'gender', 'female', 'after')[3].value, undefined);
-  assert.equal(stageSnapshots(data, charts, 'race', 'pacific-islander', 'after')[5].value, undefined);
-  assert.ok(simulate(data, 'race:black', 'after').slice(1).every((step) => !step.usable));
+  },
+});
+const project = (data, dimension, group, period = 'after') => projectPipeline({ ...data, dimension, group, period });
+const per10k = (steps) => steps.map((s) => Math.round(s.projectedReached * 100 * 10) / 10);
+
+test('scaling odds keeps rates between 0 and 1', () => {
+  assert.equal(scaleOdds(0.5, 1), 0.5);
+  assert.ok(Math.abs(scaleOdds(0.82, 3) - 0.9318) < 1e-4);
+  assert.ok(scaleOdds(0.99, 100) < 1);
+  assert.equal(scaleOdds(0, 5), 0);
 });
 
-test('the illustrative funnel shows a sourced drop-off at all six stages', () => {
-  const data = JSON.parse(readFileSync(new URL('../data/pipeline-estimates.json', import.meta.url), 'utf8'));
-  const estimates = estimateFunnel(data);
-  assert.deepEqual(estimates.map(({ reached }) => reached), [8200, 689, 112, 92, 10, 5]);
-  assert.ok(estimates.every(({ entered, reached, dropped, sources }) =>
-    dropped > 0 && entered === reached + dropped
-    && sources.length > 0 && sources.every((source) => source.url && source.year && source.verified)));
-  data.inputs['ap-csp'].verified = false;
-  assert.deepEqual(estimateFunnel(data).map(({ reached }) => reached),
-    [8200, 689, null, null, null, null]);
+test('the all-students projection drops students at every stage from cited inputs', () => {
+  const data = shipped();
+  const steps = project(data, 'all', 'all');
+  assert.deepEqual(per10k(steps), [7800, 689, 112.1, 91.9, 10.1, 5.1]);
+  assert.deepEqual(steps.map((s) => s.reached), [78, 7, 1, 1, 0, 0]);
+  assert.ok(steps.every((s) => s.rate > 0 && s.rate < 1 && s.entered === s.reached + s.dropped));
+  assert.ok(steps.every((s) => s.sources.length && s.sources.every((r) => r.verified && r.url && r.year)));
+});
+
+test('group steps compare matching populations and fall back to the all-students rate', () => {
+  const data = shipped();
+  const black = project(data, 'race', 'black');
+  assert.equal(black[0].method, 'published');
+  assert.equal(black[0].rate, 0.8);
+  assert.ok(black.slice(1).every((s) => s.method === 'group'));
+  assert.equal(black[2].compare.num.label, 'AP CSP takers');
+  assert.equal(black[2].compare.den.label, 'CS enrollees');
+  assert.ok(black[2].rate < black[2].allRate);
+
+  const female = project(data, 'gender', 'female');
+  assert.equal(female[3].method, 'all');
+  assert.equal(female[4].compare.den.label, 'AP CSP takers');
+  assert.equal(project(data, 'race', 'pacific-islander')[5].method, 'all');
+  assert.deepEqual(per10k(project(data, 'income', 'low-income')), per10k(project(data, 'all', 'all')));
+});
+
+test('the period toggle only changes the college step for race groups', () => {
+  const data = shipped();
+  const before = project(data, 'race', 'black', 'before');
+  const after = project(data, 'race', 'black', 'after');
+  assert.notEqual(before[3].rate, after[3].rate);
+  assert.deepEqual([0, 1, 2, 4, 5].map((i) => before[i].rate), [0, 1, 2, 4, 5].map((i) => after[i].rate));
+});
+
+test('an unverified input stops the projection instead of inventing a rate', () => {
+  const data = shipped();
+  data.estimates.inputs['ap-csp'].verified = false;
+  const steps = project(data, 'all', 'all');
+  assert.equal(steps[2].rate, null);
+  assert.equal(steps[5].reached, null);
 });

@@ -1,10 +1,24 @@
 // Interactive outcomes pipeline: pick a group, press Run, watch 100 students
-// move through six stages. Every number comes from /data/pipeline.json via
-// model.js; unverified stages remove no one and say so in the log.
+// move through six stages. The rates are an illustrative projection built from
+// cited figures (projection.js, data/pipeline-estimates.json); the log shows
+// every comparison and source used.
 import '../styles/pipeline.css';
 import pipeline from '../../data/pipeline.json';
-import { simulate, groupKey, anyPlaceholder } from './model.js';
+import estimates from '../../data/pipeline-estimates.json';
+import enrollment from '../../data/cs-enrollment.json';
+import exams from '../../data/ap-exams.json';
+import college from '../../data/college.json';
+import workforce from '../../data/workforce.json';
+import { projectPipeline } from './projection.js';
 import { isUnsourcedPlaceholder, loadDatapoints } from '../data-client.js';
+
+const charts = {
+  enrollment: enrollment.charts, exams: exams.charts, college: college.charts, workforce: workforce.charts,
+};
+
+// Projected counts can be fractions of a student, so small numbers keep a decimal.
+const fmt = (n) => (n >= 10 ? Math.round(n).toLocaleString('en-US') : n >= 1 ? n.toFixed(1) : String(Number(n.toPrecision(1))));
+const pct = (rate) => `${Number((rate * 100).toFixed(1))}%`;
 
 const NS = 'http://www.w3.org/2000/svg';
 const DOT_R = 2.6;
@@ -152,7 +166,7 @@ export function mountPipeline(root) {
   }
   const perNote = html('span', 'pl-note',
     periodStages.length
-      ? `Applies to stage ${periodStages.map((s) => s.n).join(', ')} only`
+      ? `Changes stage ${periodStages.map((s) => s.n).join(', ')} for race groups only`
       : 'No stage has before and after data yet');
   perNote.id = 'pl-per-note';
   perSet.setAttribute('aria-describedby', perNote.id);
@@ -173,8 +187,8 @@ export function mountPipeline(root) {
   const status = html('div', 'pl-status');
   const legend = html('div', 'pl-legend');
   legend.innerHTML = '<span><i class="k-in"></i>Still in the pipeline</span><span><i class="k-out"></i>Dropped off</span>';
-  const badgeSlot = html('span');
-  status.append(legend, badgeSlot);
+  const badge = html('span', 'badge-illus', 'Illustrative, not data');
+  status.append(legend, badge);
 
   // stage + log
   const body = html('div', 'eng-body');
@@ -200,7 +214,7 @@ export function mountPipeline(root) {
     svg.classList.toggle('vertical', L.vertical);
     svg.replaceChildren(
       svgEl('title', { id: 'pl-svg-title' }, 'Outcomes pipeline diagram'),
-      svgEl('desc', { id: 'pl-svg-desc' }, `${pipeline.cohort_size} students move through six stages. The Path taken log lists what happens at each stage.`)
+      svgEl('desc', { id: 'pl-svg-desc' }, `A projection of ${pipeline.cohort_size} students moving through six stages, built from published figures. The Path taken log lists the rate, comparison and sources for each stage.`)
     );
     const gEdges = svgEl('g'), gNodes = svgEl('g'), gText = svgEl('g'), gDots = svgEl('g');
     svg.append(gEdges, gNodes, gText, gDots);
@@ -250,11 +264,13 @@ export function mountPipeline(root) {
   }
 
   function currentSteps() {
-    return simulate(pipeline, groupKey(state.dimension, state.group), state.period);
+    return projectPipeline({ pipeline, estimates, charts, dimension: state.dimension, group: state.group, period: state.period });
   }
 
-  function refreshBadge() {
-    badgeSlot.innerHTML = anyPlaceholder(currentSteps()) ? '<span class="badge-ph">Placeholder data</span>' : '';
+  function groupLabel() {
+    if (state.dimension === 'all') return 'U.S. high school students';
+    const label = pipeline.dimensions.find((d) => d.id === state.dimension).groups.find((g) => g.id === state.group).label;
+    return state.dimension === 'gender' ? `${label.toLowerCase()} high school students` : `${label} high school students`;
   }
 
   function reset() {
@@ -264,7 +280,6 @@ export function mountPipeline(root) {
     root.removeAttribute('aria-busy');
     log.replaceChildren(html('li', 'tr-empty', 'Pick a group and press Run.'));
     draw();
-    refreshBadge();
   }
 
   dimSet.addEventListener('change', (e) => { state.dimension = e.target.value; fillGroups(); reset(); });
@@ -283,27 +298,37 @@ export function mountPipeline(root) {
 
   // ── run ──
   function logStep(step) {
-    const { stage, record, usable } = step;
+    const { stage } = step;
     const li = html('li', 'tr-step');
     li.append(html('span', 'tr-n', stage.n));
     const main = html('div', 'tr-main');
-    main.append(html('b', null, stage.short));
-    if (usable) {
-      main.append(html('span', null, `${step.entered} in · ${step.dropped} dropped off · ${step.reached} continue`));
-      const kinds = record.by_kind && Object.entries(record.by_kind).filter(([, v]) => typeof v === 'number');
-      if (kinds?.length) main.append(html('span', 'tr-sub', kinds.map(([k, v]) => `${k.replaceAll('_', ' ')} ${v}%`).join(' · ')));
-      if (typeof record.median_earnings_usd === 'number') main.append(html('span', 'tr-sub', `Median earnings $${record.median_earnings_usd.toLocaleString('en-US')}`));
-      const src = html('span', 'tr-src');
-      const a = html('a', null, `${record.source}, ${record.year}`);
-      a.href = record.url; a.target = '_blank'; a.rel = 'noopener';
-      src.append('Source: ', a);
-      main.append(src);
-    } else {
-      main.append(html('span', null, `${step.entered} in · data pending, no one removed`));
-      const ph = html('span', 'badge-ph', 'Placeholder data');
-      main.append(ph);
+    main.append(html('b', null, step.label));
+    main.append(html('span', null, `${step.entered} in · ${step.dropped} drop off · ${step.reached} continue`));
+    main.append(html('span', 'tr-sub', `${pct(step.rate)} continue. Projected: ${fmt(step.projectedReached)} of ${pipeline.cohort_size} (about ${fmt(step.projectedReached * 100)} in 10,000)`));
+    if (step.method === 'group') {
+      const { num, den } = step.compare;
+      main.append(html('span', 'tr-sub', `This group is ${pct(num.share)} of ${num.label} and ${pct(den.share)} of ${den.label}. All students: ${pct(step.allRate)}.`));
+    } else if (step.method === 'published') {
+      main.append(html('span', 'tr-sub', `Published rate for this group. All students: ${pct(step.allRate)}.`));
+    } else if (state.dimension !== 'all') {
+      main.append(html('span', 'tr-sub', 'No breakdown for this group at this stage, so it uses the all-students rate.'));
     }
-    if (stage.has_periods) main.append(html('span', 'tr-sub', pipeline.periods.find((p) => p.id === state.period).label));
+    if (stage.has_periods && state.dimension === 'race') main.append(html('span', 'tr-sub', pipeline.periods.find((p) => p.id === state.period).label));
+
+    const how = html('details', 'tr-how');
+    how.append(html('summary', null, 'How this was estimated'));
+    how.append(html('p', null, step.notes));
+    if (state.dimension !== 'all') how.append(html('p', null, step.groupMethod));
+    const list = html('ul', 'tr-src');
+    for (const source of step.sources) {
+      const item = html('li');
+      const a = html('a', null, `${source.source_short ?? source.source}, ${source.data_year ?? source.year}`);
+      a.href = source.url; a.target = '_blank'; a.rel = 'noopener';
+      item.append(a);
+      list.append(item);
+    }
+    how.append(list);
+    main.append(how);
     li.append(main);
     log.append(li);
     trace.scrollTop = trace.scrollHeight;
@@ -323,10 +348,14 @@ export function mountPipeline(root) {
     let alive = dots.slice();
     for (let i = 0; i < steps.length; i++) {
       const step = steps[i];
+      if (step.rate === null) {
+        log.append(html('li', 'tr-end', `Stage ${step.stage.n} is missing a verified input, so the projection stops here.`));
+        break;
+      }
       rings.forEach((r, k) => r.classList.toggle('on', k === i + 1));
       await animator.move(alive, alive.map((_, j) => clusterPoint(L.center(i), j)), 720 * slow, 3 * slow);
       if (!live()) return;
-      countText[i].textContent = step.usable ? `${step.entered} → ${step.reached}` : `${step.entered} → pending`;
+      countText[i].textContent = `${fmt(step.projectedEntered)} → ${fmt(step.projectedReached)}`;
       await wait(220);
       if (!live()) return;
       if (step.dropped > 0) {
@@ -349,10 +378,9 @@ export function mountPipeline(root) {
     }
     rings.forEach((r) => r.classList.remove('on'));
     const last = steps[steps.length - 1];
-    const allPending = steps.every((s) => !s.usable);
-    log.append(html('li', 'tr-end', allPending
-      ? `All ${pipeline.cohort_size} passed through because no stage has verified data yet.`
-      : `${last.reached} of ${pipeline.cohort_size} reached stage ${last.stage.n}.`));
+    const sameAsAll = state.dimension !== 'all' && steps.every((s) => s.method === 'all');
+    if (last.rate !== null) log.append(html('li', 'tr-end', `In this projection, about ${fmt(last.projectedReached * 100)} in 10,000 ${groupLabel()} reach stage ${last.stage.n} (${fmt(last.projectedReached)} of ${pipeline.cohort_size}).${
+      sameAsAll ? ' The sources have no breakdown for this group, so this matches all students.' : ''}`));
     state.running = false;
     root.removeAttribute('aria-busy');
   }
