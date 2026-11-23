@@ -5,12 +5,12 @@
     {
       "id": "before",
       "label": "Before the rollback",
-      "note": "Placeholder: set the cutoff year once the stage 04 dataset is chosen."
+      "note": "The stage 4 comparison page uses fall 2023 for the last entering class admitted before SFFA."
     },
     {
       "id": "after",
       "label": "After the rollback",
-      "note": "Placeholder: set the comparison year once the stage 04 dataset is chosen."
+      "note": "The stage 4 comparison page uses fall 2024 for the first entering class admitted after SFFA."
     }
   ],
   "dimensions": [
@@ -699,7 +699,7 @@
             "source": null,
             "url": null,
             "verified": false,
-            "notes": "",
+            "notes": "IPEDS compares first-time enrollment before and after SFFA. AP computer science exam histories are required for a linked transition rate.",
             "by_kind": {
               "selective_four_year": null,
               "other_four_year": null,

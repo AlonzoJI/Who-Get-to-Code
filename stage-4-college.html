@@ -17,6 +17,48 @@
           Comparing it with fall 2025 shows what the first two classes admitted under the ruling look like
           at the most selective colleges.</p>
 
+        <section aria-labelledby="ipeds-title">
+          <h2 class="sub-h" id="ipeds-title">Who enrolled by college selectivity</h2>
+          <p>Compare first-time, degree- or certificate-seeking students in fall 2023 and fall 2024,
+            the first entering class admitted after <i>SFFA</i>. Each chart shows the racial and
+            ethnic composition of new students within one college group.</p>
+          <div id="ipeds-period-control" hidden>
+            <label for="ipeds-period">Entering class</label>
+            <select id="ipeds-period">
+              <option value="before">Before the ruling applied to admissions · Fall 2023</option>
+              <option value="after">After the ruling · Fall 2024</option>
+            </select>
+          </div>
+
+          <div data-ipeds-period="before" role="group" aria-labelledby="ipeds-2023-title">
+            <p id="ipeds-2023-title"><strong>Fall 2023</strong></p>
+            <div class="chart-grid">
+              <!-- @chart college first-time-2023-highly-selective -->
+              <!-- @chart college first-time-2023-selective -->
+              <!-- @chart college first-time-2023-less-selective -->
+              <!-- @chart college first-time-2023-two-year -->
+            </div>
+          </div>
+
+          <div data-ipeds-period="after" role="group" aria-labelledby="ipeds-2024-title">
+            <p id="ipeds-2024-title"><strong>Fall 2024</strong></p>
+            <div class="chart-grid">
+              <!-- @chart college first-time-2024-highly-selective -->
+              <!-- @chart college first-time-2024-selective -->
+              <!-- @chart college first-time-2024-less-selective -->
+              <!-- @chart college first-time-2024-two-year -->
+            </div>
+          </div>
+
+          <p>Both years use the same colleges and their 2023 admissions classifications. The analysis
+            covers Title IV colleges in the 50 states and D.C. with complete counts in both years.
+            Four-year colleges with open admission join the least selective group. Two-year colleges
+            are grouped by level. The figures describe enrollment before and after the ruling.
+            Bloem and colleagues use linked student records and earlier admissions rates to study
+            changes in where students enrolled.</p>
+          <p><a href="https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?gotoReportId=7&amp;year=2023">IPEDS college classifications and admissions files</a></p>
+        </section>
+
         <h2 class="sub-h">Fall 2023 compared with fall 2025</h2>
         <div class="chart-grid">
           <!-- @chart college elite-declines -->
@@ -81,5 +123,6 @@
 
     <!-- @foot -->
     <script type="module" src="/src/college/cascade.js"></script>
+    <script type="module" src="/src/college/enrollment.js"></script>
   </body>
 </html>

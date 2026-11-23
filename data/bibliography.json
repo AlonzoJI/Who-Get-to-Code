@@ -38,6 +38,24 @@
       "type": "secondary"
     },
     {
+      "kind": "dataset",
+      "apa": "National Center for Education Statistics. (2023). *IPEDS fall enrollment, race and sex, fall 2023* [Data set]. Urban Institute Education Data Portal.",
+      "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2023/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
+      "type": "primary"
+    },
+    {
+      "kind": "dataset",
+      "apa": "National Center for Education Statistics. (2024). *IPEDS fall enrollment, race and sex, fall 2024* [Data set]. Urban Institute Education Data Portal.",
+      "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/fall-enrollment/2024/1/?ftpt=99&degree_seeking=1&class_level=1&sex=99&race=99,1,2,3,4,5,6,7,8,9",
+      "type": "primary"
+    },
+    {
+      "kind": "dataset",
+      "apa": "National Center for Education Statistics. (2023). *IPEDS institutional characteristics, directory, and admissions, 2023–24* [Data sets].",
+      "url": "https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?gotoReportId=7&year=2023",
+      "type": "primary"
+    },
+    {
       "kind": "source",
       "apa": "Bloem, M. D., Edwards, A., Goyer, J. P., Howell, J., Hu, X., Hurwitz, M., Imlay, S. J., Ma, J., & Pender, M. (2026). *College enrollment patterns after SFFA v. Harvard* (EdWorkingPaper No. 26-1392). Annenberg Institute at Brown University. https://doi.org/10.26300/6a7w-bq06",
       "url": "https://edworkingpapers.com/sites/default/files/ai26-1392.pdf",
