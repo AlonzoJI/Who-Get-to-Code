@@ -95,8 +95,8 @@
         "lead": "It must also prohibit"
       },
       {
-        "section": "R.C. 3345.88(B)(2)",
-        "quote": "Provide no advantage or disadvantage to faculty, staff, or students on the basis of race, ethnicity, religion, sex, sexual orientation, gender identity, or gender expression in admissions, hiring, promotion, tenuring, or workplace conditions.",
+        "section": "R.C. 3345.88(B)(1)",
+        "quote": "hold every individual to equal standards, and provide those individuals with equality of opportunity",
         "lead": "For every position, policy, program and activity, including internships and student life programs, each state college must"
       },
       {
@@ -110,22 +110,22 @@
       "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb1/05_EN/pdf/",
       "year": 2025
     },
-    "note": "The law does not ban identity-based student organizations. It closes university DEI offices, stops new DEI scholarships and requires university programs, including student life programs, to give no advantage by race or sex."
+    "note": "These provisions govern Ohio’s public colleges and universities. The law bars institutional DEI offices and new institutional DEI scholarships and sets equal-opportunity standards for university activities, including student life."
   },
   "debate": {
     "supporters": {
       "label": "What supporters of Senate Bill 1 argue",
-      "quote": "Senate Bill 1 brought important reforms to higher education to ensure intellectual diversity, eliminate structural discrimination, and more.",
-      "who": "Sen. Jerry Cirino, the bill’s sponsor, June 24, 2026",
+      "quote": "DEI programs … are inherently discriminatory, and should not be supported by taxpayers.",
+      "who": "Sen. Jerry Cirino, the bill’s sponsor",
       "source": {
-        "cite": "Ohio Senate press release, June 24, 2026",
-        "year": 2026,
-        "url": "https://ohiosenate.gov/members/jerry-c-cirino/news/cirino-press-conference-highlights-sb1-proven-success"
+        "cite": "Ohio Senate press release",
+        "year": 2025,
+        "url": "https://ohiosenate.gov/members/jerry-c-cirino/news/senate-passes-cirinos-landmark-higher-education-legislation"
       }
     },
     "outcome": {
-      "label": "What the chapter data shows",
-      "text": "Membership, sponsors and university support for the Ohio State chapter before and after the law took effect. Not yet filled in.",
+      "label": "What still needs chapter records",
+      "text": "Changes in membership, sponsorship and university support before and after SB 1 need to be checked against chapter records.",
       "records": [],
       "verified": false
     }
