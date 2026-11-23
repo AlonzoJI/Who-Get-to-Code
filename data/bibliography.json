@@ -394,6 +394,12 @@
     },
     {
       "kind": "dataset",
+      "apa": "U.S. Department of Education, Office for Civil Rights. (2026). *2023–24 Civil Rights Data Collection public-use data* [Data set].",
+      "url": "https://ocrdata.ed.gov/assets/ocr/docs/2023-24-crdc-data.zip",
+      "type": "primary"
+    },
+    {
+      "kind": "dataset",
       "apa": "U.S. Department of Education, Office for Civil Rights. (n.d.). *Civil Rights Data Collection* [Data set].",
       "url": "https://civilrightsdata.ed.gov/",
       "type": "primary"

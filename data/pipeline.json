@@ -354,7 +354,7 @@
             "source": null,
             "url": null,
             "verified": false,
-            "notes": ""
+            "notes": "CRDC reports course enrollment counts. A compatible denominator for students in the group at schools offering foundational CS is still pending."
           },
           {
             "id": "enrolls-race-american-indian",

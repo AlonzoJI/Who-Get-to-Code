@@ -8,14 +8,34 @@
     <!-- @nav -->
 
     <main id="main" class="wrap">
-      <section class="stub" aria-labelledby="page-title">
+      <section class="sec" aria-labelledby="page-title">
         <span class="eyebrow">Stage 02 of 06</span>
-        <h1 id="page-title">Student enrolls</h1>
-        <p class="lede">When the class exists, who signs up for it?</p>
-        <div class="btn-group">
-          <span class="pill">Coming soon</span>
-          <a class="btn text" href="index.html">Back to overview <span class="arr" aria-hidden="true">→</span></a>
+        <h1 id="page-title" class="page-h2">Who enrolls in high school computer science?</h1>
+        <p class="lede">The Civil Rights Data Collection asked public schools to count students
+          enrolled in at least one computer science course in grades 9–12 or the ungraded
+          equivalent at the fall 2023 snapshot. These charts show reported enrollment nationwide and in Ohio.</p>
+
+        <h2 class="sub-h">Enrollment by race and sex</h2>
+        <p>The charts have different count scales. The public file provides male and female
+          counts for these fields and suppresses the nonbinary fields.</p>
+        <div class="chart-grid">
+          <!-- @chart cs-enrollment crdc-us -->
+          <!-- @chart cs-enrollment crdc-oh -->
         </div>
+
+        <details class="more">
+          <summary>How the counts were calculated</summary>
+          <div class="more-in">
+            <p>Each cell sums reports from schools that recorded at least one computer science
+              class. The national aggregation covers the 50 states and D.C. The collection
+              includes introductory and advanced classes, including AP and IB courses. The
+              pipeline’s enrollment rate still needs the number of high school students in each
+              group who could take a course at their school.</p>
+            <!-- @chart-citations cs-enrollment -->
+          </div>
+        </details>
+
+        <!-- @fromclass pipeline-love -->
       </section>
     </main>
 
