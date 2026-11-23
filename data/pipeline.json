@@ -1150,7 +1150,7 @@
             "source": null,
             "url": null,
             "verified": false,
-            "notes": ""
+            "notes": "IPEDS completions count awards. A linked cohort is needed to measure which college entrants later earn a CS bachelor’s degree."
           },
           {
             "id": "degree-race-american-indian",

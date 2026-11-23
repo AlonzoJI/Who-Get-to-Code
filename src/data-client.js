@@ -33,6 +33,8 @@ function hydrateBarChart(figure, byId) {
   const rows = [...figure.querySelectorAll('tr[data-record]')];
   const docs = rows.map((tr) => byId.get(tr.dataset.record));
   if (!docs.some(Boolean)) return;
+  // A published build can precede the next database seed.
+  if (docs.some((d, i) => d && !usable(d) && !rows[i].classList.contains('is-pending'))) return;
   const showDataYear = figure.hasAttribute('data-show-data-year');
   if (showDataYear && docs.some((d) => !d || isUnsourcedPlaceholder(d))) return;
 

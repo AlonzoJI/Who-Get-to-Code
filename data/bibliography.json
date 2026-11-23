@@ -315,6 +315,12 @@
     },
     {
       "kind": "dataset",
+      "apa": "National Center for Education Statistics. (2024). *IPEDS completions: Awards by program, award level, race and ethnicity, and gender, 2023–24 (C2024_A)* [Data set].",
+      "url": "https://nces.ed.gov/ipeds/datacenter/data/C2024_A.zip",
+      "type": "primary"
+    },
+    {
+      "kind": "dataset",
       "apa": "National Center for Education Statistics. (n.d.). *Integrated Postsecondary Education Data System (IPEDS)* [Data set]. U.S. Department of Education.",
       "url": "https://nces.ed.gov/ipeds/",
       "type": "primary"
