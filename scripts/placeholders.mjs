@@ -19,10 +19,10 @@ const byFile = figs.reduce((acc, r) => ((acc[r.file] ??= []).push(r), acc), {});
 for (const [file, rows] of Object.entries(byFile)) {
   if (file === 'pipeline.json') {
     const pipeline = dataFiles.find(([f]) => f === file)[1];
-    section(`data/${file}: pipeline stage rates`, pipeline.stages.map((s) => {
-      const n = Object.values(s.values).flat().filter((r) => !r.verified).length;
+    section(`data/${file}: pipeline stage shares`, [pipeline.baseline, ...pipeline.stages].map((s) => {
+      const missing = [...new Set(Object.values(s.values).flat().filter((r) => !r.verified).map((r) => r.group))];
       const sets = s.datasets.map((d) => pipeline.datasets[d].name).join('; ');
-      return `- Stage ${s.n} ${s.short}: ${n} group values. Needs: ${s.metric}. From: ${sets}.`;
+      return `- Stage ${s.n} ${s.short}: ${missing.length ? missing.join(', ') : 'none missing'}. Needs: share of: ${s.population}. From: ${sets}.`;
     }));
   } else {
     section(`data/${file}`, rows.map((r) => `- ${r.figure}. Needs: a verified value${r.source ? ` (candidate: ${r.source})` : ''}.`));

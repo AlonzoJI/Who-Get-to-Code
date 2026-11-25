@@ -57,25 +57,50 @@
 .tr-src a{border-bottom:1px solid var(--t4)}
 .tr-src a:hover{color:var(--t0)}
 .tr-src{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:4px}
-.tr-how{margin-top:2px;color:var(--t2)}
-.tr-how summary{cursor:pointer;color:var(--t1)}
-.tr-how summary:focus-visible{outline:1px solid var(--focus);outline-offset:2px}
-.tr-how p{margin:6px 0 0;line-height:1.5}
-.engine .badge-illus{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--t1);border:1px solid var(--t2);padding:2px 8px;white-space:nowrap}
 @keyframes tr-in{from{opacity:0;transform:translateY(4px)}}
+.tr-main .badge-ph{margin-top:2px}
 
-/* svg marks: colors come from tokens so the theme toggle restyles them */
-.pl-edge{stroke:var(--line);stroke-width:1}
-.pl-ring{fill:none;stroke:var(--line);stroke-width:1;transition:stroke .2s}
-.pl-ring.on{stroke:var(--t2)}
-.pl-n{fill:var(--t2);font-family:var(--mono);font-size:11px;letter-spacing:.1em}
-.pl-title{fill:var(--t0);font-family:var(--sans);font-size:14px;font-weight:500}
-.pl-count{fill:var(--t2);font-family:var(--mono);font-size:12px}
-.pl-drop{fill:var(--cat-2);font-family:var(--mono);font-size:12px}
-.pl-dot{fill:var(--cat-1);transition:fill .25s}
-.pl-dot.out{fill:var(--cat-2)}
-svg.vertical .pl-title{font-size:15px}
+/* legend keys */
+.pl-legend .k-line{width:16px;height:2px;border-radius:0}
+.pl-legend .k-c1{background:var(--cat-1)}
+.pl-legend .k-c2{background:var(--cat-2)}
+.pl-legend .k-muted{background:var(--t3)}
+.pl-legend .k-dash{width:16px;height:0;border-radius:0;border-top:1px dashed var(--t1)}
+.pl-legend .k-hollow{width:8px;height:8px;background:transparent;border:1.5px solid var(--t1)}
+
+/* chart marks: colors come from tokens so the theme toggle restyles them */
+.eng-canvas{position:relative}
+.pl-grid line{stroke:var(--grid,var(--line-soft));stroke-width:1}
+.pl-grid .pl-col{stroke:var(--line-soft);stroke-dasharray:2 4}
+.pl-tick,.pl-n,.pl-reflabel{fill:var(--t2);font-family:var(--mono);font-size:11px}
+.pl-n{letter-spacing:.1em}
+.pl-xlabel{fill:var(--t1);font-family:var(--mono);font-size:11.5px}
+.pl-ref{stroke-width:1.25;stroke-dasharray:5 5;opacity:.85}
+.pl-ref.pl-c1{stroke:var(--cat-1)}
+.pl-ref.pl-c2{stroke:var(--cat-2)}
+.pl-ref-parity{stroke:var(--t1)}
+.pl-line{fill:none;stroke-width:2.25;stroke-linejoin:round;stroke-linecap:round}
+.pl-series.pl-c1 .pl-line{stroke:var(--cat-1)}
+.pl-series.pl-c2 .pl-line{stroke:var(--cat-2)}
+.pl-series.pl-muted .pl-line{stroke:var(--t3);stroke-width:1.25}
+.pl-pt{stroke:var(--bg);stroke-width:1.5;transition:opacity .25s}
+.pl-series.pl-c1 .pl-pt{fill:var(--cat-1)}
+.pl-series.pl-c2 .pl-pt{fill:var(--cat-2)}
+.pl-series.pl-muted .pl-pt{fill:var(--t3);stroke-width:0}
+.pl-series .pl-pt.derived{fill:var(--bg);stroke-width:2}
+.pl-series.pl-c1 .pl-pt.derived{stroke:var(--cat-1)}
+.pl-series.pl-c2 .pl-pt.derived{stroke:var(--cat-2)}
+.pl-series.pl-muted .pl-pt.derived{stroke:var(--t3);stroke-width:1.25}
+.pl-pt[tabindex]{cursor:pointer}
+.pl-pt:focus{outline:none}
+.pl-pt:focus-visible{stroke:var(--focus);stroke-width:3}
+.pl-pt.pending{opacity:0}
+.pl-tip{position:absolute;z-index:2;max-width:280px;padding:9px 11px;background:var(--bg);border:1px solid var(--t3);
+  font-family:var(--mono);font-size:11.5px;line-height:1.5;color:var(--t2);display:flex;flex-direction:column;gap:2px;pointer-events:none}
+.pl-tip[hidden]{display:none}
+.pl-tip b{font-family:var(--sans);font-weight:500;font-size:13px;color:var(--t0)}
+.pl-empty{margin:0;padding:48px 24px;color:var(--t2);font-size:14px;max-width:520px}
+@media (prefers-reduced-motion:reduce){ .pl-pt{transition:none} }
 
 @media (max-width:900px){
   .eng-body{grid-template-columns:1fr}
@@ -106,3 +131,10 @@ svg.vertical .pl-title{font-size:15px}
 .ds-sets a:hover{color:var(--t0);border-color:var(--t1)}
 .ds-sets .pub{display:block;font-family:var(--mono);font-size:11px;color:var(--t2)}
 @media (max-width:840px){ .ds-row{grid-template-columns:1fr} }
+
+.pl-headline{margin:24px 0 20px;max-width:880px}
+.pl-table-title{margin:24px 0 10px}
+.pl-table-title:first-child{margin-top:0}
+.pl-rep-table{min-width:1180px}
+.pl-rep-table th[scope="row"]{font-family:var(--sans);font-size:13px;letter-spacing:0;text-transform:none;color:var(--t1);vertical-align:top}
+.pl-rep-table .pl-src{display:block;margin-top:4px;font-size:11px;line-height:1.45;color:var(--t2)}

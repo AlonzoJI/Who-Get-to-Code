@@ -16,10 +16,10 @@ test('collects figures from every data file that shows numbers', () => {
   }
 });
 
-test('the Methods page includes verified Stage 1 figures and remaining pipeline placeholders', () => {
+test('the Methods page includes every pipeline share, its stage 1 inputs and the remaining gaps', () => {
   const pipeline = rows.filter((r) => r.file === 'pipeline.json');
-  assert.equal(pipeline.length, 84);
-  assert.equal(pipeline.filter((r) => r.verified).length, 8);
+  assert.equal(pipeline.length, 100);
+  assert.equal(pipeline.filter((r) => r.verified).length, 76);
   assert.ok(pipeline.filter((r) => !r.verified).every((r) => r.value === null));
   assert.equal(rows.filter((r) => r.file === 'school-access.json' && r.verified).length, 51);
 });

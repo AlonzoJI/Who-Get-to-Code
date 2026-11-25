@@ -1,30 +1,18 @@
-// Interactive outcomes pipeline: pick a group, press Run, watch 100 students
-// move through six stages. The rates are an illustrative projection built from
-// cited figures (projection.js, data/pipeline-estimates.json); the log shows
-// every comparison and source used.
+// Representation chart for the outcomes pipeline. One line per group shows its
+// share of the people at each stage; a dashed line marks its share of all high
+// school students. Every point comes from that stage's own record in
+// data/pipeline.json (see representation.js). Stages are never chained.
 import '../styles/pipeline.css';
 import pipeline from '../../data/pipeline.json';
-import estimates from '../../data/pipeline-estimates.json';
-import enrollment from '../../data/cs-enrollment.json';
-import exams from '../../data/ap-exams.json';
-import college from '../../data/college.json';
-import workforce from '../../data/workforce.json';
-import { projectPipeline } from './projection.js';
+import {
+  columns, seriesFor, segments, columnSources, columnHasGap, columnDerived, periodNote, niceMax,
+  isUsable,
+} from './representation.js';
 import { isUnsourcedPlaceholder, loadDatapoints } from '../data-client.js';
 
-const charts = {
-  enrollment: enrollment.charts, exams: exams.charts, college: college.charts, workforce: workforce.charts,
-};
-
-// Projected counts can be fractions of a student, so small numbers keep a decimal.
-const fmt = (n) => (n >= 10 ? Math.round(n).toLocaleString('en-US') : n >= 1 ? n.toFixed(1) : String(Number(n.toPrecision(1))));
-const pct = (rate) => `${Number((rate * 100).toFixed(1))}%`;
-
 const NS = 'http://www.w3.org/2000/svg';
-const DOT_R = 2.6;
-const SPREAD = 4.4; // phyllotaxis spacing for a cluster of dots
-const PILE_COLS = 10;
-const PILE_GAP = 6;
+const DEFAULT_HIGHLIGHT = { race: 'black' };
+const COLORED = { gender: ['female', 'male'], income: ['low-income', 'not-low-income'] };
 
 const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const svgEl = (tag, attrs = {}, text) => {
@@ -39,139 +27,63 @@ const html = (tag, cls, text) => {
   if (text != null) el.textContent = text;
   return el;
 };
-
-// Deterministic shuffle so a given run always drops the same dots.
-function seededShuffle(list, seed) {
-  const out = list.slice();
-  let s = seed >>> 0 || 1;
-  for (let i = out.length - 1; i > 0; i--) {
-    s = (s * 1664525 + 1013904223) >>> 0;
-    const j = s % (i + 1);
-    [out[i], out[j]] = [out[j], out[i]];
-  }
-  return out;
-}
-
-function clusterPoint(center, i) {
-  if (i === 0) return { x: center.x, y: center.y };
-  const r = SPREAD * Math.sqrt(i);
-  const a = i * 2.39996; // golden angle in radians
-  return { x: center.x + r * Math.cos(a), y: center.y + r * Math.sin(a) };
-}
+const pct = (v) => `${Number(v.toFixed(v < 1 ? 2 : 1))}%`;
+const ratio = (v) => `${v.toFixed(2)}×`;
+// "Students at..." -> "students at...", but keep "AP Computer Science...".
+const lowerFirst = (t) => (/^[A-Z][a-z]/.test(t) ? t[0].toLowerCase() + t.slice(1) : t);
 
 function layoutFor(width) {
-  const stages = pipeline.stages.length;
-  if (width >= 640) {
-    const W = 1000, H = 440, laneY = 160, first = 200, step = (W - first - 70) / (stages - 1);
-    return {
-      vertical: false, W, H,
-      start: { x: 68, y: laneY },
-      center: (i) => ({ x: first + i * step, y: laneY }),
-      pile: (i) => ({ x: first + i * step - ((PILE_COLS - 1) * PILE_GAP) / 2, y: 292 }),
-      label: (i) => ({ x: first + i * step, y: laneY - 84, anchor: 'middle' }),
-      count: (i) => ({ x: first + i * step, y: laneY + 76, anchor: 'middle' }),
-      pileLabel: (i) => ({ x: first + i * step, y: 292 + 10 * PILE_GAP + 22, anchor: 'middle' }),
-    };
-  }
-  const W = 360, step = 204, top = 268, H = top + (stages - 1) * step + 90;
+  const narrow = width < 640;
+  const W = narrow ? 360 : 1000;
+  const H = narrow ? 320 : 420;
+  const m = narrow ? { top: 22, right: 16, bottom: 46, left: 44 } : { top: 26, right: 80, bottom: 58, left: 64 };
+  const cols = columns(pipeline).length;
+  const innerW = W - m.left - m.right;
   return {
-    vertical: true, W, H,
-    start: { x: 120, y: 76 },
-    center: (i) => ({ x: 120, y: top + i * step }),
-    pile: (i) => ({ x: 236, y: top + i * step - 27 }),
-    label: (i) => ({ x: 20, y: top + i * step - 70, anchor: 'start' }),
-    count: (i) => ({ x: 120, y: top + i * step + 70, anchor: 'middle' }),
-    pileLabel: (i) => ({ x: 263, y: top + i * step + 50, anchor: 'middle' }),
+    narrow, W, H, m,
+    x: (col) => m.left + (innerW * col) / (cols - 1),
+    yFor: (max) => (v) => m.top + (H - m.top - m.bottom) * (1 - v / max),
   };
 }
 
-// ── tween engine ──────────────────────────────────────────
-const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
-function createAnimator() {
-  let active = [];
-  let frame = 0;
-  const tick = (now) => {
-    active = active.filter((tw) => {
-      const t = Math.min(1, Math.max(0, (now - tw.start) / tw.dur));
-      const k = ease(t);
-      tw.dot.x = tw.fx + (tw.tx - tw.fx) * k;
-      tw.dot.y = tw.fy + (tw.ty - tw.fy) * k;
-      tw.dot.el.setAttribute('cx', tw.dot.x.toFixed(2));
-      tw.dot.el.setAttribute('cy', tw.dot.y.toFixed(2));
-      if (t >= 1) { tw.done(); return false; }
-      return true;
-    });
-    frame = active.length ? requestAnimationFrame(tick) : 0;
-  };
-  return {
-    move(dots, targets, dur, stagger = 0) {
-      if (dur === 0) {
-        dots.forEach((d, i) => place(d, targets[i]));
-        return Promise.resolve();
-      }
-      const now = performance.now();
-      const all = dots.map((dot, i) => new Promise((done) => {
-        active.push({ dot, fx: dot.x, fy: dot.y, tx: targets[i].x, ty: targets[i].y, start: now + i * stagger, dur, done });
-      }));
-      if (!frame) frame = requestAnimationFrame(tick);
-      return Promise.all(all);
-    },
-    cancel() {
-      active.forEach((tw) => tw.done());
-      active = [];
-      if (frame) cancelAnimationFrame(frame);
-      frame = 0;
-    },
-  };
-}
-function place(dot, p) {
-  dot.x = p.x; dot.y = p.y;
-  dot.el.setAttribute('cx', p.x.toFixed(2));
-  dot.el.setAttribute('cy', p.y.toFixed(2));
-}
-
-// ── widget ────────────────────────────────────────────────
 export function mountPipeline(root) {
-  const state = { dimension: 'all', group: 'all', period: 'after', runId: 0, running: false };
-  const animator = createAnimator();
-  const periodStages = pipeline.stages.filter((s) => s.has_periods);
+  const state = { dimension: 'race', group: DEFAULT_HIGHLIGHT.race, period: 'after', view: 'share', runId: 0 };
+  const periodColumns = columns(pipeline).filter((c) => c.has_periods);
 
   root.replaceChildren();
   root.classList.add('engine');
 
-  // controls
+  // ── controls ──
   const bar = html('div', 'eng-bar');
-  const dimSet = html('fieldset', 'seg');
-  dimSet.append(html('legend', 'label', 'Group by'));
-  for (const d of pipeline.dimensions) {
-    const id = `pl-dim-${d.id}`;
-    const input = Object.assign(document.createElement('input'), { type: 'radio', name: 'pl-dim', id, value: d.id, checked: d.id === state.dimension });
-    const lab = html('label', null, d.short);
-    lab.htmlFor = id;
-    dimSet.append(input, lab);
-  }
+  const seg = (name, legend, options, checked) => {
+    const set = html('fieldset', 'seg');
+    set.append(html('legend', 'label', legend));
+    for (const o of options) {
+      const id = `pl-${name}-${o.id}`;
+      const input = Object.assign(document.createElement('input'), { type: 'radio', name: `pl-${name}`, id, value: o.id, checked: o.id === checked });
+      const lab = html('label', null, o.label);
+      lab.htmlFor = id;
+      set.append(input, lab);
+    }
+    return set;
+  };
+  const dimSet = seg('dim', 'Group by', pipeline.dimensions.map((d) => ({ id: d.id, label: d.short })), state.dimension);
   const groupWrap = html('label', 'pl-select');
-  groupWrap.append(html('span', 'label', 'Group'));
+  groupWrap.append(html('span', 'label', 'Highlight'));
   const groupSelect = document.createElement('select');
   groupWrap.append(groupSelect);
 
-  const perSet = html('fieldset', 'seg');
-  perSet.append(html('legend', 'label', 'Period'));
-  for (const p of pipeline.periods) {
-    const id = `pl-per-${p.id}`;
-    const input = Object.assign(document.createElement('input'), { type: 'radio', name: 'pl-per', id, value: p.id, checked: p.id === state.period });
-    const lab = html('label', null, p.label.replace(' the rollback', ''));
-    lab.htmlFor = id;
-    perSet.append(input, lab);
-  }
+  const perSet = seg('per', 'Period', pipeline.periods.map((p) => ({ id: p.id, label: p.label.replace(' the rollback', '') })), state.period);
   const perNote = html('span', 'pl-note',
-    periodStages.length
-      ? `Changes stage ${periodStages.map((s) => s.n).join(', ')} for race groups only`
-      : 'No stage has before and after data yet');
+    `Changes stage ${periodColumns.map((c) => c.n).join(', ')} only. Other stages have one period.`);
   perNote.id = 'pl-per-note';
   perSet.setAttribute('aria-describedby', perNote.id);
+  const perGroup = html('div', 'pl-pergroup');
+  perGroup.append(perSet, perNote);
 
-  const runBtn = html('button', 'btn primary sm', `Run ${pipeline.cohort_size} students`);
+  const viewSet = seg('view', 'Show', [{ id: 'share', label: 'Share' }, { id: 'index', label: 'Index' }], state.view);
+
+  const runBtn = html('button', 'btn primary sm', 'Run');
   runBtn.type = 'button';
   const resetBtn = html('button', 'btn text sm', 'Reset');
   resetBtn.type = 'button';
@@ -179,223 +91,278 @@ export function mountPipeline(root) {
   actions.append(runBtn, resetBtn);
 
   const controls = html('div', 'pl-controls');
-  const perGroup = html('div', 'pl-pergroup');
-  perGroup.append(perSet, perNote);
-  controls.append(dimSet, groupWrap, perGroup);
+  controls.append(dimSet, groupWrap, perGroup, viewSet);
   bar.append(controls, actions);
 
   const status = html('div', 'pl-status');
   const legend = html('div', 'pl-legend');
-  legend.innerHTML = '<span><i class="k-in"></i>Still in the pipeline</span><span><i class="k-out"></i>Dropped off</span>';
-  const badge = html('span', 'badge-illus', 'Illustrative, not data');
-  status.append(legend, badge);
+  const badgeSlot = html('span');
+  status.append(legend, badgeSlot);
 
-  // stage + log
+  // ── chart + stage log ──
   const body = html('div', 'eng-body');
   const canvas = html('div', 'eng-canvas');
-  const svg = svgEl('svg', { role: 'img', 'aria-labelledby': 'pl-svg-title pl-svg-desc' });
-  canvas.append(svg);
-  const trace = html('aside', 'trace');
-  trace.setAttribute('aria-label', 'Path taken');
-  trace.append(html('h3', 'label', 'Path taken'));
-  const log = html('ol', 'tr-log');
-  log.setAttribute('aria-live', 'polite');
-  trace.append(log);
-  body.append(canvas, trace);
+  const svg = svgEl('svg', { role: 'group', 'aria-labelledby': 'pl-svg-title', 'aria-describedby': 'pl-svg-desc' });
+  const tip = html('div', 'pl-tip');
+  tip.setAttribute('role', 'status');
+  tip.hidden = true;
+  const empty = html('p', 'pl-empty', 'Pick Race, Gender or Income to compare groups. The list beside the chart shows who each stage counts and where the numbers come from.');
+  canvas.append(svg, tip, empty);
 
+  const trace = html('aside', 'trace');
+  trace.setAttribute('aria-labelledby', 'pl-log-title');
+  const logTitle = html('h3', 'label', 'What each stage counts');
+  logTitle.id = 'pl-log-title';
+  const log = html('ol', 'tr-log');
+  trace.append(logTitle, log);
+  body.append(canvas, trace);
   root.append(bar, status, body);
 
-  // ── drawing ──
-  let L, dots, pileCounts, countText, pileText, rings;
+  // ── helpers ──
+  const dimension = () => pipeline.dimensions.find((d) => d.id === state.dimension);
+  const colorFor = (groupId) => {
+    if (state.dimension === 'race') return groupId === state.group ? 'c1' : 'muted';
+    const i = COLORED[state.dimension]?.indexOf(groupId);
+    return i === 0 ? 'c1' : i === 1 ? 'c2' : 'muted';
+  };
 
-  function draw() {
-    L = layoutFor(canvas.clientWidth || root.clientWidth);
-    svg.setAttribute('viewBox', `0 0 ${L.W} ${L.H}`);
-    svg.classList.toggle('vertical', L.vertical);
-    svg.replaceChildren(
-      svgEl('title', { id: 'pl-svg-title' }, 'Outcomes pipeline diagram'),
-      svgEl('desc', { id: 'pl-svg-desc' }, `A projection of ${pipeline.cohort_size} students moving through six stages, built from published figures. The Path taken log lists the rate, comparison and sources for each stage.`)
-    );
-    const gEdges = svgEl('g'), gNodes = svgEl('g'), gText = svgEl('g'), gDots = svgEl('g');
-    svg.append(gEdges, gNodes, gText, gDots);
-
-    const centers = [L.start, ...pipeline.stages.map((_, i) => L.center(i))];
-    for (let i = 0; i < centers.length - 1; i++) {
-      gEdges.append(svgEl('line', { class: 'pl-edge', x1: centers[i].x, y1: centers[i].y, x2: centers[i + 1].x, y2: centers[i + 1].y }));
-    }
-    rings = centers.map((c) => {
-      const r = svgEl('circle', { class: 'pl-ring', cx: c.x, cy: c.y, r: 52 });
-      gNodes.append(r);
-      return r;
-    });
-
-    const startLabel = L.vertical ? { x: 20, y: L.start.y - 46, anchor: 'start' } : { x: L.start.x, y: L.start.y - 84, anchor: 'middle' };
-    gText.append(svgEl('text', { class: 'pl-n', x: startLabel.x, y: startLabel.y - 16, 'text-anchor': startLabel.anchor }, '00'));
-    gText.append(svgEl('text', { class: 'pl-title', x: startLabel.x, y: startLabel.y, 'text-anchor': startLabel.anchor }, 'Cohort'));
-    gText.append(svgEl('text', { class: 'pl-count', x: L.start.x, y: L.start.y + 76, 'text-anchor': 'middle' }, `${pipeline.cohort_size} students`));
-
-    countText = []; pileText = [];
-    pipeline.stages.forEach((s, i) => {
-      const lp = L.label(i), cp = L.count(i), pp = L.pileLabel(i);
-      gText.append(svgEl('text', { class: 'pl-n', x: lp.x, y: lp.y - 16, 'text-anchor': lp.anchor }, s.n));
-      gText.append(svgEl('text', { class: 'pl-title', x: lp.x, y: lp.y, 'text-anchor': lp.anchor }, s.short));
-      const ct = svgEl('text', { class: 'pl-count', x: cp.x, y: cp.y, 'text-anchor': cp.anchor }, '');
-      const pt = svgEl('text', { class: 'pl-drop', x: pp.x, y: pp.y, 'text-anchor': pp.anchor }, '');
-      gText.append(ct, pt);
-      countText.push(ct); pileText.push(pt);
-    });
-
-    dots = Array.from({ length: pipeline.cohort_size }, (_, i) => {
-      const el = svgEl('circle', { class: 'pl-dot', r: DOT_R });
-      gDots.append(el);
-      const d = { el, x: 0, y: 0, i };
-      place(d, clusterPoint(L.start, i));
-      return d;
-    });
-    pileCounts = pipeline.stages.map(() => 0);
-  }
-
-  // ── controls wiring ──
   function fillGroups() {
-    const dim = pipeline.dimensions.find((d) => d.id === state.dimension);
-    groupSelect.replaceChildren(...dim.groups.map((g) => Object.assign(document.createElement('option'), { value: g.id, textContent: g.label })));
-    state.group = dim.groups[0].id;
-    groupSelect.disabled = dim.groups.length < 2;
+    const d = dimension();
+    const highlightable = state.dimension === 'race';
+    groupSelect.replaceChildren(...(highlightable ? d.groups : [{ id: '', label: state.dimension === 'all' ? 'Pick a group type first' : 'Both groups shown' }])
+      .map((g) => Object.assign(document.createElement('option'), { value: g.id, textContent: g.label })));
+    groupSelect.disabled = !highlightable;
+    state.group = highlightable ? (DEFAULT_HIGHLIGHT.race) : '';
+    groupSelect.value = state.group;
   }
 
-  function currentSteps() {
-    return projectPipeline({ pipeline, estimates, charts, dimension: state.dimension, group: state.group, period: state.period });
+  function renderLegend(series) {
+    legend.replaceChildren();
+    const item = (cls, text) => {
+      const s = html('span');
+      s.append(html('i', cls), text);
+      legend.append(s);
+    };
+    for (const s of series) {
+      const c = colorFor(s.group.id);
+      if (c !== 'muted') item(`k-line k-${c}`, s.group.label);
+    }
+    if (state.dimension === 'race') item('k-line k-muted', 'Other groups');
+    if (series.length) item('k-dash', state.view === 'share' ? 'Share of all high school students' : 'Parity (1.0)');
+    item('k-hollow', 'Derived from two sources');
+    const anyGap = columns(pipeline).some((c) => state.dimension !== 'all' && columnHasGap(c, state.dimension, state.period));
+    badgeSlot.innerHTML = anyGap ? '<span class="badge-ph">Placeholder data</span>' : '';
   }
 
-  function groupLabel() {
-    if (state.dimension === 'all') return 'U.S. high school students';
-    const label = pipeline.dimensions.find((d) => d.id === state.dimension).groups.find((g) => g.id === state.group).label;
-    return state.dimension === 'gender' ? `${label.toLowerCase()} high school students` : `${label} high school students`;
-  }
-
-  function reset() {
+  // ── drawing ──
+  let L;
+  function draw({ animate = false } = {}) {
     state.runId++;
-    animator.cancel();
-    state.running = false;
-    root.removeAttribute('aria-busy');
-    log.replaceChildren(html('li', 'tr-empty', 'Pick a group and press Run.'));
-    draw();
+    const runId = state.runId;
+    hideTip();
+    L = layoutFor(canvas.clientWidth || root.clientWidth);
+    const series = seriesFor(pipeline, state.dimension, state.period);
+    const field = state.view === 'index' ? 'index' : 'value';
+    empty.hidden = series.length > 0;
+    svg.hidden = series.length === 0;
+    renderLegend(series);
+    renderLog();
+    svg.replaceChildren();
+    if (!series.length) return;
+
+    const cols = columns(pipeline);
+    const values = series.flatMap((s) => [...s.points.map((p) => p[field]), state.view === 'share' ? s.baseValue : null]);
+    const max = niceMax(values, state.view);
+    const y = L.yFor(max);
+    svg.setAttribute('viewBox', `0 0 ${L.W} ${L.H}`);
+    const dimLabel = dimension().label.toLowerCase();
+    svg.append(
+      svgEl('title', { id: 'pl-svg-title' }, `Representation by ${dimLabel} at each stage`),
+      svgEl('desc', { id: 'pl-svg-desc' }, state.view === 'share'
+        ? `Each line is a group's share of the people at each stage. Dashed lines mark each group's share of all high school students. The table version below lists every value.`
+        : `Each line is a group's share at each stage divided by its share of all high school students. 1.0 is parity. The table version below lists every value.`),
+    );
+
+    // grid and axes
+    const gGrid = svgEl('g', { class: 'pl-grid', 'aria-hidden': 'true' });
+    const step = state.view === 'index' ? (max > 4 ? 1 : 0.5) : max > 70 ? 20 : 10;
+    for (let v = 0; v <= max + 1e-9; v += step) {
+      gGrid.append(svgEl('line', { x1: L.m.left, x2: L.W - L.m.right, y1: y(v), y2: y(v) }));
+      gGrid.append(svgEl('text', { class: 'pl-tick', x: L.m.left - 10, y: y(v) + 4, 'text-anchor': 'end' },
+        state.view === 'index' ? `${Number(v.toFixed(1))}×` : `${v}%`));
+    }
+    cols.forEach((c, i) => {
+      gGrid.append(svgEl('line', { class: 'pl-col', x1: L.x(i), x2: L.x(i), y1: L.m.top, y2: L.H - L.m.bottom }));
+      gGrid.append(svgEl('text', { class: 'pl-n', x: L.x(i), y: L.H - L.m.bottom + 18, 'text-anchor': 'middle' }, c.n));
+      if (!L.narrow) {
+        const label = c.has_periods ? `${c.short} · ${state.period}` : c.short;
+        gGrid.append(svgEl('text', { class: 'pl-xlabel', x: L.x(i), y: L.H - L.m.bottom + 36, 'text-anchor': 'middle' }, label));
+      }
+    });
+    svg.append(gGrid);
+
+    // reference lines
+    const gRef = svgEl('g', { class: 'pl-refs', 'aria-hidden': 'true' });
+    if (state.view === 'index') {
+      gRef.append(svgEl('line', { class: 'pl-ref pl-ref-parity', x1: L.m.left, x2: L.W - L.m.right, y1: y(1), y2: y(1) }));
+      gRef.append(svgEl('text', { class: 'pl-reflabel', x: L.W - L.m.right, y: y(1) - 6, 'text-anchor': 'end' }, 'Parity 1.0'));
+    } else {
+      for (const s of series) {
+        const c = colorFor(s.group.id);
+        if (c === 'muted' || s.baseValue === null) continue;
+        gRef.append(svgEl('line', { class: `pl-ref pl-${c}`, x1: L.m.left, x2: L.W - L.m.right, y1: y(s.baseValue), y2: y(s.baseValue) }));
+      }
+    }
+    svg.append(gRef);
+
+    // lines and points; muted series first so highlighted ones sit on top
+    const ordered = [...series].sort((a, b) => (colorFor(a.group.id) === 'muted' ? -1 : 0) - (colorFor(b.group.id) === 'muted' ? -1 : 0));
+    const animations = [];
+    for (const s of ordered) {
+      const c = colorFor(s.group.id);
+      const g = svgEl('g', { class: `pl-series pl-${c}` });
+      for (const run of segments(s.points, field)) {
+        const d = run.map((p, i) => `${i ? 'L' : 'M'}${L.x(p.col).toFixed(1)},${y(p[field]).toFixed(1)}`).join('');
+        const path = svgEl('path', { class: 'pl-line', d, 'aria-hidden': 'true' });
+        g.append(path);
+        animations.push({ path, start: run[0].col, end: run[run.length - 1].col });
+      }
+      for (const p of s.points) {
+        if (p[field] === null) continue;
+        const focusable = c !== 'muted';
+        const derived = p.record.derived === true;
+        const dot = svgEl('circle', {
+          class: `pl-pt${derived ? ' derived' : ''}`, cx: L.x(p.col), cy: y(p[field]), r: c === 'muted' ? 2.6 : 4.5,
+          'data-col': p.col,
+        });
+        if (focusable) {
+          dot.setAttribute('tabindex', '0');
+          dot.setAttribute('role', 'img');
+          dot.setAttribute('aria-label', tipText(s, p).join('. '));
+        } else dot.setAttribute('aria-hidden', 'true');
+        const show = () => showTip(s, p, dot);
+        dot.addEventListener('pointerenter', show);
+        dot.addEventListener('focus', show);
+        dot.addEventListener('pointerleave', hideTip);
+        dot.addEventListener('blur', hideTip);
+        dot.addEventListener('click', show);
+        g.append(dot);
+      }
+      svg.append(g);
+    }
+
+    if (animate && !reducedMotion()) animateIn(animations, runId);
   }
 
-  dimSet.addEventListener('change', (e) => { state.dimension = e.target.value; fillGroups(); reset(); });
-  groupSelect.addEventListener('change', () => { state.group = groupSelect.value; reset(); });
-  perSet.addEventListener('change', (e) => { state.period = e.target.value; reset(); });
-  resetBtn.addEventListener('click', reset);
-  runBtn.addEventListener('click', run);
+  // draw each line from left to right; points appear as the line reaches them
+  function animateIn(animations, runId) {
+    const perCol = 260;
+    const total = perCol * (columns(pipeline).length - 1);
+    root.setAttribute('aria-busy', 'true');
+    svg.querySelectorAll('.pl-pt').forEach((dot) => dot.classList.add('pending'));
+    for (const { path, start, end } of animations) {
+      const len = path.getTotalLength();
+      path.style.strokeDasharray = `${len}`;
+      path.style.strokeDashoffset = `${len}`;
+      path.getBoundingClientRect();
+      path.style.transition = `stroke-dashoffset ${Math.max(1, end - start) * perCol}ms linear ${start * perCol}ms`;
+      path.style.strokeDashoffset = '0';
+    }
+    svg.querySelectorAll('.pl-pt').forEach((dot) => {
+      setTimeout(() => { if (runId === state.runId) dot.classList.remove('pending'); }, Number(dot.dataset.col) * perCol);
+    });
+    setTimeout(() => { if (runId === state.runId) root.removeAttribute('aria-busy'); }, total + 50);
+  }
+
+  // ── tooltip ──
+  function tipText(s, p) {
+    const r = p.record;
+    const lines = [`${s.group.label}, ${p.column.short}: ${pct(r.value)} of ${lowerFirst(p.column.population)}`];
+    if (p.col > 0 && s.baseValue !== null) lines.push(`Index ${ratio(p.index)} (${pct(s.baseValue)} of all high school students)`);
+    lines.push(`Source: ${r.source_short ?? r.source}, ${r.data_year ?? r.year}`);
+    if (r.derived) lines.push('Derived from two published figures; see the stage list');
+    return lines;
+  }
+  function showTip(s, p, dot) {
+    tip.replaceChildren(...tipText(s, p).map((t, i) => html(i ? 'span' : 'b', null, t)));
+    tip.hidden = false;
+    const box = canvas.getBoundingClientRect();
+    const d = dot.getBoundingClientRect();
+    const left = Math.min(Math.max(d.left - box.left - tip.offsetWidth / 2, 4), box.width - tip.offsetWidth - 4);
+    const above = d.top - box.top - tip.offsetHeight - 10;
+    tip.style.left = `${left}px`;
+    tip.style.top = `${above < 0 ? d.bottom - box.top + 10 : above}px`;
+  }
+  function hideTip() { tip.hidden = true; }
+  root.addEventListener('keydown', (e) => { if (e.key === 'Escape') hideTip(); });
+
+  // ── stage log ──
+  function renderLog() {
+    log.replaceChildren();
+    for (const column of columns(pipeline)) {
+      const li = html('li', 'tr-step');
+      li.append(html('span', 'tr-n', column.n));
+      const main = html('div', 'tr-main');
+      main.append(html('b', null, column.short), html('span', null, column.population));
+      main.append(html('span', 'tr-sub', periodNote(column, pipeline, state.dimension)));
+      const sources = columnSources(column, state.dimension, state.period);
+      if (sources.length) {
+        const list = html('ul', 'tr-src');
+        for (const r of sources) {
+          const item = html('li');
+          const a = html('a', null, `${r.source_short ?? r.source}, ${r.data_year ?? r.year}`);
+          a.href = r.url; a.target = '_blank'; a.rel = 'noopener';
+          item.append(a);
+          list.append(item);
+        }
+        main.append(list);
+      }
+      if (state.dimension !== 'all' && columnDerived(column, state.dimension, state.period)) {
+        main.append(html('span', 'tr-sub', 'Hollow points are derived from more than one published figure. See the table version for the calculation.'));
+      }
+      if (state.dimension !== 'all' && columnHasGap(column, state.dimension, state.period)) {
+        const missing = seriesFor(pipeline, state.dimension, state.period)
+          .filter((s) => !isUsable(s.points[columns(pipeline).indexOf(column)].record)).map((s) => s.group.label);
+        main.append(html('span', 'badge-ph', 'Placeholder data'));
+        main.append(html('span', 'tr-sub', `No verified figure yet for ${missing.join(', ')}. The line has a gap here.`));
+      }
+      li.append(main);
+      log.append(li);
+    }
+  }
+
+  // ── wiring ──
+  dimSet.addEventListener('change', (e) => { state.dimension = e.target.value; fillGroups(); draw(); });
+  groupSelect.addEventListener('change', () => { state.group = groupSelect.value; draw(); });
+  perSet.addEventListener('change', (e) => { state.period = e.target.value; draw(); });
+  viewSet.addEventListener('change', (e) => { state.view = e.target.value; draw(); });
+  runBtn.addEventListener('click', () => draw({ animate: true }));
+  resetBtn.addEventListener('click', () => {
+    state.dimension = 'race'; state.period = 'after'; state.view = 'share';
+    for (const [set, v] of [[dimSet, 'race'], [perSet, 'after'], [viewSet, 'share']]) set.querySelector(`input[value="${v}"]`).checked = true;
+    fillGroups();
+    draw();
+  });
 
   let resizeTimer;
   new ResizeObserver(() => {
-    const vertical = (canvas.clientWidth || root.clientWidth) < 640;
-    if (L && vertical === L.vertical) return;
+    const narrow = (canvas.clientWidth || root.clientWidth) < 640;
+    if (L && narrow === L.narrow) return;
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(reset, 120);
+    resizeTimer = setTimeout(() => draw(), 120);
   }).observe(root);
 
-  // ── run ──
-  function logStep(step) {
-    const { stage } = step;
-    const li = html('li', 'tr-step');
-    li.append(html('span', 'tr-n', stage.n));
-    const main = html('div', 'tr-main');
-    main.append(html('b', null, step.label));
-    main.append(html('span', null, `${step.entered} in · ${step.dropped} drop off · ${step.reached} continue`));
-    main.append(html('span', 'tr-sub', `${pct(step.rate)} continue. Projected: ${fmt(step.projectedReached)} of ${pipeline.cohort_size} (about ${fmt(step.projectedReached * 100)} in 10,000)`));
-    if (step.method === 'group') {
-      const { num, den } = step.compare;
-      main.append(html('span', 'tr-sub', `This group is ${pct(num.share)} of ${num.label} and ${pct(den.share)} of ${den.label}. All students: ${pct(step.allRate)}.`));
-    } else if (step.method === 'published') {
-      main.append(html('span', 'tr-sub', `Published rate for this group. All students: ${pct(step.allRate)}.`));
-    } else if (state.dimension !== 'all') {
-      main.append(html('span', 'tr-sub', 'No breakdown for this group at this stage, so it uses the all-students rate.'));
-    }
-    if (stage.has_periods && state.dimension === 'race') main.append(html('span', 'tr-sub', pipeline.periods.find((p) => p.id === state.period).label));
-
-    const how = html('details', 'tr-how');
-    how.append(html('summary', null, 'How this was estimated'));
-    how.append(html('p', null, step.notes));
-    if (state.dimension !== 'all') how.append(html('p', null, step.groupMethod));
-    const list = html('ul', 'tr-src');
-    for (const source of step.sources) {
-      const item = html('li');
-      const a = html('a', null, `${source.source_short ?? source.source}, ${source.data_year ?? source.year}`);
-      a.href = source.url; a.target = '_blank'; a.rel = 'noopener';
-      item.append(a);
-      list.append(item);
-    }
-    how.append(list);
-    main.append(how);
-    li.append(main);
-    log.append(li);
-    trace.scrollTop = trace.scrollHeight;
-  }
-
-  async function run() {
-    reset();
-    const id = state.runId;
-    const live = () => id === state.runId;
-    const slow = reducedMotion() ? 0 : 1;
-    const wait = (ms) => new Promise((r) => setTimeout(r, ms * slow));
-    state.running = true;
-    root.setAttribute('aria-busy', 'true');
-    log.replaceChildren();
-
-    const steps = currentSteps();
-    let alive = dots.slice();
-    for (let i = 0; i < steps.length; i++) {
-      const step = steps[i];
-      if (step.rate === null) {
-        log.append(html('li', 'tr-end', `Stage ${step.stage.n} is missing a verified input, so the projection stops here.`));
-        break;
-      }
-      rings.forEach((r, k) => r.classList.toggle('on', k === i + 1));
-      await animator.move(alive, alive.map((_, j) => clusterPoint(L.center(i), j)), 720 * slow, 3 * slow);
-      if (!live()) return;
-      countText[i].textContent = `${fmt(step.projectedEntered)} → ${fmt(step.projectedReached)}`;
-      await wait(220);
-      if (!live()) return;
-      if (step.dropped > 0) {
-        const shuffled = seededShuffle(alive, (i + 1) * 7919);
-        const leaving = shuffled.slice(0, step.dropped);
-        alive = shuffled.slice(step.dropped);
-        leaving.forEach((d) => d.el.classList.add('out'));
-        const p0 = L.pile(i);
-        const targets = leaving.map((_, j) => {
-          const n = pileCounts[i]++;
-          return { x: p0.x + (n % PILE_COLS) * PILE_GAP, y: p0.y + Math.floor(n / PILE_COLS) * PILE_GAP };
-        });
-        await animator.move(leaving, targets, 620 * slow, 5 * slow);
-        if (!live()) return;
-        pileText[i].textContent = `−${step.dropped}`;
-      }
-      logStep(step);
-      await wait(180);
-      if (!live()) return;
-    }
-    rings.forEach((r) => r.classList.remove('on'));
-    const last = steps[steps.length - 1];
-    const sameAsAll = state.dimension !== 'all' && steps.every((s) => s.method === 'all');
-    if (last.rate !== null) log.append(html('li', 'tr-end', `In this projection, about ${fmt(last.projectedReached * 100)} in 10,000 ${groupLabel()} reach stage ${last.stage.n} (${fmt(last.projectedReached)} of ${pipeline.cohort_size}).${
-      sameAsAll ? ' The sources have no breakdown for this group, so this matches all students.' : ''}`));
-    state.running = false;
-    root.removeAttribute('aria-busy');
-  }
-
   fillGroups();
-  reset();
-  return { reset, isRunning: () => state.running };
+  draw();
+  return { redraw: () => draw() };
 }
 
-// The bundled pipeline.json is the fallback. If the API has newer stage rates,
-// copy them in and redraw (unless a run is in progress).
+// The bundled pipeline.json is the fallback. If the API has newer values for the
+// same records, copy them in and redraw.
 export function mergeApiRates(byId) {
   let changed = false;
-  for (const stage of pipeline.stages) {
-    for (const records of Object.values(stage.values)) {
+  for (const column of columns(pipeline)) {
+    for (const records of Object.values(column.values)) {
       for (const r of records) {
         const d = byId.get(r.id);
         if (!d) continue;
@@ -414,6 +381,6 @@ const mount = document.getElementById('pipeline-diagram');
 if (mount) {
   const widget = mountPipeline(mount);
   loadDatapoints().then((byId) => {
-    if (byId && mergeApiRates(byId) && !widget.isRunning()) widget.reset();
+    if (byId && mergeApiRates(byId)) widget.redraw();
   });
 }
