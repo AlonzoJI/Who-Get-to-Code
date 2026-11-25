@@ -127,6 +127,15 @@
       "url": "https://nces.ed.gov/programs/digest/d24/tables/dt24_203.60.asp?current=yes"
     }
   },
+  "headline": {
+    "text": "Female students are {base-gender-female} of public high school students but earn {degree-share-gender-female} of computer science bachelor’s degrees.",
+    "records": [
+      "base-gender-female",
+      "degree-share-gender-female"
+    ],
+    "verified": true,
+    "notes": "Both figures are records in this file: the ACS 2024 baseline share of public high school students in grades 9–12 and the IPEDS 2023–24 share of first-major computer and information sciences bachelor’s awards. Written 2026-11-25 as the clearest gap between two recent, directly comparable shares in the chart."
+  },
   "baseline": {
     "id": "baseline",
     "n": "00",

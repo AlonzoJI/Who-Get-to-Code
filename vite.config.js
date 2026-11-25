@@ -23,7 +23,7 @@ const pages = Object.fromEntries(
 // Markers a page can use:
 //   <!-- @head -->  <!-- @nav -->  <!-- @foot -->
 //   <!-- @stats <data-file> -->  <!-- @citations <data-file> -->
-//   <!-- @pipeline -->  <!-- @pipeline-source -->  <!-- @pipeline-table -->  <!-- @datasets -->  <!-- @timeline -->
+//   <!-- @pipeline -->  <!-- @pipeline-source -->  <!-- @pipeline-table -->  <!-- @pipeline-headline -->  <!-- @datasets -->  <!-- @timeline -->
 //   <!-- @studies <data-file> -->  <!-- @study-notes <data-file> -->
 //   <!-- @other-side <data-file> -->  <!-- @other-side-notes <data-file> -->
 //   <!-- @cards <data-file> <key> -->  <!-- @card-notes <data-file> <key> -->  <!-- @programs <data-file> -->
@@ -54,6 +54,7 @@ function sitePartials() {
           .replace('<!-- @pipeline -->', () => render.pipelineCards(readJson('pages')))
           .replace('<!-- @pipeline-source -->', () => render.pipelineSource(readJson('pipeline')))
           .replace('<!-- @pipeline-table -->', () => render.representationTable(readJson('pipeline')))
+          .replace('<!-- @pipeline-headline -->', () => render.pipelineHeadline(readJson('pipeline')))
           .replace('<!-- @datasets -->', () => render.datasetsByStage(readJson('pipeline')))
           .replace('<!-- @student-access -->', () => render.studentAccessChart(readJson('pipeline')))
           .replace(/<!-- @chart ([\w-]+) ([\w-]+) -->/g, (_, file, id) =>

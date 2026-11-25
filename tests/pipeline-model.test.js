@@ -102,3 +102,13 @@ test('derived points are flagged and stage 1 keeps the published access rates', 
   assert.equal(s1.inputs.find((r) => r.group === 'race:black').value, 80);
   assert.equal(recordFor(data.stages[5], 'race:pacific-islander', 'after').verified, false);
 });
+
+test('the headline fills from verified records and falls back to the placeholder', async () => {
+  const { pipelineHeadline } = await import('../lib/render.js');
+  const data = load('pipeline');
+  const html = pipelineHeadline(data);
+  assert.match(html, /48\.52%.*23\.47%/);
+  assert.doesNotMatch(html, /Placeholder/);
+  data.stages[4].values.current.find((r) => r.id === 'degree-share-gender-female').verified = false;
+  assert.match(pipelineHeadline(data), /Placeholder/);
+});

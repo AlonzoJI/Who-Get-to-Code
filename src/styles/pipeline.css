@@ -138,3 +138,4 @@
 .pl-rep-table{min-width:1180px}
 .pl-rep-table th[scope="row"]{font-family:var(--sans);font-size:13px;letter-spacing:0;text-transform:none;color:var(--t1);vertical-align:top}
 .pl-rep-table .pl-src{display:block;margin-top:4px;font-size:11px;line-height:1.45;color:var(--t2)}
+.pl-headline-text{font-size:clamp(20px,2.4vw,26px);line-height:1.35;color:var(--t0);margin:0 0 8px;font-weight:400}
