@@ -19,7 +19,7 @@ test('collects figures from every data file that shows numbers', () => {
 test('the Methods page includes every pipeline share, its stage 1 inputs and the remaining gaps', () => {
   const pipeline = rows.filter((r) => r.file === 'pipeline.json');
   assert.equal(pipeline.length, 100);
-  assert.equal(pipeline.filter((r) => r.verified).length, 76);
+  assert.equal(pipeline.filter((r) => r.verified).length, 80);
   assert.ok(pipeline.filter((r) => !r.verified).every((r) => r.value === null));
   assert.equal(rows.filter((r) => r.file === 'school-access.json' && r.verified).length, 51);
 });
