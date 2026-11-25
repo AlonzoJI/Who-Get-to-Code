@@ -83,12 +83,35 @@
 
         <section class="ohio-section" aria-labelledby="ohio-title">
           <h2 class="sub-h" id="ohio-title">Closer to home: Ohio</h2>
-          <p class="lede">The same before-and-after comparison for Ohio State and Ohio's public universities,
-            which also fall under Senate Bill 1. These figures are still being pulled from the Common Data
-            Set and IPEDS.</p>
-          <div class="ohio-chart">
-            <!-- @chart college ohio-first-year -->
+          <p class="lede">The same before-and-after comparison for Ohio State and two other Ohio public
+            universities, which also fall under Senate Bill 1. Each chart shows the racial and ethnic
+            makeup of first-time students on one campus. The entering-class switch above changes these
+            charts too.</p>
+
+          <div data-ipeds-period="before" role="group" aria-labelledby="ohio-2023-title">
+            <p id="ohio-2023-title"><strong>Fall 2023</strong></p>
+            <div class="chart-grid">
+              <!-- @chart college ohio-osu-2023 -->
+              <!-- @chart college ohio-uc-2023 -->
+              <!-- @chart college ohio-ou-2023 -->
+            </div>
           </div>
+
+          <div data-ipeds-period="after" role="group" aria-labelledby="ohio-2024-title">
+            <p id="ohio-2024-title"><strong>Fall 2024</strong></p>
+            <div class="chart-grid">
+              <!-- @chart college ohio-osu-2024 -->
+              <!-- @chart college ohio-uc-2024 -->
+              <!-- @chart college ohio-ou-2024 -->
+            </div>
+          </div>
+
+          <p>Source: NCES IPEDS Fall Enrollment for each campus (Ohio State Columbus, unit ID 204796;
+            University of Cincinnati main campus, 201885; Ohio University Athens, 204857), read through the
+            Urban Institute Education Data Portal, the same source and categories as the national charts.
+            Fall 2025 IPEDS data is not released yet, so "after" is fall 2024, the first class admitted after
+            <i>SFFA</i>. Groups with fewer than 10 first-time students on a campus are left off that chart
+            but stay in its total.</p>
         </section>
 
         <!-- @debate college -->
