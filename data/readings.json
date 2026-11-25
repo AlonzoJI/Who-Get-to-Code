@@ -305,5 +305,40 @@
       "hooks argues for engaged pedagogy: teaching that respects and cares for students as whole people, and that asks teachers to keep growing themselves. She builds on Freire’s critique of banking education.",
       "An audit of your own recommendations and an open door to AP CS are small versions of that practice. Both ask teachers and counselors to look at each student, not just a transcript."
     ]
+  },
+  {
+    "id": "classroom",
+    "section": "From the classroom",
+    "heading": "Lisa Delpit, “Language Diversity and Learning,” and Pugach on funds of knowledge",
+    "works": [
+      {
+        "cite": "Lisa Delpit, “Language Diversity and Learning,” in Other People’s Children: Cultural Conflict in the Classroom, updated edition. The New Press, 2006.",
+        "url": "https://openlibrary.org/books/OL8882608M"
+      },
+      {
+        "cite": "Marleen C. Pugach, Because Teaching Matters: An Introduction to the Profession, 3rd ed., p. 250."
+      }
+    ],
+    "idea": "Teachers learn from listening to what happens in their own classrooms",
+    "tie": [
+      "Delpit argues that teachers serve students best when they listen closely to how students use language and what it means to them, instead of treating difference as a problem to correct. Pugach describes funds of knowledge, the skills and know-how students bring from home and community, as something teachers can build on.",
+      "National data can show who enrolls, but not why. Teachers see that part every day: who stays after class, who stops showing up, what a student already knows from home. This page collects those observations so they can sit next to the published numbers."
+    ]
+  },
+  {
+    "id": "outreach",
+    "section": "STEM outreach",
+    "heading": "Center on Education Policy, “For the Common Good”",
+    "works": [
+      {
+        "cite": "Center on Education Policy, George Washington University, For the Common Good: Recommitting to Public Education in a Time of Crisis, 2020.",
+        "url": "https://eric.ed.gov/?id=ED606967"
+      }
+    ],
+    "idea": "Education as a shared public responsibility",
+    "tie": [
+      "CEP argues that public schools serve public purposes, not only private ones, and that keeping them strong is a responsibility the whole community shares.",
+      "Libraries, colleges, nonprofits and companies that run computing programs take on part of that responsibility outside the school building. This directory lists them so teachers and counselors can point students toward the ones nearby."
+    ]
   }
 ]

@@ -505,6 +505,12 @@
       "apa": "U.S. Census Bureau. (2025). *Sex by school enrollment by level of school by type of school for the population 3 years and over* (American Community Survey 2024 1-year estimates, Table B14002) [Data set]. Retrieved via Census Reporter.",
       "url": "https://censusreporter.org/data/table/?table=B14002&geo_ids=01000US",
       "type": "primary"
+    },
+    {
+      "kind": "reading",
+      "apa": "Delpit, L. (2006). Language diversity and learning. In *Other people’s children: Cultural conflict in the classroom* (Updated ed.). The New Press.",
+      "url": "https://openlibrary.org/books/OL8882608M",
+      "type": "primary"
     }
   ]
 }
