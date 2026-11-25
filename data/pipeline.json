@@ -141,7 +141,7 @@
     "n": "00",
     "short": "All students",
     "title": "All public high school students",
-    "population": "Public high school students in grades 9–12",
+    "population": "Public high school students, grades 9–12 (race: fall 2023 count; sex: 2024 survey; income: 2024 report)",
     "datasets": [
       "nces",
       "acs"
@@ -337,7 +337,8 @@
           "derived": true
         }
       ]
-    }
+    },
+    "metric": "Public high school students, grades 9–12 (race: fall 2023 count; sex: 2024 survey; income: 2024 report)"
   },
   "stages": [
     {
@@ -351,8 +352,8 @@
         "nces"
       ],
       "has_periods": false,
-      "population": "Students at public high schools that offer foundational CS",
-      "metric": "Students at public high schools that offer foundational CS",
+      "population": "Students at public high schools offering foundational CS (2024 report)",
+      "metric": "Students at public high schools offering foundational CS (2024 report)",
       "values": {
         "current": [
           {
@@ -737,8 +738,8 @@
         "codeorg"
       ],
       "has_periods": false,
-      "population": "Students enrolled in a high school CS course",
-      "metric": "Students enrolled in a high school CS course",
+      "population": "Students enrolled in a high school CS course during the 2023–24 school year (one-year CRDC snapshot of public schools; income: 2024 report)",
+      "metric": "Students enrolled in a high school CS course during the 2023–24 school year (one-year CRDC snapshot of public schools; income: 2024 report)",
       "values": {
         "current": [
           {
@@ -942,8 +943,8 @@
         "collegeboard"
       ],
       "has_periods": false,
-      "population": "AP Computer Science exams taken (A and Principles)",
-      "metric": "AP Computer Science exams taken (A and Principles)",
+      "population": "AP CS exams taken, A and Principles (race: the class of 2019’s exams across high school; gender: the 2024 exam administration)",
+      "metric": "AP CS exams taken, A and Principles (race: the class of 2019’s exams across high school; gender: the 2024 exam administration)",
       "values": {
         "current": [
           {
@@ -1138,8 +1139,8 @@
         "ipeds"
       ],
       "has_periods": true,
-      "population": "First-time students at matched four-year colleges",
-      "metric": "First-time students at matched four-year colleges",
+      "population": "First-time students at matched four-year colleges (fall 2023 before, fall 2024 after)",
+      "metric": "First-time students at matched four-year colleges (fall 2023 before, fall 2024 after)",
       "values": {
         "before": [
           {
@@ -1515,8 +1516,8 @@
         "ipeds"
       ],
       "has_periods": false,
-      "population": "Computer and information sciences bachelor’s degrees",
-      "metric": "Computer and information sciences bachelor’s degrees",
+      "population": "CS bachelor’s degrees awarded July 2023 to June 2024",
+      "metric": "CS bachelor’s degrees awarded July 2023 to June 2024",
       "values": {
         "current": [
           {
@@ -1711,8 +1712,8 @@
         "ncses"
       ],
       "has_periods": false,
-      "population": "College-educated computer and mathematical scientists",
-      "metric": "College-educated computer and mathematical scientists",
+      "population": "College-educated computer and mathematical scientists, all ages (2021 survey)",
+      "metric": "College-educated computer and mathematical scientists, all ages (2021 survey)",
       "values": {
         "current": [
           {

@@ -277,7 +277,7 @@ export function mountPipeline(root) {
   // ── tooltip ──
   function tipText(s, p) {
     const r = p.record;
-    const lines = [`${s.group.label}, ${p.column.short}: ${pct(r.value)} of ${lowerFirst(p.column.population)}`];
+    const lines = [`${s.group.label}, ${p.column.short}: ${pct(r.value)} of ${lowerFirst(p.column.population.replace(/\s*\(.*\)$/, ''))}`];
     if (p.col > 0 && s.baseValue !== null) lines.push(`Index ${ratio(p.index)} (${pct(s.baseValue)} of all high school students)`);
     lines.push(`Source: ${r.source_short ?? r.source}, ${r.data_year ?? r.year}`);
     if (r.derived) lines.push('Derived from two published figures; see the stage list');
