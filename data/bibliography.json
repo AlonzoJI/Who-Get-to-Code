@@ -486,6 +486,30 @@
       "apa": "Miedema, K. (2026). *ESPHE 3206 School and Society syllabus*. The Ohio State University.",
       "url": null,
       "type": "primary"
+    },
+    {
+      "kind": "source",
+      "apa": "Google. (2024). *2024 diversity annual report*.",
+      "url": "https://belonging.google/diversity-annual-report/2024/",
+      "type": "primary"
+    },
+    {
+      "kind": "source",
+      "apa": "Microsoft. (2024). *2024 global diversity & inclusion report*.",
+      "url": "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/dni/documents/presentations/microsoftcorp_gdi_report_2024_final.pdf",
+      "type": "primary"
+    },
+    {
+      "kind": "source",
+      "apa": "Meta. (2022). *Diversity data summary report 2022*.",
+      "url": "https://about.fb.com/wp-content/uploads/2022/07/Meta_Diversity-Data-Summary-Report_2022.pdf",
+      "type": "primary"
+    },
+    {
+      "kind": "source",
+      "apa": "The Ohio State University, Office of Institutional Research and Planning. (2025). *Demographics: Race and ethnicity* [Data dashboard].",
+      "url": "https://irp.osu.edu/students-faculty-staff-ethnicity",
+      "type": "primary"
     }
   ]
 }
