@@ -1,5 +1,5 @@
 {
-  "_about": "Next steps for teachers and counselors. Each action is open to every student. Citations checked 2026-11-21 against Crossref, OpenAlex abstracts or the source itself; Pugach (2024) is a course text that could not be found online and is marked as a placeholder.",
+  "_about": "Next steps for teachers and counselors. Each action is open to every student. Citations checked 2026-11-21 against Crossref, OpenAlex abstracts or the source itself; Pugach (2023) is the course text; its edition, publisher and date were checked 2026-11-24 on Wiley’s product page.",
   "actions": [
     {
       "n": "01",
@@ -11,9 +11,9 @@
       "verified": true,
       "year": 1992,
       "finding": "Ask students what they already do at home, at work and in their communities, from fixing phones to running a family business’s books, and invite them into CS from there. Moll and colleagues call this household knowledge “funds of knowledge.”",
-      "apa": "Moll, L. C., Amanti, C., Neff, D., & Gonzalez, N. (1992). Funds of knowledge for teaching: Using a qualitative approach to connect homes and classrooms. *Theory Into Practice, 31*(2), 132–141. Also Pugach (2024), p. 250 [full reference pending].",
+      "apa": "Moll, L. C., Amanti, C., Neff, D., & Gonzalez, N. (1992). Funds of knowledge for teaching: Using a qualitative approach to connect homes and classrooms. *Theory Into Practice, 31*(2), 132–141. Also Pugach, M. C. (2023). *Because teaching matters: An introduction to the profession* (3rd ed., p. 250). Wiley.",
       "url": "https://doi.org/10.1080/00405849209543534",
-      "notes": "Moll et al. citation confirmed in Crossref. The examples (fixing phones, family business books) are illustrations written for this site, not from the article. Pugach (2024), p. 250 is the course text cited in the brief; its full reference has not been added or checked."
+      "notes": "Moll et al. citation confirmed in Crossref. The examples (fixing phones, family business books) are illustrations written for this site, not from the article. Pugach (2023), p. 250 is the course text cited in the brief. Wiley lists the 3rd edition paperback (ISBN 978-1-119-89961-7) as December 2023; the page number itself was not checked against the book."
     },
     {
       "n": "02",

@@ -393,9 +393,8 @@
     },
     {
       "kind": "reading",
-      "apa": "Pugach, M. C. (2024). [Full reference pending; Chapter 7 and p. 250 are cited on this site.]",
-      "url": null,
-      "pending": true,
+      "apa": "Pugach, M. C. (2023). *Because teaching matters: An introduction to the profession* (3rd ed.). Wiley.",
+      "url": "https://www.wiley.com/en-us/because-teaching-matters-an-introduction-to-the-profession-3rd-edition-p-9781119899617",
       "type": "primary"
     },
     {
@@ -510,6 +509,12 @@
       "kind": "reading",
       "apa": "Delpit, L. (2006). Language diversity and learning. In *Other people’s children: Cultural conflict in the classroom* (Updated ed.). The New Press.",
       "url": "https://openlibrary.org/books/OL8882608M",
+      "type": "primary"
+    },
+    {
+      "kind": "reading",
+      "apa": "Miedema, K. (2026). *ESPHE 3206 School and Society syllabus*. The Ohio State University.",
+      "url": null,
       "type": "primary"
     }
   ]
