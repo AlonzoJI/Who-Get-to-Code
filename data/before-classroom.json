@@ -46,7 +46,7 @@
     {
       "id": "cs-access-2015-2025",
       "title": "Access to computer science at school, 2015 and 2025",
-      "measure": "Share of schools offering computer science",
+      "measure": "Two different measures, not compared",
       "records": [
         {
           "id": "cs-access-2015",
@@ -62,8 +62,8 @@
           "source_short": "Google & Gallup",
           "url": "https://services.google.com/fh/files/misc/searching-for-computer-science_report.pdf",
           "verified": false,
-          "accessed": "2026-11-21",
-          "notes": "Candidate figures, not yet chosen: 'Of all principals surveyed, three in four report that they do not offer computer science with programming/coding.' Also: 'approximately 25% of seventh- to 12th-grade students report having no access to a computer science class or club at school.' Both are survey responses covering K-12 schools, not a count of public high schools."
+          "accessed": "2026-11-24",
+          "notes": "Not filled: the survey does not measure the same thing as the 2025 figure. Report p. 3 (checked 2026-11-24): ‘Of all principals surveyed, three in four report that they do not offer computer science with programming/coding.’ Gallup surveyed 9,693 K-12 principals at every grade level (p. 4), and ‘approximately 25% of seventh- to 12th-grade students report having no access to a computer science class or club at school.’ Both are self-reported survey answers, not a count of public high schools."
         },
         {
           "id": "cs-access-2025",
@@ -79,10 +79,12 @@
           "source_short": "Code.org",
           "url": "https://advocacy.code.org/stateofcs/",
           "verified": false,
-          "accessed": "2026-11-21",
-          "notes": "The 2025 report gives 60% of public high schools offering foundational CS (verified on the home page). It is left pending here because it measures something different from the 2015 survey; a fair comparison needs the same measure in both years, for example an earlier Code.org State of CS figure. The 2025 report's own trend chart starts at 47% in 2019-20."
+          "accessed": "2026-11-24",
+          "notes": "Not filled: it measures something different from the 2015 survey. Code.org release, Dec. 10, 2025 (checked 2026-11-24): ‘60% of U.S. public high schools now offer foundational CS.’ This counts public high schools from state course data; the 2015 figure is principals’ survey answers about CS with programming at any K-12 grade. The 60% is shown on the home page. A fair comparison needs one series measured the same way in both years.",
+          "url_alt": "https://www.prnewswire.com/news-releases/new-report-ai--computer-science-are-the-foundation-for-us-k12-readiness-but-state-policies-lag-behind-302637515.html"
         }
-      ]
+      ],
+      "note": "Not compared. 2015: three in four K–12 principals surveyed said their school did not offer CS with programming or coding (Google and Gallup). 2025: 60% of U.S. public high schools offer foundational CS (Code.org). The schools, the definition of CS and the method all differ, so the bars stay empty."
     }
   ]
 }
